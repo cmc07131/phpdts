@@ -1,12 +1,12 @@
-// 对话系统的JavaScript扩展
+// 對話系統的JavaScript擴展
 
-// 扩展changePages函数，处理对话选择页面
+// 擴展changePages函數，處理對話選擇頁面
 function dialogueChangePages(mode, cPages) {
     console.log('dialogueChangePages called with mode=' + mode + ', cPages=' + cPages);
 
     var nowpage = Number(document.getElementById(mode + 'markpage').innerHTML);
     var endpage = Number(document.getElementById(mode + 'endpage').innerHTML);
-    var maxdkey = endpage + 1; // 选择页面的ID
+    var maxdkey = endpage + 1; // 選擇頁面的ID
 
     console.log('Current page: ' + nowpage + ', End page: ' + endpage + ', Choice page ID: ' + maxdkey);
 
@@ -19,7 +19,7 @@ function dialogueChangePages(mode, cPages) {
     console.log('Next page: ' + nextpage);
     document.getElementById(mode + 'markpage').innerHTML = nextpage;
 
-    // 隐藏当前页面
+    // 隱藏當前頁面
     var currentPage = document.getElementById(mode + nowpage);
     if(currentPage) {
         currentPage.style.display = "none";
@@ -28,10 +28,10 @@ function dialogueChangePages(mode, cPages) {
         console.error('Current page not found: ' + mode + nowpage);
     }
 
-    // 如果下一页是选择页面
+    // 如果下一頁是選擇頁面
     if(nextpage > endpage) {
         console.log('Next page is choice page');
-        // 显示选择页面
+        // 顯示選擇頁面
         var choicePage = document.getElementById(mode + maxdkey);
         console.log('Looking for choice page with ID: ' + mode + maxdkey);
 
@@ -52,7 +52,7 @@ function dialogueChangePages(mode, cPages) {
         }
     } else {
         console.log('Next page is dialogue page');
-        // 显示普通对话页面
+        // 顯示普通對話頁面
         var dialoguePage = document.getElementById(mode + nextpage);
         if(dialoguePage) {
             dialoguePage.style.display = "block";
@@ -63,13 +63,13 @@ function dialogueChangePages(mode, cPages) {
     }
 }
 
-// 覆盖原有的changePages函数
+// 覆蓋原有的changePages函數
 function changePages(mode, cPages) {
-    // 如果是对话系统，使用dialogueChangePages
+    // 如果是對話系統，使用dialogueChangePages
     if(mode === 'd') {
         dialogueChangePages(mode, cPages);
     } else {
-        // 否则使用原有的逻辑
+        // 否則使用原有的邏輯
         var nowpage = Number(document.getElementById(mode + 'markpage').innerHTML);
         var endpage = Number(document.getElementById(mode + 'endpage').innerHTML);
 
@@ -107,7 +107,7 @@ function changePages(mode, cPages) {
     }
 }
 
-// 处理对话选择；不要假定当前临时指令页拥有 #command 或 #mode。
+// 處理對話選擇；不要假定當前臨時指令頁擁有 #command 或 #mode。
 // Handle a dialogue choice without assuming the current transient command page has #command or #mode.
 function handleDialogueChoice(dialogueId, choiceIndex) {
     var commandValue = 'dialogue_choice ' + dialogueId + ' ' + choiceIndex;
@@ -133,7 +133,7 @@ function handleDialogueChoice(dialogueId, choiceIndex) {
         dialogueElement.appendChild(processingDiv);
     }
     if(processingDiv) {
-        processingDiv.innerHTML = '<span style="color: yellow; font-weight: bold;">正在处理选择...</span>';
+        processingDiv.innerHTML = '<span style="color: yellow; font-weight: bold;">正在處理選擇...</span>';
     }
 
     var requestCompleted = false;
@@ -143,7 +143,7 @@ function handleDialogueChoice(dialogueId, choiceIndex) {
         requestCompleted = true;
         if(recoveryTimer) window.clearTimeout(recoveryTimer);
         if(processingDiv) {
-            processingDiv.innerHTML = '<span style="color: yellow; font-weight: bold;">请求未完成，正在重新载入游戏页...</span>';
+            processingDiv.innerHTML = '<span style="color: yellow; font-weight: bold;">請求未完成，正在重新載入遊戲頁...</span>';
         }
         window.setTimeout(function() {
             window.location.reload();
@@ -156,18 +156,18 @@ function handleDialogueChoice(dialogueId, choiceIndex) {
         if(recoveryTimer) window.clearTimeout(recoveryTimer);
     }
 
-    // 即使尸体、战果等页面存在同名 radio，也只提交此处指定的强制选择。
+    // 即使屍體、戰果等頁面存在同名 radio，也只提交此處指定的強制選擇。
     // Submit only this mandatory choice even when corpse/result pages contain same-named radio controls.
     recoveryTimer = window.setTimeout(function() {
         if(!requestCompleted && document.getElementById('dialogue') === dialogueElement) {
-            recoverChoice({message: '指令请求超时。'});
+            recoverChoice({message: '指令請求超時。'});
         }
     }, 15000);
 
     try {
         var requestStarted = postCmd('gamecmd', 'command.php', {
             data: {mode: 'command', command: commandValue},
-            // 选择按钮已在本函数中锁定，不能让通用的 50ms 节流静默吞掉强制选择。
+            // 選擇按鈕已在本函數中鎖定，不能讓通用的 50ms 節流靜默吞掉強制選擇。
             // Buttons are already locked here, so the generic 50ms throttle must not silently drop this choice.
             bypassDelay: true,
             timeout: 15000,
@@ -175,7 +175,7 @@ function handleDialogueChoice(dialogueId, choiceIndex) {
             onError: recoverChoice
         });
         if(requestStarted === false && !requestCompleted) {
-            recoverChoice({message: '指令未能开始发送。'});
+            recoverChoice({message: '指令未能開始發送。'});
         }
     } catch(error) {
         recoverChoice(error);

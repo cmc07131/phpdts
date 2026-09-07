@@ -22,13 +22,13 @@ function item_synthesis($itmn, &$data) {
     $itmsk = & ${'itmsk' . $itmn};
     
     if ($itmk == 'ZA') {
-        if ($itm == '→【单兵撤退按钮】←') {
-            $log .= "你按下了这个按钮。<br>但似乎什么都没有发生。<br>按钮就这样消失了。<br>在你觉得你买到了假冒伪劣产品时，你听到了来自红暮的广播。<br>";
+        if ($itm == '→【單兵撤退按鈕】←') {
+            $log .= "你按下了這個按鈕。<br>但似乎什麼都沒有發生。<br>按鈕就這樣消失了。<br>在你覺得你買到了假冒偽劣產品時，你聽到了來自紅暮的廣播。<br>";
             // 销毁物品
             $itm = $itmk = $itmsk = '';
             $itme = $itms = 0;
-            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【红暮】','','如果你们发现了什么带有异样颜色的代码断片，千万别合成它们，老实带过来给我就行。')");
-            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【红暮】','','大家请注意，虚拟幻境系统似乎遭到了来自不明人士的入侵。')");
+            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【紅暮】','','如果你們發現了什麼帶有異樣顏色的代碼斷片，千萬別合成它們，老實帶過來給我就行。')");
+            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【紅暮】','','大家請注意，虛擬幻境系統似乎遭到了來自不明人士的入侵。')");
             // 播撒合成用物品
             $kitm1 = "［ＩＮＮＯＣＥＮＣＥ］";
             $kitm2 = "［ＤＩＬＩＧＥＮＣＥ］";
@@ -42,15 +42,15 @@ function item_synthesis($itmn, &$data) {
             $plsname1 = $plsinfo[$rndpls1];
             $plsname2 = $plsinfo[$rndpls2];
             $plsname3 = $plsinfo[$rndpls3];
-            $log .= "然后，你听到了来自蓝凝的私聊——<br><span class=\"clan\">【蓝凝】就给你一些提示吧，你需要找到三个代码断片进行合成：{$kitm1}，{$kitm2}与{$kitm3}，它们分别位于{$plsname1}，{$plsname2}与{$plsname3}。<br>【蓝凝】别谢我，问就是我免贵姓雷了。祝你好运！</span>";
-            $log .= "<br>看起来，在脱出幻境之前，你需要玩一把寻宝游戏了……";
-        } elseif ($itm == '→【神器任意门】←') {
-            $log .= "你将这个门扉种在了地上。<br>但门扉突然消失了。<br>在你觉得你捡到了个笑话时，你听到了来自红暮的广播。<br>";
+            $log .= "然後，你聽到了來自藍凝的私聊——<br><span class=\"clan\">【藍凝】就給你一些提示吧，你需要找到三個代碼斷片進行合成：{$kitm1}，{$kitm2}與{$kitm3}，它們分別位於{$plsname1}，{$plsname2}與{$plsname3}。<br>【藍凝】別謝我，問就是我免貴姓雷了。祝你好運！</span>";
+            $log .= "<br>看起來，在脱出幻境之前，你需要玩一把尋寶遊戲了……";
+        } elseif ($itm == '→【神器任意門】←') {
+            $log .= "你將這個門扉種在了地上。<br>但門扉突然消失了。<br>在你覺得你撿到了個笑話時，你聽到了來自紅暮的廣播。<br>";
             // 销毁物品
             $itm = $itmk = $itmsk = '';
             $itme = $itms = 0;
-            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【红暮】','','如果你们发现了什么带有异样颜色的代码断片，千万别合成它们，老实带过来给我就行。')");
-            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【红暮】','','大家请注意，虚拟幻境系统似乎遭到了来自不明人士的入侵。')");
+            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【紅暮】','','如果你們發現了什麼帶有異樣顏色的代碼斷片，千萬別合成它們，老實帶過來給我就行。')");
+            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【紅暮】','','大家請注意，虛擬幻境系統似乎遭到了來自不明人士的入侵。')");
             // 播撒合成用物品
             $kitm1 = "［ΨТОВХ］";
             $kitm2 = "［ЫΑИЙВХΨ］";
@@ -64,15 +64,15 @@ function item_synthesis($itmn, &$data) {
             $plsname1 = $plsinfo[$rndpls1];
             $plsname2 = $plsinfo[$rndpls2];
             $plsname3 = $plsinfo[$rndpls3];
-            $log .= "然后，你听到了来自不明人士的私聊——<br><span class=\"lime\">【？？？】就给你一些提示吧，你需要找到三个代码断片进行合成：{$kitm1}，{$kitm2}与{$kitm3}，它们分别位于{$plsname1}，{$plsname2}与{$plsname3}。<br>【？？？】祝你好运！</span>";
-            $log .= "<br>看起来，在脱出幻境之前，你需要玩一把寻宝游戏了……";
+            $log .= "然後，你聽到了來自不明人士的私聊——<br><span class=\"lime\">【？？？】就給你一些提示吧，你需要找到三個代碼斷片進行合成：{$kitm1}，{$kitm2}與{$kitm3}，它們分別位於{$plsname1}，{$plsname2}與{$plsname3}。<br>【？？？】祝你好運！</span>";
+            $log .= "<br>看起來，在脱出幻境之前，你需要玩一把尋寶遊戲了……";
         } else {
-            $log .= "你启动了单人脱出机构。<br>";
+            $log .= "你啓動了單人脱出機構。<br>";
             // 销毁物品
             $itm = $itmk = $itmsk = '';
             $itme = $itms = 0;
-            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【红暮】','','如果你们发现了什么带有异样颜色的代码断片，千万别合成它们，老实带过来给我就行。')");
-            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【红暮】','','大家请注意，虚拟幻境系统似乎遭到了来自不明人士的入侵。')");
+            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【紅暮】','','如果你們發現了什麼帶有異樣顏色的代碼斷片，千萬別合成它們，老實帶過來給我就行。')");
+            $db->query("INSERT INTO {$tablepre}chat (type,`time`,send,recv,msg) VALUES ('2','$now','【紅暮】','','大家請注意，虛擬幻境系統似乎遭到了來自不明人士的入侵。')");
             // 播撒合成用物品
             $kitm1 = "［ｒｍ］";
             $kitm2 = "［－ｒ］";
@@ -86,8 +86,8 @@ function item_synthesis($itmn, &$data) {
             $plsname1 = $plsinfo[$rndpls1];
             $plsname2 = $plsinfo[$rndpls2];
             $plsname3 = $plsinfo[$rndpls3];
-            $log .= "然后，你听到了来自不明人士的私聊——<br><span class=\"lime\">【？？？】就给你一些提示吧，你需要找到三个代码断片进行合成：{$kitm1}，{$kitm2}与{$kitm3}，它们分别位于{$plsname1}，{$plsname2}与{$plsname3}。<br>【？？？】祝你好运！</span>";
-            $log .= "<br>看起来，在脱出幻境之前，你需要玩一把寻宝游戏了……";
+            $log .= "然後，你聽到了來自不明人士的私聊——<br><span class=\"lime\">【？？？】就給你一些提示吧，你需要找到三個代碼斷片進行合成：{$kitm1}，{$kitm2}與{$kitm3}，它們分別位於{$plsname1}，{$plsname2}與{$plsname3}。<br>【？？？】祝你好運！</span>";
+            $log .= "<br>看起來，在脱出幻境之前，你需要玩一把尋寶遊戲了……";
         }
     }
 }

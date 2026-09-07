@@ -6,14 +6,14 @@
 
 <section class="nv-window nv-window--status" id="nv-status" data-window-title="Status">
     <div class="nv-window__titlebar">
-        <span class="nv-window__title">Status Window / 状态窗口</span>
+        <span class="nv-window__title">Status Window / 狀態窗口</span>
         <span class="nv-window__actions"><button type="button" class="nv-window__action" data-window-minimize title="Minimize">_</button></span>
     </div>
     <div class="nv-window__body">
         <div class="nv-status-head">
             <div>
                 <div class="nv-status-name">{$nickinfo} {$name}<!--{if !empty($clbpara['PlatformName'])}-->（$clbpara['PlatformName']）<!--{/if}--></div>
-                <div class="nv-status-id">{$sexinfo[$gd]}{$sNo}号 · Lv. $lvl · $clubinfo[$club]</div>
+                <div class="nv-status-id">{$sexinfo[$gd]}{$sNo}號 · Lv. $lvl · $clubinfo[$club]</div>
             </div>
             <div class="nv-status-id">{lang weather}: $wthinfo[$weather]</div>
         </div>
@@ -43,7 +43,7 @@
             <dt>{lang killnum}</dt><dd>$killnum</dd>
             <dt>{lang att}</dt><dd>$atkinfo</dd>
             <dt>{lang def}</dt><dd>$definfo</dd>
-            <dt>{lang team}</dt><dd><!--{if $teamID && $gamestate < 40 }-->$teamID<!--{else}-->无<!--{/if}--></dd>
+            <dt>{lang team}</dt><dd><!--{if $teamID && $gamestate < 40 }-->$teamID<!--{else}-->無<!--{/if}--></dd>
             <dt>{lang inf}</dt>
             <dd>
                 <!--{if $inf}-->
@@ -51,7 +51,7 @@
                         <!--{if strpos($inf,$key)!==false}-->$val <!--{/if}-->
                     <!--{/loop}-->
                 <!--{else}-->
-                    无
+                    無
                 <!--{/if}-->
             </dd>
         </dl>
@@ -71,7 +71,7 @@
                     <!--{/loop}-->
                 </select>
             </label>
-            <label>战术界面<br>
+            <label>戰術界面<br>
                 <select id="horizon" name="horizon" onchange="$('mode').value='special';$('command').value=$('horizon').value;postCmd('gamecmd','command.php');return false;" <!--{if CURSCRIPT != 'game' || $mode != 'command'}-->disabled<!--{/if}-->>
                     <!--{loop $horizoninfo $key $value}-->
                     <option value="hor$key"<!--{if $horizon == $key}-->selected<!--{/if}-->>$value
@@ -82,10 +82,10 @@
             <label>{lang club}<br>
                 <!--{eval $t1_list = valid_getclublist_t1($udata); $t2_list = valid_getclublist_t2($udata);}-->
                 <select id="clubsel" name="clubsel" onchange="$('mode').value='special';$('command').value=$('clubsel').value;postCmd('gamecmd','command.php');return false;" <!--{if CURSCRIPT != 'game' || $mode != 'command'}-->disabled<!--{/if}-->>
-                    <optgroup label="普通称号">
+                    <optgroup label="普通稱號">
                         <!--{loop $t2_list $key}--><option value="clubsel$key">$clubinfo[$key]<!--{/loop}-->
                     </optgroup>
-                    <optgroup label="特殊称号">
+                    <optgroup label="特殊稱號">
                         <!--{loop $t1_list $key}--><option value="clubsel$key">$clubinfo[$key]<!--{/loop}-->
                     </optgroup>
                 </select>
@@ -97,7 +97,7 @@
 
 <section class="nv-window nv-window--avatar" id="nv-avatar" data-window-title="Avatar">
     <div class="nv-window__titlebar">
-        <span class="nv-window__title">Paperdoll / 纸娃娃</span>
+        <span class="nv-window__title">Paperdoll / 紙娃娃</span>
         <span class="nv-window__actions"><button type="button" class="nv-window__action" data-window-minimize title="Minimize">_</button></span>
     </div>
     <div class="nv-window__body">
@@ -106,11 +106,11 @@
                 <img src="img/$iconImg" data-fallback="avatar" alt="$name">
             </div>
             <dl class="nv-kv">
-                <dt>编号</dt><dd>{$sexinfo[$gd]}{$sNo}号</dd>
-                <dt>状态</dt><dd><!--{if $hp <= 0}-->死亡<!--{elseif $hp <= $mhp*0.2}-->危险<!--{elseif $inf!=''}-->异常<!--{else}-->稳定<!--{/if}--></dd>
+                <dt>編號</dt><dd>{$sexinfo[$gd]}{$sNo}號</dd>
+                <dt>狀態</dt><dd><!--{if $hp <= 0}-->死亡<!--{elseif $hp <= $mhp*0.2}-->危險<!--{elseif $inf!=''}-->異常<!--{else}-->穩定<!--{/if}--></dd>
                 <dt>武器</dt><dd><!--{if $weps}-->$wep_words<!--{else}-->$nowep<!--{/if}--></dd>
                 <dt>防具</dt><dd><!--{if $arbs}-->$arb_words<!--{else}-->$noarb<!--{/if}--></dd>
-                <dt>饰品</dt><dd><!--{if $arts}-->$art_words<!--{else}-->$noitm<!--{/if}--></dd>
+                <dt>飾品</dt><dd><!--{if $arts}-->$art_words<!--{else}-->$noitm<!--{/if}--></dd>
             </dl>
         </div>
     </div>
@@ -118,7 +118,7 @@
 
 <section class="nv-window nv-window--inventory" id="nv-inventory" data-window-title="Inventory">
     <div class="nv-window__titlebar">
-        <span class="nv-window__title">Inventory / 装备与背包</span>
+        <span class="nv-window__title">Inventory / 裝備與揹包</span>
         <span class="nv-window__actions"><button type="button" class="nv-window__action" data-window-minimize title="Minimize">_</button></span>
     </div>
     <div class="nv-window__body">
@@ -171,7 +171,7 @@
                     <div class="nv-slot"><span class="nv-item__kind"><!--{if $itmk5_words}-->$itmk5_words<!--{else}-->{lang pack}5<!--{/if}--></span><span class="nv-item__name"><!--{if $itms5}-->$itm5_words<!--{else}-->$noitm<!--{/if}--></span><span class="nv-item__stat">$itme5 / $itms5</span></div>
                     <div class="nv-slot"><span class="nv-item__kind"><!--{if $itmk6_words}-->$itmk6_words<!--{else}-->{lang pack}6<!--{/if}--></span><span class="nv-item__name"><!--{if $itms6}-->$itm6_words<!--{else}-->$noitm<!--{/if}--></span><span class="nv-item__stat">$itme6 / $itms6</span></div>
                 </div>
-                <p class="nv-note">使用、装备、交换、合成和丢弃仍通过行动窗口中的原按钮执行。</p>
+                <p class="nv-note">使用、裝備、交換、合成和丟棄仍通過行動窗口中的原按鈕執行。</p>
             </div>
         </div>
     </div>

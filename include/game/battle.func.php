@@ -11,18 +11,18 @@ function findteam(&$w_pdata)
 
 	if($gamestate>=40)
 	{
-		$log .= '<span class="yellow">连斗阶段所有队伍取消！</span><br>';
+		$log .= '<span class="yellow">連鬥階段所有隊伍取消！</span><br>';
 		$mode = 'command';
 		return;
 	}
 
-	$battle_title = '发现队友';
+	$battle_title = '發現隊友';
 	extract($pdata,EXTR_REFS);
 	extract($w_pdata,EXTR_PREFIX_ALL,'w');
 	init_battle_rev($pdata,$w_pdata);
 
 	$main = 'battle_rev';
-	$log .= "你发现了队友<span class=\"yellow\">$w_name</span>！<br>";
+	$log .= "你發現了隊友<span class=\"yellow\">$w_name</span>！<br>";
 
 	include template('findteam');
 	$cmd = ob_get_contents();
@@ -37,14 +37,14 @@ function findcorpse(&$w_pdata)
 	global $allow_destory_corpse,$no_destory_corpse_type;
 	global $pdata;
 
-	$battle_title = '发现尸体';
+	$battle_title = '發現屍體';
 	extract($pdata,EXTR_REFS);
 	extract($w_pdata,EXTR_PREFIX_ALL,'w');
 
 	init_battle_rev($pdata,$w_pdata,1);
 
 	$main = 'battle_rev';
-	$log .= '你发现了<span class="red">'.$w_name.'</span>的尸体！<br>';
+	$log .= '你發現了<span class="red">'.$w_name.'</span>的屍體！<br>';
 
 	# 初始化尸体tooltip
 	foreach (Array('wep','wep2','arb','arh','ara','arf','art','itm0','itm1','itm2','itm3','itm4','itm5','itm6') as $value)
@@ -117,20 +117,20 @@ function senditem()
 
 	$mateid = $bid;
 	if(!$mateid || $action != 'team'){
-		$log .= '<span class="yellow">你没有遇到队友，或已经离开现场！</span><br>';
+		$log .= '<span class="yellow">你沒有遇到隊友，或已經離開現場！</span><br>';
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
 	}
 	if($gamestate>=40){
-		$log .= '<span class="yellow">连斗阶段无法赠送物品！</span><br>';
+		$log .= '<span class="yellow">連鬥階段無法贈送物品！</span><br>';
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
 	}
 	$result = $db->query("SELECT * FROM {$tablepre}players WHERE pid='$mateid'");
 	if(!$db->num_rows($result)){
-		$log .= "对方不存在！<br>";
+		$log .= "對方不存在！<br>";
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
@@ -141,17 +141,17 @@ function senditem()
 	{
 		//登记非功能性地点信息时合并隐藏地点
 		foreach($hplsinfo as $hgroup=>$hpls) $plsinfo += $hpls;
-		$log .= '<span class="yellow">'.$edata['name'].'</span>已经离开了<span class="yellow">'.$plsinfo[$pls].'</span>。<br>';
+		$log .= '<span class="yellow">'.$edata['name'].'</span>已經離開了<span class="yellow">'.$plsinfo[$pls].'</span>。<br>';
 		$mode = 'command';
 		$action = ''; $bid = 0;
 		return;
 	} elseif($edata['hp'] <= 0) {
-		$log .= '<span class="yellow">'.$edata['name'].'</span>已经死亡，不能接受物品。<br>';
+		$log .= '<span class="yellow">'.$edata['name'].'</span>已經死亡，不能接受物品。<br>';
 		$mode = 'command';
 		$action = ''; $bid = 0;
 		return;
 	} elseif(!$teamID || $edata['teamID']!=$teamID){
-		$log .= '<span class="yellow">'.$edata['name'].'</span>并非你的队友，不能接受物品。<br>';
+		$log .= '<span class="yellow">'.$edata['name'].'</span>並非你的隊友，不能接受物品。<br>';
 		$mode = 'command';
 		$action = ''; $bid = 0;
 		return;
@@ -159,8 +159,8 @@ function senditem()
 
 	if(!empty($message))
 	{
-		$log .= "<span class=\"lime\">你对{$edata['name']}说：“{$message}”</span><br>";
-		$w_log = "<span class=\"lime\">{$name}对你说：“{$message}”</span><br>";
+		$log .= "<span class=\"lime\">你對{$edata['name']}説：“{$message}”</span><br>";
+		$w_log = "<span class=\"lime\">{$name}對你説：“{$message}”</span><br>";
 		if(!$edata['type']){logsave($edata['pid'],$now,$w_log,'c');}
 	}
 
@@ -184,7 +184,7 @@ function senditem()
 		# 诅咒道具不能赠予，不准祸水东引！
 		if(in_array('V',get_itmsk_array($itmsk)))
 		{
-			$log .= "你伸出手，挠了挠自己的头。<br>你本来打算干什么来着？<br>";
+			$log .= "你伸出手，撓了撓自己的頭。<br>你本來打算幹什麼來着？<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
@@ -202,8 +202,8 @@ function senditem()
 				$edata['itms'.$i] = $itms;
 				$edata['itmsk'.$i] = $itmsk;
 				$edata['itmpara'.$i] = $itmpara;
-				$log .= "你将<span class=\"yellow\">{$edata['itm'.$i]}</span>送给了<span class=\"yellow\">$w_name</span>。<br>";
-				$w_log = "<span class=\"yellow\">$name</span>将<span class=\"yellow\">{$edata['itm'.$i]}</span>送给了你。";
+				$log .= "你將<span class=\"yellow\">{$edata['itm'.$i]}</span>送給了<span class=\"yellow\">$w_name</span>。<br>";
+				$w_log = "<span class=\"yellow\">$name</span>將<span class=\"yellow\">{$edata['itm'.$i]}</span>送給了你。";
 				if(!$w_type){logsave($w_pid,$now,$w_log,'t');}
 
 				addnews($now,'senditem',$name,$w_name,$itm,$nick);
@@ -215,7 +215,7 @@ function senditem()
 				return;
 			}
 		}
-		$log .= "<span class=\"yellow\">$w_name</span> 的包裹已经满了，不能赠送物品。<br>";
+		$log .= "<span class=\"yellow\">$w_name</span> 的包裹已經滿了，不能贈送物品。<br>";
 	}
 	$action = ''; $bid = 0;
 	$mode = 'command';

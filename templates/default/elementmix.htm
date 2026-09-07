@@ -4,13 +4,13 @@
     <span id="edesc$ekey">$elements_info[$ekey]</span>
     <!--{/loop}-->
 </div>
-<!-- 元素选取模块 -->
+<!-- 元素選取模塊 -->
 <input type="hidden" id="emixlist" name="emixlist" value="">
 <input type="hidden" id="emixnums" name="emixnums" value="">
 
 <!-- 主界面 -->
-你在你的小口袋里翻找起来……<br>
-打算组合哪些元素？<br>
+你在你的小口袋裏翻找起來……<br>
+打算組合哪些元素？<br>
 <input type="hidden" id="emax" name="emax" value="$emax">
 <input type="hidden" name="mode" value="itemmain">
 <input type="hidden" name="command" id="command" value="menu">
@@ -59,30 +59,30 @@
 </div>
 <br>
 
-<!--根据元素笔记中已知的合成公式进行快速投料-->
+<!--根據元素筆記中已知的合成公式進行快速投料-->
 <!--{eval include_once GAME_ROOT.'./include/game/elementmix.func.php';$quickmix = quick_add_mix_elements($pdata);}-->
 <span class="yellow" >【快速合成】</span><br>
 {$quickmix}
 <br>
-<!--自带：通过投入元素数量的奇偶决定道具类别-->
-<span class="yellow" >【数术】</span><br>
-› 投入份数<span class="lime">最多(±10)</span>的一种或多种元素<br>
-会成为<span class="lime">主元素</span>，影响合成结果的<span class="lime">类型</span>。<br>
-› 投入的主元素为<span class="redseed">奇</span>|<span class="blueseed">偶</span>数份时，元素会展<br>
-现<span class="redseed">第一</span>|<span class="blueseed">第二</span>个主特征。<br>
+<!--自帶：通過投入元素數量的奇偶決定道具類別-->
+<span class="yellow" >【數術】</span><br>
+› 投入份數<span class="lime">最多(±10)</span>的一種或多種元素<br>
+會成為<span class="lime">主元素</span>，影響合成結果的<span class="lime">類型</span>。<br>
+› 投入的主元素為<span class="redseed">奇</span>|<span class="blueseed">偶</span>數份時，元素會展<br>
+現<span class="redseed">第一</span>|<span class="blueseed">第二</span>個主特徵。<br>
 <br>
-<!-- 最大生成效果调节 -->
-<span class="yellow">【节制】</span><span class="grey">（勾选启用）</span><input type="checkbox" id="change_emax" name="change_emax" value="0"><br>
-› 你可以主动限制元素合成结果的<span class="lime">效耐上限</span>。<br>
-› 当前：生成道具的效果+耐久上限<span class="yellow">【<span id="s_emitme_max" name="s_emitme_max">$emax</span>】</span><br>
+<!-- 最大生成效果調節 -->
+<span class="yellow">【節制】</span><span class="grey">（勾選啓用）</span><input type="checkbox" id="change_emax" name="change_emax" value="0"><br>
+› 你可以主動限制元素合成結果的<span class="lime">效耐上限</span>。<br>
+› 當前：生成道具的效果+耐久上限<span class="yellow">【<span id="s_emitme_max" name="s_emitme_max">$emax</span>】</span><br>
 <input type="range" class="range" style="width:220px" id="emitme_max_r" name="emixitmemax" min="1" max="100" value="100" onchange="getEmitmeR(1)"><br>
 <br>
-<!-- 效果、耐久比例调节 -->
-<span class="yellow">【预言】</span><span class="grey">（勾选启用）</span><input type="checkbox" id="change_emr" name="change_emr" value="0"><br>
-› 你能够干涉元素合成结果的<span class="lime">效耐占比</span>。<br>
-› 当前：效果占比<span class="yellow">【<span id="s_emitme_r" name="s_emitme_r">55</span>%】</span>耐久占比<span class="yellow">【<span id="s_emitms_r" name="s_emitms_r">45</span>%】</span><br>
+<!-- 效果、耐久比例調節 -->
+<span class="yellow">【預言】</span><span class="grey">（勾選啓用）</span><input type="checkbox" id="change_emr" name="change_emr" value="0"><br>
+› 你能夠干涉元素合成結果的<span class="lime">效耐佔比</span>。<br>
+› 當前：效果佔比<span class="yellow">【<span id="s_emitme_r" name="s_emitme_r">55</span>%】</span>耐久佔比<span class="yellow">【<span id="s_emitms_r" name="s_emitms_r">45</span>%】</span><br>
 <input type="range" class="range" style="width:220px" id="emitme_r" name="emixitmer" min="2" max="98" value="55" onchange="getEmitmeR(0)"><br>
 <span id="sr_warning" name="sr_warning" class="red"></span>
 <br>
 <input type="button" class="cmdbutton" id="zz" name="submit" value="[Z]提交" onclick="itemmixchooser();$('command').value='elementmix';postCmd('gamecmd','command.php');this.disabled=true;">
-<input type="button" class="cmdbutton" id="x" name="submit" value="[X]放弃" onclick="postCmd('gamecmd','command.php');this.disabled=true;">
+<input type="button" class="cmdbutton" id="x" name="submit" value="[X]放棄" onclick="postCmd('gamecmd','command.php');this.disabled=true;">

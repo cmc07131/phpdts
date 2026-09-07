@@ -21,7 +21,7 @@ function item_ending($itmn, &$data) {
     $itms = & ${'itms' . $itmn};
     $itmsk = & ${'itmsk' . $itmn};
 
-    if ($itm == '游戏解除钥匙') {
+    if ($itm == '遊戲解除鑰匙') {
         $state = 6;
         $url = 'end.php';
         include_once GAME_ROOT . './include/system.func.php';
@@ -31,10 +31,10 @@ function item_ending($itmn, &$data) {
         $url = 'end.php';
         include_once GAME_ROOT . './include/system.func.php';
         gameover($now, 'end7', $name);
-    } elseif ($itm == '奇怪的按钮') {
+    } elseif ($itm == '奇怪的按鈕') {
         $button_dice = rand(1, 10);
         if ($button_dice < 5) {
-            $log .= "你按下了<span class=\"yellow\">$itm</span>，不过好像什么都没有发生！";
+            $log .= "你按下了<span class=\"yellow\">$itm</span>，不過好像什麼都沒有發生！";
             $itm = $itmk = $itmsk = '';
             $itme = $itms = 0;
         } elseif ($button_dice < 8) {
@@ -43,16 +43,16 @@ function item_ending($itmn, &$data) {
             include_once GAME_ROOT . './include/system.func.php';
             gameover($now, 'end5', $name);
         } else {
-            $log .= '好像什么也没发生嘛？<br>咦，按钮上的标签写着什么？"危险，勿触"……？<br>';
+            $log .= '好像什麼也沒發生嘛？<br>咦，按鈕上的標籤寫着什麼？"危險，勿觸"……？<br>';
             include_once GAME_ROOT . './include/state.func.php';
-            $log .= '呜哇，按钮爆炸了！<br>';
+            $log .= '嗚哇，按鈕爆炸了！<br>';
             death('button', '', 0, $itm);
         }
     } elseif ($itm == '【E.S.C.A.P.E】') {
         // 这实际上是个死法，但是会给成就，称号，并加积分与胜场
         include_once GAME_ROOT . './include/state.func.php';
         // 成就检查该物品本身的使用，逻辑不写在这里
-        $log .= '万事俱备，只欠逃离！<br>';
+        $log .= '萬事俱備，只欠逃離！<br>';
         // 销毁物品
         $itm = $itmk = $itmsk = '';
         $itme = $itms = 0;

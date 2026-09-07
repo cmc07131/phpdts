@@ -26,7 +26,7 @@ namespace revbattle
 		# 检查是否存在战斗动作
 		if(empty($action) || empty($bid) || !in_array($action,$action_list))
 		{
-			$log .= "你没有遇到敌人，或已经离开战场！<br>";
+			$log .= "你沒有遇到敵人，或已經離開戰場！<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
@@ -36,7 +36,7 @@ namespace revbattle
 		$result = $db->query ( "SELECT * FROM {$tablepre}players WHERE pid='$enemyid'");
 		if (!$db->num_rows($result)) 
 		{
-			$log .= "对方不存在！<br>";
+			$log .= "對方不存在！<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
@@ -47,7 +47,7 @@ namespace revbattle
 		# 检查敌人是否处于当前位置
 		if ($edata['pls'] != $pls) 
 		{
-			$log .= "<span class=\"yellow\">" . $edata ['name'] . "</span>已经离开了<span class=\"yellow\">$plsinfo[$pls]</span>。<br>";
+			$log .= "<span class=\"yellow\">" . $edata ['name'] . "</span>已經離開了<span class=\"yellow\">$plsinfo[$pls]</span>。<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
@@ -55,7 +55,7 @@ namespace revbattle
 		# 检查敌人是否已死亡
 		if ($edata ['hp'] <= 0)
 		{
-			if($action != 'focus') $log .= "<span class=\"red\">" . $edata ['name'] . "</span>已经死亡，不能被攻击。<br>";
+			if($action != 'focus') $log .= "<span class=\"red\">" . $edata ['name'] . "</span>已經死亡，不能被攻擊。<br>";
 			include_once GAME_ROOT . './include/game/battle.func.php';
 			$action = 'corpse'; $bid = $edata['pid'];
 			findcorpse($edata);
@@ -76,7 +76,7 @@ namespace revbattle
 			}
 			elseif ($command != 'back')
 			{
-				$log .= '<span class="yellow">对方正在等待你的应援，普通攻击并不合适。</span><br>';
+				$log .= '<span class="yellow">對方正在等待你的應援，普通攻擊並不合適。</span><br>';
 				findenemy_rev($edata);
 				return;
 			}
@@ -130,7 +130,7 @@ namespace revbattle
 			$action = ''; $bid = 0;
 			if(empty($clbpara['coveratk']))
 			{
-				$log .= "协战对象不存在！<br>";
+				$log .= "協戰對象不存在！<br>";
 				$mode = 'command';
 				return;
 			}
@@ -139,7 +139,7 @@ namespace revbattle
 			$result = $db->query ( "SELECT * FROM {$tablepre}players WHERE pid='$coid' AND pls='$pls' AND hp>0 ");
 			if (!$db->num_rows($result)) 
 			{
-				$log .= "协战对象不存在！<br>";
+				$log .= "協戰對象不存在！<br>";
 				$mode = 'command';
 				return;
 			}
@@ -177,7 +177,7 @@ namespace revbattle
 				$mccost = get_skillvars($sk,'atkp') * get_skillpara($sk,'paid',$clbpara)[$mkey];
 				$money -= $mccost;
 				# 干活！
-				$log .= "<span class='yellow'>你掏出{$mccost}元振臂一呼，{$mdata['name']}接过钱后毫不犹豫地扑向了敌人！</span><br>";
+				$log .= "<span class='yellow'>你掏出{$mccost}元振臂一呼，{$mdata['name']}接過錢後毫不猶豫地撲向了敵人！</span><br>";
 				# 登记为收钱办事
 				$mdata['is_merc'] = 1;
 				# 是否要检查先后手？
@@ -192,7 +192,7 @@ namespace revbattle
 					}
 					else 
 					{
-						$log .= "<span class='yellow'>但是敌人早已做好了准备！</span><br>";
+						$log .= "<span class='yellow'>但是敵人早已做好了準備！</span><br>";
 						\revcombat\rev_combat_prepare($edata,$mdata,0);
 					}
 				}
@@ -290,9 +290,9 @@ namespace revbattle
 							# 检查是否有钱强制命令佣兵攻击
 							$mccost = get_skillvars($sk,'atkp') * get_skillpara($sk,'paid',$pdata['clbpara'])[$mkey];
 							$unlock = $mccost > $pdata['money'] ? 1 : 0;
-							$sk_desc = $unlock ? '你没有足够的钱指挥佣兵主动攻击' : "花费<span class='yellow'>{$mccost}</span>元，指挥<span class='yellow'>{$mdata['name']}</span>发动攻击，攻击后佣兵会<span class='yellow'>锁定</span>敌人，离开地图前可再度对敌人进行<span class='yellow'>追击</span>";
+							$sk_desc = $unlock ? '你沒有足夠的錢指揮傭兵主動攻擊' : "花費<span class='yellow'>{$mccost}</span>元，指揮<span class='yellow'>{$mdata['name']}</span>發動攻擊，攻擊後傭兵會<span class='yellow'>鎖定</span>敵人，離開地圖前可再度對敵人進行<span class='yellow'>追擊</span>";
 							# 将佣兵攻击指令加入指令集
-							$cskills[$sk.$mkey]['name'] = "佣兵攻击";
+							$cskills[$sk.$mkey]['name'] = "傭兵攻擊";
 							$battle_skills[$sk_nums] = Array($unlock,$sk.$mkey,$sk_desc);
 							$sk_nums++;
 						}
@@ -311,7 +311,7 @@ namespace revbattle
 					}
 					//直接调用上箭的函数
 					if($pos_a) {
-						$log .= '你及时弯弓搭箭，';
+						$log .= '你及時彎弓搭箭，';
 						include_once GAME_ROOT . './include/game/item2.func.php';
 						itemuse_ugb($pdata, $pos_a);
 					}
@@ -346,7 +346,7 @@ namespace revbattle
 			$escape_dice = diceroll(99);
 			if($escape_dice < $chase_escape_obbs)
 			{
-				$log .= "你尝试逃跑，但是敌人在你身后紧追不舍！<br>";
+				$log .= "你嘗試逃跑，但是敵人在你身後緊追不捨！<br>";
 				$pa['fail_escape'] = 1;
 				return 0;
 			}
@@ -366,24 +366,24 @@ namespace revbattle
 		global $db,$tablepre,$pdata;
 		global $now,$fog,$log,$mode,$main,$cmd,$battle_title,$attinfo,$skillinfo;
 		
-		$battle_title = $kind ? '发现朋友' : '发现敌人？';
+		$battle_title = $kind ? '發現朋友' : '發現敵人？';
 
 		//格式化双方clbpara
 		$pdata['clbpara'] = get_clbpara($pdata['clbpara']); $edata['clbpara'] = get_clbpara($edata['clbpara']);
 
 		init_battle_rev($pdata,$edata,1);
 
-		$log .= "你发现了<span class=\"yellow\">{$edata['name']}</span>！<br>";
-		if(!$kind) $log .= "对方看起来没有敌意。<br>";
+		$log .= "你發現了<span class=\"yellow\">{$edata['name']}</span>！<br>";
+		if(!$kind) $log .= "對方看起來沒有敵意。<br>";
 
 		//TODO：把这一段挪到一个独立函数里
 		if($edata['clbpara']['post'] == $pdata['pid']) 
 		{	
-			$log.="对方一看见你，便猛地朝你扑了过来！<br>
-			<br><span class='sienna'>“老板！有你的快递喔！”</span><br>
-			<br>你被这突然袭击吓了一跳！<br>
-			但对方只是从身上摸出了一个包裹样的东西扔给了你。然后又急匆匆地转身离开了。<br>
-			<br>……这是在搞啥……？<br><br>";
+			$log.="對方一看見你，便猛地朝你撲了過來！<br>
+			<br><span class='sienna'>“老闆！有你的快遞喔！”</span><br>
+			<br>你被這突然襲擊嚇了一跳！<br>
+			但對方只是從身上摸出了一個包裹樣的東西扔給了你。然後又急匆匆地轉身離開了。<br>
+			<br>……這是在搞啥……？<br><br>";
 			$action='';
 			global $itm0,$itmk0,$itme0,$itms0,$itmsk0;
 			$iid=$edata['clbpara']['postid'];
@@ -414,16 +414,16 @@ namespace revbattle
 	{
 		if(strpos($pa['action'],'chase')!==false)
 		{
-			if(strpos($pa['action'],'pchase')!==false) $title = '遭到追击';
-			else $title = '乘胜追击';
+			if(strpos($pa['action'],'pchase')!==false) $title = '遭到追擊';
+			else $title = '乘勝追擊';
 		}
 		if(strpos($pa['action'],'dfight')!==false)
 		{
-			$title = '陷入鏖战';
+			$title = '陷入鏖戰';
 		}
 		else 
 		{
-			$title = '发现敌人';
+			$title = '發現敵人';
 		}
 		return $title;
 	}
@@ -437,26 +437,26 @@ namespace revbattle
 		{
 			if(strpos($pa['action'],'pchase')!==false)
 			{
-				$battle_log = "但是<span class=\"red\">{$pd['name']}</span>在你身后紧追不舍！<br>";
+				$battle_log = "但是<span class=\"red\">{$pd['name']}</span>在你身後緊追不捨！<br>";
 			}
 			else 
 			{
-				$battle_log = "你再度锁定了<span class=\"red\">{$pd['name']}</span>！<br>";
+				$battle_log = "你再度鎖定了<span class=\"red\">{$pd['name']}</span>！<br>";
 			}
 		}
 		elseif(strpos($pa['action'],'dfight')!==false)
 		{
-			$battle_log = "你与<span class=\"red\">{$pd['name']}</span>相互对峙着！<br>";
+			$battle_log = "你與<span class=\"red\">{$pd['name']}</span>相互對峙着！<br>";
 		}
 		else 
 		{
 			if($pd['pose'] == 7)
 			{
-				$battle_log ="你发现了<span class=\"lime\">{$pd['name']}</span>！<br>对方看起来对你没有敌意。<br>";
+				$battle_log ="你發現了<span class=\"lime\">{$pd['name']}</span>！<br>對方看起來對你沒有敵意。<br>";
 			}
 			else
 			{
-				$battle_log ="你发现了敌人<span class=\"red\">{$pd['name']}</span>！<br>对方好像完全没有注意到你！<br>";
+				$battle_log ="你發現了敵人<span class=\"red\">{$pd['name']}</span>！<br>對方好像完全沒有注意到你！<br>";
 			}
 		}
 		return $battle_log;

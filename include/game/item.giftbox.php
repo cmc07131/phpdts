@@ -15,7 +15,7 @@ function item_giftbox($itmn, &$data) {
 	$itms = & ${'itms' . $itmn};
 	$itmsk = & ${'itmsk' . $itmn};
 	
-	$log.="你打开了<span class=\"yellow\">$itm</span>。<br>";
+	$log.="你打開了<span class=\"yellow\">$itm</span>。<br>";
 
 	$oitm = $itm; $oitmk = $itmk;
 	if ($itms != $nosta) {
@@ -55,9 +55,9 @@ function item_giftbox($itmn, &$data) {
 	}elseif(strpos($oitmk, 'p0') === 0){//新福袋·VOL1
 		// 用$clbpara['opened_pack']记录打开福袋的名称，只要有这个名称，就搞事！
 		if(!empty($clbpara['opened_pack'])){
-			$log.="似乎你本轮已经打开过福袋，因此不能再打开更多的福袋！<br>";
+			$log.="似乎你本輪已經打開過福袋，因此不能再打開更多的福袋！<br>";
 			$db->query("INSERT INTO {$tablepre}shopitem (kind,num,price,area,item,itmk,itme,itms,itmsk) VALUES ('17','1','20','0','$itm','$itmk','$itme','1','$itmsk')");
-			$log.="<span class=\"yellow\">$itm</span>从你的手中飞出，向商店的方向飞去。<br>";
+			$log.="<span class=\"yellow\">$itm</span>從你的手中飛出，向商店的方向飛去。<br>";
 		} 
 		if(strpos($itmk, 'p0P') === 0){
 			include_once config('randomWP',$gamecfg);
@@ -99,7 +99,7 @@ function item_giftbox($itmn, &$data) {
 			$rand = rand(0,count($itemflag)-1);
 			list($in,$ik,$ie,$is,$isk) = explode(',',$itemflag[$rand]);
 			if($clbpara['opened_pack']){
-				$in = '乌黑的脸'; # 给一个惩罚用物品
+				$in = '烏黑的臉'; # 给一个惩罚用物品
 				$ik = 'X';
 				$ie = 1;
 				$is = 1;
@@ -133,7 +133,7 @@ function item_ygo_box($itmn, &$data) {
 	$itms = & ${'itms' . $itmn};
 	$itmsk = & ${'itmsk' . $itmn};
 	
-	$log.="你打开了<span class=\"yellow\">$itm</span>。<br>";
+	$log.="你打開了<span class=\"yellow\">$itm</span>。<br>";
 	$oitm = $itm;
 	if ($itms != $nosta) {
 		$itms--;
@@ -163,7 +163,7 @@ function item_fy_box($itmn, &$data) {
 	$itms = & ${'itms' . $itmn};
 	$itmsk = & ${'itmsk' . $itmn};
 	
-	$log.="你打开了<span class=\"yellow\">$itm</span>。<br>";
+	$log.="你打開了<span class=\"yellow\">$itm</span>。<br>";
 	$oitm = $itm;
 	if ($itms != $nosta) {
 		$itms--;
@@ -193,7 +193,7 @@ function item_debug_box($itmn, &$data) {
 	$itms = & ${'itms' . $itmn};
 	$itmsk = & ${'itmsk' . $itmn};
 	
-	$log.="你打开了<span class=\"yellow\">$itm</span>。<br>";
+	$log.="你打開了<span class=\"yellow\">$itm</span>。<br>";
 	$oitm = $itm;
 	if ($itms != $nosta) {
 		$itms--;

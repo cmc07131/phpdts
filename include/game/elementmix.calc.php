@@ -85,11 +85,11 @@
 		
 		if($spt == 'corpse')
 		{
-			$log.="<span class='grey'>你发现从{$typeinfo[$edata['type']]}身上飘落的<span class='red'>{$esnum}</span>份{$elements_info[$esid]}样子有点奇怪……怎么回事呢？</span><br>";
+			$log.="<span class='grey'>你發現從{$typeinfo[$edata['type']]}身上飄落的<span class='red'>{$esnum}</span>份{$elements_info[$esid]}樣子有點奇怪……怎麼回事呢？</span><br>";
 		}
 		else 
 		{
-			$log.="<span class='grey'>你发现构成{$edata['itm']}的<span class='red'>{$esnum}</span>份{$elements_info[$esid]}样子有点奇怪……怎么回事呢？</span><br>";
+			$log.="<span class='grey'>你發現構成{$edata['itm']}的<span class='red'>{$esnum}</span>份{$elements_info[$esid]}樣子有點奇怪……怎麼回事呢？</span><br>";
 		}
 
 		if(empty($clbpara['elements']['info']['hd']['h'.$erkey]['s'.$eskey]))
@@ -143,9 +143,9 @@
 			}
 
 			# 次优先：检查拆解关键词匹配道具名时的事件（改为手动添加判断条件）
-			if(strpos($t['itm'],'方块')!==false || strpos($t['itm'],'宝石方块')!==false)
+			if(strpos($t['itm'],'方塊')!==false || strpos($t['itm'],'寶石方塊')!==false)
 			{
-				$ev = strpos($t['itm'],'宝石方块')!==false ? 1000 : 400;
+				$ev = strpos($t['itm'],'寶石方塊')!==false ? 1000 : 400;
 				$ekey = rand(0,5);
 				$ev_arr[$ekey] += $ev;
 				continue; 
@@ -314,7 +314,7 @@
 		# 获取固定合成结果
 		if(!empty($fix_flag))
 		{
-			$log.="<br>但是出现结果的速度比你想象中要快得多！<br>你还没反应过来，元素们就把一样东西吐了出来！<br><br>";
+			$log.="<br>但是出現結果的速度比你想象中要快得多！<br>你還沒反應過來，元素們就把一樣東西吐了出來！<br><br>";
 			$itm0 = $fix_flag[0]; $itmk0 = $fix_flag[1]; $itmsk0 = $fix_flag[4];
 			$itme0 = $fix_flag[2]; $itms0 = $fix_flag[3];
 			include_once GAME_ROOT.'./include/game/itemmain.func.php';

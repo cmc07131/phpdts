@@ -1,9 +1,9 @@
-先选择要移位的道具，再选择要移动到的位置。<br>
+先選擇要移位的道具，再選擇要移動到的位置。<br>
 
 <input type="hidden" name="mode" value="itemmain">
 <input type="hidden" name="command" id="command" value="menu">
 <br>
-将：
+將：
 <select name="from">
 <option value="0">■ 道  具 ■
 	<!--{if $itms1}--><option value="1">$itm1/$itme1/$itms1<!--{/if}-->
@@ -14,7 +14,7 @@
 	<!--{if $itms6}--><option value="6">$itm6/$itme6/$itms6<!--{/if}-->
 </select>
 <br>
-移动至/与之交换：
+移動至/與之交換：
 <select name="to">
 <option value="0">■ 位  置 ■
 	<!--{if $itms1}--><option value="1">包裹1：$itm1/$itme1/$itms1<!--{else}--><option value="1">包裹1<!--{/if}-->
@@ -26,4 +26,4 @@
 </select>
 <br>
 <input type="button" class="cmdbutton" name="submit" value="提交" onclick="$('command').value='itemmove';postCmd('gamecmd','command.php');this.disabled=true;">
-<input type="button" class="cmdbutton" name="submit" value="放弃" onclick="postCmd('gamecmd','command.php');this.disabled=true;">
+<input type="button" class="cmdbutton" name="submit" value="放棄" onclick="postCmd('gamecmd','command.php');this.disabled=true;">

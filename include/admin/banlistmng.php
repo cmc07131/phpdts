@@ -12,7 +12,7 @@ if($command == 'write'){
 	$iplimit = astrfilter($postiplmt);
 	writeover("{$dir}banlist.list","<?php\n\n\$nmlimit = '$nmlimit';\n\$iplimit = '$iplimit';\n\n?>");
 	//write_list($dir,$postnmlmt,$postiplmt);
-	$cmd_info = '新的屏蔽列表已经写入。';
+	$cmd_info = '新的屏蔽列表已經寫入。';
 }else{
 	include_once $dir.'banlist.list';
 }

@@ -30,7 +30,7 @@ if(!defined('IN_GAME')) exit('Access Denied');
 $itmpara_tooltip = [
     // 伤害相关
     'AddDamageRaw' => [
-        'title' => '最终伤害增加',
+        'title' => '最終傷害增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'red',
@@ -39,7 +39,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddDamagePercentage' => [
-        'title' => '最终伤害增加',
+        'title' => '最終傷害增加',
         'format' => '{value}',
         'suffix' => '%',
         //'color' => 'red',
@@ -48,7 +48,7 @@ $itmpara_tooltip = [
         }
     ],
     'DecreaseDamageRaw' => [
-        'title' => '最终伤害减少',
+        'title' => '最終傷害減少',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'blue',
@@ -57,7 +57,7 @@ $itmpara_tooltip = [
         }
     ],
     'DecreaseDamagePercentage' => [
-        'title' => '最终伤害减少',
+        'title' => '最終傷害減少',
         'format' => '{value}',
         'suffix' => '%',
         //'color' => 'blue',
@@ -68,7 +68,7 @@ $itmpara_tooltip = [
 
     // 战斗中属性增加
     'AddPlayerMhpInCombat' => [
-        'title' => '战斗中生命上限增加',
+        'title' => '戰鬥中生命上限增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -77,7 +77,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerMspInCombat' => [
-        'title' => '战斗中体力上限增加',
+        'title' => '戰鬥中體力上限增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -86,7 +86,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerMssInCombat' => [
-        'title' => '战斗中灵力上限增加',
+        'title' => '戰鬥中靈力上限增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -95,7 +95,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerAttInCombat' => [
-        'title' => '战斗中攻击力增加',
+        'title' => '戰鬥中攻擊力增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -104,7 +104,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerDefInCombat' => [
-        'title' => '战斗中防御力增加',
+        'title' => '戰鬥中防禦力增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -113,7 +113,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWpInCombat' => [
-        'title' => '战斗中殴系熟练度增加',
+        'title' => '戰鬥中毆系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -122,7 +122,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWkInCombat' => [
-        'title' => '战斗中斩系熟练度增加',
+        'title' => '戰鬥中斬系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -131,7 +131,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWgInCombat' => [
-        'title' => '战斗中射系熟练度增加',
+        'title' => '戰鬥中射系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -140,7 +140,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWcInCombat' => [
-        'title' => '战斗中投系熟练度增加',
+        'title' => '戰鬥中投系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -149,7 +149,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWdInCombat' => [
-        'title' => '战斗中爆系熟练度增加',
+        'title' => '戰鬥中爆系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -158,7 +158,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWfInCombat' => [
-        'title' => '战斗中灵系熟练度增加',
+        'title' => '戰鬥中靈系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -167,7 +167,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerMoneyInCombat' => [
-        'title' => '战斗中金钱增加',
+        'title' => '戰鬥中金錢增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -176,7 +176,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerRageInCombat' => [
-        'title' => '战斗中怒气增加',
+        'title' => '戰鬥中怒氣增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'yellow',
@@ -187,7 +187,7 @@ $itmpara_tooltip = [
 
     // 搜索/移动中属性增加
     'AddPlayerMhpInSearchMove' => [
-        'title' => '搜索/移动中生命上限增加',
+        'title' => '搜索/移動中生命上限增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -196,7 +196,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerMspInSearchMove' => [
-        'title' => '搜索/移动中体力上限增加',
+        'title' => '搜索/移動中體力上限增加',
         'format' => '{value}',
         'suffix' => '',
        // 'color' => 'green',
@@ -205,7 +205,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerMssInSearchMove' => [
-        'title' => '搜索/移动中歌魂上限增加',
+        'title' => '搜索/移動中歌魂上限增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -214,7 +214,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerAttInSearchMove' => [
-        'title' => '搜索/移动中攻击力增加',
+        'title' => '搜索/移動中攻擊力增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -223,7 +223,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerDefInSearchMove' => [
-        'title' => '搜索/移动中防御力增加',
+        'title' => '搜索/移動中防禦力增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -232,7 +232,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWpInSearchMove' => [
-        'title' => '搜索/移动中殴系熟练度增加',
+        'title' => '搜索/移動中毆系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -241,7 +241,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWkInSearchMove' => [
-        'title' => '搜索/移动中斩系熟练度增加',
+        'title' => '搜索/移動中斬系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -250,7 +250,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWgInSearchMove' => [
-        'title' => '搜索/移动中射系熟练度增加',
+        'title' => '搜索/移動中射系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -259,7 +259,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWcInSearchMove' => [
-        'title' => '搜索/移动中投系熟练度增加',
+        'title' => '搜索/移動中投系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
         //'color' => 'green',
@@ -268,7 +268,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWdInSearchMove' => [
-        'title' => '搜索/移动中爆系熟练度增加',
+        'title' => '搜索/移動中爆系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
        // 'color' => 'green',
@@ -277,7 +277,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerWfInSearchMove' => [
-        'title' => '搜索/移动中灵系熟练度增加',
+        'title' => '搜索/移動中靈系熟練度增加',
         'format' => '{value}',
         'suffix' => '',
        // 'color' => 'green',
@@ -286,7 +286,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerMoneyInSearchMove' => [
-        'title' => '搜索/移动中金钱增加',
+        'title' => '搜索/移動中金錢增加',
         'format' => '{value}',
         'suffix' => '',
        // 'color' => 'green',
@@ -295,7 +295,7 @@ $itmpara_tooltip = [
         }
     ],
     'AddPlayerRageInSearchMove' => [
-        'title' => '搜索/移动中怒气增加',
+        'title' => '搜索/移動中怒氣增加',
         'format' => '{value}',
         'suffix' => '',
       //  'color' => 'green',
@@ -307,7 +307,7 @@ $itmpara_tooltip = [
     // 平台物品相关
     'IsPlatformItem' => [
         'title' => '平台物品',
-        'format' => '此物品可以变身为特定角色',
+        'format' => '此物品可以變身為特定角色',
         'suffix' => '',
       //  'color' => 'purple',
         'condition' => function($item_type, $value) {
@@ -315,8 +315,8 @@ $itmpara_tooltip = [
         }
     ],
     'PlatformIsTimed' => [
-        'title' => '限时变身',
-        'format' => '变身效果会随着时间消失',
+        'title' => '限時變身',
+        'format' => '變身效果會隨着時間消失',
         'suffix' => '',
         //'color' => 'purple',
         'condition' => function($item_type, $value) {
@@ -324,7 +324,7 @@ $itmpara_tooltip = [
         }
     ],
     'PlatformChargeBaseValue' => [
-        'title' => '变身持续时间',
+        'title' => '變身持續時間',
         'format' => '{value}',
         'suffix' => '回合',
         //'color' => 'purple',
@@ -335,8 +335,8 @@ $itmpara_tooltip = [
 
     // 任务物品相关
     'IsQuestItem' => [
-        'title' => '任务物品',
-        'format' => '此物品与任务相关',
+        'title' => '任務物品',
+        'format' => '此物品與任務相關',
         'suffix' => '',
         //'color' => 'orange',
         'condition' => function($item_type, $value) {
@@ -346,8 +346,8 @@ $itmpara_tooltip = [
 
     // 核武器相关
     'isNuclearWeapon' => [
-        'title' => '群体攻击武器',
-        'format' => '此武器会对战斗区域内的所有人造成伤害',
+        'title' => '羣體攻擊武器',
+        'format' => '此武器會對戰鬥區域內的所有人造成傷害',
         'suffix' => '',
         'condition' => function($item_type, $value) {
             return $value == 1;

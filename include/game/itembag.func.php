@@ -95,11 +95,11 @@ function item_info(){
 	global $iteminfo,$itemspkinfo; 
 	global $log,$mode;
 	$item_list = decode_item($itembag);
-	$log.="当前背包内装有如下道具：<br><br>";
+	$log.="當前揹包內裝有如下道具：<br><br>";
 	foreach($item_list as $item){
 		$log.="<span class='yellow'>{$item['itm']}</span>/{$item['itme']}/{$item['itms']}/{$itemspkinfo[$item['itmsk']]}<br>";
 	}
-	$log.="<br>背包剩余空间 <span class='lime'>{$itmnum}/{$itmnumlimit}</span><br>";
+	$log.="<br>揹包剩餘空間 <span class='lime'>{$itmnum}/{$itmnumlimit}</span><br>";
 	$mode = 'command';
 }
 //选择要放入的道具
@@ -115,9 +115,9 @@ function item_encase($ilist){
 		$itmsk = &${'itmsk'.$i};
 		$itmpara = &${'itmpara'.$i};
 		if(strpos($itmsk,'V')!==false || strpos($itmsk,'v')!==false){
-			$log.="诅咒和灵魂绑定的装备无法存放在背包内。<br>";
+			$log.="詛咒和靈魂綁定的裝備無法存放在揹包內。<br>";
 		}elseif(round(sizeof($git_list)+1+$itmnum) > $itmnumlimit){
-			$log.="背包已满，无法继续放入道具。<br>";
+			$log.="揹包已滿，無法繼續放入道具。<br>";
 		}else{
 			item_find($itm,$itmk,$itme,$itms,$itmsk, $itmpara);
 			$itm = $itmk = $itmsk = $itmpara = '';
@@ -156,7 +156,7 @@ function item_get(){
 		$gitsk = $git_list[$gid]['itmsk'];
 		$gitpara = $git_list[$gid]['itmpara'];
 		if(!$gits || !$gitk || !$git){
-			$log.="获取道具的相关信息失败。<br>";
+			$log.="獲取道具的相關信息失敗。<br>";
 		}else{
 		/*	//判断是否超重
 			$overwt = getitem_weight($git,$gits);
@@ -196,13 +196,13 @@ function item_get(){
 						$add_git = $itmstkinfo[$gitk] - $item_list[$i]['itms'];
 						$item_list[$i]['itms'] += $add_git;
 						$git_list[$gid]['itms'] -= $add_git;
-						$log.="合并了道具<span class=\"yellow\">{$git}</span>的一部分。<br>";
+						$log.="合併了道具<span class=\"yellow\">{$git}</span>的一部分。<br>";
 					}else{
 						//获得道具数+原有道具数未超过堆叠限制时
 						$weight += $itmwtinfo[$git]*$git_list[$gid]['itms'];
 						$item_list[$i]['itms'] += $git_list[$gid]['itms'];
 						$git_list[$gid]['itms'] = 0;
-						$log.="合并了道具<span class=\"yellow\">{$git}</span>。<br>";
+						$log.="合併了道具<span class=\"yellow\">{$git}</span>。<br>";
 						$full_stk = true;
 					}
 					$gits = $git_list[$gid]['itms'];
@@ -212,7 +212,7 @@ function item_get(){
 			//判断是否过量
 			$overnum = ($itmnum+1) > $itmnumlimit ? true : false;
 			if($overnum && !$full_stk){
-				$log.="背包已满，无法继续放入道具。<br>";
+				$log.="揹包已滿，無法繼續放入道具。<br>";
 				return;
 			}else{
 				$weight = item_weight();
@@ -243,11 +243,11 @@ function item_out($iid){
 	global $log,$itm0,$itmk0,$itme0,$itms0,$itmsk0, $itmpara0;
 	$item_list = decode_item($itembag);
 	if(!in_array($iid,array_keys($item_list))){
-		$log .= '此道具不存在，请重新选择。<br>';
+		$log .= '此道具不存在，請重新選擇。<br>';
 		return;
 	}
 	if(!$item_list[$iid]['itm'] || !$item_list[$iid]['itms'] || !$item_list[$iid]['itmk']){
-		$log .= '此道具不存在，请重新选择。<br>';
+		$log .= '此道具不存在，請重新選擇。<br>';
 		return;
 	}
 	$itm0 = $item_list[$iid]['itm'];
@@ -274,7 +274,7 @@ function overnumlimit(){
 			array_pop($item_list);
 			$itembag = json_encode_comp($item_list);
 		}
-		$log.="由于背包空间不足，你背包里的一些道具在行动中损坏了！<br>";
+		$log.="由於揹包空間不足，你揹包裏的一些道具在行動中損壞了！<br>";
 		$itmnum = $itmnumlimit;//青蛙你漏了这句导致背包会不断漏直到漏完为止
 	}
 }
@@ -292,7 +292,7 @@ function drop_itembag(){
 		$itmpara = $item_list[$iid]['itmpara'];
 		$db->query("INSERT INTO {$tablepre}mapitem (itm, itmk, itme, itms, itmsk ,itmpara, pls) VALUES ('$itm', '$itmk', '$itme', '$itms', '$itmsk', '$itmpara', '$pls')");
 	}
-	$log.="你将背包连同里面的道具一同丢掉了。<br>";
+	$log.="你將揹包連同裏面的道具一同丟掉了。<br>";
 	$itmnum = $itmnumlimit = 0;
 	$item_list = Array();
 	$itembag = json_encode_comp($item_list);
@@ -337,12 +337,12 @@ function replace_itembag(&$keep){
 				$itm0 = $itmk0 = $itmsk0 = $itmpara0 = '';
 				$itme0 = $itms0 = 0;
 			}
-			$log.="由于只能携带一个背包，你用拾到的品质较高的背包替换掉了身上的背包。<br>";
+			$log.="由於只能攜帶一個揹包，你用拾到的品質較高的揹包替換掉了身上的揹包。<br>";
 		}elseif($r_flag){
 			$db->query("INSERT INTO {$tablepre}mapitem (itm, itmk, itme, itms, itmsk ,pls) VALUES ('$itm0', '$itmk0', '$itme0', '$itms0', '$itmsk0', '$pls')");
 			$itm0 = $itmk0 = $itmsk0 = $itmpara0 = '';
 			$itme0 = $itms0 = 0;
-			$log.="由于只能携带一个背包，你扔掉了这个品质较差的背包。<br>";
+			$log.="由於只能攜帶一個揹包，你扔掉了這個品質較差的揹包。<br>";
 		}else{
 			$keep = true;
 		}

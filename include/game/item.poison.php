@@ -28,7 +28,7 @@ function item_poison($itmn, &$data) {
 
 	# 「种火IV」效果判定：
 	if(!empty($data['clbpara']['skill']) && in_array('fireseed4', $data['clbpara']['skill'])) {
-		$log .= "<span class='yellow'>「种火IV」使{$name}受到的所有伤害变为0！</span><br>";
+		$log .= "<span class='yellow'>「種火IV」使{$name}受到的所有傷害變為0！</span><br>";
 		$damage = 0;
 	}
 	# RuleSet钩子：模式技能可复用种火IV式的非战斗伤害免疫。
@@ -42,10 +42,10 @@ function item_poison($itmn, &$data) {
 	if ($itmsk && is_numeric($itmsk)) {
 		$result = $db->query("SELECT * FROM {$tablepre}players WHERE pid='$itmsk'");
 		$wdata = $db->fetch_array($result);
-		$log .= "糟糕，<span class=\"yellow\">$itm</span>中被<span class=\"yellow\">{$wdata['name']}</span>掺入了毒药！你受到了<span class=\"dmg\">$damage</span>点伤害！<br>";
+		$log .= "糟糕，<span class=\"yellow\">$itm</span>中被<span class=\"yellow\">{$wdata['name']}</span>摻入了毒藥！你受到了<span class=\"dmg\">$damage</span>點傷害！<br>";
 		addnews($now, 'poison', $name, $wdata['name'], $itm, $nick);
 	} else {
-		$log .= "糟糕，<span class=\"yellow\">$itm</span>有毒！你受到了<span class=\"dmg\">$damage</span>点伤害！<br>";
+		$log .= "糟糕，<span class=\"yellow\">$itm</span>有毒！你受到了<span class=\"dmg\">$damage</span>點傷害！<br>";
 	}
 	if ($hp <= 0) {
 		if ($itmsk && is_numeric($itmsk)) {
@@ -58,7 +58,7 @@ function item_poison($itmn, &$data) {
 			//if($killmsg){$log .= "<span class=\"yellow\">{$wdata['name']}对你说："{$killmsg}"</span><br>";}
 			if(!$edata['type'])
 			{
-				$w_log = "<span class=\"yellow\">{$name}误食了你下毒的补给<span class=\"red\">{$itm}</span>被毒死！</span><br>";
+				$w_log = "<span class=\"yellow\">{$name}誤食了你下毒的補給<span class=\"red\">{$itm}</span>被毒死！</span><br>";
 				logsave($itmsk, $now, $w_log, 'b');
 			}
 			$edata['wep_name'] = $itm;
@@ -77,8 +77,8 @@ function item_poison($itmn, &$data) {
 	else
 	{
 		//吃了像围棋子一样的饼干但是活下来了……怎么做到的！
-		if($itm == '像围棋子一样的饼干') $clbpara['achvars']['eat_weiqi'] = 1;
-		if($itm == '桔黄色的果酱') $clbpara['achvars']['eat_jelly'] = 1;
+		if($itm == '像圍棋子一樣的餅乾') $clbpara['achvars']['eat_weiqi'] = 1;
+		if($itm == '桔黃色的果醬') $clbpara['achvars']['eat_jelly'] = 1;
 	}
 	if ($itms != $nosta) {
 		$itms --;

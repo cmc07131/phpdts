@@ -40,7 +40,7 @@ function start_fishing(&$data) {
 
     // 检查当前位置是否可以钓鱼
     if (!can_fishing($pls)) {
-        $log .= '<span class="yellow">这个地方没有水，不能钓鱼！</span><br>';
+        $log .= '<span class="yellow">這個地方沒有水，不能釣魚！</span><br>';
         $mode = 'command';
         return;
     }
@@ -52,9 +52,9 @@ function start_fishing(&$data) {
         'caught_items' => array()
     );
 
-    $log .= '你拿出鱼竿，开始在这里钓鱼...<br>';
-    $log .= '你可以一边钓鱼，一边' . ($state == 1 ? '休息' : ($state == 2 ? '治疗' : '静养')) . '。<br>';
-    $log .= '钓到的鱼会自动存入鱼篓子中。<br>';
+    $log .= '你拿出魚竿，開始在這裏釣魚...<br>';
+    $log .= '你可以一邊釣魚，一邊' . ($state == 1 ? '休息' : ($state == 2 ? '治療' : '靜養')) . '。<br>';
+    $log .= '釣到的魚會自動存入魚簍子中。<br>';
 
     $mode = 'fishing';
 }
@@ -71,7 +71,7 @@ function end_fishing(&$data) {
 
     // 检查是否有钓鱼状态
     if (empty($clbpara['fishing'])) {
-        $log .= '你没有在钓鱼！<br>';
+        $log .= '你沒有在釣魚！<br>';
         $mode = 'command';
         return;
     }
@@ -84,7 +84,7 @@ function end_fishing(&$data) {
     $count = count($caught_items);
 
     if ($count > 0) {
-        $log .= '你结束了钓鱼，总共钓到了 <span class="yellow">' . $count . '</span> 件物品：<br>';
+        $log .= '你結束了釣魚，總共釣到了 <span class="yellow">' . $count . '</span> 件物品：<br>';
 
         foreach ($caught_items as $item) {
             $log .= '- <span class="yellow">' . $item['name'] . '</span><br>';
@@ -93,24 +93,24 @@ function end_fishing(&$data) {
         // 创建鱼篓子
         create_fish_basket($data, $caught_items);
     } else {
-        $log .= '你结束了钓鱼，但是什么都没钓到...<br>';
+        $log .= '你結束了釣魚，但是什麼都沒釣到...<br>';
     }
 
     // 显示属性提升总结
     if (!empty($clbpara['fishing']['stat_increases'])) {
         $stat_increases = $clbpara['fishing']['stat_increases'];
         $stat_summary = array(
-            '基础攻击' => 0,
-            '基础防御' => 0,
+            '基礎攻擊' => 0,
+            '基礎防禦' => 0,
             '生命上限' => 0,
-            '体力上限' => 0
+            '體力上限' => 0
         );
 
         foreach ($stat_increases as $increase) {
             $stat_summary[$increase['type']] += $increase['amount'];
         }
 
-        $log .= '<br><span class="lime">钓鱼期间，你的属性得到了提升：</span><br>';
+        $log .= '<br><span class="lime">釣魚期間，你的屬性得到了提升：</span><br>';
 
         foreach ($stat_summary as $type => $amount) {
             if ($amount > 0) {
@@ -157,7 +157,7 @@ function check_fishing(&$data) {
     $fishing_rod_bonus = 1.0; // 默认没有加成
 
     // 检查手臂装备是否有钓竿
-    if (strpos($ara, '钓竿') !== false || strpos($ara, '钓鱼竿') !== false) {
+    if (strpos($ara, '釣竿') !== false || strpos($ara, '釣魚竿') !== false) {
         $has_fishing_rod = true;
         $fishing_rod_bonus = 1.5; // 装备钓竿时提高 50% 效率
 
@@ -181,7 +181,7 @@ function check_fishing(&$data) {
 
     // 记录钓竿信息
     if ($has_fishing_rod && !isset($clbpara['fishing']['rod_message_shown'])) {
-        $log .= '<span class="lime">你使用了' . $ara . '，钓鱼效率提高了 ' . round(($fishing_rod_bonus - 1) * 100) . '%！</span><br>';
+        $log .= '<span class="lime">你使用了' . $ara . '，釣魚效率提高了 ' . round(($fishing_rod_bonus - 1) * 100) . '%！</span><br>';
         $clbpara['fishing']['rod_message_shown'] = true;
     }
 
@@ -253,9 +253,9 @@ function check_fishing(&$data) {
 
                 // 根据是否使用钓竿显示不同的消息
                 if ($has_fishing_rod) {
-                    $log .= '你熟练地操作' . $ara . '，钓到了一个 <span class="yellow">' . $item_name . '</span>！<br>';
+                    $log .= '你熟練地操作' . $ara . '，釣到了一個 <span class="yellow">' . $item_name . '</span>！<br>';
                 } else {
-                    $log .= '你感觉鱼竿一沉，钓到了一个 <span class="yellow">' . $item_name . '</span>！<br>';
+                    $log .= '你感覺魚竿一沉，釣到了一個 <span class="yellow">' . $item_name . '</span>！<br>';
                 }
             }
         }
@@ -277,13 +277,13 @@ function check_fishing(&$data) {
                     $base_increase = rand(1, 3); // 基础提升 1-3 点
                     $stat_increase = $has_fishing_rod ? ceil($base_increase * $stat_boost_multiplier) : $base_increase;
                     $att += $stat_increase;
-                    $stat_name = '基础攻击';
+                    $stat_name = '基礎攻擊';
                     break;
                 case 2: // 提升防御
                     $base_increase = rand(1, 3); // 基础提升 1-3 点
                     $stat_increase = $has_fishing_rod ? ceil($base_increase * $stat_boost_multiplier) : $base_increase;
                     $def += $stat_increase;
-                    $stat_name = '基础防御';
+                    $stat_name = '基礎防禦';
                     break;
                 case 3: // 提升生命上限
                     $base_increase = rand(5, 15); // 基础提升 5-15 点
@@ -297,7 +297,7 @@ function check_fishing(&$data) {
                     $stat_increase = $has_fishing_rod ? ceil($base_increase * $stat_boost_multiplier) : $base_increase;
                     $msp += $stat_increase;
                     $sp = min($sp + $stat_increase, $msp); // 同时提升当前体力
-                    $stat_name = '体力上限';
+                    $stat_name = '體力上限';
                     break;
             }
 
@@ -313,9 +313,9 @@ function check_fishing(&$data) {
 
             // 根据是否使用钓竿显示不同的消息
             if ($has_fishing_rod) {
-                $log .= '<span class="lime">使用' . $ara . '钓鱼的过程中，你的手臂和意志得到了锻炼，你的' . $stat_name . '提升了 ' . $stat_increase . ' 点！</span><br>';
+                $log .= '<span class="lime">使用' . $ara . '釣魚的過程中，你的手臂和意志得到了鍛鍊，你的' . $stat_name . '提升了 ' . $stat_increase . ' 點！</span><br>';
             } else {
-                $log .= '<span class="lime">长时间的钓鱼让你感到心旷神怡，你的' . $stat_name . '提升了 ' . $stat_increase . ' 点！</span><br>';
+                $log .= '<span class="lime">長時間的釣魚讓你感到心曠神怡，你的' . $stat_name . '提升了 ' . $stat_increase . ' 點！</span><br>';
             }
         }
     }
@@ -337,7 +337,7 @@ function create_fish_basket(&$data, $caught_items) {
     $basket_index = -1;
 
     for ($i = 1; $i <= 6; $i++) {
-        if (${'itmk'.$i} == 'DA' && ${'itm'.$i} == '鱼篓子' && ${'itmsk'.$i} == 'Z') {
+        if (${'itmk'.$i} == 'DA' && ${'itm'.$i} == '魚簍子' && ${'itmsk'.$i} == 'Z') {
             $has_basket = true;
             $basket_index = $i;
             break;
@@ -347,7 +347,7 @@ function create_fish_basket(&$data, $caught_items) {
     // 如果没有鱼篓子，创建一个新的
     if (!$has_basket) {
         // 创建鱼篓子并放入玩家物品栏
-        $itm0 = '鱼篓子';
+        $itm0 = '魚簍子';
         $itmk0 = 'Z';
         $itme0 = count($caught_items); // 效果值表示容量
         $itms0 = count($caught_items); // 数量表示已使用空间
@@ -369,7 +369,7 @@ function create_fish_basket(&$data, $caught_items) {
         // 将物品列表转换为JSON并存储在itmpara0中
         $itmpara0 = json_encode($basket_items, JSON_UNESCAPED_UNICODE);
 
-        $log .= '你将钓到的物品都放入了一个新的<span class="yellow">鱼篓子</span>中。<br>';
+        $log .= '你將釣到的物品都放入了一個新的<span class="yellow">魚簍子</span>中。<br>';
     } else {
         // 如果已有鱼篓子，将新物品添加到现有鱼篓子中
         $basket_items = json_decode(${'itmpara'.$basket_index}, true);
@@ -392,7 +392,7 @@ function create_fish_basket(&$data, $caught_items) {
         ${'itms'.$basket_index} = count($basket_items); // 更新已使用空间
         ${'itmpara'.$basket_index} = json_encode($basket_items, JSON_UNESCAPED_UNICODE);
 
-        $log .= '你将钓到的物品都放入了现有的<span class="yellow">鱼篓子</span>中。<br>';
+        $log .= '你將釣到的物品都放入了現有的<span class="yellow">魚簍子</span>中。<br>';
     }
 }
 
@@ -411,10 +411,10 @@ function fishing_command($command, &$data) {
         end_fishing($data);
     } elseif ($command == 'rest') {
         // 继续钓鱼
-        $log .= '你继续钓鱼...<br>';
+        $log .= '你繼續釣魚...<br>';
         check_fishing($data);
     } else {
-        $log .= '你正在钓鱼，不能执行其他命令！<br>';
+        $log .= '你正在釣魚，不能執行其他命令！<br>';
     }
 }
 

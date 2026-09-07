@@ -26,7 +26,7 @@ function item_nouveau_booster1($itmn, &$data) {
         $chosen_index = isset($_POST['choose']) ? intval($_POST['choose']) : -1;
 
         if ($chosen_index < 0 || !isset($basket_items[$chosen_index])) {
-            $log .= '你没有选择任何物品，或者选择的物品不存在。<br>';
+            $log .= '你沒有選擇任何物品，或者選擇的物品不存在。<br>';
             $mode = 'command';
             $cmd = '';
             return true;
@@ -53,8 +53,8 @@ function item_nouveau_booster1($itmn, &$data) {
         // 更新鱼篓子
         if (empty($basket_items)) {
             // 如果鱼篓子为空，移除它
-            $log .= '你从鱼篓子中取出了<span class="yellow">' . $itm0 . '</span>。<br>';
-            $log .= '鱼篓子已经空了，你将它丢弃了。<br>';
+            $log .= '你從魚簍子中取出了<span class="yellow">' . $itm0 . '</span>。<br>';
+            $log .= '魚簍子已經空了，你將它丟棄了。<br>';
 
             ${'itm'.$basket_position} = '';
             ${'itmk'.$basket_position} = '';
@@ -68,8 +68,8 @@ function item_nouveau_booster1($itmn, &$data) {
             ${'itms'.$basket_position} = count($basket_items); // 更新已使用空间
             ${'itmpara'.$basket_position} = json_encode($basket_items, JSON_UNESCAPED_UNICODE);
 
-            $log .= '你从鱼篓子中取出了<span class="yellow">' . $itm0 . '</span>。<br>';
-            $log .= '鱼篓子中还有 ' . count($basket_items) . ' 件物品。<br>';
+            $log .= '你從魚簍子中取出了<span class="yellow">' . $itm0 . '</span>。<br>';
+            $log .= '魚簍子中還有 ' . count($basket_items) . ' 件物品。<br>';
         }
 
         // 清除临时数据
@@ -90,11 +90,11 @@ function item_nouveau_booster1($itmn, &$data) {
     $itmsk = ${'itmsk' . $itmn};
     $itmpara = ${'itmpara' . $itmn};
 
-    if ($itm == '鱼篓子' && $itmk == 'Z' && $itmsk == 'Z') {
+    if ($itm == '魚簍子' && $itmk == 'Z' && $itmsk == 'Z') {
         // 解析鱼篓子中的物品
         $basket_items = json_decode($itmpara, true);
         if (!$basket_items || empty($basket_items)) {
-            $log .= '这个鱼篓子是空的！<br>';
+            $log .= '這個魚簍子是空的！<br>';
             return true;
         }
 
@@ -115,18 +115,18 @@ function item_nouveau_booster1($itmn, &$data) {
     // 处理技能书物品
     if ($itmk == 'VS') {
         // 现实逃避论 ～风中残烛之卷：获得奇机技能
-        if ($itm == '现实逃避论～风中残烛之卷' && $itmsk == 'tl_2ndchance') {
+        if ($itm == '現實逃避論～風中殘燭之卷' && $itmsk == 'tl_2ndchance') {
             global $cskills, $now;
             $flag = getclubskill('tl_2ndchance', $clbpara);
             if ($flag) {
-                $log .= "你仔细阅读了<span class='red'>{$itm}</span>，书中详细描述了在危机时刻如何保持最后一丝生机的秘诀。<br>";
-                $log .= "哇！没想到这本书里竟然介绍了<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>的原理！<br>";
-                $log .= "获得了技能<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>！<br>";
-                $log .= "你心满意足地把<span class='red'>{$itm}</span>吃进了肚里。<br>";
+                $log .= "你仔細閲讀了<span class='red'>{$itm}</span>，書中詳細描述了在危機時刻如何保持最後一絲生機的秘訣。<br>";
+                $log .= "哇！沒想到這本書裏竟然介紹了<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>的原理！<br>";
+                $log .= "獲得了技能<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>！<br>";
+                $log .= "你心滿意足地把<span class='red'>{$itm}</span>吃進了肚裏。<br>";
                 //addnews($now, 'getsk_tl_2ndchance', $name, $itm, $nick);
             } else {
-                $log .= "什么嘛！原来里面都是些你看过的东西了，你没有从书中学到任何新东西。<br>";
-                $log .= "你一怒之下把这本破书撕了个稀巴烂！<br>";
+                $log .= "什麼嘛！原來裏面都是些你看過的東西了，你沒有從書中學到任何新東西。<br>";
+                $log .= "你一怒之下把這本破書撕了個稀巴爛！<br>";
             }
 
                 // 消耗物品
@@ -142,18 +142,18 @@ function item_nouveau_booster1($itmn, &$data) {
         }
 
         // 现实逃避论 ～一转攻势之卷：获得起迹技能
-        if ($itm == '现实逃避论～一转攻势之卷' && $itmsk == 'tl_oncemore') {
+        if ($itm == '現實逃避論～一轉攻勢之卷' && $itmsk == 'tl_oncemore') {
             global $cskills, $now;
             $flag = getclubskill('tl_oncemore', $clbpara);
             if ($flag) {
-                $log .= "你仔细阅读了<span class='red'>{$itm}</span>，书中详细描述了如何在生死一线之际转危为安的秘诀。<br>";
-                $log .= "哇！没想到这本书里竟然介绍了<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>的原理！<br>";
-                $log .= "获得了技能<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>！<br>";
-                $log .= "你心满意足地把<span class='red'>{$itm}</span>吃进了肚里。<br>";
+                $log .= "你仔細閲讀了<span class='red'>{$itm}</span>，書中詳細描述瞭如何在生死一線之際轉危為安的秘訣。<br>";
+                $log .= "哇！沒想到這本書裏竟然介紹了<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>的原理！<br>";
+                $log .= "獲得了技能<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>！<br>";
+                $log .= "你心滿意足地把<span class='red'>{$itm}</span>吃進了肚裏。<br>";
                 //addnews($now, 'getsk_tl_oncemore', $name, $itm, $nick);
             } else {
-                $log .= "什么嘛！原来里面都是些你看过的东西了，你没有从书中学到任何新东西。<br>";
-                $log .= "你一怒之下把这本破书撕了个稀巴烂！<br>";
+                $log .= "什麼嘛！原來裏面都是些你看過的東西了，你沒有從書中學到任何新東西。<br>";
+                $log .= "你一怒之下把這本破書撕了個稀巴爛！<br>";
             }
 
             // 消耗物品
@@ -168,30 +168,30 @@ function item_nouveau_booster1($itmn, &$data) {
         }
 
         // 现实逃避论 ～全卷：同时获得奇机和起迹技能
-        if ($itm == '现实逃避论～全卷' ) {
+        if ($itm == '現實逃避論～全卷' ) {
             global $cskills, $now;
             $flag1 = getclubskill('tl_2ndchance', $clbpara);
             $flag2 = getclubskill('tl_oncemore', $clbpara);
 
             if ($flag1 || $flag2) {
-                $log .= "你仔细阅读了<span class='red'>{$itm}</span>，这是一本完整的生存指南，详细描述了如何在绝境中求生的各种技巧。<br>";
+                $log .= "你仔細閲讀了<span class='red'>{$itm}</span>，這是一本完整的生存指南，詳細描述瞭如何在絕境中求生的各種技巧。<br>";
 
                 if ($flag1) {
-                    $log .= "哇！没想到这本书里竟然介绍了<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>的原理！<br>";
-                    $log .= "获得了技能<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>！<br>";
+                    $log .= "哇！沒想到這本書裏竟然介紹了<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>的原理！<br>";
+                    $log .= "獲得了技能<span class='yellow'>「{$cskills['tl_2ndchance']['name']}」</span>！<br>";
                     //addnews($now, 'getsk_tl_2ndchance', $name, $itm, $nick);
                 }
 
                 if ($flag2) {
-                    $log .= "哇！没想到这本书里竟然还介绍了<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>的原理！<br>";
-                    $log .= "获得了技能<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>！<br>";
+                    $log .= "哇！沒想到這本書裏竟然還介紹了<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>的原理！<br>";
+                    $log .= "獲得了技能<span class='yellow'>「{$cskills['tl_oncemore']['name']}」</span>！<br>";
                     //addnews($now, 'getsk_tl_oncemore', $name, $itm, $nick);
                 }
 
-                $log .= "你心满意足地把<span class='red'>{$itm}</span>吃进了肚里。<br>";
+                $log .= "你心滿意足地把<span class='red'>{$itm}</span>吃進了肚裏。<br>";
             } else {
-                $log .= "什么嘛！原来里面都是些你看过的东西了，你没有从书中学到任何新东西。<br>";
-                $log .= "你一怒之下把这本破书撕了个稀巴烂！<br>";
+                $log .= "什麼嘛！原來裏面都是些你看過的東西了，你沒有從書中學到任何新東西。<br>";
+                $log .= "你一怒之下把這本破書撕了個稀巴爛！<br>";
             }
 
             // 消耗物品
@@ -210,7 +210,7 @@ function item_nouveau_booster1($itmn, &$data) {
     if ($itm == '☢核子核心☢' && $itmk == 'Y') {
         // 检查是否装备了武器
         if (empty($wep) || $weps == 0) {
-            $log .= "你必须装备武器才能使用<span class='red'>{$itm}</span>。<br>";
+            $log .= "你必須裝備武器才能使用<span class='red'>{$itm}</span>。<br>";
             return true;
         }
 
@@ -219,7 +219,7 @@ function item_nouveau_booster1($itmn, &$data) {
 
         // 如果武器已经是核武器，则不能再次改造
         if (!empty($weapon_para['isNuclearWeapon'])) {
-            $log .= "你的<span class='yellow'>{$wep}</span>已经是核武器了，不需要再次改造。<br>";
+            $log .= "你的<span class='yellow'>{$wep}</span>已經是核武器了，不需要再次改造。<br>";
             return true;
         }
 
@@ -234,8 +234,8 @@ function item_nouveau_booster1($itmn, &$data) {
             $wep = "☢" . $wep;
         }
 
-        $log .= "你将<span class='red'>{$itm}</span>安装到了你的武器上。<br>";
-        $log .= "你的武器变成了<span class='yellow'>{$wep}</span>！现在它可以对战斗区域内的所有人造成伤害了。<br>";
+        $log .= "你將<span class='red'>{$itm}</span>安裝到了你的武器上。<br>";
+        $log .= "你的武器變成了<span class='yellow'>{$wep}</span>！現在它可以對戰鬥區域內的所有人造成傷害了。<br>";
 
         // 消耗物品
         ${'itm'.$itmn} = '';

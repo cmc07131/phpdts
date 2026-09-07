@@ -73,7 +73,7 @@ function userIconMover(){
 	ugd = $('male').checked ? 'm' : 'f';
 	uinum = $('icon').value; // 使用value而不是selectedIndex
 
-	// 检查是否在RuleSet房间中
+	// 檢查是否在RuleSet房間中
 	if (typeof window.rulesetAvatarPath !== 'undefined' && window.rulesetAvatarPath) {
 		$('userIconImg').innerHTML = '<img src="' + window.rulesetAvatarPath + ugd + '_' + uinum + '.gif" alt="' + uinum + '">';
 	} else {
@@ -231,114 +231,114 @@ function sl(id) {
 
 function postCmd(formName,sendto){
 	console.log('%c正在提交命令', 'background: blue; color: white; font-size: 16px;');
-	console.log('表单名称: ' + formName + ', 发送到: ' + sendto);
+	console.log('表單名稱: ' + formName + ', 發送到: ' + sendto);
 
 	try {
 		var oXmlHttp = zXmlHttp.createRequest();
 		var formElement = document.forms[formName];
 
 		if (!formElement) {
-			console.error('找不到表单: ' + formName);
-			alert('找不到表单: ' + formName);
+			console.error('找不到表單: ' + formName);
+			alert('找不到表單: ' + formName);
 			return;
 		}
 
 		var sBody = getRequestBody(formElement);
-		console.log('请求体: ' + sBody);
+		console.log('請求體: ' + sBody);
 
 		oXmlHttp.open("post", sendto, true);
 		oXmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 		oXmlHttp.onreadystatechange = function () {
-			console.log('请求状态变化: ' + oXmlHttp.readyState);
+			console.log('請求狀態變化: ' + oXmlHttp.readyState);
 
 			if (oXmlHttp.readyState == 4) {
-				console.log('请求完成，状态码: ' + oXmlHttp.status);
+				console.log('請求完成，狀態碼: ' + oXmlHttp.status);
 
 				if (oXmlHttp.status == 200) {
-					console.log('请求成功，响应长度: ' + oXmlHttp.responseText.length);
+					console.log('請求成功，響應長度: ' + oXmlHttp.responseText.length);
 					try {
 						showData(oXmlHttp.responseText);
 					} catch (e) {
-						console.error('处理响应时出错: ' + e.message);
-						alert('处理响应时出错: ' + e.message);
+						console.error('處理響應時出錯: ' + e.message);
+						alert('處理響應時出錯: ' + e.message);
 					}
 				} else {
-					console.error('请求失败: ' + oXmlHttp.statusText);
+					console.error('請求失敗: ' + oXmlHttp.statusText);
 					showNotice(oXmlHttp.statusText);
 				}
 			}
 		}
 
-		console.log('发送请求...');
+		console.log('發送請求...');
 		oXmlHttp.send(sBody);
-		console.log('请求已发送');
+		console.log('請求已發送');
 	} catch (e) {
-		console.error('发送请求时出错: ' + e.message);
-		alert('发送请求时出错: ' + e.message);
+		console.error('發送請求時出錯: ' + e.message);
+		alert('發送請求時出錯: ' + e.message);
 	}
 }
 
 function showData(sdata){
-	console.log('%c正在处理响应数据', 'background: green; color: white; font-size: 16px;');
+	console.log('%c正在處理響應數據', 'background: green; color: white; font-size: 16px;');
 
 	try {
-		// 尝试解析 JSON
-		console.log('响应数据片段: ' + sdata.substring(0, 100) + '...');
+		// 嘗試解析 JSON
+		console.log('響應數據片段: ' + sdata.substring(0, 100) + '...');
 		shwData = sdata.parseJSON();
-		console.log('解析后的数据类型: ' + typeof(shwData));
+		console.log('解析後的數據類型: ' + typeof(shwData));
 
-		// 检查是否需要重定向
+		// 檢查是否需要重定向
 		if(shwData['url']) {
 			console.log('需要重定向到: ' + shwData['url']);
 			window.location.href = shwData['url'];
 		} else if(!shwData['innerHTML']) {
-			console.log('没有 innerHTML 属性，显示原始数据');
+			console.log('沒有 innerHTML 屬性，顯示原始數據');
 			if($('error')) {
 				$('error').innerHTML = sdata;
 			} else {
 				console.error('error 元素不存在');
-				alert('错误: ' + sdata);
+				alert('錯誤: ' + sdata);
 			}
 		} else {
-			console.log('处理 innerHTML 和其他属性');
+			console.log('處理 innerHTML 和其他屬性');
 
-			// 处理 value 属性
+			// 處理 value 屬性
 			if(shwData['value']) {
 				sDv = shwData['value'];
-				console.log('value 属性的键数量: ' + Object.keys(sDv).length);
+				console.log('value 屬性的鍵數量: ' + Object.keys(sDv).length);
 
 				for(var id in sDv){
 					if($(id)!=null){
-						console.log('设置 ' + id + ' 的 value 为: ' + sDv[id]);
+						console.log('設置 ' + id + ' 的 value 為: ' + sDv[id]);
 						$(id).value = sDv[id];
 					} else {
-						console.warn('元素 ' + id + ' 不存在，无法设置 value');
+						console.warn('元素 ' + id + ' 不存在，無法設置 value');
 					}
 				}
 			}
 
-			// 处理 innerHTML 属性
+			// 處理 innerHTML 屬性
 			if(shwData['innerHTML']) {
 				sDi = shwData['innerHTML'];
-				console.log('innerHTML 属性的键数量: ' + Object.keys(sDi).length);
+				console.log('innerHTML 屬性的鍵數量: ' + Object.keys(sDi).length);
 
 				for(var id in sDi){
 					if($(id)!=null){
 						if(sDi[id] !== ''){
-							console.log('设置 ' + id + ' 的 innerHTML，长度: ' + sDi[id].length);
+							console.log('設置 ' + id + ' 的 innerHTML，長度: ' + sDi[id].length);
 							$(id).innerHTML = sDi[id];
 						} else {
 							console.log('清空 ' + id + ' 的 innerHTML');
 							$(id).innerHTML = '';
 						}
 					} else {
-						console.warn('元素 ' + id + ' 不存在，无法设置 innerHTML');
+						console.warn('元素 ' + id + ' 不存在，無法設置 innerHTML');
 					}
 				}
 			}
 
-			// 同步clbpara驱动的侧边栏数据
+			// 同步clbpara驅動的側邊欄數據
 			if(shwData['clbpara']) {
 				window.clbpara_data = shwData['clbpara'];
 				window.clbpara = shwData['clbpara'];
@@ -353,43 +353,43 @@ function showData(sdata){
 				}
 			}
 
-			// 处理 display 属性
+			// 處理 display 屬性
 			if(shwData['display']) {
 				sDd = shwData['display'];
-				console.log('display 属性的键数量: ' + Object.keys(sDd).length);
+				console.log('display 屬性的鍵數量: ' + Object.keys(sDd).length);
 
 				for(var id in sDd){
 					if($(id)!=null){
-						console.log('设置 ' + id + ' 的 display 为: ' + sDd[id]);
+						console.log('設置 ' + id + ' 的 display 為: ' + sDd[id]);
 						$(id).style.display = sDd[id];
 					} else {
-						console.warn('元素 ' + id + ' 不存在，无法设置 display');
+						console.warn('元素 ' + id + ' 不存在，無法設置 display');
 					}
 				}
 			}
 		}
 
-		// 处理计时器
+		// 處理計時器
 		if(shwData['timer'] && typeof(timerid)=='undefined'){
-			console.log('启动计时器: ' + shwData['timer']);
+			console.log('啓動計時器: ' + shwData['timer']);
 			demiSecTimerStarter(shwData['timer']);
 		}
 
-		// 处理页面刷新
+		// 處理頁面刷新
 		if ($('HsUipfcGhU')) {
-			console.log('检测到页面刷新标记，即将刷新页面');
+			console.log('檢測到頁面刷新標記，即將刷新頁面');
 			window.location.reload();
 		}
 
-		console.log('响应数据处理完成');
+		console.log('響應數據處理完成');
 	} catch (e) {
-		console.error('处理响应数据时出错: ' + e.message);
-		console.error('原始数据: ' + sdata);
-		alert('处理响应数据时出错: ' + e.message);
+		console.error('處理響應數據時出錯: ' + e.message);
+		console.error('原始數據: ' + sdata);
+		alert('處理響應數據時出錯: ' + e.message);
 
-		// 尝试显示原始数据
+		// 嘗試顯示原始數據
 		if($('error')) {
-			$('error').innerHTML = '<div style="color: red; background-color: yellow; padding: 10px; border: 2px solid black;">错误: ' + e.message + '<br>原始数据: ' + sdata + '</div>';
+			$('error').innerHTML = '<div style="color: red; background-color: yellow; padding: 10px; border: 2px solid black;">錯誤: ' + e.message + '<br>原始數據: ' + sdata + '</div>';
 		}
 	}
 }

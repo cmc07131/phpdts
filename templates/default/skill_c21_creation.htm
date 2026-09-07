@@ -18,10 +18,10 @@
 							{$cdesc}
 							&nbsp;
 							<!--{if empty($no_skill_input)}-->
-								选择的属性为：
+								選擇的屬性為：
 								<select name="{$skid}upgpara" id="{$skid}upgpara" onchange="$('mode').value='revskpts';$('command').value='swtskill_{$skid}';postCmd('gamecmd','command.php');this.disabled=true;">
 								<!--{if empty($nchoice)}-->
-								<option value="" selected>无<br />
+								<option value="" selected>無<br />
 								<!--{/if}-->
 								<!--{loop $cskills[$skid]['choice'] $key}-->
 									<!--{if $key != $nchoice}-->

@@ -5,7 +5,7 @@
 				<tr>
 					<!--{eval $nickinfo = titles_get_desc($nick,1);}-->
                     <td width="210" colspan="3" class="b1" id="nickinfo"><span>{$nickinfo} {$name}<!--{if !empty($clbpara['PlatformName'])}--> （$clbpara['PlatformName']）<!--{/if}--></span></td>
-					<td width="100" colspan="1" class="b1"><span>{$sexinfo[$gd]}{$sNo}号</span></td>
+					<td width="100" colspan="1" class="b1"><span>{$sexinfo[$gd]}{$sNo}號</span></td>
 					<td width="95" colspan="2" class="b1"><span>{lang weather}:$wthinfo[$weather]</span></td>
 					<td width="215" colspan="1" class="b1"><span>{lang gamedate}<!--{if $gamestate == 40 }--><span class="yellow">{lang combo}</span><!--{/if}--><!--{if $gamestate == 50 }--><span class="red">{lang duel}</span><!--{/if}--></span></td>
 				</tr>
@@ -49,7 +49,7 @@
 									</td>
 									<td width=55px background="img/state2.gif" style="position:relative;background-repeat:no-repeat;background-position:left top;">
 										<div style="border:0; margin:0; cellspacing:0; cellpadding:0; position:absolute;top:0px;right:55px;z-index:1;">
-											<span <!--{if $inf}-->tooltip="消耗{$inf_sp}点体力，点击红色准星图标包扎伤口"<!--{/if}-->>$newhpimg</span>
+											<span <!--{if $inf}-->tooltip="消耗{$inf_sp}點體力，點擊紅色準星圖標包紮傷口"<!--{/if}-->>$newhpimg</span>
 										</div>
 									</td>
 								</tr>
@@ -65,7 +65,7 @@
 				</tr>
 				<tr>
 					<td class="b2"><span>{lang team}</span></td>
-					<td class="b3"><span><!--{if $teamID && $gamestate < 40 }-->$teamID<!--{else}--> 无 <!--{/if}--></span></td>
+					<td class="b3"><span><!--{if $teamID && $gamestate < 40 }-->$teamID<!--{else}--> 無 <!--{/if}--></span></td>
 					<td class="b2"><span><!--{if $wg >= 100}-->{lang wg}{lang skill}<!--{else}--><span class="grey">{lang wg}{lang skill}</span><!--{/if}--></span></td>
 					<td class="b3"><span>$wg</span></td>
 				</tr>
@@ -75,16 +75,16 @@
 					<!--{if $club!=0}-->
 						$clubinfo[$club]
 					<!--{else}-->
-						<!-- 后续更新中，将停用在游戏内直接选择称号的方式。 -->
+						<!-- 後續更新中，將停用在遊戲內直接選擇稱號的方式。 -->
 						<!--{if function_exists('valid_getclublist_t1') && function_exists('valid_getclublist_t2')}-->
 							<!--{eval $t1_list = valid_getclublist_t1($udata); $t2_list = valid_getclublist_t2($udata);}-->
 							<select id="clubsel" name="clubsel" onchange="$('mode').value='special';$('command').value=$('clubsel').value;postCmd('gamecmd','command.php');return false;" <!--{if CURSCRIPT != 'game' || $mode != 'command'}-->disabled<!--{/if}-->>
-								<optgroup label="普通称号">
+								<optgroup label="普通稱號">
 									<!--{loop $t2_list $key}-->
 										<option value="clubsel$key">$clubinfo[$key]</option>
 									<!--{/loop}-->
 								</optgroup>
-								<optgroup label="特殊称号">
+								<optgroup label="特殊稱號">
 									<!--{loop $t1_list $key}-->
 										<option value="clubsel$key">$clubinfo[$key]</option>
 									<!--{/loop}-->
@@ -119,7 +119,7 @@
 									<!--{/if}-->
 								<!--{/loop}-->
 							<!--{else}-->
-							无
+							無
 							<!--{/if}-->
 						</span>
 					</td>
@@ -166,7 +166,7 @@
 					<td class="b3"><!--{if $skillpoint > 0}--><span class="lime">$skillpoint</span><!--{else}--><span>$skillpoint</span><!--{/if}--></td>
 				</tr>
 				<tr>
-					<td class="b2">战术界面</td>
+					<td class="b2">戰術界面</td>
 					<td class="b3">
 						<select id="horizon" name="horizon" onchange="$('mode').value='special';$('command').value=$('horizon').value;postCmd('gamecmd','command.php');return false;" <!--{if CURSCRIPT != 'game' || $mode != 'command'}-->disabled<!--{/if}-->>
 							<!--{loop $horizoninfo $key $value}-->
@@ -192,16 +192,16 @@
       		<td>
 		      	<TABLE border="0" cellSpacing=0 cellPadding=0 height=100% width=100%>
   						<TR>
-          			<TD class=b1 width="60"><span>装备种类</span></TD>
-          			<TD class=b1><span>名称</span></TD>
-          			<TD class=b1 width="70"><span>属性</span></TD>
+          			<TD class=b1 width="60"><span>裝備種類</span></TD>
+          			<TD class=b1><span>名稱</span></TD>
+          			<TD class=b1 width="70"><span>屬性</span></TD>
           			<TD class=b1 width="40"><span>效</span></TD>
           			<TD class=b1 width="40"><span>耐</span></TD>
           		</tr>
           		<tr>
     						<TD class=b2 height="26"><span><!--{if $wepk_words}-->$wepk_words<!--{else}-->$mltwk<!--{/if}--></span></TD>
                 <TD class=b3>
-					<span <!--{if CURSCRIPT == 'game' && $mode == 'command' && $wep2e}-->tooltip="副武器栏：{$wep2}"<!--{/if}-->>
+					<span <!--{if CURSCRIPT == 'game' && $mode == 'command' && $wep2e}-->tooltip="副武器欄：{$wep2}"<!--{/if}-->>
                 	<!--{if CURSCRIPT == 'game' && $mode == 'command' && $wepe}-->
 						<span>
 							<input type="button" value="卸下" onclick="$('mode').value='itemmain';$('command').value='offwep';postCmd('gamecmd','command.php');return false;">
@@ -276,8 +276,8 @@
   					<TABLE border="0" cellSpacing=0 cellPadding=0 height=100% width=100%>
 		      		<tr>
 								<TD class=b1 width="60"><span>道具用途</span></TD>
-								<TD class=b1><span>名称</span></TD>
-								<TD class=b1 width="70"><span>属性</span></TD>
+								<TD class=b1><span>名稱</span></TD>
+								<TD class=b1 width="70"><span>屬性</span></TD>
 								<TD class=b1 width="40"><span>效</span></TD>
 								<TD class=b1 width="40"><span>耐</span></TD>
 							</TR>

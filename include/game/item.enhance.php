@@ -35,7 +35,7 @@ function item_enhance($itmn, &$data) {
 			}
 		}
 		$att += $mefct;
-		$mdname = "基础攻击力";
+		$mdname = "基礎攻擊力";
 	} elseif (strpos($itmk, 'MD') === 0) {
 		//global $def;
 		$def_min = 500;
@@ -54,19 +54,19 @@ function item_enhance($itmn, &$data) {
 			}
 		}
 		$def += $mefct;
-		$mdname = "基础防御力";
+		$mdname = "基礎防禦力";
 	} elseif (strpos($itmk, 'ME') === 0) {
 		//global $exp, $upexp, $baseexp;
 		$lvlup_objective = $itme / 10;
 		$mefct = round($baseexp * 2 * $lvlup_objective + rand(0, 5));
 		$exp += $mefct;
-		$mdname = "经验值";
+		$mdname = "經驗值";
 	} elseif (strpos($itmk, 'MS') === 0) {
 		//global $sp, $msp;
 		$mefct = $itme;
 		$sp += $mefct;
 		$msp += $mefct;
-		$mdname = "体力上限";
+		$mdname = "體力上限";
 	} elseif (strpos($itmk, 'MH') === 0) {
 		//global $hp, $mhp;
 		$mefct = $itme;
@@ -97,15 +97,15 @@ function item_enhance($itmn, &$data) {
 		$wc += $mefct;
 		$wd += $mefct;
 		$wf += $mefct;
-		$mdname = "全系熟练度";
+		$mdname = "全系熟練度";
 	}
 	if ($mefct > 0) {
-		$log .= "身体里有种力量涌出来！<br>你的{$mdname}提高了<span class=\"yellow\">$mefct</span>点！<br>";
+		$log .= "身體裏有種力量湧出來！<br>你的{$mdname}提高了<span class=\"yellow\">$mefct</span>點！<br>";
 	} elseif ($mefct == 0) {
-		$log .= "已经很强了，却还想靠药物继续强化自己，是不是太贪心了？<br>你的能力没有任何提升。<br>";
+		$log .= "已經很強了，卻還想靠藥物繼續強化自己，是不是太貪心了？<br>你的能力沒有任何提升。<br>";
 	} else {
 		$mefct = -$mefct;
-		$log .= "已经很强了，却还想靠药物继续强化自己，是不是太贪心了？<br>你贪婪的行为引发了药物的副作用！<br>你的{$mdname}下降了<span class=\"red\">$mefct</span>点！<br>";
+		$log .= "已經很強了，卻還想靠藥物繼續強化自己，是不是太貪心了？<br>你貪婪的行為引發了藥物的副作用！<br>你的{$mdname}下降了<span class=\"red\">$mefct</span>點！<br>";
 	}
 	if (strpos($itmk, 'ME') === 0) {
 		

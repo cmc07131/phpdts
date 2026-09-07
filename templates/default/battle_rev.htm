@@ -22,7 +22,7 @@
 				<tr>
 					<td class="b1" colspan=2 height=20px><span>$tdata['lvlinfo']</span></td>											
 					<td class="b1" colspan=2><span>$tdata['nameinfo']<!--{if !empty($tdata['clbpara']['PlatformName'])}--> （$tdata['clbpara']['PlatformName']）<!--{/if}--></span></td>											
-					<td class="b1" colspan=2><span>{$tdata['typeinfo']}{$tdata['sNoinfo']}</span><!--{if $sdata['club']==19}--> 【<span class="lime">报应点数：<span id="anum">$tdata['rp']</span></span>】<!--{/if}--></td>											
+					<td class="b1" colspan=2><span>{$tdata['typeinfo']}{$tdata['sNoinfo']}</span><!--{if $sdata['club']==19}--> 【<span class="lime">報應點數：<span id="anum">$tdata['rp']</span></span>】<!--{/if}--></td>											
 				</tr>
 				<tr>
 					<td class="b2" width=70px height=20px><span>{lang rage}</span></td>
@@ -50,7 +50,7 @@
 				</tr>
 				<tr>
 				<!--{if isset($sdata['clbpara']['battle_turns'])}-->
-					<td class="b2" height=20px><span>战斗回合</span></td>
+					<td class="b2" height=20px><span>戰鬥回合</span></td>
 					<td class="b3"><span>{$sdata['clbpara']['battle_turns']}</span></td>
 				<!--{else}-->
 					<td height=20px></td>
@@ -60,10 +60,10 @@
 					<td></td>
 				<!--{if !empty($tdata['clbpara']['skill'])}-->
 					<td class="b2" height=20px>
-						<span>战斗技能</span>
+						<span>戰鬥技能</span>
 					</td>
 					<td class="b3">
-						<span><input type="button" class="cmdbutton" value="点击查看技能" onclick="showModalDialog($('enemy_skillpage'));"></span>
+						<span><input type="button" class="cmdbutton" value="點擊查看技能" onclick="showModalDialog($('enemy_skillpage'));"></span>
 					</td>
 				<!--{/if}-->
 				</tr>
@@ -73,7 +73,7 @@
 	<tr>
 		<TD class="b8" height=270px width=440px>
 			<div style="position:relative;height:268px;width:438px;display: flex;align-items:center;justify-content: center;">
-					<span><B><FONT color="#ff0000" size="5" face="黑体">$battle_title</FONT></B></span>
+					<span><B><FONT color="#ff0000" size="5" face="黑體">$battle_title</FONT></B></span>
 			</div>
 		</TD>
 		<td class="b8" width=140px rowspan="2" valign="bottom">
@@ -90,7 +90,7 @@
 		<td colspan=2 width=580px>
 			<table border="0" width=580px height=80px cellspacing="0" cellpadding="0" valign="middle">
 				<tr>
-					<td class="b1" colspan=2 height=20px><span>$typeinfo[$sdata['type']]({$sexinfo[$sdata['gd']]}{$sdata['sNo']}号)</span></td>
+					<td class="b1" colspan=2 height=20px><span>$typeinfo[$sdata['type']]({$sexinfo[$sdata['gd']]}{$sdata['sNo']}號)</span></td>
 					<td class="b1" colspan=2><span>$sdata['name']<!--{if !empty($sdata['clbpara']['PlatformName'])}--> （$sdata['clbpara']['PlatformName']）<!--{/if}--></span></td>
 					<td class="b1" colspan=2><span>Lv. $sdata['lvl']</span></td>
 				</tr>
@@ -128,15 +128,15 @@
 
 	<p style="margin-left:0px; margin-top:0px; margin-right:0px; margin-bottom:0px;">
 		以下是<span class="yellow">{$typeinfo[$tdata['type']]} $tdata['name']</span>的的技能列表。
-		请注意描述文字中的<span class="yellow">“你”</span>指代的是这个对象。
+		請注意描述文字中的<span class="yellow">“你”</span>指代的是這個對象。
 		<br><br>
 		<table class="skilltable" style="width:559px">
 			<tr>
 				<td class="b1" width="40">
-					<span>名称</span>
+					<span>名稱</span>
 				</td>
 				<td class="b1">
-					<span>技能详情</span>
+					<span>技能詳情</span>
 				</td>
 			</tr>
 			<!--{eval $uidata = $tdata; $no_skill_input = 1;}-->
@@ -151,7 +151,7 @@
 				<!--{/if}-->
 			<!--{/loop}-->
 		</table>
-		<br>提示：点击技能界面外任意位置或按ESC键即可关闭窗口<br>
+		<br>提示：點擊技能界面外任意位置或按ESC鍵即可關閉窗口<br>
 	</p>
 	<img class="dialog-background" src="img/profile.gif" onclick="closeDialog($('enemy_skillpage'));this.disabled=true;">
 </dialog>

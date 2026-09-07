@@ -48,7 +48,7 @@ function init_ruleset_override() {
     if (!empty($ruleset_id)) {
         include_once GAME_ROOT.'./gamedata/ruleset/ruleset_config.php';
         $current_ruleset_config = get_ruleset_config($ruleset_id);
-        error_log("RuleSet Override: 房间 " . $GLOBALS['groomid'] . " 使用 RuleSet: $ruleset_id");
+        error_log("RuleSet Override: 房間 " . $GLOBALS['groomid'] . " 使用 RuleSet: $ruleset_id");
     }
 }
 
@@ -69,7 +69,7 @@ function load_ruleset_override_functions() {
         foreach ($override_files as $override_file) {
             if (!file_exists($override_file)) continue;
             include_once $override_file;
-            error_log("RuleSet Override: 已加载 $ruleset_id 的覆盖函数");
+            error_log("RuleSet Override: 已加載 $ruleset_id 的覆蓋函數");
             break;
         }
     }
@@ -83,9 +83,9 @@ function debug_ruleset_override() {
     $is_all_random = is_all_random_mode();
 
     echo "<pre>RuleSet Debug Info:\n";
-    echo "房间ID: " . $GLOBALS['groomid'] . "\n";
+    echo "房間ID: " . $GLOBALS['groomid'] . "\n";
     echo "RuleSet ID: " . ($ruleset_id ? $ruleset_id : 'NONE') . "\n";
-    echo "全随机模式: " . ($is_all_random ? 'YES' : 'NO') . "\n";
+    echo "全隨機模式: " . ($is_all_random ? 'YES' : 'NO') . "\n";
     echo "</pre>";
 }
 

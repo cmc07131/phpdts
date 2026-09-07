@@ -171,7 +171,7 @@ function check_mixitem_achievement_rev($nn,$item)
 	$done = 0;
 	$atotal = Array();
 	//1. 快速KEY弹成就
-	if ($item=="【KEY系催泪弹】")
+	if ($item=="【KEY系催淚彈】")
 	{
 		$timeused=$now-$starttime; $besttime=(int)fetch_achievement_rev(1,$nn);
 		if ($timeused<$besttime || $besttime==0) update_achievement_rev(1,$nn,$timeused);
@@ -200,7 +200,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//200.快速贤者成就
-	if ($item=="火水木金土符『贤者之石』")
+	if ($item=="火水木金土符『賢者之石』")
 	{
 		$aid = 200;
 		$alvl = check_achievement_rev($aid,$nn);$achlist = get_achlist($aid);
@@ -235,7 +235,7 @@ function check_mixitem_achievement_rev($nn,$item)
 	}
 
 	//0. KEY弹成就
-	if ($item=="【KEY系催泪弹】") 
+	if ($item=="【KEY系催淚彈】") 
 	{
 		update_achievement_rev(0,$nn,((int)fetch_achievement_rev(0,$nn))+1);
 		if ((int)fetch_achievement_rev(0,$nn)>=30 && (check_achievement_rev(0,$nn)<999)) {
@@ -259,7 +259,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//14. 燃烧弹成就
-	if ($item=="【KEY系燃烧弹】") 
+	if ($item=="【KEY系燃燒彈】") 
 	{
 		update_achievement_rev(14,$nn,((int)fetch_achievement_rev(14,$nn))+1);
 		if ((int)fetch_achievement_rev(14,$nn)>=30 && (check_achievement_rev(14,$nn)<999)) {
@@ -274,7 +274,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+200 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("树形图",$nn);
+		get_title("樹形圖",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(14,$nn)>=1 && (check_achievement_rev(14,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -283,7 +283,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//15. 生命弹成就
-	if ($item=="【KEY系生命弹】") 
+	if ($item=="【KEY系生命彈】") 
 	{
 		update_achievement_rev(15,$nn,((int)fetch_achievement_rev(15,$nn))+1);
 		if ((int)fetch_achievement_rev(15,$nn)>=30 && (check_achievement_rev(15,$nn)<999)) {
@@ -291,7 +291,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("未来战士",$nn);
+		get_title("未來戰士",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(15,$nn)>=5 && (check_achievement_rev(15,$nn)<2)) {
 		done_achievement_rev(15,2,$nn);
@@ -307,7 +307,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//33. 诅咒刀成就
-	if ($item=="影刀【秋岚】") 
+	if ($item=="影刀【秋嵐】") 
 	{
 		update_achievement_rev(33,$nn,((int)fetch_achievement_rev(33,$nn))+1);
 		if ((int)fetch_achievement_rev(33,$nn)>=1 && (check_achievement_rev(33,$nn)<999)) {
@@ -315,11 +315,11 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+522 WHERE username='".$nn."'" );
 		
-		get_title("剑圣",$nn);
+		get_title("劍聖",$nn);
 		}
 	}
 	//35. 『T-LINK念动冲拳』成就
-	if ($item=="『T-LINK念动冲拳』") 
+	if ($item=="『T-LINK念動衝拳』") 
 	{
 		update_achievement_rev(35,$nn,((int)fetch_achievement_rev(35,$nn))+1);
 		if ((int)fetch_achievement_rev(35,$nn)>=111 && (check_achievement_rev(35,$nn)<999)) {
@@ -327,14 +327,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("殴系爱好者",$nn);
+		get_title("毆系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(35,$nn)>=51 && (check_achievement_rev(35,$nn)<2)) {
 		done_achievement_rev(35,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("热血机师",$nn);
+		get_title("熱血機師",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(35,$nn)>=1 && (check_achievement_rev(35,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -351,14 +351,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("斩系爱好者",$nn);
+		get_title("斬系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(36,$nn)>=51 && (check_achievement_rev(36,$nn)<2)) {
 		done_achievement_rev(36,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("苍蓝之光",$nn);
+		get_title("蒼藍之光",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(36,$nn)>=1 && (check_achievement_rev(36,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -375,14 +375,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("钥刃大师",$nn);
+		get_title("鑰刃大師",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(37,$nn)>=51 && (check_achievement_rev(37,$nn)<2)) {
 		done_achievement_rev(37,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("合二为一",$nn);
+		get_title("合二為一",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(37,$nn)>=1 && (check_achievement_rev(37,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -391,7 +391,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//38. 『迷你鲨』成就
-	if ($item=="『迷你鲨』") 
+	if ($item=="『迷你鯊』") 
 	{
 		update_achievement_rev(38,$nn,((int)fetch_achievement_rev(38,$nn))+1);
 		if ((int)fetch_achievement_rev(38,$nn)>=111 && (check_achievement_rev(38,$nn)<999)) {
@@ -399,14 +399,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("射系爱好者",$nn);
+		get_title("射系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(38,$nn)>=51 && (check_achievement_rev(38,$nn)<2)) {
 		done_achievement_rev(37,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("勇闯仙境",$nn);
+		get_title("勇闖仙境",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(38,$nn)>=1 && (check_achievement_rev(38,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -415,7 +415,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//39. ☆金色闪光☆成就
-	if ($item=="☆金色闪光☆") 
+	if ($item=="☆金色閃光☆") 
 	{
 		update_achievement_rev(39,$nn,((int)fetch_achievement_rev(39,$nn))+1);
 		if ((int)fetch_achievement_rev(39,$nn)>=111 && (check_achievement_rev(39,$nn)<999)) {
@@ -423,14 +423,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("重枪爱好者",$nn);
+		get_title("重槍愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(39,$nn)>=51 && (check_achievement_rev(39,$nn)<2)) {
 		done_achievement_rev(39,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("黑洞边缘",$nn);
+		get_title("黑洞邊緣",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(39,$nn)>=1 && (check_achievement_rev(39,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -439,7 +439,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//40. 星尘龙 ★8成就
-	if ($item=="星尘龙 ★8") 
+	if ($item=="星塵龍 ★8") 
 	{
 		update_achievement_rev(40,$nn,((int)fetch_achievement_rev(40,$nn))+1);
 		if ((int)fetch_achievement_rev(40,$nn)>=111 && (check_achievement_rev(40,$nn)<999)) {
@@ -447,7 +447,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("决斗者",$nn);
+		get_title("決鬥者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(40,$nn)>=51 && (check_achievement_rev(40,$nn)<2)) {
 		done_achievement_rev(40,2,$nn);
@@ -463,7 +463,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//41. 流星龙 ★10成就
-	if ($item=="流星龙 ★10") 
+	if ($item=="流星龍 ★10") 
 	{
 		update_achievement_rev(41,$nn,((int)fetch_achievement_rev(41,$nn))+1);
 		if ((int)fetch_achievement_rev(41,$nn)>=111 && (check_achievement_rev(41,$nn)<999)) {
@@ -471,14 +471,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("聚集的祈愿",$nn);
+		get_title("聚集的祈願",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(41,$nn)>=51 && (check_achievement_rev(41,$nn)<2)) {
 		done_achievement_rev(41,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("加速同调",$nn);
+		get_title("加速同調",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(41,$nn)>=1 && (check_achievement_rev(41,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -487,7 +487,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//42. 《小黄的超级球》成就
-	if ($item=="《小黄的超级球》") 
+	if ($item=="《小黃的超級球》") 
 	{
 		update_achievement_rev(42,$nn,((int)fetch_achievement_rev(42,$nn))+1);
 		if ((int)fetch_achievement_rev(42,$nn)>=111 && (check_achievement_rev(42,$nn)<999)) {
@@ -495,7 +495,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("投系爱好者",$nn);
+		get_title("投系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(42,$nn)>=51 && (check_achievement_rev(42,$nn)<2)) {
 		done_achievement_rev(42,2,$nn);
@@ -511,7 +511,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//43. 莫洛托夫鸡尾酒成就
-	if ($item=="莫洛托夫鸡尾酒") 
+	if ($item=="莫洛托夫雞尾酒") 
 	{
 		update_achievement_rev(43,$nn,((int)fetch_achievement_rev(43,$nn))+1);
 		if ((int)fetch_achievement_rev(43,$nn)>=111 && (check_achievement_rev(43,$nn)<999)) {
@@ -519,14 +519,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("爆系爱好者",$nn);
+		get_title("爆系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(43,$nn)>=51 && (check_achievement_rev(43,$nn)<2)) {
 		done_achievement_rev(43,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("红烧天堂",$nn);
+		get_title("紅燒天堂",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(43,$nn)>=1 && (check_achievement_rev(43,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -567,7 +567,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("灵系爱好者",$nn);
+		get_title("靈系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(45,$nn)>=51 && (check_achievement_rev(45,$nn)<2)) {
 		done_achievement_rev(45,2,$nn);
@@ -583,7 +583,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//46. 火水木金土符『贤者之石』成就
-	if ($item=="火水木金土符『贤者之石』") 
+	if ($item=="火水木金土符『賢者之石』") 
 	{
 		update_achievement_rev(46,$nn,((int)fetch_achievement_rev(46,$nn))+1);
 		if ((int)fetch_achievement_rev(46,$nn)>=111 && (check_achievement_rev(46,$nn)<999)) {
@@ -591,14 +591,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("贤者之石",$nn);
+		get_title("賢者之石",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(46,$nn)>=51 && (check_achievement_rev(46,$nn)<2)) {
 		done_achievement_rev(46,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("五行大师",$nn);
+		get_title("五行大師",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(46,$nn)>=1 && (check_achievement_rev(46,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -607,7 +607,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//47. 广域生命探测器成就
-	if ($item=="广域生命探测器") 
+	if ($item=="廣域生命探測器") 
 	{
 		update_achievement_rev(47,$nn,((int)fetch_achievement_rev(47,$nn))+1);
 		if ((int)fetch_achievement_rev(47,$nn)>=111 && (check_achievement_rev(47,$nn)<999)) {
@@ -631,7 +631,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//48. 法式面包棍棒成就
-	if ($item=="法式面包棍棒") 
+	if ($item=="法式麪包棍棒") 
 	{
 		update_achievement_rev(48,$nn,((int)fetch_achievement_rev(48,$nn))+1);
 		if ((int)fetch_achievement_rev(48,$nn)>=111 && (check_achievement_rev(48,$nn)<999)) {
@@ -639,14 +639,14 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("混沌的深渊",$nn);
+		get_title("混沌的深淵",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(48,$nn)>=51 && (check_achievement_rev(48,$nn)<2)) {
 		done_achievement_rev(48,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("混沌爱好者",$nn);
+		get_title("混沌愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(48,$nn)>=1 && (check_achievement_rev(48,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -655,7 +655,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//49. 【春雨夏海，秋叶冬雪】挑战成就
-	if ($item=="【春雨夏海，秋叶冬雪】") 
+	if ($item=="【春雨夏海，秋葉冬雪】") 
 	{
 		update_achievement_rev(49,$nn,((int)fetch_achievement_rev(49,$nn))+1);
 		if ((int)fetch_achievement_rev(49,$nn)>=7 && (check_achievement_rev(49,$nn)<999)) {
@@ -663,7 +663,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("键·四季赞歌",$nn);
+		get_title("鍵·四季讚歌",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(49,$nn)>=1 && (check_achievement_rev(49,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -672,7 +672,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//50. ★一发逆转神话★挑战成就
-	if ($item=="★一发逆转神话★") 
+	if ($item=="★一發逆轉神話★") 
 	{
 		update_achievement_rev(50,$nn,((int)fetch_achievement_rev(50,$nn))+1);
 		if ((int)fetch_achievement_rev(50,$nn)>=7 && (check_achievement_rev(50,$nn)<999)) {
@@ -680,7 +680,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("★一发逆转！★",$nn);
+		get_title("★一發逆轉！★",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(50,$nn)>=1 && (check_achievement_rev(50,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -706,7 +706,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		}
 	}
 	//52. ◎光之创造神◎挑战成就
-	if ($item=="◎光之创造神◎") 
+	if ($item=="◎光之創造神◎") 
 	{
 		update_achievement_rev(52,$nn,((int)fetch_achievement_rev(52,$nn))+1);
 		if ((int)fetch_achievement_rev(52,$nn)>=7 && (check_achievement_rev(52,$nn)<999)) {
@@ -714,7 +714,7 @@ function check_mixitem_achievement_rev($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("◎胜利之光◎",$nn);
+		get_title("◎勝利之光◎",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(52,$nn)>=1 && (check_achievement_rev(52,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -1255,13 +1255,13 @@ function check_battle_achievement_rev($pa,$pd)
 	{
 		$result = $db->query("SELECT nicks FROM {$gtablepre}users WHERE username = '$killname'");
 		$ns = $db->result($result, 0);
-		if ((strpos($ns,"KEY男")!==false)&&($wp=='【KEY系催泪弹】')){
+		if ((strpos($ns,"KEY男")!==false)&&($wp=='【KEY系催淚彈】')){
 			update_achievement_rev(31,$nn,((int)fetch_achievement_rev(31,$nn))+1);
 			if ((int)fetch_achievement_rev(31,$nn)>=1 && (check_achievement_rev(31,$nn)<999)) {
 				done_achievement_rev(31,999,$nn);
 				
 				get_title("R.T.S",$nn);
-				get_title("善有善报",$killname);
+				get_title("善有善報",$killname);
 				}
 		}
 	}
@@ -1289,7 +1289,7 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+500 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+15 WHERE username='".$nn."'" );
 		
-		get_title("最后一步",$nn);
+		get_title("最後一步",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(3,$nn)>=500 && (check_achievement_rev(3,$nn)<2)) {
 		done_achievement_rev(3,2,$nn);
@@ -1322,13 +1322,13 @@ function check_battle_achievement_rev($pa,$pd)
 		}
 	}
 	//4. 推倒红暮成就
-	if ($is_npc && ($killname=="红暮" || $killname=="红杀将军 红暮")) 
+	if ($is_npc && ($killname=="紅暮" || $killname=="紅殺將軍 紅暮")) 
 	{
 		update_achievement_rev(4,$nn,((int)fetch_achievement_rev(4,$nn))+1);
 		if ((int)fetch_achievement_rev(4,$nn)>=9 && (check_achievement_rev(4,$nn)<999)) {
 		done_achievement_rev(4,999,$nn);
 		
-		get_title("越红者",$nn);
+		get_title("越紅者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(4,$nn)>=1 && (check_achievement_rev(4,$nn)<1)) {
 		done_achievement_rev(4,1,$nn);
@@ -1337,13 +1337,13 @@ function check_battle_achievement_rev($pa,$pd)
 		}
 	}
 	//13. 推倒蓝凝成就
-	if ($is_npc && ($killname=="蓝凝" || $killname=="红杀菁英 蓝凝")) 
+	if ($is_npc && ($killname=="藍凝" || $killname=="紅殺菁英 藍凝")) 
 	{
 		update_achievement_rev(13,$nn,((int)fetch_achievement_rev(13,$nn))+1);
 		if ((int)fetch_achievement_rev(13,$nn)>=3 && (check_achievement_rev(13,$nn)<999)) {
 		done_achievement_rev(13,999,$nn);
 		
-		get_title("跨过彩虹",$nn);
+		get_title("跨過彩虹",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(13,$nn)>=1 && (check_achievement_rev(13,$nn)<1)) {
 		done_achievement_rev(13,1,$nn);
@@ -1352,7 +1352,7 @@ function check_battle_achievement_rev($pa,$pd)
 		}
 	}
 	//20. 击破虚子成就
-	if ($is_npc && ($killname=="虚子" || $killname=="武神 虚子")) 
+	if ($is_npc && ($killname=="虛子" || $killname=="武神 虛子")) 
 	{
 		update_achievement_rev(20,$nn,((int)fetch_achievement_rev(20,$nn))+1);
 		if ((int)fetch_achievement_rev(20,$nn)>=1 && (check_achievement_rev(20,$nn)<999)) {
@@ -1360,7 +1360,7 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+268 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+263 WHERE username='".$nn."'" );
 		
-		get_title("寻星者",$nn);
+		get_title("尋星者",$nn);
 		}
 	}
 	//21. 击破水月成就
@@ -1372,7 +1372,7 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+233 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+233 WHERE username='".$nn."'" );
 		
-		get_title("寂静洪流",$nn);
+		get_title("寂靜洪流",$nn);
 		}
 	}
 	//22. 击破冴冴成就
@@ -1388,7 +1388,7 @@ function check_battle_achievement_rev($pa,$pd)
 		}
 	}
 	//23. 击破四面成就
-	if ($is_npc && ($killname=="星莲船四面BOSS" || $killname=="天神 星莲船四面BOSS")) 
+	if ($is_npc && ($killname=="星蓮船四面BOSS" || $killname=="天神 星蓮船四面BOSS")) 
 	{
 		update_achievement_rev(23,$nn,((int)fetch_achievement_rev(23,$nn))+1);
 		if ((int)fetch_achievement_rev(23,$nn)>=1 && (check_achievement_rev(23,$nn)<999)) {
@@ -1396,7 +1396,7 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+888 WHERE username='".$nn."'" );
 		
-		get_title("赌玉狂魔",$nn);
+		get_title("賭玉狂魔",$nn);
 		}
 	}
 	//24. 击破北京成就
@@ -1408,7 +1408,7 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+211 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+299 WHERE username='".$nn."'" );
 		
-		get_title("时代眼泪",$nn);
+		get_title("時代眼淚",$nn);
 		}
 	}
 	//25. 击破yoshiko成就
@@ -1424,7 +1424,7 @@ function check_battle_achievement_rev($pa,$pd)
 		}
 	}
 	//26. 击破吉祥物成就
-	if ($is_npc && ($killname=="便当盒" || $killname=="真职人 便当盒")) 
+	if ($is_npc && ($killname=="便當盒" || $killname=="真職人 便當盒")) 
 	{
 		update_achievement_rev(26,$nn,((int)fetch_achievement_rev(26,$nn))+1);
 		if ((int)fetch_achievement_rev(26,$nn)>=1 && (check_achievement_rev(26,$nn)<999)) {
@@ -1466,14 +1466,14 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+250 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("除错大师",$nn);
+		get_title("除錯大師",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(56,$nn)>=180 && (check_achievement_rev(56,$nn)<2)) {
 		done_achievement_rev(56,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("都市传说",$nn);
+		get_title("都市傳説",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(56,$nn)>=1 && (check_achievement_rev(56,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -1507,14 +1507,14 @@ function check_battle_achievement_rev($pa,$pd)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+250 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("暴雷骤雨",$nn);
+		get_title("暴雷驟雨",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(57,$nn)>=52 && (check_achievement_rev(57,$nn)<2)) {
 		done_achievement_rev(57,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("风驰电掣",$nn);
+		get_title("風馳電掣",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(57,$nn)>=1 && (check_achievement_rev(57,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -1572,7 +1572,7 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 	}
 
 	//解禁相关
-	if ($i == "游戏解除钥匙")
+	if ($i == "遊戲解除鑰匙")
 	{
 		// 初始化
 		$done = 0;
@@ -1602,7 +1602,7 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 		if($done) done_achievement_rev($aid,$alvl,$nn);
 	}
 
-	if($i == "凸眼鱼")
+	if($i == "凸眼魚")
 	{
 		// 607.日常 使用一次凸眼鱼吸收20具尸体
 		if(in_array(607,check_daily_achievement($nn,1)) && $isk>=20)
@@ -1635,7 +1635,7 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+250 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("神触",$nn);
+		get_title("神觸",$nn);
 		}
 		//604. 日常开启一次死斗
 		if(in_array(604,check_daily_achievement($nn,1)))
@@ -1668,7 +1668,7 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 		
-		get_title("补给掠夺者",$nn);
+		get_title("補給掠奪者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(29,$nn)>=142857 && (check_achievement_rev(29,$nn)<2)) {
 		done_achievement_rev(29,2,$nn);
@@ -1693,14 +1693,14 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 		
-		get_title("贝爷",$nn);
+		get_title("貝爺",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(30,$nn)>=133 && (check_achievement_rev(30,$nn)<2)) {
 		done_achievement_rev(30,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 		
-		get_title("神农",$nn);
+		get_title("神農",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(30,$nn)>=5 && (check_achievement_rev(30,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -1719,25 +1719,25 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("脚底抹油",$nn);
+			get_title("腳底抹油",$nn);
 			}
 			elseif ((int)fetch_achievement_rev(34,$nn)>=36 && (check_achievement_rev(34,$nn)<2)) {
 			done_achievement_rev(34,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits+50 WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("现实主义者",$nn);
+			get_title("現實主義者",$nn);
 			}
 			elseif ((int)fetch_achievement_rev(34,$nn)>=1 && (check_achievement_rev(34,$nn)<1)) {
 			done_achievement_rev(34,1,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits+10 WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+5 WHERE username='".$nn."'" );
 			
-			get_title("实用主义者",$nn);
+			get_title("實用主義者",$nn);
 			}
 	}
 	//53. 打钉子成就
-	if (preg_match ( "/钉$/", $i ) || preg_match ( "/钉\[/", $i )){
+	if (preg_match ( "/釘$/", $i ) || preg_match ( "/釘\[/", $i )){
 		$enhance=$ie;
 		$uu=((int)fetch_achievement_rev(53,$nn))+$enhance;
 		if ($uu>9999999) $uu=9999999;
@@ -1747,14 +1747,14 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("无情打钉者",$nn);
+			get_title("無情打釘者",$nn);
 			}
 			elseif ((int)fetch_achievement_rev(53,$nn)>=1777 && (check_achievement_rev(53,$nn)<2)) {
 			done_achievement_rev(53,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("棍棒爱好者",$nn);
+			get_title("棍棒愛好者",$nn);
 			}
 			elseif ((int)fetch_achievement_rev(53,$nn)>=777 && (check_achievement_rev(53,$nn)<1)) {
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -1773,14 +1773,14 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("无情磨刀者",$nn);
+			get_title("無情磨刀者",$nn);
 			}
 			elseif ((int)fetch_achievement_rev(54,$nn)>=1777 && (check_achievement_rev(54,$nn)<2)) {
 			done_achievement_rev(54,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("磨刀爱好者",$nn);
+			get_title("磨刀愛好者",$nn);
 			}
 			elseif ((int)fetch_achievement_rev(54,$nn)>=777 && (check_achievement_rev(54,$nn)<1)) {
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -1789,7 +1789,7 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 			}
 	}
 	//55. 针线包成就
-	if ($i == "针线包"){
+	if ($i == "針線包"){
 		$enhance=$ie;
 		$uu=((int)fetch_achievement_rev(55,$nn))+$enhance;
 		if ($uu>9999999) $uu=9999999;
@@ -1799,14 +1799,14 @@ function check_item_achievement_rev($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 		
-		get_title("无情补丁",$nn);
+		get_title("無情補丁",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(55,$nn)>=1777 && (check_achievement_rev(55,$nn)<2)) {
 		done_achievement_rev(55,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 		
-		get_title("补丁爱好者",$nn);
+		get_title("補丁愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement_rev(55,$nn)>=777 && (check_achievement_rev(55,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2204,7 +2204,7 @@ function check_mixitem_achievement($nn,$item)
 {
 	global $now,$validtime,$starttime,$gamecfg,$name,$db,$gtablepre;
 	//0. KEY弹成就
-	if ($item=="【KEY系催泪弹】") 
+	if ($item=="【KEY系催淚彈】") 
 	{
 		update_achievement(0,$nn,((int)fetch_achievement(0,$nn))+1);
 		if ((int)fetch_achievement(0,$nn)>=30 && (check_achievement(0,$nn)<999)) {
@@ -2228,7 +2228,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//1. 快速KEY弹成就
-	if ($item=="【KEY系催泪弹】")
+	if ($item=="【KEY系催淚彈】")
 	{
 		$timeused=$now-$starttime; $besttime=(int)fetch_achievement(1,$nn);
 		if ($timeused<$besttime || $besttime==0) update_achievement(1,$nn,$timeused);
@@ -2241,7 +2241,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//14. 燃烧弹成就
-	if ($item=="【KEY系燃烧弹】") 
+	if ($item=="【KEY系燃燒彈】") 
 	{
 		update_achievement(14,$nn,((int)fetch_achievement(14,$nn))+1);
 		if ((int)fetch_achievement(14,$nn)>=30 && (check_achievement(14,$nn)<999)) {
@@ -2256,7 +2256,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+200 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("树形图",$nn);
+		get_title("樹形圖",$nn);
 		}
 		elseif ((int)fetch_achievement(14,$nn)>=1 && (check_achievement(14,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2265,7 +2265,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//15. 生命弹成就
-	if ($item=="【KEY系生命弹】") 
+	if ($item=="【KEY系生命彈】") 
 	{
 		update_achievement(15,$nn,((int)fetch_achievement(15,$nn))+1);
 		if ((int)fetch_achievement(15,$nn)>=30 && (check_achievement(15,$nn)<999)) {
@@ -2273,7 +2273,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("未来战士",$nn);
+		get_title("未來戰士",$nn);
 		}
 		elseif ((int)fetch_achievement(15,$nn)>=5 && (check_achievement(15,$nn)<2)) {
 		done_achievement(15,2,$nn);
@@ -2289,7 +2289,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//33. 诅咒刀成就
-	if ($item=="影刀【秋岚】") 
+	if ($item=="影刀【秋嵐】") 
 	{
 		update_achievement(33,$nn,((int)fetch_achievement(33,$nn))+1);
 		if ((int)fetch_achievement(33,$nn)>=1 && (check_achievement(33,$nn)<999)) {
@@ -2297,11 +2297,11 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+522 WHERE username='".$nn."'" );
 		
-		get_title("剑圣",$nn);
+		get_title("劍聖",$nn);
 		}
 	}
 	//35. 『T-LINK念动冲拳』成就
-	if ($item=="『T-LINK念动冲拳』") 
+	if ($item=="『T-LINK念動衝拳』") 
 	{
 		update_achievement(35,$nn,((int)fetch_achievement(35,$nn))+1);
 		if ((int)fetch_achievement(35,$nn)>=111 && (check_achievement(35,$nn)<999)) {
@@ -2309,14 +2309,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("殴系爱好者",$nn);
+		get_title("毆系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(35,$nn)>=51 && (check_achievement(35,$nn)<2)) {
 		done_achievement(35,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("热血机师",$nn);
+		get_title("熱血機師",$nn);
 		}
 		elseif ((int)fetch_achievement(35,$nn)>=1 && (check_achievement(35,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2333,14 +2333,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("斩系爱好者",$nn);
+		get_title("斬系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(36,$nn)>=51 && (check_achievement(36,$nn)<2)) {
 		done_achievement(36,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("苍蓝之光",$nn);
+		get_title("蒼藍之光",$nn);
 		}
 		elseif ((int)fetch_achievement(36,$nn)>=1 && (check_achievement(36,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2357,14 +2357,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("钥刃大师",$nn);
+		get_title("鑰刃大師",$nn);
 		}
 		elseif ((int)fetch_achievement(37,$nn)>=51 && (check_achievement(37,$nn)<2)) {
 		done_achievement(37,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("合二为一",$nn);
+		get_title("合二為一",$nn);
 		}
 		elseif ((int)fetch_achievement(37,$nn)>=1 && (check_achievement(37,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2373,7 +2373,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//38. 『迷你鲨』成就
-	if ($item=="『迷你鲨』") 
+	if ($item=="『迷你鯊』") 
 	{
 		update_achievement(38,$nn,((int)fetch_achievement(38,$nn))+1);
 		if ((int)fetch_achievement(38,$nn)>=111 && (check_achievement(38,$nn)<999)) {
@@ -2381,14 +2381,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("射系爱好者",$nn);
+		get_title("射系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(38,$nn)>=51 && (check_achievement(38,$nn)<2)) {
 		done_achievement(37,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("勇闯仙境",$nn);
+		get_title("勇闖仙境",$nn);
 		}
 		elseif ((int)fetch_achievement(38,$nn)>=1 && (check_achievement(38,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2397,7 +2397,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//39. ☆金色闪光☆成就
-	if ($item=="☆金色闪光☆") 
+	if ($item=="☆金色閃光☆") 
 	{
 		update_achievement(39,$nn,((int)fetch_achievement(39,$nn))+1);
 		if ((int)fetch_achievement(39,$nn)>=111 && (check_achievement(39,$nn)<999)) {
@@ -2405,14 +2405,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("重枪爱好者",$nn);
+		get_title("重槍愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(39,$nn)>=51 && (check_achievement(39,$nn)<2)) {
 		done_achievement(39,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("黑洞边缘",$nn);
+		get_title("黑洞邊緣",$nn);
 		}
 		elseif ((int)fetch_achievement(39,$nn)>=1 && (check_achievement(39,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2421,7 +2421,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//40. 星尘龙 ★8成就
-	if ($item=="星尘龙 ★8") 
+	if ($item=="星塵龍 ★8") 
 	{
 		update_achievement(40,$nn,((int)fetch_achievement(40,$nn))+1);
 		if ((int)fetch_achievement(40,$nn)>=111 && (check_achievement(40,$nn)<999)) {
@@ -2429,7 +2429,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("决斗者",$nn);
+		get_title("決鬥者",$nn);
 		}
 		elseif ((int)fetch_achievement(40,$nn)>=51 && (check_achievement(40,$nn)<2)) {
 		done_achievement(40,2,$nn);
@@ -2445,7 +2445,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//41. 流星龙 ★10成就
-	if ($item=="流星龙 ★10") 
+	if ($item=="流星龍 ★10") 
 	{
 		update_achievement(41,$nn,((int)fetch_achievement(41,$nn))+1);
 		if ((int)fetch_achievement(41,$nn)>=111 && (check_achievement(41,$nn)<999)) {
@@ -2453,14 +2453,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("聚集的祈愿",$nn);
+		get_title("聚集的祈願",$nn);
 		}
 		elseif ((int)fetch_achievement(41,$nn)>=51 && (check_achievement(41,$nn)<2)) {
 		done_achievement(41,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("加速同调",$nn);
+		get_title("加速同調",$nn);
 		}
 		elseif ((int)fetch_achievement(41,$nn)>=1 && (check_achievement(41,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2469,7 +2469,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//42. 《小黄的超级球》成就
-	if ($item=="《小黄的超级球》") 
+	if ($item=="《小黃的超級球》") 
 	{
 		update_achievement(42,$nn,((int)fetch_achievement(42,$nn))+1);
 		if ((int)fetch_achievement(42,$nn)>=111 && (check_achievement(42,$nn)<999)) {
@@ -2477,7 +2477,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("投系爱好者",$nn);
+		get_title("投系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(42,$nn)>=51 && (check_achievement(42,$nn)<2)) {
 		done_achievement(42,2,$nn);
@@ -2493,7 +2493,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//43. 莫洛托夫鸡尾酒成就
-	if ($item=="莫洛托夫鸡尾酒") 
+	if ($item=="莫洛托夫雞尾酒") 
 	{
 		update_achievement(43,$nn,((int)fetch_achievement(43,$nn))+1);
 		if ((int)fetch_achievement(43,$nn)>=111 && (check_achievement(43,$nn)<999)) {
@@ -2501,14 +2501,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("爆系爱好者",$nn);
+		get_title("爆系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(43,$nn)>=51 && (check_achievement(43,$nn)<2)) {
 		done_achievement(43,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("红烧天堂",$nn);
+		get_title("紅燒天堂",$nn);
 		}
 		elseif ((int)fetch_achievement(43,$nn)>=1 && (check_achievement(43,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2549,7 +2549,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("灵系爱好者",$nn);
+		get_title("靈系愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(45,$nn)>=51 && (check_achievement(45,$nn)<2)) {
 		done_achievement(45,2,$nn);
@@ -2565,7 +2565,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//46. 火水木金土符『贤者之石』成就
-	if ($item=="火水木金土符『贤者之石』") 
+	if ($item=="火水木金土符『賢者之石』") 
 	{
 		update_achievement(46,$nn,((int)fetch_achievement(46,$nn))+1);
 		if ((int)fetch_achievement(46,$nn)>=111 && (check_achievement(46,$nn)<999)) {
@@ -2573,14 +2573,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("贤者之石",$nn);
+		get_title("賢者之石",$nn);
 		}
 		elseif ((int)fetch_achievement(46,$nn)>=51 && (check_achievement(46,$nn)<2)) {
 		done_achievement(46,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("五行大师",$nn);
+		get_title("五行大師",$nn);
 		}
 		elseif ((int)fetch_achievement(46,$nn)>=1 && (check_achievement(46,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2589,7 +2589,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//47. 广域生命探测器成就
-	if ($item=="广域生命探测器") 
+	if ($item=="廣域生命探測器") 
 	{
 		update_achievement(47,$nn,((int)fetch_achievement(47,$nn))+1);
 		if ((int)fetch_achievement(47,$nn)>=111 && (check_achievement(47,$nn)<999)) {
@@ -2613,7 +2613,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//48. 法式面包棍棒成就
-	if ($item=="法式面包棍棒") 
+	if ($item=="法式麪包棍棒") 
 	{
 		update_achievement(48,$nn,((int)fetch_achievement(48,$nn))+1);
 		if ((int)fetch_achievement(48,$nn)>=111 && (check_achievement(48,$nn)<999)) {
@@ -2621,14 +2621,14 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+350 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("混沌的深渊",$nn);
+		get_title("混沌的深淵",$nn);
 		}
 		elseif ((int)fetch_achievement(48,$nn)>=51 && (check_achievement(48,$nn)<2)) {
 		done_achievement(48,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("混沌爱好者",$nn);
+		get_title("混沌愛好者",$nn);
 		}
 		elseif ((int)fetch_achievement(48,$nn)>=1 && (check_achievement(48,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2637,7 +2637,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//49. 【春雨夏海，秋叶冬雪】挑战成就
-	if ($item=="【春雨夏海，秋叶冬雪】") 
+	if ($item=="【春雨夏海，秋葉冬雪】") 
 	{
 		update_achievement(49,$nn,((int)fetch_achievement(49,$nn))+1);
 		if ((int)fetch_achievement(49,$nn)>=7 && (check_achievement(49,$nn)<999)) {
@@ -2645,7 +2645,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("键·四季赞歌",$nn);
+		get_title("鍵·四季讚歌",$nn);
 		}
 		elseif ((int)fetch_achievement(49,$nn)>=1 && (check_achievement(49,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2654,7 +2654,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//50. ★一发逆转神话★挑战成就
-	if ($item=="★一发逆转神话★") 
+	if ($item=="★一發逆轉神話★") 
 	{
 		update_achievement(50,$nn,((int)fetch_achievement(50,$nn))+1);
 		if ((int)fetch_achievement(50,$nn)>=7 && (check_achievement(50,$nn)<999)) {
@@ -2662,7 +2662,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("★一发逆转！★",$nn);
+		get_title("★一發逆轉！★",$nn);
 		}
 		elseif ((int)fetch_achievement(50,$nn)>=1 && (check_achievement(50,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2688,7 +2688,7 @@ function check_mixitem_achievement($nn,$item)
 		}
 	}
 	//52. ◎光之创造神◎挑战成就
-	if ($item=="◎光之创造神◎") 
+	if ($item=="◎光之創造神◎") 
 	{
 		update_achievement(52,$nn,((int)fetch_achievement(52,$nn))+1);
 		if ((int)fetch_achievement(52,$nn)>=7 && (check_achievement(52,$nn)<999)) {
@@ -2696,7 +2696,7 @@ function check_mixitem_achievement($nn,$item)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+700 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("◎胜利之光◎",$nn);
+		get_title("◎勝利之光◎",$nn);
 		}
 		elseif ((int)fetch_achievement(52,$nn)>=1 && (check_achievement(52,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -2731,7 +2731,7 @@ function check_end_achievement($w,$m)
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+100 WHERE username='".$w."'" );
 		done_achievement(17,999,$w);
 		
-		get_title("叶子钦定！",$w);
+		get_title("葉子欽定！",$w);
 		}
 	}
 	//18. 锁定解除成就
@@ -2743,7 +2743,7 @@ function check_end_achievement($w,$m)
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$w."'" );
 		done_achievement(18,999,$w);
 		
-		get_title("最后的荣光",$w);
+		get_title("最後的榮光",$w);
 		}
 	}
 	//19. 幻境解离成就
@@ -2755,7 +2755,7 @@ function check_end_achievement($w,$m)
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+1000 WHERE username='".$w."'" );
 		done_achievement(19,999,$w);
 		
-		get_title("奇迹的篝火",$w);
+		get_title("奇蹟的篝火",$w);
 		}
 	}
 }
@@ -2794,13 +2794,13 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 	{
 		$result = $db->query("SELECT nicks FROM {$gtablepre}users WHERE username = '$killname'");
 		$ns = $db->result($result, 0);
-		if ((strpos($ns,"KEY男")!==false)&&($wp=='【KEY系催泪弹】')){
+		if ((strpos($ns,"KEY男")!==false)&&($wp=='【KEY系催淚彈】')){
 			update_achievement(31,$nn,((int)fetch_achievement(31,$nn))+1);
 			if ((int)fetch_achievement(31,$nn)>=1 && (check_achievement(31,$nn)<999)) {
 				done_achievement(31,999,$nn);
 				
 				get_title("R.T.S",$nn);
-				get_title("善有善报",$killname);
+				get_title("善有善報",$killname);
 				}
 		}
 	}
@@ -2828,7 +2828,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+500 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+15 WHERE username='".$nn."'" );
 		
-		get_title("最后一步",$nn);
+		get_title("最後一步",$nn);
 		}
 		elseif ((int)fetch_achievement(3,$nn)>=500 && (check_achievement(3,$nn)<2)) {
 		done_achievement(3,2,$nn);
@@ -2844,13 +2844,13 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		}
 	}
 	//4. 推倒红暮成就
-	if ($is_npc && ($killname=="红暮" || $killname=="红杀将军 红暮")) 
+	if ($is_npc && ($killname=="紅暮" || $killname=="紅殺將軍 紅暮")) 
 	{
 		update_achievement(4,$nn,((int)fetch_achievement(4,$nn))+1);
 		if ((int)fetch_achievement(4,$nn)>=9 && (check_achievement(4,$nn)<999)) {
 		done_achievement(4,999,$nn);
 		
-		get_title("越红者",$nn);
+		get_title("越紅者",$nn);
 		}
 		elseif ((int)fetch_achievement(4,$nn)>=1 && (check_achievement(4,$nn)<1)) {
 		done_achievement(4,1,$nn);
@@ -2859,13 +2859,13 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		}
 	}
 	//13. 推倒蓝凝成就
-	if ($is_npc && ($killname=="蓝凝" || $killname=="红杀菁英 蓝凝")) 
+	if ($is_npc && ($killname=="藍凝" || $killname=="紅殺菁英 藍凝")) 
 	{
 		update_achievement(13,$nn,((int)fetch_achievement(13,$nn))+1);
 		if ((int)fetch_achievement(13,$nn)>=3 && (check_achievement(13,$nn)<999)) {
 		done_achievement(13,999,$nn);
 		
-		get_title("跨过彩虹",$nn);
+		get_title("跨過彩虹",$nn);
 		}
 		elseif ((int)fetch_achievement(13,$nn)>=1 && (check_achievement(13,$nn)<1)) {
 		done_achievement(13,1,$nn);
@@ -2874,7 +2874,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		}
 	}
 	//20. 击破虚子成就
-	if ($is_npc && ($killname=="虚子" || $killname=="武神 虚子")) 
+	if ($is_npc && ($killname=="虛子" || $killname=="武神 虛子")) 
 	{
 		update_achievement(20,$nn,((int)fetch_achievement(20,$nn))+1);
 		if ((int)fetch_achievement(20,$nn)>=1 && (check_achievement(20,$nn)<999)) {
@@ -2882,7 +2882,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+268 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+263 WHERE username='".$nn."'" );
 		
-		get_title("寻星者",$nn);
+		get_title("尋星者",$nn);
 		}
 	}
 	//21. 击破水月成就
@@ -2894,7 +2894,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+233 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+233 WHERE username='".$nn."'" );
 		
-		get_title("寂静洪流",$nn);
+		get_title("寂靜洪流",$nn);
 		}
 	}
 	//22. 击破冴冴成就
@@ -2910,7 +2910,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		}
 	}
 	//23. 击破四面成就
-	if ($is_npc && ($killname=="星莲船四面BOSS" || $killname=="天神 星莲船四面BOSS")) 
+	if ($is_npc && ($killname=="星蓮船四面BOSS" || $killname=="天神 星蓮船四面BOSS")) 
 	{
 		update_achievement(23,$nn,((int)fetch_achievement(23,$nn))+1);
 		if ((int)fetch_achievement(23,$nn)>=1 && (check_achievement(23,$nn)<999)) {
@@ -2918,7 +2918,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+888 WHERE username='".$nn."'" );
 		
-		get_title("赌玉狂魔",$nn);
+		get_title("賭玉狂魔",$nn);
 		}
 	}
 	//24. 击破北京成就
@@ -2930,7 +2930,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+211 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+299 WHERE username='".$nn."'" );
 		
-		get_title("时代眼泪",$nn);
+		get_title("時代眼淚",$nn);
 		}
 	}
 	//25. 击破yoshiko成就
@@ -2946,7 +2946,7 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		}
 	}
 	//26. 击破吉祥物成就
-	if ($is_npc && ($killname=="便当盒" || $killname=="真职人 便当盒")) 
+	if ($is_npc && ($killname=="便當盒" || $killname=="真職人 便當盒")) 
 	{
 		update_achievement(26,$nn,((int)fetch_achievement(26,$nn))+1);
 		if ((int)fetch_achievement(26,$nn)>=1 && (check_achievement(26,$nn)<999)) {
@@ -2988,14 +2988,14 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+250 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("除错大师",$nn);
+		get_title("除錯大師",$nn);
 		}
 		elseif ((int)fetch_achievement(56,$nn)>=180 && (check_achievement(56,$nn)<2)) {
 		done_achievement(56,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("都市传说",$nn);
+		get_title("都市傳説",$nn);
 		}
 		elseif ((int)fetch_achievement(56,$nn)>=1 && (check_achievement(56,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -3012,14 +3012,14 @@ function check_battle_achievement($n,$is_npc,$killname,$wp)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+250 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("暴雷骤雨",$nn);
+		get_title("暴雷驟雨",$nn);
 		}
 		elseif ((int)fetch_achievement(57,$nn)>=52 && (check_achievement(57,$nn)<2)) {
 		done_achievement(57,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("风驰电掣",$nn);
+		get_title("風馳電掣",$nn);
 		}
 		elseif ((int)fetch_achievement(57,$nn)>=1 && (check_achievement(57,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -3044,7 +3044,7 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits+250 WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2 WHERE username='".$nn."'" );
 		
-		get_title("神触",$nn);
+		get_title("神觸",$nn);
 		}
 	}
 	//29. 美食成就
@@ -3060,7 +3060,7 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 		
-		get_title("补给掠夺者",$nn);
+		get_title("補給掠奪者",$nn);
 		}
 		elseif ((int)fetch_achievement(29,$nn)>=142857 && (check_achievement(29,$nn)<2)) {
 		done_achievement(29,2,$nn);
@@ -3085,14 +3085,14 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 		
-		get_title("贝爷",$nn);
+		get_title("貝爺",$nn);
 		}
 		elseif ((int)fetch_achievement(30,$nn)>=133 && (check_achievement(30,$nn)<2)) {
 		done_achievement(30,2,$nn);
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 		$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 		
-		get_title("神农",$nn);
+		get_title("神農",$nn);
 		}
 		elseif ((int)fetch_achievement(30,$nn)>=5 && (check_achievement(30,$nn)<1)) {
 		$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -3111,25 +3111,25 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits+100 WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("脚底抹油",$nn);
+			get_title("腳底抹油",$nn);
 			}
 			elseif ((int)fetch_achievement(34,$nn)>=36 && (check_achievement(34,$nn)<2)) {
 			done_achievement(34,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits+50 WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("现实主义者",$nn);
+			get_title("現實主義者",$nn);
 			}
 			elseif ((int)fetch_achievement(34,$nn)>=1 && (check_achievement(34,$nn)<1)) {
 			done_achievement(34,1,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits+10 WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+5 WHERE username='".$nn."'" );
 			
-			get_title("实用主义者",$nn);
+			get_title("實用主義者",$nn);
 			}
 	}
 	//53. 打钉子成就
-	if (preg_match ( "/钉$/", $i ) || preg_match ( "/钉\[/", $i )){
+	if (preg_match ( "/釘$/", $i ) || preg_match ( "/釘\[/", $i )){
 		$enhance=$ie;
 		$uu=((int)fetch_achievement(53,$nn))+$enhance;
 		if ($uu>9999999) $uu=9999999;
@@ -3139,14 +3139,14 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("无情打钉者",$nn);
+			get_title("無情打釘者",$nn);
 			}
 			elseif ((int)fetch_achievement(53,$nn)>=1777 && (check_achievement(53,$nn)<2)) {
 			done_achievement(53,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("棍棒爱好者",$nn);
+			get_title("棍棒愛好者",$nn);
 			}
 			elseif ((int)fetch_achievement(53,$nn)>=777 && (check_achievement(53,$nn)<1)) {
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -3165,14 +3165,14 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("无情磨刀者",$nn);
+			get_title("無情磨刀者",$nn);
 			}
 			elseif ((int)fetch_achievement(54,$nn)>=1777 && (check_achievement(54,$nn)<2)) {
 			done_achievement(54,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("磨刀爱好者",$nn);
+			get_title("磨刀愛好者",$nn);
 			}
 			elseif ((int)fetch_achievement(54,$nn)>=777 && (check_achievement(54,$nn)<1)) {
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
@@ -3181,7 +3181,7 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 			}
 	}
 	//55. 针线包成就
-	if ($i == "针线包"){
+	if ($i == "針線包"){
 		$enhance=$ie;
 		$uu=((int)fetch_achievement(55,$nn))+$enhance;
 		if ($uu>9999999) $uu=9999999;
@@ -3191,14 +3191,14 @@ function check_item_achievement($nn,$i,$ie,$is,$ik,$isk)
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+200 WHERE username='".$nn."'" );
 			
-			get_title("无情补丁",$nn);
+			get_title("無情補丁",$nn);
 			}
 			elseif ((int)fetch_achievement(55,$nn)>=1777 && (check_achievement(55,$nn)<2)) {
 			done_achievement(55,2,$nn);
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );
 			$db->query("UPDATE {$gtablepre}users SET credits2=credits2+50 WHERE username='".$nn."'" );
 			
-			get_title("补丁爱好者",$nn);
+			get_title("補丁愛好者",$nn);
 			}
 			elseif ((int)fetch_achievement(55,$nn)>=777 && (check_achievement(55,$nn)<1)) {
 			$db->query("UPDATE {$gtablepre}users SET credits=credits WHERE username='".$nn."'" );

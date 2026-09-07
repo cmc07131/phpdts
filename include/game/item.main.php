@@ -25,7 +25,7 @@ function itemuse($itmn,&$data=NULL) {
 	extract($data,EXTR_REFS);
 
 	if (($itmn < 1 || $itmn > 6) && $itmn != 0 ){
-		$log .= '此道具不存在，请重新选择。';
+		$log .= '此道具不存在，請重新選擇。';
 		$mode = 'command';
 		return;
 	}
@@ -44,15 +44,15 @@ function itemuse($itmn,&$data=NULL) {
 	if (($itms <= 0) && ($itms != $nosta)) {
 		$itm = $itmk = $itmsk = '';
 		$itme = $itms = 0;
-		$log .= '此道具不存在，请重新选择。<br>';
+		$log .= '此道具不存在，請重新選擇。<br>';
 		$mode = 'command';
 		return;
 	}
 
 	//If you are dead, you can't use items!
 	if ($hp <= 0) {
-		$log .= '你的大脑看起来仍旧想挣扎一下，但你的手已经动不了了，挣扎似乎也没有什么意义。<br>';
-		$log .= '你已经死亡，无法使用道具。<br>';
+		$log .= '你的大腦看起來仍舊想掙扎一下，但你的手已經動不了了，掙扎似乎也沒有什麼意義。<br>';
+		$log .= '你已經死亡，無法使用道具。<br>';
 		$mode = 'command';
 		return;
 	}
@@ -160,7 +160,7 @@ function itemuse($itmn,&$data=NULL) {
 	} elseif(strpos($itmk, 'EW') === 0) {
 		// Weather control
 		item_weather($itmn, $data);
-	} elseif(strpos($itmk, 'EE') === 0 || $itm == '移动PC') {
+	} elseif(strpos($itmk, 'EE') === 0 || $itm == '移動PC') {
 		// Electronic devices
 		item_electronic($itmn, $data);
 	} elseif(strpos($itmk, 'ER') === 0) {
@@ -221,13 +221,13 @@ function itemuse($itmn,&$data=NULL) {
 	}
 
 	//元素大师使用提示纸条的特殊效果：
-	if(strpos($ik,'💝')!==0 && !platform_is_recorder_item($ipara) && $club == 20 && strpos($itmk,'Y')===0 && strpos($itm,'提示纸条')!==false)
+	if(strpos($ik,'💝')!==0 && !platform_is_recorder_item($ipara) && $club == 20 && strpos($itmk,'Y')===0 && strpos($itm,'提示紙條')!==false)
 	{
-		$log.="<br>就在你读完内容打算把纸条收起来时，你愕然发现纸条背面竟然还有字！<br><br>";
+		$log.="<br>就在你讀完內容打算把紙條收起來時，你愕然發現紙條背面竟然還有字！<br><br>";
 		include config('elementmix',$gamecfg);
 		$log.= $emix_slip[array_rand($emix_slip)];
 		//除商店纸条外：提供一条元素特征（TODO）、或一条固定配方、或一条随机属性组合
-		$log .= "<br><span class='yellow'>附：见面有缘，再送你一条提示吧：<br>“将带有";
+		$log .= "<br><span class='yellow'>附：見面有緣，再送你一條提示吧：<br>“將帶有";
 		if(!preg_match('/(A|B|C|D)/',$itm))
 		{
 				//野生纸条：给随机属性组合提示
@@ -236,9 +236,9 @@ function itemuse($itmn,&$data=NULL) {
 		$s_id = array_rand($submix_list);
 		$s_result = $itemspkinfo[$submix_list[$s_id]['result']];
 		foreach($submix_list[$s_id]['stuff'] as $skey) $log .= "【$itemspkinfo[$skey]】";
-		$log .= "特征的元素组合起来，就有机会组合出【{$s_result}】属性。”</span><br>";
+		$log .= "特徵的元素組合起來，就有機會組合出【{$s_result}】屬性。”</span><br>";
 		//阅后即焚
-		$log .="<br>……说这么多鬼记得住啊！<br>你思考了一下，决定把{$itm}吃进肚子里，以便慢慢消化其中的知识。<br>";
+		$log .="<br>……説這麼多鬼記得住啊！<br>你思考了一下，決定把{$itm}吃進肚子裏，以便慢慢消化其中的知識。<br>";
 		if ($itms != $nosta) {
 			$itms--;
 		}

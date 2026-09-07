@@ -226,7 +226,7 @@
 				$pd['hp'] = max($wth18_obbs,1);
 				$pd['sp'] = max($wth18_obbs,1);
 				$pd['state'] = 0;
-				$log.= "<span class=\"lime\">但是，飞舞着的光玉们钻进了{$pd['nm']}的身体，让{$pd['nm']}重新站了起来！</span><br>";;
+				$log.= "<span class=\"lime\">但是，飛舞着的光玉們鑽進了{$pd['nm']}的身體，讓{$pd['nm']}重新站了起來！</span><br>";;
 				return $revival_flag;
 			}
 		}
@@ -244,7 +244,7 @@
 				$pd['hp'] = max($aurora_dice,1);
 				$pd['sp'] = max($aurora_dice,1);
 				$pd['state'] = 0;
-				$log.= "<span class=\"lime\">但是，空气中弥漫着的奥罗拉让{$pd['nm']}重新站了起来！</span><br>";;
+				$log.= "<span class=\"lime\">但是，空氣中瀰漫着的奧羅拉讓{$pd['nm']}重新站了起來！</span><br>";;
 				return $revival_flag;
 			}
 		}
@@ -301,7 +301,7 @@
 			//死者是玩家，增加击杀数并保存系统状况。
 			$pa['killnum'] ++;
 			$alivenum --;
-			if(!empty($last)) $log .= "<span class='evergreen'>{$pd['nm']}用尽最后的力气喊道：“".$last."”</span><br>";
+			if(!empty($last)) $log .= "<span class='evergreen'>{$pd['nm']}用盡最後的力氣喊道：“".$last."”</span><br>";
 		}
 		else
 		{
@@ -317,7 +317,7 @@
 			$pname = $pa['name'];
 			$result = $db->query("SELECT killmsg FROM {$gtablepre}users WHERE username = '$pname'");
 			$killmsg = $db->result($result,0);
-			if(!empty($killmsg)) $log .= "<span class=\"evergreen\">{$pa['nm']}对{$pd['nm']}说：“{$killmsg}”</span><br>";
+			if(!empty($killmsg)) $log .= "<span class=\"evergreen\">{$pa['nm']}對{$pd['nm']}説：“{$killmsg}”</span><br>";
 		}
 		else
 		{
@@ -364,7 +364,7 @@
 		{
 			$pa['clbpara']['achvars']['kill_n14'] += 1;
 			# 不一定是一击秒杀……但是先这样吧^ ^;
-			if($pd['name'] == '守卫者 静流' && $pa['final_damage'] >= $pd['mhp']) $pa['clbpara']['achvars']['ach505'] = 1;
+			if($pd['name'] == '守衞者 靜流' && $pa['final_damage'] >= $pd['mhp']) $pa['clbpara']['achvars']['ach505'] = 1;
 		}
 
 		# Process 百命猫 Kills
@@ -404,7 +404,7 @@
 		# 快递被劫事件：
 		if(isset($pd['clbpara']['post']))
 		{
-			$log.="<span class='sienna'>某样东西从{$pd['name']}身上掉了出来……</span><br>";
+			$log.="<span class='sienna'>某樣東西從{$pd['name']}身上掉了出來……</span><br>";
 			//获取快递信息
 			$iid = $pd['clbpara']['postid'];
 			//获取金主信息
@@ -426,7 +426,7 @@
 			// 哈哈，放了！
 			if(!empty($pd[$equip.'s']) && strpos($pd[$equip.'sk'],'v')!==false)
 			{
-				$log .= "伴随着{$pd['nm']}的死亡，<span class=\"yellow\">{$pd[$equip]}</span>化作灰烬消散了。<br>";
+				$log .= "伴隨着{$pd['nm']}的死亡，<span class=\"yellow\">{$pd[$equip]}</span>化作灰燼消散了。<br>";
 				include_once GAME_ROOT.'./include/game/itemmain.func.php';
 				destory_single_equip($pd,$equip);
 			}
@@ -435,7 +435,7 @@
 		{
 			if(!empty($pd['itms'.$i]) && strpos($pd['itmsk'.$i],'v')!==false)
 			{
-				$log .= "伴随着{$pd['nm']}的死亡，<span class=\"yellow\">{$pd['itm'.$i]}</span>化作灰烬消散了。<br>";
+				$log .= "伴隨着{$pd['nm']}的死亡，<span class=\"yellow\">{$pd['itm'.$i]}</span>化作灰燼消散了。<br>";
 				include_once GAME_ROOT.'./include/game/itemmain.func.php';
 				destory_single_item($pd,$i);
 			}
@@ -455,7 +455,7 @@
 			//获取抢钱率
 			$sk_p = get_skillvars('c4_loot','goldr');
 			$lootgold = $pa['lvl'] * $sk_p;
-			$log.="<span class='yellow'>「掠夺」使{$pa['nm']}获得了{$lootgold}元！</span><br>";
+			$log.="<span class='yellow'>「掠奪」使{$pa['nm']}獲得了{$lootgold}元！</span><br>";
 		}
 
 		# 「天威」技能判定
@@ -465,7 +465,7 @@
 			if(!empty($rageback))
 			{
 				$pa['rage'] = min(255,$pa['rage']+$rageback);
-				$log .= '<span class="yellow">「天威」使'.$pa['nm'].'的怒气回复了'.$rageback.'点！</span><br>';
+				$log .= '<span class="yellow">「天威」使'.$pa['nm'].'的怒氣回覆了'.$rageback.'點！</span><br>';
 			}
 		}
 
@@ -478,7 +478,7 @@
 			$sk_att_vars = get_skillvars('c12_bloody','attgain',$sk_lvl);
 			$sk_def_vars = get_skillvars('c12_bloody','defgain',$sk_lvl);
 			$pa['att'] += $sk_att_vars; $pa['def'] += $sk_def_vars;
-			$log .= '<span class="yellow">「浴血」使'.$pa['nm'].'的攻击增加了'.$sk_att_vars.'点，防御增加了'.$sk_def_vars.'点！</span><br>';
+			$log .= '<span class="yellow">「浴血」使'.$pa['nm'].'的攻擊增加了'.$sk_att_vars.'點，防禦增加了'.$sk_def_vars.'點！</span><br>';
 		}
 
 		# 佣兵死亡时，自动解除与雇主的雇佣关系
@@ -486,7 +486,7 @@
 		{
 			$odata = fetch_playerdata_by_pid($pd['clbpara']['oid']);
 			include_once GAME_ROOT.'./include/game/revclubskills_extra.func.php';
-			$log .= "<span clas='red'>由于战死，";
+			$log .= "<span clas='red'>由於戰死，";
 			skill_merc_fire('c11_merc',$pd['clbpara']['mkey'],$pd,1);
 		}
 		# 灵俑死亡时，从创造者的灵俑队列中删除
@@ -498,7 +498,7 @@
 			$zkey = array_search($pd['pid'],$odata['clbpara']['zombieid']);
 			unset($odata['clbpara']['zombieid'][$zkey]);
 			player_save($odata);
-			$w_log = "<span class=\"grey\">你的灵俑{$pd['name']}归于尘土了……</span><br>";
+			$w_log = "<span class=\"grey\">你的靈俑{$pd['name']}歸於塵土了……</span><br>";
 			logsave($odata['pid'],$now,$w_log,'c');
 		}
 
@@ -548,7 +548,7 @@
 		if ($pa['clbpara']['BGMBrand'] == 'azure'){
 			$check = diceroll(20);
 			if ($check > 17){
-				$pa['log'] .= "<span class=\"ltazure\">你想到了蓝凝的天真烂漫及没心没肺，<br>因此没受到杀人的罪恶感影响。<br></span>";
+				$pa['log'] .= "<span class=\"ltazure\">你想到了藍凝的天真爛漫及沒心沒肺，<br>因此沒受到殺人的罪惡感影響。<br></span>";
 				$rpup = 0;
 			}
 		}
@@ -586,7 +586,7 @@
 		# 「洁净」技能判定：战斗时无法获得经验值
 		if(!empty($pa['clbpara']['skill']) && in_array('npc_purity', $pa['clbpara']['skill']))
 		{
-			$log.='<span class="yellow">「洁净」使'.$pa['nm'].'无法获得经验值！</span><br>';
+			$log.='<span class="yellow">「潔淨」使'.$pa['nm'].'無法獲得經驗值！</span><br>';
 			return;
 		}
 
@@ -607,7 +607,7 @@
 			$sk_up = ceil($pd['lvl'] - ($pa['lvl']*0.15));
 			if($sk_up > 0)
 			{
-				$log.='<span class="yellow">「解构」使'.$pa['nm'].'获得了额外'.$sk_up.'点经验！</span><br>';
+				$log.='<span class="yellow">「解構」使'.$pa['nm'].'獲得了額外'.$sk_up.'點經驗！</span><br>';
 				$expup += $sk_up;
 			}
 		}
@@ -632,7 +632,7 @@
 		$up_exp_temp = round ( (2 * $pa['lvl'] + 1) * $baseexp );
 		if ($pa['exp'] >= $up_exp_temp && $pa['lvl'] < 255)
 		{
-			$sklanginfo = Array ('wp' => '殴熟', 'wk' => '斩熟', 'wg' => '射熟', 'wc' => '投熟', 'wd' => '爆熟', 'wf' => '灵熟', 'all' => '全系熟练度' );
+			$sklanginfo = Array ('wp' => '毆熟', 'wk' => '斬熟', 'wg' => '射熟', 'wc' => '投熟', 'wd' => '爆熟', 'wf' => '靈熟', 'all' => '全系熟練度' );
 			$sknlist = Array (1 => 'wp', 2 => 'wk', 3 => 'wc', 4 => 'wg', 5 => 'wd', 9 => 'wf', 12 => 'all' );
 			$skname = isset($sknlist[$pa['club']]) ? $sknlist[$pa['club']] : 0;
 			//升级判断
@@ -700,9 +700,9 @@
 			if ($skname) {
 				$sklog = "，{$sklanginfo[$skname]}+{$lvupskill}";
 			}
-			$lvlup_log = "<span class=\"yellow\">{$pa['nm']}升了{$lvup}级！生命上限+{$lvuphp}，体力上限+{$lvupsp}，攻击+{$lvupatt}，防御+{$lvupdef}";
+			$lvlup_log = "<span class=\"yellow\">{$pa['nm']}升了{$lvup}級！生命上限+{$lvuphp}，體力上限+{$lvupsp}，攻擊+{$lvupatt}，防禦+{$lvupdef}";
 			if(isset($sklog)) $lvlup_log .= $sklog;
-			$lvlup_log .= "，体力恢复了{$lvupspref}，获得了{$lvup}点技能点！</span><br>";
+			$lvlup_log .= "，體力恢復了{$lvupspref}，獲得了{$lvup}點技能點！</span><br>";
 			if(!$pa['type'])
 			{
 				if($pa['nm'] == '你') $log.= $lvlup_log;
@@ -934,7 +934,7 @@
 			$nums = $db->num_rows($result);
 			if($nums)
 			{
-				$log .= "在你闭目养神之际……似乎有什么东西戳了戳你的脸……<br>感觉身体轻松了不少。<br>";
+				$log .= "在你閉目養神之際……似乎有什麼東西戳了戳你的臉……<br>感覺身體輕鬆了不少。<br>";
 				$upsp += $nums * 10 * $rtime;
 			}
 		}
@@ -954,7 +954,7 @@
 			$nums = $db->num_rows($result);
 			if($nums)
 			{
-				$log .= "在你专心治疗伤口时……似乎有什么东西靠了过来……<br>伤口好像不那么疼了。<br>";
+				$log .= "在你專心治療傷口時……似乎有什麼東西靠了過來……<br>傷口好像不那麼疼了。<br>";
 				$uphp += $nums * 10 * $rtime;
 			}
 		}
@@ -988,9 +988,9 @@
 
 		//If you are dead, resting won't do you any good!
 		if ($hp <= 0) {
-			$log .= "你的大脑觉得你可能可以抢救一下，但你的心脏却突然掀开胸膛破口大骂：<span class=\"yellow\">“死都死了，治个屁！火化吧！”</span><br>
-			看起来这下治疗也没有什么用处了。<br>";
-			$log .= "你已经死亡，无法治疗。<br>";
+			$log .= "你的大腦覺得你可能可以搶救一下，但你的心臟卻突然掀開胸膛破口大罵：<span class=\"yellow\">“死都死了，治個屁！火化吧！”</span><br>
+			看起來這下治療也沒有什麼用處了。<br>";
+			$log .= "你已經死亡，無法治療。<br>";
 			return;
 		}
 
@@ -1002,8 +1002,8 @@
 			$sp += $upsp; $sp = min($sp, $msp);
 			$upsp = $sp - $oldsp;
 			$upsp=max(0,$upsp);
-			if(!$upsp && $sp >= $msp) $log .= "已经不需要休息了。";
-			else $log .= "你的体力恢复了<span class=\"yellow\">$upsp</span>点。";
+			if(!$upsp && $sp >= $msp) $log .= "已經不需要休息了。";
+			else $log .= "你的體力恢復了<span class=\"yellow\">$upsp</span>點。";
 		}
 
 		if ($state == 2 || $state == 3) {
@@ -1016,11 +1016,11 @@
 			# 「起迹」标记清除：
 			if($uphp > 0 && isset($clbpara['tl_oncemore_used'])) {
 				unset($clbpara['tl_oncemore_used']);
-				$log .= "<span class='yellow'>「起迹」技能恢复了效果！</span><br>";
+				$log .= "<span class='yellow'>「起跡」技能恢復了效果！</span><br>";
 			}
 
-			if(!$uphp && $hp >= $mhp) $log .= "没有伤口需要治疗了。";
-			else $log .= "你的生命恢复了<span class=\"yellow b\">$uphp</span>点。";
+			if(!$uphp && $hp >= $mhp) $log .= "沒有傷口需要治療了。";
+			else $log .= "你的生命恢復了<span class=\"yellow b\">$uphp</span>點。";
 		}
 
 		if($state == 3)
@@ -1029,7 +1029,7 @@
 			{
 				$rageup = min(255-$rage,calculate_rest_rageup($resttime,$data));
 				$rage += $rageup;
-				$log .= "<br>但你在病床上辗转反侧，脑中回忆起种种倒霉遭遇，忍不住越想越气！<br>怒气增加了<span class=\"yellow\">$rageup</span>点！";
+				$log .= "<br>但你在病牀上輾轉反側，腦中回憶起種種倒黴遭遇，忍不住越想越氣！<br>怒氣增加了<span class=\"yellow\">$rageup</span>點！";
 			}
 			if (!empty($inf))
 			{
@@ -1051,14 +1051,14 @@
 							$refinfstr = substr($spinf,$infno,1);
 							$inf = str_replace($refinfstr,'',$inf);
 							$spinf = str_replace($refinfstr,'',$spinf);
-							$log .= "<span class=\"yellow\">你从{$exdmginf[$refinfstr]}状态中恢复了！</span><br>";
+							$log .= "<span class=\"yellow\">你從{$exdmginf[$refinfstr]}狀態中恢復了！</span><br>";
 							$spinflength -= 1;
 							$refflag = true;
 						}
 						$resttime -= $refintv;
 					} while ($resttime > 0 && $spinflength > 0);
 					if(!$refflag){
-						$log .= "也许是时间不够吧……你没有治好任何异常状态。<br>";
+						$log .= "也許是時間不夠吧……你沒有治好任何異常狀態。<br>";
 					}
 				}
 			}
@@ -1086,7 +1086,7 @@
 		//睡眠时会提示的NPC类别，依次是全息，豆腐，黑幕，真职人，DF，妖精，女主，武神，巫师，歌神，电掣
 		$tip_npctype = array(2,5,6,11,12,13,14,21,24,26,89);
 		//睡眠时会提示的道具名列表
-		$tip_itemnamelist = array('肥料', '中药', '火把', '铁锤', '广域生命探测器', '★阔剑地雷★', '毒物说明书', '☆碧藍怒火☆', '☆白楼剑☆', '☆楼观剑☆', '钻石', '宅男装', '萝莉装', '女仆装', '伪娘装', '电子马克笔', '一个能打的都没有', '德国BOY的键盘', '葱娘の葱', '容嬷嬷的针', '新八的眼镜', '新华里的领带', '新华里的西服', '新华里的手表', '新华里的皮鞋', '新华里的投入', '新华里的震撼', '新华里的乱舞', '新华里的手势', '新华里的呐喊', '新华里的眼神', '新华里的增员', '红色方块', '绿色方块', '蓝色方块', '黄色方块', '金色方块', '银色方块', '水晶方块', '黑色方块', '白色方块', 'X方块', 'Y方块', '妹汁', '《BR大逃杀》', '《防身术图解》', '《剑道社教材》', '《枪械杂志》', '《飞镖投掷法》', '《化学课本》', '《太极拳指南》', '【腕力强化剂】', '【皮肤强化剂】', '【神经强化剂】', '【超级战士药剂】', '【肉体强化剂】', '【线粒体强化剂】', '提示纸条E', '提示纸条I', '提示纸条K', '提示纸条N', '弱点探测器', '【北斗百裂拳】', '【狂暴凶刃】', '【盖特机炮】', '幻符【杀人玩偶】', '【泰迪熊炸弹】', '【西方秋霜玉】', '预言挂坠', '【紫棠花色波纹疾走】', '弱爆了！', '《哲♂学》', '★全图唯一的野生巨大香蕉★', '残存的礼品盒', '残存的结婚喜糖-红', '残存的结婚喜糖-橙', '残存的结婚喜糖-黄', '残存的结婚喜糖-绿', '残存的结婚喜糖-青', '残存的结婚喜糖-蓝', '残存的结婚喜糖-紫', '糖衣炮弹-红', '糖衣炮弹-橙', '糖衣炮弹-黄', '糖衣炮弹-绿', '糖衣炮弹-青', '糖衣炮弹-蓝', '糖衣炮弹-紫', '密封的酒瓶', '音乐录像', '五线乐谱', '葱娘肉包', 'V家蔬菜汁', '破旧录音机', '神奇的八音盒', '魂之结晶', '歌手之魂', '【Alicemagic】', '【Crow Song】', '「奥西里斯之天空龙」-仮', '「欧贝利斯克之巨神兵」-仮', '「太阳神之翼神龙」-仮', '【流星一条】', '杨叔的眼镜', '蓝蓝路的大鞋', '动感超人手表', 'MIKU的内裤', '■DeathNote■', '■魔剑－雷瓦丁■', '★Unlimited Blade Works★', '★Unlimited Code Works★', '《ACFUN大逃杀攻略》', '《北斗神拳》', '《寒蝉鸣泣之时》', '《魔法少女奈叶》', '《网球王子》', '《新机动战记高达W》', '《东方永夜抄》', '【触手的萃取液】', '【圣防护罩-反射之力】', '【金蚕王】', '【我已经天下无敌了！】', '【残机碎片】', '【S2机关】', '【宇航服】', '【楼主头】', '【哥哥鞋】', '受王拳', '★闪光迎击神话★', '鲜红的生血', '《东方幻想乡》', '★I-力场★', '奇怪的按钮', '【主角光环】', '【测试用具】', '驱云弹');
+		$tip_itemnamelist = array('肥料', '中藥', '火把', '鐵錘', '廣域生命探測器', '★闊劍地雷★', '毒物説明書', '☆碧藍怒火☆', '☆白樓劍☆', '☆樓觀劍☆', '鑽石', '宅男裝', '蘿莉裝', '女僕裝', '偽娘裝', '電子馬克筆', '一個能打的都沒有', '德國BOY的鍵盤', '葱娘の葱', '容嬤嬤的針', '新八的眼鏡', '新華里的領帶', '新華里的西服', '新華里的手錶', '新華里的皮鞋', '新華里的投入', '新華里的震撼', '新華里的亂舞', '新華里的手勢', '新華里的吶喊', '新華里的眼神', '新華里的增員', '紅色方塊', '綠色方塊', '藍色方塊', '黃色方塊', '金色方塊', '銀色方塊', '水晶方塊', '黑色方塊', '白色方塊', 'X方塊', 'Y方塊', '妹汁', '《BR大逃殺》', '《防身術圖解》', '《劍道社教材》', '《槍械雜誌》', '《飛鏢投擲法》', '《化學課本》', '《太極拳指南》', '【腕力強化劑】', '【皮膚強化劑】', '【神經強化劑】', '【超級戰士藥劑】', '【肉體強化劑】', '【線粒體強化劑】', '提示紙條E', '提示紙條I', '提示紙條K', '提示紙條N', '弱點探測器', '【北斗百裂拳】', '【狂暴兇刃】', '【蓋特機炮】', '幻符【殺人玩偶】', '【泰迪熊炸彈】', '【西方秋霜玉】', '預言掛墜', '【紫棠花色波紋疾走】', '弱爆了！', '《哲♂學》', '★全圖唯一的野生巨大香蕉★', '殘存的禮品盒', '殘存的結婚喜糖-紅', '殘存的結婚喜糖-橙', '殘存的結婚喜糖-黃', '殘存的結婚喜糖-綠', '殘存的結婚喜糖-青', '殘存的結婚喜糖-藍', '殘存的結婚喜糖-紫', '糖衣炮彈-紅', '糖衣炮彈-橙', '糖衣炮彈-黃', '糖衣炮彈-綠', '糖衣炮彈-青', '糖衣炮彈-藍', '糖衣炮彈-紫', '密封的酒瓶', '音樂錄像', '五線樂譜', '葱娘肉包', 'V家蔬菜汁', '破舊錄音機', '神奇的八音盒', '魂之結晶', '歌手之魂', '【Alicemagic】', '【Crow Song】', '「奧西里斯之天空龍」-仮', '「歐貝利斯克之巨神兵」-仮', '「太陽神之翼神龍」-仮', '【流星一條】', '楊叔的眼鏡', '藍藍路的大鞋', '動感超人手錶', 'MIKU的內褲', '■DeathNote■', '■魔劍－雷瓦丁■', '★Unlimited Blade Works★', '★Unlimited Code Works★', '《BR大逃殺攻略》', '《北斗神拳》', '《寒蟬鳴泣之時》', '《魔法少女奈葉》', '《網球王子》', '《新機動戰記高達W》', '《東方永夜抄》', '【觸手的萃取液】', '【聖防護罩-反射之力】', '【金蠶王】', '【我已經天下無敵了！】', '【殘機碎片】', '【S2機關】', '【宇航服】', '【樓主頭】', '【哥哥鞋】', '受王拳', '★閃光迎擊神話★', '鮮紅的生血', '《東方幻想鄉》', '★I-力場★', '奇怪的按鈕', '【主角光環】', '【測試用具】', '驅雲彈');
 
 		$get_tips_count = floor($resttime / $rest_get_tip_rate);
 		if (rand(0,99) < $resttime) $get_tips_count += 1;//奖励骰
@@ -1102,7 +1102,7 @@
 					$traps[] = $traparr;
 				}
 				shuffle($traps);
-				$tips[] = "你梦见自己在<span class=\"yellow b\">{$plsinfo[$traps[0]['pls']]}</span>被<span class=\"yellow b\">{$traps[0]['itm']}</span>炸上了天。<br>……<br>";
+				$tips[] = "你夢見自己在<span class=\"yellow b\">{$plsinfo[$traps[0]['pls']]}</span>被<span class=\"yellow b\">{$traps[0]['itm']}</span>炸上了天。<br>……<br>";
 				$get_tips_count -= 1;
 			}
 			if ($get_tips_count > 0)
@@ -1118,7 +1118,7 @@
 						if (!empty($summon_ids))
 						{
 							$tip_edata = fetch_playerdata_by_pid($summon_ids[0]);
-							$tips[] = "你梦见<span class=\"red b\">{$tip_edata['name']}</span>在<span class=\"yellow b\">{$plsinfo[$tip_edata['pls']]}</span>游荡。<br>……<br>";
+							$tips[] = "你夢見<span class=\"red b\">{$tip_edata['name']}</span>在<span class=\"yellow b\">{$plsinfo[$tip_edata['pls']]}</span>遊蕩。<br>……<br>";
 							$enemytip_count -= 1;
 						}
 					}
@@ -1133,13 +1133,13 @@
 						$tip_edata = array_randompick($tip_edata_arr, $enemytip_count);
 						if (isset($tip_edata['name']))
 						{
-							$tips[] = "你梦见<span class=\"red b\">{$tip_edata['name']}</span>在<span class=\"yellow b\">{$plsinfo[$tip_edata['pls']]}</span>游荡。<br>……<br>";
+							$tips[] = "你夢見<span class=\"red b\">{$tip_edata['name']}</span>在<span class=\"yellow b\">{$plsinfo[$tip_edata['pls']]}</span>遊蕩。<br>……<br>";
 							$enemytip_count = 1;
 						}
 						else
 						{
 							foreach($tip_edata as $ed) {
-								$tips[] = "你梦见<span class=\"red b\">{$ed['name']}</span>在<span class=\"yellow b\">{$plsinfo[$ed['pls']]}</span>游荡。<br>……<br>";
+								$tips[] = "你夢見<span class=\"red b\">{$ed['name']}</span>在<span class=\"yellow b\">{$plsinfo[$ed['pls']]}</span>遊蕩。<br>……<br>";
 							}
 							$enemytip_count = count($tip_edata);
 						}
@@ -1158,12 +1158,12 @@
 						$tip_mi = array_randompick($tip_mipool, $itemtip_count);
 						if (isset($tip_mi['itm']))
 						{
-							$tips[] = "你梦见自己在<span class=\"yellow b\">{$plsinfo[$tip_mi['pls']]}</span>捡到了<span class=\"yellow b\">{$tip_mi['itm']}</span>。<br>……<br>";
+							$tips[] = "你夢見自己在<span class=\"yellow b\">{$plsinfo[$tip_mi['pls']]}</span>撿到了<span class=\"yellow b\">{$tip_mi['itm']}</span>。<br>……<br>";
 						}
 						else
 						{
 							foreach($tip_mi as $mi) {
-								$tips[] = "你梦见自己在<span class=\"yellow b\">{$plsinfo[$mi['pls']]}</span>捡到了<span class=\"yellow b\">{$mi['itm']}</span>。<br>……<br>";
+								$tips[] = "你夢見自己在<span class=\"yellow b\">{$plsinfo[$mi['pls']]}</span>撿到了<span class=\"yellow b\">{$mi['itm']}</span>。<br>……<br>";
 							}
 						}
 					}

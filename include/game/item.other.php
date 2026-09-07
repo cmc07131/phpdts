@@ -42,14 +42,14 @@ function item_fireworks($itmn, &$data) {
 
 		# Special check for a invalid item (Rank = 0), Just turn it into healing.
 		if($rank == 0){
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚，你感觉焕然一新！<br>";
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚，你感覺煥然一新！<br>";
 			$hp = $mhp;
 			$sp = $msp;
 
 			if ($itms != $nosta) {
 				$itms --;
 				if ($itms <= 0) {
-					$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+					$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 					$itm = $itmk = $itmsk = '';
 					$itme = $itms = 0;
 				}
@@ -84,33 +84,33 @@ function item_fireworks($itmn, &$data) {
 			else $addhp = 0;
 
 			if ($addhp <= 0){
-				$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-				但是似乎并没有回复生命！<br>
+				$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+				但是似乎並沒有回覆生命！<br>
 				<br>
-				<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-				「你可能需要找个纯度更高的代码片段哟~」<br></span>";
+				<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+				「你可能需要找個純度更高的代碼片段喲~」<br></span>";
 			}else{
 
 			$gainless = ($mhp + $gainmax) - $hp;
 
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			治愈的代码片段为你恢复了<span class=\"yellow\">$addhp</span>点生命和<span class=\"yellow\">$addsp</span>点体力。<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			治癒的代碼片段為你恢復了<span class=\"yellow\">$addhp</span>點生命和<span class=\"yellow\">$addsp</span>點體力。<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你还能获得{$gainless}点临时生命哟~<br>
-			但临时生命就是临时的，随时都有可能消失哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你還能獲得{$gainless}點臨時生命喲~<br>
+			但臨時生命就是臨時的，隨時都有可能消失喲~」<br></span>";
 
 			if($gainless < $itme){
-				$log.="<br><span class=\"redseed\">这时，有另一把声音插了进来：<br>
-				「看起来这个纯度的代码片段已经喂不饱你了。<br>
-				赶快找下一个纯度的代码片段吧！」<br></span>";
+				$log.="<br><span class=\"redseed\">這時，有另一把聲音插了進來：<br>
+				「看起來這個純度的代碼片段已經喂不飽你了。<br>
+				趕快找下一個純度的代碼片段吧！」<br></span>";
 			}
 
 			if ($itms != $nosta) {
 				$itms --;
 				if ($itms <= 0) {
-					$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+					$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 					$itm = $itmk = $itmsk = '';
 					$itme = $itms = 0;
 				}
@@ -124,13 +124,13 @@ function item_fireworks($itmn, &$data) {
 				$addhp = $itme;
 				$hp += $addhp;
 
-				$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			治愈的代码片段为你恢复了<span class=\"yellow\">$addhp</span>点生命和<span class=\"yellow\">$addsp</span>点体力。<br>";
+				$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			治癒的代碼片段為你恢復了<span class=\"yellow\">$addhp</span>點生命和<span class=\"yellow\">$addsp</span>點體力。<br>";
 
 			if ($itms != $nosta) {
 				$itms --;
 				if ($itms <= 0) {
-					$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+					$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 					$itm = $itmk = $itmsk = '';
 					$itme = $itms = 0;
 				}
@@ -166,33 +166,33 @@ function item_fireworks($itmn, &$data) {
 			else $addw = 0;
 
 			if ($addw <= 0){
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			但是似乎什么都没有发生！<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			但是似乎什麼都沒有發生！<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你可能需要找个纯度更高的代码片段哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你可能需要找個純度更高的代碼片段喲~」<br></span>";
 			}else{
 
 			$gainless = $clbpara['fireseedmaxProfGain'] - $clbpara['fireseedmaxProfAdd'];
 
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			载有熟练度的代码片段让你获得了<span class=\"yellow\">$addw</span>点全系熟练度！<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			載有熟練度的代碼片段讓你獲得了<span class=\"yellow\">$addw</span>點全系熟練度！<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你还能通过这个纯度的代码获得{$gainless}点熟练度哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你還能通過這個純度的代碼獲得{$gainless}點熟練度喲~」<br></span>";
 
 			if($gainless < $itme){
-				$log.="<br><span class=\"redseed\">这时，有另一把声音插了进来：<br>
-				「看起来这个纯度的代码片段已经喂不饱你了。<br>
-				赶快找下一个纯度的代码片段吧！」<br></span>";
+				$log.="<br><span class=\"redseed\">這時，有另一把聲音插了進來：<br>
+				「看起來這個純度的代碼片段已經喂不飽你了。<br>
+				趕快找下一個純度的代碼片段吧！」<br></span>";
 			}
 
 			if ($itms != $nosta) {
 				$itms --;
 				if ($itms <= 0) {
-					$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+					$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 					$itm = $itmk = $itmsk = '';
 					$itme = $itms = 0;
 				}
@@ -208,13 +208,13 @@ function item_fireworks($itmn, &$data) {
 				$wd += $addw; 
 				$wf += $addw;
 
-				$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-				载有熟练度的代码片段让你获得了<span class=\"yellow\">$addw</span>点全系熟练度！<br>";
+				$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+				載有熟練度的代碼片段讓你獲得了<span class=\"yellow\">$addw</span>點全系熟練度！<br>";
 
 				if ($itms != $nosta) {
 					$itms --;
 					if ($itms <= 0) {
-						$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+						$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 						$itm = $itmk = $itmsk = '';
 						$itme = $itms = 0;
 					}
@@ -244,34 +244,34 @@ function item_fireworks($itmn, &$data) {
 			else $addmhp = 0;
 
 			if ($addmhp <= 0){
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			但是似乎什么都没有发生！<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			但是似乎什麼都沒有發生！<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你可能需要找个纯度更高的代码片段哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你可能需要找個純度更高的代碼片段喲~」<br></span>";
 			}else{
 
 			$gainless = $clbpara['fireseedmaxHPGain'] - $clbpara['fireseedmaxHPAdd'];
 
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			载有生命的代码片段让你获得了<span class=\"yellow\">$addmhp</span>点生命最大值！<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			載有生命的代碼片段讓你獲得了<span class=\"yellow\">$addmhp</span>點生命最大值！<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你还能通过这个纯度的代码获得{$gainless}点生命最大值哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你還能通過這個純度的代碼獲得{$gainless}點生命最大值喲~」<br></span>";
 
 			if($gainless < $itme){
-				$log.="<br><span class=\"redseed\">这时，有另一把声音插了进来：<br>
-				「看起来这个纯度的代码片段已经喂不饱你了。<br>
-				赶快找下一个纯度的代码片段吧！」<br></span>";
+				$log.="<br><span class=\"redseed\">這時，有另一把聲音插了進來：<br>
+				「看起來這個純度的代碼片段已經喂不飽你了。<br>
+				趕快找下一個純度的代碼片段吧！」<br></span>";
 
 			}
 
 			if ($itms != $nosta) {
 				$itms --;
 				if ($itms <= 0) {
-					$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+					$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 					$itm = $itmk = $itmsk = '';
 					$itme = $itms = 0;
 				}
@@ -282,13 +282,13 @@ function item_fireworks($itmn, &$data) {
 				$addmhp = $itme;
 				$mhp += $addmhp;
 
-				$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-				载有生命的代码片段让你获得了<span class=\"yellow\">$addmhp</span>点生命最大值！<br>";
+				$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+				載有生命的代碼片段讓你獲得了<span class=\"yellow\">$addmhp</span>點生命最大值！<br>";
 
 				if ($itms != $nosta) {
 					$itms --;
 					if ($itms <= 0) {
-						$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+						$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 						$itm = $itmk = $itmsk = '';
 						$itme = $itms = 0;
 					}
@@ -318,32 +318,32 @@ function item_fireworks($itmn, &$data) {
 			else $adddef = 0;
 
 			if ($adddef <= 0){
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			但是似乎什么都没有发生！<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			但是似乎什麼都沒有發生！<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你可能需要找个纯度更高的代码片段哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你可能需要找個純度更高的代碼片段喲~」<br></span>";
 			}else{
 
 			$gainless = $clbpara['fireseedmaxDefGain'] - $clbpara['fireseedmaxDefAdd'];
 
-			$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-			载有防御数据的代码片段让你获得了<span class=\"yellow\">$adddef</span>点基础防御力！<br>
+			$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+			載有防禦數據的代碼片段讓你獲得了<span class=\"yellow\">$adddef</span>點基礎防禦力！<br>
 			<br>
 			<br>
-			<span class=\"blueseed\">同时，你还隐约听见了一个声音：<br>
-			「你还能通过这个纯度的代码获得{$gainless}点基础防御力哟~」<br></span>";
+			<span class=\"blueseed\">同時，你還隱約聽見了一個聲音：<br>
+			「你還能通過這個純度的代碼獲得{$gainless}點基礎防禦力喲~」<br></span>";
 
 			if($gainless < $itme){
-				$log.="<br><span class=\"redseed\">这时，有另一把声音插了进来：<br>
-				「看起来这个纯度的代码片段已经喂不饱你了。<br>
-				赶快找下一个纯度的代码片段吧！」<br></span>";
+				$log.="<br><span class=\"redseed\">這時，有另一把聲音插了進來：<br>
+				「看起來這個純度的代碼片段已經喂不飽你了。<br>
+				趕快找下一個純度的代碼片段吧！」<br></span>";
 			}
 			if ($itms != $nosta) {
 				$itms --;
 				if ($itms <= 0) {
-					$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+					$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 					$itm = $itmk = $itmsk = '';
 					$itme = $itms = 0;
 				}
@@ -354,13 +354,13 @@ function item_fireworks($itmn, &$data) {
 				$adddef = $itme;
 				$def += $adddef;
 
-				$log.="你将<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
-				载有防御数据的代码片段让你获得了<span class=\"yellow\">$adddef</span>点基础防御力！<br>";
+				$log.="你將<span class=\"yellow\">{$itm}</span>吞下了肚。<br>
+				載有防禦數據的代碼片段讓你獲得了<span class=\"yellow\">$adddef</span>點基礎防禦力！<br>";
 
 				if ($itms != $nosta) {
 					$itms --;
 					if ($itms <= 0) {
-						$log .= "<span class=\"red\">$itm</span>的余烬崩解消失了……<br>";
+						$log .= "<span class=\"red\">$itm</span>的餘燼崩解消失了……<br>";
 						$itm = $itmk = $itmsk = '';
 						$itme = $itms = 0;
 					}
@@ -370,7 +370,7 @@ function item_fireworks($itmn, &$data) {
 		}elseif($itmk == '🎆B'){
 			# Fireseed Box, containing various helpful items.
 			# Officially dubbed Silent Box.
-			$log.="你打开了<span class=\"yellow\">$itm</span>。<br>";
+			$log.="你打開了<span class=\"yellow\">$itm</span>。<br>";
 
 			$oitm = $itm; $oitmk = $itmk;
 			if ($itms != $nosta) {
@@ -408,7 +408,7 @@ function item_fireworks($itmn, &$data) {
 		}elseif($itmk == '🎆C'){
 			# Weird Fireseed Box, containing interesting items.
 			# Officially dubbed Weird Box.
-			$log.="你打开了<span class=\"yellow\">$itm</span>。<br>";
+			$log.="你打開了<span class=\"yellow\">$itm</span>。<br>";
 
 			$oitm = $itm; $oitmk = $itmk;
 			if ($itms != $nosta) {
@@ -440,7 +440,7 @@ function item_fireworks($itmn, &$data) {
 			itemget($data);
 
 		}else{
-			$log.="这段代码……要如何使用呢？<br>";
+			$log.="這段代碼……要如何使用呢？<br>";
 		}
 
 		//Process a special check for total Ash item used, for future usage.
@@ -477,5 +477,5 @@ function item_other($itmn, &$data) {
 	$itmsk = & ${'itmsk' . $itmn};
 	
 	// 处理其他未分类的物品
-	$log .= "你使用了<span class=\"yellow\">$itm</span>，但是什么也没有发生。<br>";
+	$log .= "你使用了<span class=\"yellow\">$itm</span>，但是什麼也沒有發生。<br>";
 }

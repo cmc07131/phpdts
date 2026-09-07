@@ -48,14 +48,14 @@ if($command == 'edit') {
 				if(${$key}===''){
 					$cmd_info .= "$lang[$key] 已清空<br>";
 				}else{
-					$cmd_info .= "$lang[$key] 修改为 ${$key} <br>";
+					$cmd_info .= "$lang[$key] 修改為 ${$key} <br>";
 				}
 				$edlist[$key] = ${$key};
 			}
 		}
 	}
 	
-	$cmd_info .= "提交的修改请求数量： $ednum <br>";
+	$cmd_info .= "提交的修改請求數量： $ednum <br>";
 	
 	if($ednum){
 		$adminlog = '';
@@ -71,7 +71,7 @@ if($command == 'edit') {
 		}
 		file_put_contents($gamecfg_file,$file);
 		adminlog('gamecfgmng',$gamecfg);
-		$cmd_info .= '游戏数据修改完毕';
+		$cmd_info .= '遊戲數據修改完畢';
 	}
 }
 include template('admin_gamecfg');

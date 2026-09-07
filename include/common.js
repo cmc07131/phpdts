@@ -15,7 +15,7 @@ function closeDialog(id){
 	id.close();
 }
 
-//时间检查
+//時間檢查
 function checkTime(i)
 {
 if (i<10) 
@@ -42,7 +42,7 @@ zXmlHttp.createRequest=function(){
 };
 zXmlHttp.isSupported=function(){return zXml.useXmlHttp||zXml.useActiveX;};
 
-//form转字符串；可选覆盖指定字段，避免临时页面中同名控件覆盖强制指令。
+//form轉字符串；可選覆蓋指定字段，避免臨時頁面中同名控件覆蓋強制指令。
 // Serialize a form; optional overrides replace all controls with the same name for mandatory commands.
 function getRequestBody(oForm, overrides) {
 	var aParams = new Array();
@@ -65,7 +65,7 @@ function getRequestBody(oForm, overrides) {
     return aParams.join("&"); 
 }
 
-//cookie类
+//cookie類
 function Cookie(){}
 Cookie.setCookie=function(name,value,option){
 	var str=name+"="+escape(value);

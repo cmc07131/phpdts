@@ -19,13 +19,13 @@
                         <span class="skilldesc">
                             <!--{eval $cdesc = parse_skilldesc($skid,$uidata);}-->
                             {$cdesc}
-                            当前选择的称号是：<span class="yellow"><!--{if !empty($nchoice)}-->$clubinfo[$nchoice]<!--{else}-->无<!--{/if}--></span>
+                            當前選擇的稱號是：<span class="yellow"><!--{if !empty($nchoice)}-->$clubinfo[$nchoice]<!--{else}-->無<!--{/if}--></span>
                             &nbsp;
                             <!--{if empty($no_skill_input)}-->
-                                变更选择为：
+                                變更選擇為：
                                 <select name="{$skid}upgpara" id="{$skid}upgpara" onchange="$('mode').value='revskpts';$('command').value='swtskill_{$skid}';postCmd('gamecmd','command.php');this.disabled=true;">
                                 <!--{if empty($nchoice)}-->
-                                <option value="" selected>无<br />
+                                <option value="" selected>無<br />
                                 <!--{/if}-->
                                 <!--{loop $cskills[$skid]['choice'] $key}-->
                                     <!--{if $key != $nchoice}-->

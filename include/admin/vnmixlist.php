@@ -46,7 +46,7 @@ if(strpos($vncmd ,'del')===0)
 	$vnid = substr($vncmd,4);
 	if(!isset($vnid) || !isset($vn_mixinfo[$vnid]))
 	{
-		$cmd_info = "配方{$vnid}不存在，请重新输入！";
+		$cmd_info = "配方{$vnid}不存在，請重新輸入！";
 		//草草草 我已经变成goto的形状了 怎么会这样！
 		return;
 	}

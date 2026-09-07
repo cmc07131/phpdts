@@ -23,6 +23,6 @@ movehtm();
 save_gameinfo();
 
 adminlog('infomng');
-echo "状态更新：激活人数 {$validnum},生存人数 {$alivenum},死亡人数 {$deathnum}<br>";
-echo "已重置移动地点缓存数据";
+echo "狀態更新：激活人數 {$validnum},生存人數 {$alivenum},死亡人數 {$deathnum}<br>";
+echo "已重置移動地點緩存數據";
 ?>

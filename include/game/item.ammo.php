@@ -16,7 +16,7 @@ function item_ammo_bullets($itmn, &$data) {
 	$itmsk = & ${'itmsk' . $itmn};
 	
 	if ((strpos($wepk, 'WG') !== 0)&&(strpos($wepk, 'WJ') !== 0)) {
-		$log .= "<span class=\"red\">你没有装备枪械，不能使用子弹。</span><br>";
+		$log .= "<span class=\"red\">你沒有裝備槍械，不能使用子彈。</span><br>";
 		$mode = 'command';
 		return;
 	}
@@ -24,20 +24,20 @@ function item_ammo_bullets($itmn, &$data) {
 		if ($itmk=='GBh'){
 		$bulletnum = 3;	
 		}else{
-		$log .= "<span class=\"red\">枪械类型和弹药类型不匹配。</span><br>";
+		$log .= "<span class=\"red\">槍械類型和彈藥類型不匹配。</span><br>";
 		$mode = 'command';
 		return;
 		}
 	}
 	elseif (strpos($wepsk, 'o') !== false) {
-		$log .= "<span class=\"red\">{$wep}不能装填弹药。</span><br>";
+		$log .= "<span class=\"red\">{$wep}不能裝填彈藥。</span><br>";
 		$mode = 'command';
 		return;
 	} elseif (strpos($wepsk, 'e') !== false || strpos($wepsk, 'w') !== false) {
 		if ($itmk == 'GBe') {
 			$bulletnum = 18;
 		} else {
-			$log .= "<span class=\"red\">枪械类型和弹药类型不匹配。</span><br>";
+			$log .= "<span class=\"red\">槍械類型和彈藥類型不匹配。</span><br>";
 			$mode = 'command';
 			return;
 		}
@@ -45,7 +45,7 @@ function item_ammo_bullets($itmn, &$data) {
 		if ($itmk == 'GBi') {
 			$bulletnum = 18;
 		} else {
-			$log .= "<span class=\"red\">枪械类型和弹药类型不匹配。</span><br>";
+			$log .= "<span class=\"red\">槍械類型和彈藥類型不匹配。</span><br>";
 			$mode = 'command';
 			return;
 		}
@@ -54,7 +54,7 @@ function item_ammo_bullets($itmn, &$data) {
 			if ($itmk == 'GBr') {
 				$bulletnum = 24;
 			} else {
-				$log .= "<span class=\"red\">枪械类型和弹药类型不匹配。</span><br>";
+				$log .= "<span class=\"red\">槍械類型和彈藥類型不匹配。</span><br>";
 				$mode = 'command';
 				return;
 			}
@@ -62,7 +62,7 @@ function item_ammo_bullets($itmn, &$data) {
 			if ($itmk == 'GB') {
 				$bulletnum = 12;
 			} else {
-				$log .= "<span class=\"red\">枪械类型和弹药类型不匹配。</span><br>";
+				$log .= "<span class=\"red\">槍械類型和彈藥類型不匹配。</span><br>";
 				$mode = 'command';
 				return;
 			}
@@ -73,7 +73,7 @@ function item_ammo_bullets($itmn, &$data) {
 	}
 	$bullet = $bulletnum - $weps;
 	if ($bullet <= 0) {
-		$log .= "<span class=\"red\">{$wep}的弹匣是满的，不能装弹。</span>";
+		$log .= "<span class=\"red\">{$wep}的彈匣是滿的，不能裝彈。</span>";
 		return;
 	} elseif ($bullet >= $itms) {
 		$bullet = $itms;
@@ -81,7 +81,7 @@ function item_ammo_bullets($itmn, &$data) {
 	if ($itms != $nosta) {
 		$itms -= $bullet;
 		$weps += $bullet;
-		$log .= "为<span class=\"red\">$wep</span>装填了<span class=\"red\">$itm</span>，<span class=\"red\">$wep</span>残弹数增加<span class=\"yellow\">$bullet</span>。<br>";
+		$log .= "為<span class=\"red\">$wep</span>裝填了<span class=\"red\">$itm</span>，<span class=\"red\">$wep</span>殘彈數增加<span class=\"yellow\">$bullet</span>。<br>";
 		if ($itms <= 0) {
 			$log .= "<span class=\"red\">$itm</span>用光了。<br>";
 			$itm = $itmk = $itmsk = '';
@@ -89,7 +89,7 @@ function item_ammo_bullets($itmn, &$data) {
 		}
 	} else {
 		$weps += $bullet;
-		$log .= "为<span class=\"red\">$wep</span>装填了<span class=\"red\">$itm</span>，<span class=\"red\">$wep</span>残弹数增加<span class=\"yellow\">$bullet</span>。<br>";
+		$log .= "為<span class=\"red\">$wep</span>裝填了<span class=\"red\">$itm</span>，<span class=\"red\">$wep</span>殘彈數增加<span class=\"yellow\">$bullet</span>。<br>";
 	}
 }
 
@@ -105,11 +105,11 @@ function item_ammo_arrows($itmn, &$data) {
 	$itmsk = & ${'itmsk' . $itmn};
 	
 	if (strpos($wepk, 'WB') !== 0) {
-		$log .= "<span class=\"red b\">你没有装备弓，不能给武器上箭。</span><br>";
+		$log .= "<span class=\"red b\">你沒有裝備弓，不能給武器上箭。</span><br>";
 		$mode = 'command';
 		return;
 	} elseif(0 === $itmn && !empty($weps)) {//捡到的箭矢不能马上拉弓，避免换箭覆盖itm0的问题
-		$log .= "你一只手捏着弓箭，一只手抓着刚捡到的箭矢，没法马上弯弓搭箭。<span class=\"red b\">还是先把箭矢收进包裹里吧。</span><br>";
+		$log .= "你一隻手捏着弓箭，一隻手抓着剛撿到的箭矢，沒法馬上彎弓搭箭。<span class=\"red b\">還是先把箭矢收進包裹裏吧。</span><br>";
 		$mode = 'command';
 		return;
 	} else {

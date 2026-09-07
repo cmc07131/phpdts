@@ -22,32 +22,32 @@ function item_cure($itmn, &$data) {
 		foreach ($ex_inf as $value) {
 			if(strpos($inf, $value) !== false){
 				$inf = str_replace($value, '', $inf);
-				$log .= "{$exdmginf[$value]}状态解除了。<br>";
+				$log .= "{$exdmginf[$value]}狀態解除了。<br>";
 				$flag=true;
 			}
 		}
 		if(!$flag){
-			$log .= '但是什么也没发生。<br>';
+			$log .= '但是什麼也沒發生。<br>';
 		}
 	}elseif(in_array($ck,$ex_inf)){
 		if(strpos($inf, $ck) !== false){
 			$inf = str_replace($ck, '', $inf);
-			$log .= "服用了<span class=\"red\">$itm</span>，{$exdmginf[$ck]}状态解除了。<br>";
+			$log .= "服用了<span class=\"red\">$itm</span>，{$exdmginf[$ck]}狀態解除了。<br>";
 		}else{
-			$log .= "服用了<span class=\"red\">$itm</span>，但是什么效果也没有。<br>";
+			$log .= "服用了<span class=\"red\">$itm</span>，但是什麼效果也沒有。<br>";
 		}
 	}elseif ($ck == 'x'){
 		$inf = "puiewhbaf";
 		$log .= "服用了<span class=\"red\">$itm</span>，<br>";
-		$log .= "但是，假冒伪劣的<span class=\"red\">$itm</span>导致你{$exdmginf['p']}了！<br>";
-		$log .= "假冒伪劣的<span class=\"red\">$itm</span>导致你{$exdmginf['u']}了！<br>";
-		$log .= "假冒伪劣的<span class=\"red\">$itm</span>导致你{$exdmginf['i']}了！<br>";
-		$log .= "假冒伪劣的<span class=\"red\">$itm</span>导致你{$exdmginf['e']}了！<br>";
-		$log .= "而且，假冒伪劣的<span class=\"red\">$itm</span>还导致你{$exdmginf['w']}了！<br>";
-		$log .= "你遍体鳞伤地站了起来。<br>";
+		$log .= "但是，假冒偽劣的<span class=\"red\">$itm</span>導致你{$exdmginf['p']}了！<br>";
+		$log .= "假冒偽劣的<span class=\"red\">$itm</span>導致你{$exdmginf['u']}了！<br>";
+		$log .= "假冒偽劣的<span class=\"red\">$itm</span>導致你{$exdmginf['i']}了！<br>";
+		$log .= "假冒偽劣的<span class=\"red\">$itm</span>導致你{$exdmginf['e']}了！<br>";
+		$log .= "而且，假冒偽劣的<span class=\"red\">$itm</span>還導致你{$exdmginf['w']}了！<br>";
+		$log .= "你遍體鱗傷地站了起來。<br>";
 		$log .= "真是大快人心啊！<br>";
 	}else{
-		$log .= "服用了<span class=\"red\">$itm</span>……发生了什么？<br>";
+		$log .= "服用了<span class=\"red\">$itm</span>……發生了什麼？<br>";
 	}
 
 	if ($itms != $nosta) {

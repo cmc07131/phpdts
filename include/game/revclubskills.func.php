@@ -109,14 +109,14 @@
 		# 获取技能信息
 		$cskill = $cskills[$sk];
 		# 获取技能升级后文本
-		$clog = isset($cskill['log']) ? $cskill['log'] : '升级成功！<br>';
+		$clog = isset($cskill['log']) ? $cskill['log'] : '升級成功！<br>';
 		# 检查技能是否存在等级
 		if(isset($cskill['maxlvl']))
 		{
 			$now_clvl = isset($clbpara['skillpara'][$sk]['lvl']) ? $clbpara['skillpara'][$sk]['lvl'] : 0;
 			if($now_clvl >= $cskill['maxlvl'])
 			{
-				$log .= "该技能已到达等级上限！<br>";
+				$log .= "該技能已到達等級上限！<br>";
 				return;
 			}
 		}
@@ -127,7 +127,7 @@
 			if($nums > 1) $cost *= $nums; 
 			if($cost > $skillpoint)
 			{
-				$log .= "技能点不足。<br>";
+				$log .= "技能點不足。<br>";
 				return;
 			}
 			$clog = str_replace("[:cost:]",$cost,$clog);
@@ -193,7 +193,7 @@
 		# 合法性检查
 		if(isset($choice) && !isset($cskills[$sk]['choice']))
 		{
-			$log.="该技能无法变更状态。";
+			$log.="該技能無法變更狀態。";
 			return;
 		}
 		$lock_flag = check_skill_unlock($sk,$data);
@@ -206,7 +206,7 @@
 		# 获取技能信息
 		$cskill = $cskills[$sk];
 		# 获取技能升级后文本
-		$clog = isset($cskill['clog']) ? $cskill['clog'] : '状态变更成功！<br>';
+		$clog = isset($cskill['clog']) ? $cskill['clog'] : '狀態變更成功！<br>';
 		# 检查技能是否是要切换状态
 		if(isset($choice))
 		{
@@ -216,7 +216,7 @@
 			}
 			else 
 			{
-				$log.="状态参数非法。";
+				$log.="狀態參數非法。";
 				return;
 			}
 		}
@@ -238,28 +238,28 @@
 		global $cskills,$cskills_blist,$cskills_wlist;
 		if($nums <= 0)
 		{
-			$log.="输入了无效的升级指令。<br>";
+			$log.="輸入了無效的升級指令。<br>";
 			return 0;
 		}
 		if(!in_array($sk,$clbpara['skill']))
 		{
-			$log.="该技能不存在！<br>";
+			$log.="該技能不存在！<br>";
 			return 0;
 		}
 		# 只有特定技能可以一次性升复数级
 		if($nums!=1 && !isset($cskills[$sk]['num_input']))
 		{
-			$log.="该技能每次只能提升1级。";
+			$log.="該技能每次只能提升1級。";
 			return;
 		}
 		if(array_key_exists($sk,$cskills_wlist) && !in_array($club,$cskills_wlist[$sk]))
 		{
-			$log.="你不能升级此技能。<br>";
+			$log.="你不能升級此技能。<br>";
 			return 0;
 		}
 		if(array_key_exists($sk,$cskills_blist) && in_array($club,$cskills_blist[$sk]))
 		{
-			$log.="你不能升级此技能。<br>";
+			$log.="你不能升級此技能。<br>";
 			return 0;
 		}
 		# 检查冷却技能是否解锁
@@ -344,7 +344,7 @@
 		global $cskills;
 		# 不满足激活条件输出的文本，先写在这里，之后挪到配置文件里
 		$cannot_active_log = Array(
-			0 => '怒气不足，需要<span class="red">[:ragecost:]</span>点怒气',
+			0 => '怒氣不足，需要<span class="red">[:ragecost:]</span>點怒氣',
 		);
 		$ragecost = get_skillragecost($sk,$data);
 		# 检查技能需要消耗的怒气条件是否满足
@@ -367,12 +367,12 @@
 			$lock = $lock[0];
 		}
 		# 通用未解锁项目
-		if($lock == 'noskill' || !isset($cskill['lockdesc'])) return "技能未解锁或解锁条件不明！<br>";
+		if($lock == 'noskill' || !isset($cskill['lockdesc'])) return "技能未解鎖或解鎖條件不明！<br>";
 		# 返回对应的未解锁描述
 		$lockdesc = $cskill['lockdesc']; 
 		if(is_array($lockdesc))
 		{
-			$lockdesc = isset($lockdesc[$lock]) ? $lockdesc[$lock] : "技能不可用，可能是因为：{$lock}<br>";
+			$lockdesc = isset($lockdesc[$lock]) ? $lockdesc[$lock] : "技能不可用，可能是因為：{$lock}<br>";
 		}
 		if(isset($cd)) $lockdesc = str_replace("[:cd:]",$cd,$lockdesc);
 		return $lockdesc;
@@ -553,11 +553,11 @@
 			if($now_clvl >= $cskill['maxlvl'])
 			{
 				$max_lvl_flag = 1;
-				if(!$shortdesc) $lvl_desc = "<span class='lime'>当前级别{$now_clvl}/{$cskill['maxlvl']}</span>&nbsp;<br>";
+				if(!$shortdesc) $lvl_desc = "<span class='lime'>當前級別{$now_clvl}/{$cskill['maxlvl']}</span>&nbsp;<br>";
 			}
 			else 
 			{
-				if(!$shortdesc) $lvl_desc = "<span class='lime'>当前级别{$now_clvl}/{$cskill['maxlvl']}</span>&nbsp;消耗<span class='lime'>[:cost:]</span>点技能点升至下一级<br>";
+				if(!$shortdesc) $lvl_desc = "<span class='lime'>當前級別{$now_clvl}/{$cskill['maxlvl']}</span>&nbsp;消耗<span class='lime'>[:cost:]</span>點技能點升至下一級<br>";
 			}
 		}
 		# 格式化技能描述前缀
@@ -622,7 +622,7 @@
 					if(isset($data['clbpara']['skillpara'][$sk]['active']))
 					{
 						$tpvar = $data['clbpara']['skillpara'][$sk]['active'];
-						$tpdesc = $tpvar ? "<span class='clan'>【技能效果已启用】</span>" : "<span class='grey'>【技能效果已关闭】</span>";
+						$tpdesc = $tpvar ? "<span class='clan'>【技能效果已啓用】</span>" : "<span class='grey'>【技能效果已關閉】</span>";
 						$sk_desc = str_replace("[^".$pvar."^]",$tpdesc,$sk_desc);
 					}
 				}

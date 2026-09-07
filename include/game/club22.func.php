@@ -60,7 +60,7 @@ function FireseedRecruit($npc) {
 
     // 检查是否为种火NPC
     if($npc['type'] != 92) {
-        $log .= "<span class='red'>这不是一个种火！</span><br>";
+        $log .= "<span class='red'>這不是一個種火！</span><br>";
         return false;
     }
 
@@ -71,14 +71,14 @@ function FireseedRecruit($npc) {
 
     // 检查是否已被其他玩家收纳
     if(!empty($npc['clbpara']['owner'])) {
-        $log .= "<span class='yellow'>这个种火已经被其他枫火歌者收纳了！</span><br>";
+        $log .= "<span class='yellow'>這個種火已經被其他楓火歌者收納了！</span><br>";
         return false;
     }
 
     // 计算收纳成功率
     $recruit_dice = rand(1, 100);
     if($recruit_dice > $fireseed_recruit_rate) {
-        $log .= "<span class='yellow'>你试图收纳这个种火，但失败了！</span><br>";
+        $log .= "<span class='yellow'>你試圖收納這個種火，但失敗了！</span><br>";
         return false;
     }
 
@@ -112,7 +112,7 @@ function FireseedRecruit($npc) {
     $encoded_player_clbpara = json_encode($clbpara, JSON_UNESCAPED_UNICODE);
     $db->query("UPDATE {$tablepre}players SET clbpara='$encoded_player_clbpara' WHERE pid='$pid'");
 
-    $log .= "<span class='lime'>你成功收纳了种火「{$npc['name']}」！</span><br>";
+    $log .= "<span class='lime'>你成功收納了種火「{$npc['name']}」！</span><br>";
     addnews($now, 'fireseed_recruit', $name, $npc['name']);
 
     return true;
@@ -137,19 +137,19 @@ function FireseedDeploy($fireseed_id, $mode, $deploypls = 0) {
 
     // 检查种火是否存在
     if(!isset($clbpara['fireseed'][$fireseed_id])) {
-        $log .= "<span class='red'>指定的种火不存在！</span><br>";
+        $log .= "<span class='red'>指定的種火不存在！</span><br>";
         return false;
     }
 
     // 检查种火是否存活
     if(!isFireseedAlive($fireseed_id)) {
-        $log .= "<span class='red'>指定的种火已死亡或被销毁，无法部署！</span><br>";
+        $log .= "<span class='red'>指定的種火已死亡或被銷燬，無法部署！</span><br>";
         return false;
     }
 
     // 检查模式是否有效
     if(!isset($fireseed_deploy_modes[$mode])) {
-        $log .= "<span class='red'>无效的部署模式！</span><br>";
+        $log .= "<span class='red'>無效的部署模式！</span><br>";
         return false;
     }
 
@@ -158,7 +158,7 @@ function FireseedDeploy($fireseed_id, $mode, $deploypls = 0) {
 
     // 检查位置是否有效（不是禁区或隐藏地图）
     if(in_array($fspls, $deepzones) || $fspls < 0 || $fspls >= 100) {
-        $log .= "<span class='red'>无法部署到指定位置！</span><br>";
+        $log .= "<span class='red'>無法部署到指定位置！</span><br>";
         return false;
     }
 
@@ -173,16 +173,16 @@ function FireseedDeploy($fireseed_id, $mode, $deploypls = 0) {
 
     // 如果是跟随模式，记录一下但仍然使用传入的位置
     if($mode == 0) {
-        $log .= "<span class='yellow'>DEBUG: 跟随模式，部署位置 $fspls</span><br>";
+        $log .= "<span class='yellow'>DEBUG: 跟隨模式，部署位置 $fspls</span><br>";
     }
 
     // 先更新NPC的位置和姿态
     $result = $db->query("SELECT * FROM {$tablepre}players WHERE pid='$fireseed_id'");
     if($db->num_rows($result) > 0) {
         $db->query("UPDATE {$tablepre}players SET pls='$fspls', pose='$pose' WHERE pid='$fireseed_id'");
-        $log .= "<span class='yellow'>DEBUG: 更新NPC位置 $fspls 和姿态 {$poseinfo[$pose]}</span><br>";
+        $log .= "<span class='yellow'>DEBUG: 更新NPC位置 $fspls 和姿態 {$poseinfo[$pose]}</span><br>";
     } else {
-        $log .= "<span class='red'>警告：找不到对应的种火NPC！</span><br>";
+        $log .= "<span class='red'>警告：找不到對應的種火NPC！</span><br>";
     }
 
     // 再更新种火部署状态
@@ -200,10 +200,10 @@ function FireseedDeploy($fireseed_id, $mode, $deploypls = 0) {
 
     // 获取种火名称
     $fireseed_data = getFireseedRealTimeData($fireseed_id);
-    $fireseed_name = $fireseed_data ? $fireseed_data['name'] : '未知种火';
+    $fireseed_name = $fireseed_data ? $fireseed_data['name'] : '未知種火';
 
-    $log .= "<span class='lime'>你将种火「{$fireseed_name}」的状态设置为「{$mode_name}」（{$pose_name}）";
-    $log .= "，并部署在了「{$location}」";
+    $log .= "<span class='lime'>你將種火「{$fireseed_name}」的狀態設置為「{$mode_name}」（{$pose_name}）";
+    $log .= "，並部署在了「{$location}」";
     $log .= "。</span><br>";
 
     return true;
@@ -316,9 +316,9 @@ function FireseedSearch($pls) {
 
         // 获取种火名称
         $finder_data = getFireseedRealTimeData($finder_id);
-        $finder_name = $finder_data ? $finder_data['name'] : '未知种火';
+        $finder_name = $finder_data ? $finder_data['name'] : '未知種火';
 
-        $log .= "<span class='lime'>你的种火「{$finder_name}」在「{$plsinfo[$location]}」发现了物品「{$item_data['itm']}」！</span><br>";
+        $log .= "<span class='lime'>你的種火「{$finder_name}」在「{$plsinfo[$location]}」發現了物品「{$item_data['itm']}」！</span><br>";
     }
 
     // 如果有任何种火成功探物，更新玩家的 clbpara
@@ -452,9 +452,9 @@ function FireseedDrainNPC($pls) {
 
             // 获取种火名称
             $drainer_data = getFireseedRealTimeData($drainer_id);
-            $drainer_name = $drainer_data ? $drainer_data['name'] : '未知种火';
+            $drainer_name = $drainer_data ? $drainer_data['name'] : '未知種火';
 
-            $log .= "<span class='lime'>你的种火「{$drainer_name}」在「{$plsinfo[$location]}」削弱了「{$npc['name']}」，造成了{$drain_amount}点伤害！</span><br>";
+            $log .= "<span class='lime'>你的種火「{$drainer_name}」在「{$plsinfo[$location]}」削弱了「{$npc['name']}」，造成了{$drain_amount}點傷害！</span><br>";
         }
     }
 }
@@ -477,13 +477,13 @@ function FireseedEnhance($fireseed_id, $item_index) {
 
     // 检查种火是否存在
     if(!isset($clbpara['fireseed'][$fireseed_id])) {
-        $log .= "<span class='red'>指定的种火不存在！</span><br>";
+        $log .= "<span class='red'>指定的種火不存在！</span><br>";
         return false;
     }
 
     // 检查种火是否存活
     if(!isFireseedAlive($fireseed_id)) {
-        $log .= "<span class='red'>指定的种火已死亡或被销毁，无法强化！</span><br>";
+        $log .= "<span class='red'>指定的種火已死亡或被銷燬，無法強化！</span><br>";
         return false;
     }
 
@@ -502,7 +502,7 @@ function FireseedEnhance($fireseed_id, $item_index) {
     // 检查物品是否为焰火类物品
     $item_name = $$item_var;
     if(!isset($fireseed_enhance_multipliers[$item_name])) {
-        $log .= "<span class='red'>这不是可用于强化的焰火物品！</span><br>";
+        $log .= "<span class='red'>這不是可用於強化的焰火物品！</span><br>";
         return false;
     }
 
@@ -512,7 +512,7 @@ function FireseedEnhance($fireseed_id, $item_index) {
     // 获取种火当前数据
     $fireseed_data = getFireseedRealTimeData($fireseed_id);
     if(!$fireseed_data) {
-        $log .= "<span class='red'>无法获取种火数据！</span><br>";
+        $log .= "<span class='red'>無法獲取種火數據！</span><br>";
         return false;
     }
 
@@ -543,8 +543,8 @@ function FireseedEnhance($fireseed_id, $item_index) {
         $$iteme_var = $$items_var = 0;
     }
 
-    $log .= "<span class='lime'>你使用「{$item_name}」强化了种火「{$fireseed_data['name']}」！</span><br>";
-    $log .= "<span class='yellow'>种火的强化倍率提升到了{$multiplier}倍！</span><br>";
+    $log .= "<span class='lime'>你使用「{$item_name}」強化了種火「{$fireseed_data['name']}」！</span><br>";
+    $log .= "<span class='yellow'>種火的強化倍率提升到了{$multiplier}倍！</span><br>";
 
     // 保存玩家的clbpara数据到数据库
     $encoded_clbpara = json_encode($clbpara, JSON_UNESCAPED_UNICODE);
@@ -631,7 +631,7 @@ function FireseedFollow($target_pls) {
         $db->query("UPDATE {$tablepre}players SET clbpara='$encoded_clbpara' WHERE pid='$pid'");
 
         // 显示提示
-        $log .= "<span class='lime'>{$moved_count}个跟随状态的种火随你一起移动到了「{$plsinfo[$target_pls]}」。</span><br>";
+        $log .= "<span class='lime'>{$moved_count}個跟隨狀態的種火隨你一起移動到了「{$plsinfo[$target_pls]}」。</span><br>";
     }
 }
 

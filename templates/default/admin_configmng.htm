@@ -10,7 +10,7 @@
 	</tr>
 	<tr>
 	  <td>$lang['moveut']</td>
-	  <td><input type="text" name="moveut" value="$moveut" size="5">小时<input type="text" name="moveutmin" value="$moveutmin" size="5">分钟</td>
+	  <td><input type="text" name="moveut" value="$moveut" size="5">小時<input type="text" name="moveutmin" value="$moveutmin" size="5">分鐘</td>
 	  <td>$lang['moveut_comment']<br>{$lang['orin_time']}{$orin_time}<br>{$lang['set_time']}{$set_time}</td>
 	</tr>
 	<tr>
@@ -44,47 +44,47 @@
 	  <td>$lang['homepage_comment']</td>
 	</tr>
 	<tr>
-	  <td colspan="3" style="background-color: #FFE4E1; text-align: center; font-weight: bold; color: #8B0000;">主从数据库配置 (只读显示)</td>
+	  <td colspan="3" style="background-color: #FFE4E1; text-align: center; font-weight: bold; color: #8B0000;">主從數據庫配置 (只讀顯示)</td>
 	</tr>
 	<tr>
-	  <td>从服务器级别</td>
+	  <td>從服務器級別</td>
 	  <td><input type="text" value="$display_slave_level_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>-1=反向迁移模式(本地主→远端从), 0=主服务器, 1=从服务器(手动迁移), 2=从服务器(自动同步), 3=从服务器(直接使用主数据库)</td>
+	  <td>-1=反向遷移模式(本地主→遠端從), 0=主服務器, 1=從服務器(手動遷移), 2=從服務器(自動同步), 3=從服務器(直接使用主數據庫)</td>
 	</tr>
 	<tr>
-	  <td>目标服务器名称</td>
+	  <td>目標服務器名稱</td>
 	  <td><input type="text" value="$display_master_server_name_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>用于显示的目标服务器名称（反向迁移模式下为远端从服务器）</td>
+	  <td>用於顯示的目標服務器名稱（反向遷移模式下為遠端從服務器）</td>
 	</tr>
 	<tr>
-	  <td>目标数据库服务器</td>
+	  <td>目標數據庫服務器</td>
 	  <td><input type="text" value="$display_master_dbhost_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>目标数据库服务器地址（反向迁移模式下为远端从数据库）</td>
+	  <td>目標數據庫服務器地址（反向遷移模式下為遠端從數據庫）</td>
 	</tr>
 	<tr>
-	  <td>目标数据库用户名</td>
+	  <td>目標數據庫用户名</td>
 	  <td><input type="text" value="$display_master_dbuser_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>目标数据库用户名（反向迁移模式下为远端从数据库）</td>
+	  <td>目標數據庫用户名（反向遷移模式下為遠端從數據庫）</td>
 	</tr>
 	<tr>
-	  <td>目标数据库密码</td>
+	  <td>目標數據庫密碼</td>
 	  <td><input type="password" value="$display_master_dbpw_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>目标数据库密码（反向迁移模式下为远端从数据库）</td>
+	  <td>目標數據庫密碼（反向遷移模式下為遠端從數據庫）</td>
 	</tr>
 	<tr>
-	  <td>目标数据库名</td>
+	  <td>目標數據庫名</td>
 	  <td><input type="text" value="$display_master_dbname_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>目标数据库名（反向迁移模式下为远端从数据库）</td>
+	  <td>目標數據庫名（反向遷移模式下為遠端從數據庫）</td>
 	</tr>
 	<tr>
-	  <td>目标数据库表前缀</td>
+	  <td>目標數據庫表前綴</td>
 	  <td><input type="text" value="$display_master_tablepre_html" size="30" disabled="true" style="background-color: #F5F5F5;"></td>
-	  <td>目标数据库表前缀（反向迁移模式下为远端从数据库）</td>
+	  <td>目標數據庫表前綴（反向遷移模式下為遠端從數據庫）</td>
 	</tr>
 </table>
 <input type="submit" value="提交" onclick="$('command').value='edit';">
 <br><br>
 <div style="color: #8B0000; font-size: 12px; text-align: center;">
-	注意：主从数据库配置不能通过此界面修改，请直接编辑 config.inc.php 文件或重新运行安装脚本。
+	注意：主從數據庫配置不能通過此界面修改，請直接編輯 config.inc.php 文件或重新運行安裝腳本。
 </div>
 </form>

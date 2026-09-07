@@ -39,13 +39,13 @@ function chgword($nmotto,$nlastword,$nkillmsg) {
 
 	
 	if($nmotto != $userinfo['motto']) {
-		$log .= $nmotto == '' ? '口头禅已清空。' : '口头禅变更为<span class="yellow">'.$nmotto.'</span>。<br>';
+		$log .= $nmotto == '' ? '口頭禪已清空。' : '口頭禪變更為<span class="yellow">'.$nmotto.'</span>。<br>';
 	}
 	if($nlastword != $userinfo['lastword']) {
-		$log .= $nlastword == '' ? '遗言已清空。' : '遗言变更为<span class="yellow">'.$nlastword.'</span>。<br>';
+		$log .= $nlastword == '' ? '遺言已清空。' : '遺言變更為<span class="yellow">'.$nlastword.'</span>。<br>';
 	}
 	if($nkillmsg != $userinfo['killmsg']) {
-		$log .= $nkillmsg == '' ? '杀人留言已清空。' : '杀人留言变更为<span class="yellow">'.$nkillmsg.'</span>。<br>';
+		$log .= $nkillmsg == '' ? '殺人留言已清空。' : '殺人留言變更為<span class="yellow">'.$nkillmsg.'</span>。<br>';
 	}
 
 	$db->query("UPDATE {$gtablepre}users SET motto='$nmotto', lastword='$nlastword', killmsg='$nkillmsg' WHERE username='$name'");
@@ -58,11 +58,11 @@ function chgpassword($oldpswd,$newpswd,$newpswd2){
 	global $db,$gtablepre,$tablepre,$name,$log;
 	
 	if (!$oldpswd || !$newpswd || !$newpswd2){
-		$log .= '放弃了修改密码。<br />';
+		$log .= '放棄了修改密碼。<br />';
 		$mode = 'command';
 		return;
 	} elseif ($newpswd !== $newpswd2) {
-		$log .= '<span class="red">两次输入的新密码不一致。</span><br />';
+		$log .= '<span class="red">兩次輸入的新密碼不一致。</span><br />';
 		$mode = 'command';
 		return;
 	}
@@ -74,7 +74,7 @@ function chgpassword($oldpswd,$newpswd,$newpswd2){
 	
 	if($oldpswd == $userinfo['password']){
 		$db->query("UPDATE {$gtablepre}users SET `password` ='$newpswd' WHERE username='$name'");
-		$log .= '<span class="yellow">密码已修改！</span><br />';
+		$log .= '<span class="yellow">密碼已修改！</span><br />';
 		
 		//include_once GAME_ROOT.'./include/global.func.php';
 		
@@ -82,7 +82,7 @@ function chgpassword($oldpswd,$newpswd,$newpswd2){
 		$mode = 'command';
 		return;
 	}else{
-		$log .= '<span class="red">原密码输入错误！</span><br />';
+		$log .= '<span class="red">原密碼輸入錯誤！</span><br />';
 		$mode = 'command';
 		return;
 	}
@@ -91,11 +91,11 @@ function oneonone($sb,$sf){
 	global $db,$gold,$mode,$now,$gtablepre,$tablepre,$log,$name,$art,$arte,$artk,$arts,$artsk;
 	$mode = 'command';
 	if($sb == $sf){
-		$log .= "不能自我约战。<br>";
+		$log .= "不能自我約戰。<br>";
 		return;
 	}
 	if(($artk=='XX')||($artk=='XY')){
-		$log .= "不能重复约战。<br>";
+		$log .= "不能重複約戰。<br>";
 		return;
 	}
 	$result = $db->query("SELECT * FROM {$tablepre}players WHERE name='$sb' AND type = 0");
@@ -105,18 +105,18 @@ function oneonone($sb,$sf){
 	$a3=$edata['pid'];
 	$a4=$edata['hp'];
 	if (!$a3){
-		$log .= "该ID不存在！<br>";
+		$log .= "該ID不存在！<br>";
 		return;
 	}
 	if (!$a4){
-		$log .= "不能和死人约战。<br>";
+		$log .= "不能和死人約戰。<br>";
 		return;
 	}
 	$result = $db->query("SELECT * FROM {$tablepre}players WHERE name='$sf' AND type = 0");
 	$edata = $db->fetch_array($result);
 	$a1=$edata['money'];
 	if ($a1<1500){
-		$log .= "需要携带1500G才能约战。<br>";
+		$log .= "需要攜帶1500G才能約戰。<br>";
 		return;
 	}
 	$result = $db->query("SELECT * FROM {$gtablepre}users WHERE username='$sb'");
@@ -129,9 +129,9 @@ function oneonone($sb,$sf){
 		//$log .= "不能自我约战。<br>";
 		//return;
 	}
-	if(preg_match('/[,|<|>|&|;|#|"|\s|\p{C}]+/u',$sb)) { $log.='请不要尝试注入……';return; }
+	if(preg_match('/[,|<|>|&|;|#|"|\s|\p{C}]+/u',$sb)) { $log.='請不要嘗試注入……';return; }
 	$art=$sb;$artk='XY';$arte=1;$arts=1;$artsk='';
-	$taunt=$sf.'喊道：“'.$sb.'，来，战♂个♂痛♂快！”';
+	$taunt=$sf.'喊道：“'.$sb.'，來，戰♂個♂痛♂快！”';
 	$db->query("INSERT INTO {$tablepre}chat (type,`time`,send,msg) VALUES ('4','$now','$name','$taunt')");
 	$result = $db->query("SELECT * FROM {$tablepre}players WHERE name='$sb' AND type = 0");
 	$edata = $db->fetch_array($result);
@@ -140,7 +140,7 @@ function oneonone($sb,$sf){
 	if (($a1==$sf)&&($a2=='XY')){
 		$artk='XX';
 		$db->query ( "UPDATE {$tablepre}players SET artk='XX' WHERE `name` ='$sb' AND type=0 ");
-		$taunt='约战成立！';
+		$taunt='約戰成立！';
 		$db->query("INSERT INTO {$tablepre}chat (type,`time`,send,msg) VALUES ('4','$now','$name','$taunt')");
 	}
 	return;
@@ -149,7 +149,7 @@ function oneonone($sb,$sf){
 function adtsk(){
 	global $log,$mode,$club,$wep,$wepk,$wepe,$weps,$wepsk;
 	if($wepk == 'WN' || !$wepe || !$weps){
-		$log .= '<span class="red">你没有装备武器，无法改造！</span><br />';
+		$log .= '<span class="red">你沒有裝備武器，無法改造！</span><br />';
 		$mode = 'command';
 		return;
 	}
@@ -169,11 +169,11 @@ function adtsk(){
 		}
 		if($position){
 			if(strpos($wepsk,'e')!==false){
-				$log .= '<span class="red">武器已经带有电击属性，不用改造！</span><br />';
+				$log .= '<span class="red">武器已經帶有電擊屬性，不用改造！</span><br />';
 				$mode = 'command';
 				return;
 			}elseif(strlen($wepsk)>=40){
-				$log .= '<span class="red">武器属性数目达到上限，无法改造！</span><br />';
+				$log .= '<span class="red">武器屬性數目達到上限，無法改造！</span><br />';
 				$mode = 'command';
 				return;
 			}
@@ -181,8 +181,8 @@ function adtsk(){
 			
 			${'itms'.$position}-=1;
 			$itm = ${'itm'.$position};
-			$log .= "<span class=\"yellow\">用{$itm}改造了{$wep}，{$wep}增加了电击属性！</span><br />";
-			$wep = '电气'.$wep;
+			$log .= "<span class=\"yellow\">用{$itm}改造了{$wep}，{$wep}增加了電擊屬性！</span><br />";
+			$wep = '電氣'.$wep;
 			$wepsk .= 'e';
 			if(${'itms'.$position} == 0){
 				$log .= "<span class=\"red\">$itm</span>用光了。<br />";
@@ -192,7 +192,7 @@ function adtsk(){
 			$mode = 'command';
 			return;
 		}else{
-			$log .= '<span class="red">你没有电池，无法改造武器！</span><br />';
+			$log .= '<span class="red">你沒有電池，無法改造武器！</span><br />';
 			$mode = 'command';
 			return;
 		}
@@ -200,23 +200,23 @@ function adtsk(){
 		$position = 0;
 		foreach(Array(1,2,3,4,5,6) as $imn){
 			global ${'itm'.$imn},${'itmk'.$imn},${'itme'.$imn},${'itms'.$imn},${'itmsk'.$imn},${'itmpara'.$imn};
-			if(${'itm'.$imn} == '毒药' && ${'itmk'.$imn} == 'Y' && ${'itme'.$imn} > 0 ){
+			if(${'itm'.$imn} == '毒藥' && ${'itmk'.$imn} == 'Y' && ${'itme'.$imn} > 0 ){
 				$position = $imn;
 				break;
 			}
 		}
 		if($position){
 			if(strpos($wepsk,'p')!==false){
-				$log .= '<span class="red">武器已经带毒，不用改造！</span><br />';
+				$log .= '<span class="red">武器已經帶毒，不用改造！</span><br />';
 				$mode = 'command';
 				return;
 			}elseif(strlen($wepsk)>=40){
-				$log .= '<span class="red">武器属性数目达到上限，无法改造！</span><br />';
+				$log .= '<span class="red">武器屬性數目達到上限，無法改造！</span><br />';
 				$mode = 'command';
 				return;
 			}
 			$wepsk .= 'p';
-			$log .= "<span class=\"yellow\">用毒药为{$wep}淬毒了，{$wep}增加了带毒属性！</span><br />";
+			$log .= "<span class=\"yellow\">用毒藥為{$wep}淬毒了，{$wep}增加了帶毒屬性！</span><br />";
 			$wep = '毒性'.$wep;
 			${'itms'.$position}-=1;
 			$itm = ${'itm'.$position};
@@ -228,7 +228,7 @@ function adtsk(){
 			$mode = 'command';
 			return;
 		}else{
-			$log .= '<span class="red">你没有毒药，无法给武器淬毒！</span><br />';
+			$log .= '<span class="red">你沒有毒藥，無法給武器淬毒！</span><br />';
 			$mode = 'command';
 			return;
 		}
@@ -242,18 +242,18 @@ function adtsk(){
 function trap_adtsk($which){
 	global $log,$mode,$club,${'itm'.$which},${'itmk'.$which},${'itme'.$which},${'itms'.$which},${'itmpara'.$which};
 	if(strpos(${'itmk'.$which},'T')!==0){
-		$log .= '<span class="red">这个物品不是陷阱，无法改造！</span><br />';
+		$log .= '<span class="red">這個物品不是陷阱，無法改造！</span><br />';
 		$mode = 'command';
 		return;
 	}
 	if(${'itmk'.$which}=='TOc' || ${'itmk'.$which}=='TNc'){
-		$log .= '<span class="red">奇迹陷阱不允许改造！</span><br />';
+		$log .= '<span class="red">奇蹟陷阱不允許改造！</span><br />';
 		$mode = 'command';
 		return;
 	}
 	if($club == 7){//电脑社，电气改造
-		if (strpos(${'itm'.$which},'电气')!==false){
-			$log .= '<span class="red">陷阱已经带有电击属性，不用改造！</span><br />';
+		if (strpos(${'itm'.$which},'電氣')!==false){
+			$log .= '<span class="red">陷阱已經帶有電擊屬性，不用改造！</span><br />';
 			$mode='command';
 			return;
 		}
@@ -268,8 +268,8 @@ function trap_adtsk($which){
 		if($position){
 			${'itms'.$position}-=1;
 			$itm = ${'itm'.$position}; $citm=${'itm'.$which};
-			$log .= "<span class=\"yellow\">用{$itm}改造了{$citm}，{$citm}增加了电击属性！</span><br />";
-			${'itm'.$which} = '电气'.${'itm'.$which};
+			$log .= "<span class=\"yellow\">用{$itm}改造了{$citm}，{$citm}增加了電擊屬性！</span><br />";
+			${'itm'.$which} = '電氣'.${'itm'.$which};
 			if(${'itms'.$position} == 0){
 				$log .= "<span class=\"red\">$itm</span>用光了。<br />";
 				${'itm'.$position} = ${'itmk'.$position} = ${'itmsk'.$position} = ${'itmpara'.$position} = '';
@@ -278,20 +278,20 @@ function trap_adtsk($which){
 			$mode = 'command';
 			return;
 		}else{
-			$log .= '<span class="red">你没有电池，无法改造陷阱！</span><br />';
+			$log .= '<span class="red">你沒有電池，無法改造陷阱！</span><br />';
 			$mode = 'command';
 			return;
 		}
 	}elseif($club == 8){//带毒改造
 		if (strpos(${'itm'.$which},'毒性')!==false){
-			$log .= '<span class="red">陷阱已经带毒，不用改造！</span><br />';
+			$log .= '<span class="red">陷阱已經帶毒，不用改造！</span><br />';
 			$mode='command';
 			return;
 		}
 		$position = 0;
 		foreach(Array(1,2,3,4,5,6) as $imn){
 			global ${'itm'.$imn},${'itmk'.$imn},${'itme'.$imn},${'itms'.$imn},${'itmsk'.$imn};
-			if(${'itm'.$imn} == '毒药' && ${'itmk'.$imn} == 'Y' && ${'itme'.$imn} > 0 ){
+			if(${'itm'.$imn} == '毒藥' && ${'itmk'.$imn} == 'Y' && ${'itme'.$imn} > 0 ){
 				$position = $imn;
 				break;
 			}
@@ -299,7 +299,7 @@ function trap_adtsk($which){
 		if($position){
 			${'itms'.$position}-=1;
 			$itm = ${'itm'.$position}; $citm=${'itm'.$which};
-			$log .= "<span class=\"yellow\">用{$itm}改造了{$citm}，{$citm}增加了带毒属性！</span><br />";
+			$log .= "<span class=\"yellow\">用{$itm}改造了{$citm}，{$citm}增加了帶毒屬性！</span><br />";
 			${'itm'.$which} = '毒性'.${'itm'.$which};
 			if(${'itms'.$position} == 0){
 				$log .= "<span class=\"red\">$itm</span>用光了。<br />";
@@ -309,7 +309,7 @@ function trap_adtsk($which){
 			$mode = 'command';
 			return;
 		}else{
-			$log .= '<span class="red">你没有毒药，无法给武器淬毒！</span><br />';
+			$log .= '<span class="red">你沒有毒藥，無法給武器淬毒！</span><br />';
 			$mode = 'command';
 			return;
 		}
@@ -336,7 +336,7 @@ function syncro($sb){
 function weaponswap(){
 	global $log,$mode,$club,$wep,$wepk,$wepe,$weps,$wepsk,$weppara,$gamecfg;
 	if (strpos($wepsk,'j')===false){
-		$log.='你的武器不能变换。<br>';
+		$log.='你的武器不能變換。<br>';
 		$mode = 'command';
 		return;
 		}
@@ -348,11 +348,11 @@ function weaponswap(){
 		list($on,$nn,$nk,$ne,$ns,$nsk,$npara) = explode(',',$wlist[$i]);
 		if ($wep==$on){
 			$wep=$nn;$wepk=$nk;$wepe=$ne;$weps=$ns;$wepsk=$nsk;$weppara=$npara;
-			$log.="<span class=\"yellow\">{$oldw}</span>变换成了<span class=\"yellow\">{$wep}</span>。<br>";
+			$log.="<span class=\"yellow\">{$oldw}</span>變換成了<span class=\"yellow\">{$wep}</span>。<br>";
 			return;
 		}
 	}
-	$log.="<span class=\"yellow\">{$oldw}</span>由于改造或其他原因不能变换。<br>";
+	$log.="<span class=\"yellow\">{$oldw}</span>由於改造或其他原因不能變換。<br>";
 }
 function chginf($infpos){
 	global $log,$mode,$inf,$inf_sp,$inf_sp_2,$sp,$infinfo,$exdmginf,$club;
@@ -367,11 +367,11 @@ function chginf($infpos){
 				}
 			}
 			if(!$spdown){
-				$log .= '你并没有受伤！';
+				$log .= '你並沒有受傷！';
 				$mode = 'command';
 				return;
 			}elseif($sp <= $spdown){
-				$log .= "包扎全部伤口需要{$spdown}点体力，先回复体力吧！";
+				$log .= "包紮全部傷口需要{$spdown}點體力，先回復體力吧！";
 				$mode = 'command';
 				return;
 			}
@@ -380,46 +380,46 @@ function chginf($infpos){
 			$inf = str_replace('a','',$inf);
 			$inf = str_replace('f','',$inf);
 			$sp -= $spdown;
-			$log .= "消耗<span class=\"yellow\">$spdown</span>点体力，全身伤口都包扎好了！";
+			$log .= "消耗<span class=\"yellow\">$spdown</span>點體力，全身傷口都包紮好了！";
 			$mode = 'command';
 			return;
 		}else{
-			$log .= '你不懂得怎样快速包扎伤口！';
+			$log .= '你不懂得怎樣快速包紮傷口！';
 			$mode = 'command';
 			return;
 		}
 	}elseif(in_array($infpos,$normalinf) && strpos($inf,$infpos) !== false){	//普通伤口
 		if($sp <= $inf_sp) {
-			$log .= "包扎伤口需要{$inf_sp}点体力，先回复体力吧！";
+			$log .= "包紮傷口需要{$inf_sp}點體力，先回復體力吧！";
 			$mode = 'command';
 			return;
 		} else {
 			$inf = str_replace($infpos,'',$inf);
 			$sp -= $inf_sp;
-			$log .= "消耗<span class=\"yellow\">$inf_sp</span>点体力，{$infinfo[$infpos]}<span class=\"red\">部</span>的伤口已经包扎好了！";
+			$log .= "消耗<span class=\"yellow\">$inf_sp</span>點體力，{$infinfo[$infpos]}<span class=\"red\">部</span>的傷口已經包紮好了！";
 			$mode = 'command';
 			return;
 		}
 	}elseif(strpos($inf,$infpos) !== false){  //特殊状态
 		if($club == 16){
 			if($sp <= $inf_sp_2) {
-				$log .= "处理异常状态需要{$inf_sp_2}点体力，先回复体力吧！";
+				$log .= "處理異常狀態需要{$inf_sp_2}點體力，先回復體力吧！";
 				$mode = 'command';
 				return;
 			} else {
 				$inf = str_replace($infpos,'',$inf);
 				$sp -= $inf_sp_2;
-				$log .= "消耗<span class=\"yellow\">$inf_sp_2</span>点体力，{$exdmginf[$infpos]}状态已经完全治愈了！";
+				$log .= "消耗<span class=\"yellow\">$inf_sp_2</span>點體力，{$exdmginf[$infpos]}狀態已經完全治癒了！";
 				$mode = 'command';
 				return;
 			}
 		}else{
-			$log .= '你不懂得怎样治疗异常状态！';
+			$log .= '你不懂得怎樣治療異常狀態！';
 			$mode = 'command';
 			return;
 		}
 	}else{
-		$log .= '你不需要包扎这个伤口！';
+		$log .= '你不需要包紮這個傷口！';
 		$mode = 'command';
 		return;
 	}
@@ -428,13 +428,13 @@ function chginf($infpos){
 function chkpoison($itmn){
 	global $log,$mode,$club;
 	if($club != 8){
-		$log .= '你不会查毒。';
+		$log .= '你不會查毒。';
 		$mode = 'command';
 		return;
 	}
 
 	if ( $itmn < 1 || $itmn > 6 ) {
-		$log .= '此道具不存在，请重新选择。';
+		$log .= '此道具不存在，請重新選擇。';
 		$mode = 'command';
 		return;
 	}
@@ -447,7 +447,7 @@ function chkpoison($itmn){
 	$itmsk = & ${'itmsk'.$itmn};
 
 	if(!$itms) {
-		$log .= '此道具不存在，请重新选择。<br>';
+		$log .= '此道具不存在，請重新選擇。<br>';
 		$mode = 'command';
 		return;
 	}
@@ -464,7 +464,7 @@ function chkpoison($itmn){
 function press_bomb(){
 	global $log,$mode,$club,$wp,$wk,$wg,$wc,$wd,$wf,$mhp,$hp,$msp,$sp,$att,$def,$rage,$lvl;
 	if($club != 99){
-		$log .= '你的称号不能使用该技能。';
+		$log .= '你的稱號不能使用該技能。';
 		$mode = 'command';
 		return;
 	}
@@ -473,7 +473,7 @@ function press_bomb(){
 	$wp=ceil($wp*1.2); $wk=ceil($wk*1.2); $wg=ceil($wg*1.2); $wc=ceil($wc*1.2); $wd=ceil($wd*1.2); $wf=ceil($wf*1.2);
 	$mhp=ceil($mhp*1.15); $hp=ceil($hp*1.15); $msp=ceil($msp*1.15); $sp=ceil($sp*1.15); 
 	$att=ceil($att*1.2); $def=ceil($def*1.2); $rage+=$lvl*10; 
-	$log.="你按下了X按钮，你突然感觉到一股力量贯通全身！"; 
+	$log.="你按下了X按鈕，你突然感覺到一股力量貫通全身！"; 
 	$mode = 'command';
 	return;
 }

@@ -4,49 +4,49 @@
 	
 	<table class="admin">
 		<tr>
-			<th>游戏变量</th>
-			<th>当前数据</th>
+			<th>遊戲變量</th>
+			<th>當前數據</th>
 			<th>操作</th>
 		</tr>
 		
 		<tr>
-			<td>游戏局数</td>
+			<td>遊戲局數</td>
 			<td>$gamenum</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>游戏状态</td>
+			<td>遊戲狀態</td>
 			<td>$gstate[$gamestate]</td>
 			<td>
 				<!--{if $gamestate == 0}-->
-				<input type="submit" value="准备开始" onclick="$('command').value='gsedit_10'"><br>
-				<input type="submit" value="开始游戏" onclick="$('command').value='gsedit_20'">
+				<input type="submit" value="準備開始" onclick="$('command').value='gsedit_10'"><br>
+				<input type="submit" value="開始遊戲" onclick="$('command').value='gsedit_20'">
 				<!--{elseif $gamestate == 10}-->
-				<input type="submit" value="开始游戏" onclick="$('command').value='gsedit_20'"><br>
-				<input type="submit" value="结束游戏" onclick="$('command').value='gsedit_0'">
+				<input type="submit" value="開始遊戲" onclick="$('command').value='gsedit_20'"><br>
+				<input type="submit" value="結束遊戲" onclick="$('command').value='gsedit_0'">
 				<!--{elseif $gamestate == 20}-->
 				<input type="submit" value="停止激活" onclick="$('command').value='gsedit_30'"><br>
-				<input type="submit" value="进入连斗" onclick="$('command').value='gsedit_40'"><br>
-				<input type="submit" value="进入死斗" onclick="$('command').value='gsedit_50'"><br>
-				<input type="submit" value="结束游戏" onclick="$('command').value='gsedit_0'">
+				<input type="submit" value="進入連鬥" onclick="$('command').value='gsedit_40'"><br>
+				<input type="submit" value="進入死鬥" onclick="$('command').value='gsedit_50'"><br>
+				<input type="submit" value="結束遊戲" onclick="$('command').value='gsedit_0'">
 				<!--{elseif $gamestate == 30}-->
-				<input type="submit" value="进入连斗" onclick="$('command').value='gsedit_40'"><br>
-				<input type="submit" value="进入死斗" onclick="$('command').value='gsedit_50'"><br>
-				<input type="submit" value="结束游戏" onclick="$('command').value='gsedit_0'">
+				<input type="submit" value="進入連鬥" onclick="$('command').value='gsedit_40'"><br>
+				<input type="submit" value="進入死鬥" onclick="$('command').value='gsedit_50'"><br>
+				<input type="submit" value="結束遊戲" onclick="$('command').value='gsedit_0'">
 				<!--{elseif $gamestate == 40}-->
-				<input type="submit" value="进入死斗" onclick="$('command').value='gsedit_50'"><br>
-				<input type="submit" value="结束游戏" onclick="$('command').value='gsedit_0'">
+				<input type="submit" value="進入死鬥" onclick="$('command').value='gsedit_50'"><br>
+				<input type="submit" value="結束遊戲" onclick="$('command').value='gsedit_0'">
 				<!--{elseif $gamestate == 50}-->
-				<input type="submit" value="结束游戏" onclick="$('command').value='gsedit_0'">
+				<input type="submit" value="結束遊戲" onclick="$('command').value='gsedit_0'">
 				<!--{/if}-->
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<!--{if $gamestate}-->
-				当前游戏开始时间
+				當前遊戲開始時間
 				<!--{else}-->
-				下局游戏开始时间
+				下局遊戲開始時間
 				<!--{/if}-->
 			</td>
 			<td>				
@@ -58,14 +58,14 @@
 			</td>
 			<td>
 				<!--{if $gamestate}-->
-				<input type="submit" value="无法设定" disabled>
+				<input type="submit" value="無法設定" disabled>
 				<!--{else}-->
-				<input type="submit" value="设定时间" onclick="$('command').value='sttimeedit'">
+				<input type="submit" value="設定時間" onclick="$('command').value='sttimeedit'">
 				<!--{/if}-->
 			</td>
 		</tr>
 		<tr>
-			<td>当前天气</td>
+			<td>當前天氣</td>
 			<td>
 				<select name="iweather">
 					<!--{loop $wthinfo $n $wth}-->
@@ -73,25 +73,25 @@
 					<!--{/loop}-->
 				</select>
 			</td>
-			<td><input type="submit" value="更改天气" onclick="$('command').value='wthedit'"></td>
+			<td><input type="submit" value="更改天氣" onclick="$('command').value='wthedit'"></td>
 		</tr>
 		<tr>
-			<td>禁区列表</td>
+			<td>禁區列表</td>
 			<td>$arealiststr</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>下次禁区列表</td>
+			<td>下次禁區列表</td>
 			<td>$nextarealiststr</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>已有禁区数目</td>
+			<td>已有禁區數目</td>
 			<td>$areanum</td>
 			<td></td>
 		</tr>
 		<tr>
-			<td>下次禁区时间</td>
+			<td>下次禁區時間</td>
 			<td>
 				<input type="text" name="areayear" size="4" disabled value="{$aryear}">{$lang['year']}
 				<input type="text" name="areamonth" size="2" disabled value="{$armonth}">{$lang['month']}
@@ -99,14 +99,14 @@
 				<input type="text" name="areahour" size="2" disabled value="{$arhour}">{$lang['hour']}
 				<input type="text" name="areamin" size="2" disabled value="{$armin}">{$lang['min']}
 			</td>
-			<td><input type="submit" value="立刻禁区" onclick="$('command').value='areaadd'"></td>
+			<td><input type="submit" value="立刻禁區" onclick="$('command').value='areaadd'"></td>
 		</tr>
 		<tr>
-			<td>禁区解除</td>
+			<td>禁區解除</td>
 			<td>
 				<input type="radio" name="ihack" value="1" <!--{if $hack}-->checked<!--{/if}-->>是&nbsp;&nbsp;&nbsp;<input type="radio" name="ihack" value="0" <!--{if !$hack}-->checked<!--{/if}-->>否
 			</td>
-			<td><input type="submit" value="更改状态" onclick="$('command').value='hackedit'"></td>
+			<td><input type="submit" value="更改狀態" onclick="$('command').value='hackedit'"></td>
 		</tr>
 	</table>
 </form> 

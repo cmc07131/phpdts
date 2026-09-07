@@ -21,9 +21,9 @@
 			$tagcolor = $etype == 'dom' ? '' : '';
 			$tagtype = $etype == 'dom' ? 'iteminfo' : 'itemspkinfo';
 			$tagskdesc = $$tagtype[$tagid];
-			if($tagskdesc == '重击辅助') $tagskdesc = '重击';
+			if($tagskdesc == '重擊輔助') $tagskdesc = '重擊';
 			if($tagskdesc == 'HP制御') $tagskdesc = '制御';
-			if($tagskdesc == '陷阱探测') $tagskdesc = '探雷';
+			if($tagskdesc == '陷阱探測') $tagskdesc = '探雷';
 			$tag = "<span class=\"{$tagcolor}\">{$tagdesc}{$tagskdesc}</span>";
 		}
 		else
@@ -42,7 +42,7 @@
 		include_once GAME_ROOT.'./include/game/itemplace.func.php';
 		if(!empty($clbpara['elements']['info']['d']))
 		{
-			$smhint = '<span class="blueseed b">已了解到的元素配方（按顺序投入）：</span><br><ul>';
+			$smhint = '<span class="blueseed b">已瞭解到的元素配方（按順序投入）：</span><br><ul>';
 			foreach($emix_fixlist as $key => $list)
 			{
 				if(!empty($clbpara['elements']['info']['d']['d'.$key]))
@@ -87,7 +87,7 @@
 		}
 		if(!empty($clbpara['elements']['info']['dd']))
 		{
-			$smhint .= '<br><span class="blueseed b">已了解到的主要特征组合式：</span><br><ul>';
+			$smhint .= '<br><span class="blueseed b">已瞭解到的主要特徵組合式：</span><br><ul>';
 			foreach($dommix_list as $key => $list)
 			{
 				if(!empty($clbpara['elements']['info']['dd']['dd'.$key]))
@@ -107,7 +107,7 @@
 		}
 		if(!empty($clbpara['elements']['info']['sd']))
 		{
-			$smhint .= '<br><span class="blueseed b">已了解到的次要特征组合式：</span><br><ul>';
+			$smhint .= '<br><span class="blueseed b">已瞭解到的次要特徵組合式：</span><br><ul>';
 			$submix_list = array_merge_recursive($submix_list,$gamevars['rand_emixsubres']);
 			foreach($submix_list as $key => $list)
 			{
@@ -194,22 +194,22 @@
 
 		if($club != 20 || ($emode == 'c20_zombie' && check_skill_unlock('c20_zombie',$data)))
 		{
-			$log.="你还想对这具可怜的尸体干什么？<br>";
+			$log.="你還想對這具可憐的屍體幹什麼？<br>";
 			$mode = 'command';
 			return;
 		}
 		# 过滤不能分解的尸体
 		if(($emode == 'element_split' && in_array($edata['type'],$no_type_to_e_list)) || ($emode == 'c20_zombie' && in_array($edata['type'],get_skillvars($emode,'notype'))) )
 		{
-			$desc = ($emode == 'element_split') ? '提炼为元素' : '转化成灵俑';
-			$log.="无法将{$edata['name']}{$desc}……为什么呢？<br>";
+			$desc = ($emode == 'element_split') ? '提煉為元素' : '轉化成靈俑';
+			$log.="無法將{$edata['name']}{$desc}……為什麼呢？<br>";
 			$mode = 'command';
 			return;
 		}
 		# 不能灵俑套娃……
 		if($emode == 'c20_zombie' && !check_skill_unlock('inf_zombie',$edata))
 		{
-			$log.="竟然想让一个已经死了两次的人再起来替你打工……你的良心不会痛吗！<br>";
+			$log.="竟然想讓一個已經死了兩次的人再起來替你打工……你的良心不會痛嗎！<br>";
 			$mode = 'command';
 			return;
 		}
@@ -217,8 +217,8 @@
 		# 开始提炼尸体
 		$ev_arr = Array();
 
-		if($emode == 'element_split') $log.="<span class='grey'>{$edata['name']}化作点点荧光四散开来……</span><br>";
-		else $log.="<span class='grey'>{$edata['name']}身上升腾起缕缕不详黑气……</span><br>";
+		if($emode == 'element_split') $log.="<span class='grey'>{$edata['name']}化作點點熒光四散開來……</span><br>";
+		else $log.="<span class='grey'>{$edata['name']}身上升騰起縷縷不詳黑氣……</span><br>";
 
 		# 处理绑定有秘钥的尸体
 		if($emode == 'element_split' && !empty($split_spcorpse_fix[$edata['type']])) esplit_vip_things($ev_arr,$edata,$data);
@@ -249,14 +249,14 @@
 				$add_ev = get_clbskill_emgain_r($add_ev,$data);
 				${'element'.$e_key} += $add_ev;
 				$total_addev += $add_ev;
-				$log.="获得了{$add_ev}份{$e_info}！<br>";
+				$log.="獲得了{$add_ev}份{$e_info}！<br>";
 			}
 			else 
 			{
 				$add_ev = ceil($add_ev * sqrt($edata['lvl']));
 				if(${'element'.$e_key} < $add_ev)
 				{
-					$log.="但是你的元素库存告罄了！转化被迫中止了……<br>";
+					$log.="但是你的元素庫存告罄了！轉化被迫中止了……<br>";
 					$mode = 'command';
 					return;
 				}
@@ -269,7 +269,7 @@
 		if($emode == 'c20_zombie')
 		{
 			$gdata = $edata; unset($gdata['pid']);
-			$gdata['name'] .= '的灵俑';
+			$gdata['name'] .= '的靈俑';
 			$gdata['hp'] = $gdata['mhp']; $gdata['action'] = '';
 			$gdata['state'] = $gdata['endtime'] = $gdata['deathtime'] = $gdata['bid'] = 0;
 			# 登记为盟友，并记录创造者id
@@ -296,7 +296,7 @@
 		# 分解的结果有参数合法的特殊道具
 		if($emode == 'element_split' && !empty($ev_arr['spitm']) && count($ev_arr['spitm'])>3)
 		{
-			$log.="但出现在你面前的不是元素，而是<span class='yellow'>{$ev_arr['result'][0]}</span>！<br>……这又是什么鬼东西！<br>";
+			$log.="但出現在你面前的不是元素，而是<span class='yellow'>{$ev_arr['result'][0]}</span>！<br>……這又是什麼鬼東西！<br>";
 			$itm0 = $ev_arr['result'][0]; $itmk0 = $ev_arr['result'][1]; $itmsk0 = $ev_arr['result'][4];
 			$itme0 = $ev_arr['result'][2]; $itms0 = $ev_arr['result'][3];
 			include_once GAME_ROOT.'./include/game/itemmain.func.php';
@@ -311,7 +311,7 @@
 		{
 			include_once GAME_ROOT.'./include/state.func.php';
 			rpup_rev($data,$ep_dice);
-			$log.="……但是这一切真的值得吗？<br>";
+			$log.="……但是這一切真的值得嗎？<br>";
 		}
 		$log.="<br>";
 		$mode = 'command';
@@ -331,7 +331,7 @@
 		extract($data,EXTR_REFS);
 		if($club != 20)
 		{
-			$log .= "你的手突然掐住了你的头左右摇摆！<br><span class='yellow'>“你还想要干什么，啊？你还想要干什么！！”</span><br>看来你的手和脑子之间起了一点小摩擦。<br><br>";
+			$log .= "你的手突然掐住了你的頭左右搖擺！<br><span class='yellow'>“你還想要幹什麼，啊？你還想要幹什麼！！”</span><br>看來你的手和腦子之間起了一點小摩擦。<br><br>";
 			$mode = 'command';
 			return;
 		}
@@ -340,7 +340,7 @@
 		{
 			if(!${'itms'.$iid})
 			{
-				$log.="道具来源非法。<br>";
+				$log.="道具來源非法。<br>";
 				$mode = 'command';
 				return;
 			}
@@ -358,7 +358,7 @@
 				return;
 			}
 			//分解道具获得元素
-			$log.="<span class='grey'>".${'itm'.$iid}."化作点点荧光四散开来……</span><br>";
+			$log.="<span class='grey'>".${'itm'.$iid}."化作點點熒光四散開來……</span><br>";
 			//计算能获得的元素种类与数量
 			$ev_arr = esplit_get_values_by_iarr($i_arr,$ev_arr,$data);
 			//销毁道具
@@ -372,7 +372,7 @@
 				{
 					if(is_array($ev) && count($ev)>3)
 					{
-						$log.="但出现在你面前的不是元素，而是<span class='yellow'>{$ev[0]}</span>！<br>……这是什么情况……！？<br>";
+						$log.="但出現在你面前的不是元素，而是<span class='yellow'>{$ev[0]}</span>！<br>……這是什麼情況……！？<br>";
 						$itm0 = $ev[0]; $itmk0 = $ev[1]; $itmsk0 = $ev[4];
 						$itme0 = $ev[2]; $itms0 = $ev[3];
 						include_once GAME_ROOT.'./include/game/itemmain.func.php';
@@ -385,7 +385,7 @@
 						$ev = ceil($ev);
 						${'element'.$e_key} += $ev;
 						$total_addev += $ev;
-						$log.="获得了{$ev}份{$elements_info[$e_key]}！<br>";
+						$log.="獲得了{$ev}份{$elements_info[$e_key]}！<br>";
 					}
 				}
 			}
@@ -416,13 +416,13 @@
 
 		if($club != 20)
 		{
-			$log .= "你思考了一会儿，还是没明白你到底想要干什么……<br>";
+			$log .= "你思考了一會兒，還是沒明白你到底想要幹什麼……<br>";
 			return;
 		}
 
 		if($clbstatusa)
 		{
-			$log .= "你习惯性摸了摸腰间，但那里已经没有元素口袋了……呼，至少元素们还没有离开你。<br>";
+			$log .= "你習慣性摸了摸腰間，但那裏已經沒有元素口袋了……呼，至少元素們還沒有離開你。<br>";
 			return;
 		}
 
@@ -432,8 +432,8 @@
 		# 素材队列上限：6种
 		if(count($list)>6 || count($nums)>6)
 		{
-			$log .= "你投入的元素种类过多，元素们在锅里打起来了，甚至把你也波及到了！<br>
-			你被元素们打得奄奄一息！<br>";
+			$log .= "你投入的元素種類過多，元素們在鍋裏打起來了，甚至把你也波及到了！<br>
+			你被元素們打得奄奄一息！<br>";
 			$hp = 1;
 			return;
 		}
@@ -460,7 +460,7 @@
 				$farr[$emixarr[$i]] += $emixnums[$i];
 				if($farr[$emixarr[$i]] > ${'element'.$emixarr[$i]})
 				{
-					$log .= "{$elements_info[$emixarr[$i]]}库存不足，无法合成。<br>";
+					$log .= "{$elements_info[$emixarr[$i]]}庫存不足，無法合成。<br>";
 					return;
 				}
 				# 检查是否为主元素
@@ -508,7 +508,7 @@
 		if(!isset($clbpara['achvars'])) $clbpara['achvars'] = array();
 		if(empty($clbpara['achvars']['immix'])) $clbpara['achvars']['immix'] = 1;
 
-		$log.="从口袋中抓出了：<br>";
+		$log.="從口袋中抓出了：<br>";
 
 		# 素材位置 => 元素id
 		$dom_log = Array(); $total_enum = 0;
@@ -523,18 +523,18 @@
 		}
 		if(!empty($dom_log)) $log .= implode('、',$dom_log);
 
-		$log.="。<br>你紧张地搓了搓手。<br>合成开始了。<br>";
+		$log.="。<br>你緊張地搓了搓手。<br>合成開始了。<br>";
 
 		# 判断合成是否存在固定结果
 		$flag = emix_check_fix_result($emlist,$emnums,$data);
 		if($flag) return;
 
 		# 开始随机结果合成：
-		$log.="<span class='grey'>…加入了一点{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br>";
+		$log.="<span class='grey'>…加入了一點{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br>";
 
 		# 检查随机合成运势：
 		$emix_flag = emix_check_mix_luck();
-		$log.="<span class='grey'>你感觉{$emix_luck_info[$emix_flag]}</span><br>";
+		$log.="<span class='grey'>你感覺{$emix_luck_info[$emix_flag]}</span><br>";
 		
 		# 开始生成道具类别：
 		$emix_itmk = '';
@@ -543,7 +543,7 @@
 		# 用获取到的主特征（是个数组）确定道具类别
 		$emix_itmk = emix_spawn_itmk($emix_itmk_tags,$emix_flag);
 
-		$log.="<span class='clan'>你观察到自己投入进去的那坨混合物慢慢有了形状，它似乎能被用作<span class='yellow'>{$iteminfo[$emix_itmk]}</span>。</span><br>";
+		$log.="<span class='clan'>你觀察到自己投入進去的那坨混合物慢慢有了形狀，它似乎能被用作<span class='yellow'>{$iteminfo[$emix_itmk]}</span>。</span><br>";
 		$log.="<span class='grey'>…再加一些{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br>";
 
 		# 开始生成道具效果、耐久：
@@ -551,8 +551,8 @@
 		if(!$esarr) goto emix_failed_flag;
 		$emix_itme = $esarr[0]; $emix_itms = $esarr[1]; 
 
-		$log.="<span class='clan'>在那形状愈发明晰的时候，你听到<span class='yellow'>".($emix_itme+$emix_itms)."</span>份</span>{$elements_info[$emlist[$domkey[0]]]}<span class='clan'>在升腾的雾气中喃喃呓语。</span><br>";
-		$log.="<span class='grey'>…哎呀，不小心混入了一点{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br>";
+		$log.="<span class='clan'>在那形狀愈發明晰的時候，你聽到<span class='yellow'>".($emix_itme+$emix_itms)."</span>份</span>{$elements_info[$emlist[$domkey[0]]]}<span class='clan'>在升騰的霧氣中喃喃囈語。</span><br>";
+		$log.="<span class='grey'>…哎呀，不小心混入了一點{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br>";
 
 		# 生成道具属性：
 		$emix_itmsk = Array();
@@ -571,15 +571,15 @@
 				# 转换为道具属性
 				$tmp_emix_itmsk = emix_spawn_itmsk($subtags,$emix_itmk,$data,$emix_flag);
 				$emix_itmsk = array_merge($emix_itmsk,$tmp_emix_itmsk);
-				$log.="<span class='clan'>闻到了硫磺、莎草纸、</span>{$elements_info[$emlist[array_rand($emlist)]]}<span class='clan'>与</span><span class='yellow'>".(count($subtags))."种发酵物</span><span class='clan'>混合的味道。</span><br>";
+				$log.="<span class='clan'>聞到了硫磺、莎草紙、</span>{$elements_info[$emlist[array_rand($emlist)]]}<span class='clan'>與</span><span class='yellow'>".(count($subtags))."種發酵物</span><span class='clan'>混合的味道。</span><br>";
 			}
 		}
 		# 将itmsk从数组转回字符串
 		$emix_itmsk = get_itmsk_strlen($emix_itmsk);
 
 		//（TODO：合成事件结算阶段）
-		$log.="<span class='grey'>…最后再加一点{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br><br>";
-		$log.="结束了…？<br><br>";
+		$log.="<span class='grey'>…最後再加一點{$emix_tips_arr[array_rand($emix_tips_arr)]}…</span><br><br>";
+		$log.="結束了…？<br><br>";
 
 		$emix_itm = emix_spawn_itmname($emlist,$emnums,$domkey,$emix_itmk,$emix_itme,$emix_itms,$emix_itmsk,$data,$emix_flag);
 
@@ -594,7 +594,7 @@
 		else
 		{
 			emix_failed_flag:
-			$log.="<span class='red'>……合成失败了！<br>你投入进去的元素也全部打了水漂！<br>怎么这样……</span><br>";
+			$log.="<span class='red'>……合成失敗了！<br>你投入進去的元素也全部打了水漂！<br>怎麼這樣……</span><br>";
 			addnews($now,'emix_failed',$name);
 		}
 		# 只要不是大失败，每次进行元素合成都能获得一定的经验

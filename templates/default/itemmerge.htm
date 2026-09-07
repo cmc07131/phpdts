@@ -1,12 +1,12 @@
-你打算怎么整理？<br>
+你打算怎麼整理？<br>
 
 <input type="hidden" name="mode" value="itemmain">
 <input type="radio" name="command" id="menu" value="menu" checked><a onclick=sl('menu'); href="javascript:void(0);" >返回</a><br><br>
 
-<!-- 合并道具 -->
-<input type="radio" name="command" id="itemmerge" value="itemmerge"><a onclick=sl('itemmerge'); href="javascript:void(0);">合并道具</a>
+<!-- 合併道具 -->
+<input type="radio" name="command" id="itemmerge" value="itemmerge"><a onclick=sl('itemmerge'); href="javascript:void(0);">合併道具</a>
 <div style="padding: 5px;">
-    <span class="grey">将两个可堆叠道具合并在一起。</span><br>
+    <span class="grey">將兩個可堆疊道具合併在一起。</span><br>
     <select name="merge1" onclick=sl('itemmerge'); href="javascript:void(0);">
     <option value="0">■ 道具一 ■<br />
     <!--{if $itms1}--><option value="1">$itm1/$itme1/$itms1<br /><!--{/if}-->
@@ -30,11 +30,11 @@
 
 <br>
 
-<!-- 交换道具位置 -->
-<input type="radio" name="command" id="itemmove" value="itemmove"><a onclick=sl('itemmove'); href="javascript:void(0);">移动道具</a>
+<!-- 交換道具位置 -->
+<input type="radio" name="command" id="itemmove" value="itemmove"><a onclick=sl('itemmove'); href="javascript:void(0);">移動道具</a>
 <div style="padding: 5px;">
-    <span class="grey">先选择要移位的道具，再选择要移动到的位置。</span><br>
-    将：
+    <span class="grey">先選擇要移位的道具，再選擇要移動到的位置。</span><br>
+    將：
     <select name="from" onclick=sl('itemmove'); href="javascript:void(0);">
     <option value="0">■ 道  具 ■
         <!--{if $itms1}--><option value="1">$itm1/$itme1/$itms1<!--{/if}-->
@@ -45,7 +45,7 @@
         <!--{if $itms6}--><option value="6">$itm6/$itme6/$itms6<!--{/if}-->
     </select>
     <br>
-    移动至/与之交换：
+    移動至/與之交換：
     <select name="to" onclick=sl('itemmove'); href="javascript:void(0);">
     <option value="0">■ 位  置 ■
         <!--{if $itms1}--><option value="1">包裹1：$itm1/$itme1/$itms1<!--{else}--><option value="1">包裹1<!--{/if}-->

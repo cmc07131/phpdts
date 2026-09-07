@@ -9,26 +9,26 @@
 					<option value="{$val}"<!--{if $udata['nick'] == $val}-->selected<!--{/if}--> comments="{$title_desc_tmp}">$titles_list[$val]</option>
 				<!--{/loop}-->
 			</select>
-			<span id="nickcmt">选择一个有趣的头衔，部分头衔存在特殊的入场效果。<br><br><br></span>
+			<span id="nickcmt">選擇一個有趣的頭銜，部分頭銜存在特殊的入場效果。<br><br><br></span>
 		</td>
 	</tr>
 	<!--{if !empty($t1_list) && !empty($t2_list)}-->
 	<tr>
-		<td>内定称号</td>
+		<td>內定稱號</td>
 		<td>
 			<select name="club">
-				<optgroup label="普通称号">
+				<optgroup label="普通稱號">
 					<!--{loop $t2_list $key}-->
 						<option value="{$key}">$clubinfo[$key]</option>
 					<!--{/loop}-->
 				</optgroup>
-				<optgroup label="特殊称号">
+				<optgroup label="特殊稱號">
 					<!--{loop $t1_list $key}-->
 						<option value="{$key}">$clubinfo[$key]</option>
 					<!--{/loop}-->
 				</optgroup>
 			</select>
-			选择“无”时，可在游戏内使用<span class="lime">称号卡</span>变更称号。
+			選擇“無”時，可在遊戲內使用<span class="lime">稱號卡</span>變更稱號。
 		</td>
 	</tr>
 	<!--{/if}-->

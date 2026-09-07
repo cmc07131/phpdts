@@ -1,5 +1,5 @@
-<!-- 注意：大部分技能可以直接通过编辑配置文件完成 -->
-<!-- 可能的、需要新建模板的情况：你的技能需要在面板内执行比较复杂的、单靠配置文件无法实现的操作 -->
+<!-- 注意：大部分技能可以直接通過編輯配置文件完成 -->
+<!-- 可能的、需要新建模板的情況：你的技能需要在面板內執行比較複雜的、單靠配置文件無法實現的操作 -->
 <tr>
     <td class="b1" width="40">
         <span>{$cskills['c4_sniper']['name']}</span>
@@ -20,7 +20,7 @@
                     </td>
                     <td class="skilldesc_right b3">
                         <!--{if !empty($unlock_c4_sniper_flag) && $unlock_c4_sniper_flag == 'skillpara|c4_sniper-active' && empty($no_skill_input)}-->
-                        <input type="button" style="width:47px;margin-right:25px;float:right;" value="解锁">
+                        <input type="button" style="width:47px;margin-right:25px;float:right;" value="解鎖">
                         <!--{/if}-->
                     </td>
                 </tr>
@@ -38,7 +38,7 @@
                     </td>
                     <!--{if !empty($unlock_c4_sniper_flag) && $unlock_c4_sniper_flag == 'skillpara|c4_sniper-active' && empty($no_skill_input)}-->
                     <td class="skilldesc_right">
-                        <input type="button" style="width:47px;margin-right:25px;float:right;" value="解锁" onclick="$('mode').value='revskpts';$('command').value='actskill_c4_sniper';postCmd('gamecmd','command.php');this.disabled=true;">
+                        <input type="button" style="width:47px;margin-right:25px;float:right;" value="解鎖" onclick="$('mode').value='revskpts';$('command').value='actskill_c4_sniper';postCmd('gamecmd','command.php');this.disabled=true;">
                     </td>
                     <!--{/if}-->
                 </tr>

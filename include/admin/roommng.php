@@ -21,28 +21,28 @@ echo <<<EOT
 <form method="post" name="roommng" onsubmit="admin.php">
 <input type="hidden" name="mode" value="roommng">
 <input type="hidden" id="command" name="command" value="killroom">
-强制关闭指定房间：
+強制關閉指定房間：
 <select name="roomkey">
 EOT;
 
 foreach($roomlist as $rkey => $rinfo)
 {
 echo <<<EOT
-	<option value="{$rkey}">房间 {$rkey} 号 | 正在游玩人数：{$rinfo['alivenum']}
+	<option value="{$rkey}">房間 {$rkey} 號 | 正在遊玩人數：{$rinfo['alivenum']}
 EOT;
 }
 
 echo <<<EOT
 </select>
-<input type="submit" value="强制关闭">
+<input type="submit" value="強制關閉">
 <br>
-<span class='red'>（警告：正处于游戏状态中的房间也会被关闭！）</span>
+<span class='red'>（警告：正處於遊戲狀態中的房間也會被關閉！）</span>
 <br><br>
 EOT;
 
 echo <<<EOT
-<span tooltip="只会关闭尚未开始、或已无幸存玩家的房间">
-<input type="submit" value="关闭所有闲置房间" onclick="$('command').value='killallroom';"><br>
+<span tooltip="只會關閉尚未開始、或已無倖存玩家的房間">
+<input type="submit" value="關閉所有閒置房間" onclick="$('command').value='killallroom';"><br>
 </span>
 EOT;
 

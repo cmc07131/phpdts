@@ -19,11 +19,11 @@ function hotkey(evt)
 	if(hotkey_ok && document.activeElement.tagName != 'INPUT'){
 		evt = (evt) ? evt : ((window.event) ? window.event : '');
 		var ky = evt.keyCode ? evt.keyCode : evt.which;
-		flag=1;//是否完成冷却
+		flag=1;//是否完成冷卻
 		if (ms!=undefined) {
 			if (ms>0) flag=0;
 		}
-		//双字母id=冷却时间内不可执行的操作 单字母可以执行
+		//雙字母id=冷卻時間內不可執行的操作 單字母可以執行
 		if(!evt.ctrlKey && !evt.altKey && !evt.shiftKey){
 			if(ky==90){
 				flag==1 ? hotkey_click('zz') : hotkey_click('z');
@@ -298,7 +298,7 @@ function sl(id) {
 //	$('alivelist').innerHTML = alive;
 //}
 var lastRun = 0; var delay = 50;
-// 可选请求参数保持旧的两参数调用兼容；强制对话可安全覆盖临时页面的 mode/command。
+// 可選請求參數保持舊的兩參數調用兼容；強制對話可安全覆蓋臨時頁面的 mode/command。
 // Optional request settings preserve legacy calls while mandatory dialogues can safely override mode/command.
 function postCmd(formName,sendto,options){
 	var requestOptions = options || {};
@@ -320,13 +320,13 @@ function postCmd(formName,sendto,options){
 
 	var formElement = document.forms[formName];
 	if(!formElement) {
-		finishError('form', '找不到指令表单。');
+		finishError('form', '找不到指令表單。');
 		return false;
 	}
 
 	var now = Date.now();
 	if(!requestOptions.bypassDelay && lastRun && now - lastRun < delay) {
-		finishError('throttled', '指令提交过快，请稍后重试。');
+		finishError('throttled', '指令提交過快，請稍後重試。');
 		return false;
 	}
 
@@ -338,14 +338,14 @@ function postCmd(formName,sendto,options){
 		oXmlHttp.open("post", sendto, true);
 		oXmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		if(requestOptions.timeout && requestOptions.timeout > 0) {
-			// 老旧 XMLHttpRequest 实现可能不支持 timeout；仍允许请求继续并由对话层后备计时恢复。
+			// 老舊 XMLHttpRequest 實現可能不支持 timeout；仍允許請求繼續並由對話層後備計時恢復。
 			// Older XMLHttpRequest implementations may not support timeout; let the dialogue fallback timer recover instead.
 			try {
 				oXmlHttp.timeout = requestOptions.timeout;
 			} catch(timeoutError) {}
 		}
 	} catch(requestError) {
-		finishError('setup', '无法建立指令请求：' + requestError.message);
+		finishError('setup', '無法建立指令請求：' + requestError.message);
 		return false;
 	}
 
@@ -356,39 +356,39 @@ function postCmd(formName,sendto,options){
 			if (oXmlHttp.responseText != '') {
 				try {
 					if(showData(oXmlHttp.responseText) === false) {
-						finishError('response', '服务器返回了无效的指令结果。');
+						finishError('response', '服務器返回了無效的指令結果。');
 					} else {
 						finishSuccess();
 					}
 				} catch(responseError) {
-					finishError('parse', '无法处理服务器响应：' + responseError.message);
+					finishError('parse', '無法處理服務器響應：' + responseError.message);
 				}
 			} else {
-				finishError('empty', '服务器没有返回指令结果。');
+				finishError('empty', '服務器沒有返回指令結果。');
 			}
 		} else {
-			finishError('http', oXmlHttp.statusText || ('请求失败（HTTP ' + oXmlHttp.status + '）。'));
+			finishError('http', oXmlHttp.statusText || ('請求失敗（HTTP ' + oXmlHttp.status + '）。'));
 		}
 	};
 	oXmlHttp.onerror = function () {
-		finishError('network', '网络请求失败。');
+		finishError('network', '網絡請求失敗。');
 	};
 	oXmlHttp.onabort = function () {
-		finishError('abort', '指令请求已中断。');
+		finishError('abort', '指令請求已中斷。');
 	};
 	oXmlHttp.ontimeout = function () {
-		finishError('timeout', '指令请求超时。');
+		finishError('timeout', '指令請求超時。');
 	};
 	try {
 		oXmlHttp.send(sBody);
 	} catch(sendError) {
-		finishError('send', '无法发送指令请求：' + sendError.message);
+		finishError('send', '無法發送指令請求：' + sendError.message);
 		return false;
 	}
 	return true;
 }
 
-// 更新背景图片函数
+// 更新背景圖片函數
 function updateBackgroundImage(locationId) {
 	if (!locationId) return;
 	var bgUrl = "img/location/" + locationId + ".jpg";
@@ -403,7 +403,7 @@ function showData(sdata){
 		return true;
 	}else if(!shwData['innerHTML']) {
 		if($('error')) $('error').innerHTML=sdata;
-		else if(typeof showNotice == 'function') showNotice('服务器返回了无效响应。');
+		else if(typeof showNotice == 'function') showNotice('服務器返回了無效響應。');
 			//window.location.href = 'index.php';
 		return false;
 	}else{
@@ -444,17 +444,17 @@ function showData(sdata){
 			}
 		}
 
-		// 检查位置是否更新，如果更新则更新背景图片
+		// 檢查位置是否更新，如果更新則更新背景圖片
 		if(sDi['pls'] && CURSCRIPT === 'game') {
-			// 从位置文本中提取位置ID
+			// 從位置文本中提取位置ID
 			var plsText = sDi['pls'];
 			var locationId = null;
 
-			// 尝试从command.php中获取位置ID
+			// 嘗試從command.php中獲取位置ID
 			if(shwData['locationId']) {
 				locationId = shwData['locationId'];
 			} else {
-				// 如果没有直接提供位置ID，尝试从URL参数中获取
+				// 如果沒有直接提供位置ID，嘗試從URL參數中獲取
 				var urlParams = new URLSearchParams(window.location.search);
 				var moveto = urlParams.get('moveto');
 				if(moveto) {
@@ -462,7 +462,7 @@ function showData(sdata){
 				}
 			}
 
-			// 如果有位置ID，更新背景图片
+			// 如果有位置ID，更新背景圖片
 			if(locationId) {
 				updateBackgroundImage(locationId);
 			}
@@ -479,7 +479,7 @@ function showData(sdata){
 	{
 		dialogid = $('open-dialog').innerHTML;
 		var dialogElement = $(dialogid);
-		// 对话容器可能因页面切换而暂不存在；避免一次 UI 异常中断后续更新。
+		// 對話容器可能因頁面切換而暫不存在；避免一次 UI 異常中斷後續更新。
 		// A dialog host can be absent during a page transition; do not let that interrupt later UI updates.
 		if(dialogElement && dialogElement.showModal) showModalDialog(dialogElement);
 	}
@@ -547,7 +547,7 @@ function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
 	}
 }
 
-//元素合成界面的ajax效果 仅作美化使用
+//元素合成界面的ajax效果 僅作美化使用
 function getEmitmeR(type=0) {
 	if(type == 1)
 	{
@@ -563,7 +563,7 @@ function getEmitmeR(type=0) {
 		$('sr_warning').innerHTML = '';
 		if(r>79 || r<21)
 		{
-			$('sr_warning').innerHTML = '警告：过度干预可能引发灾难性的后果！<br>';
+			$('sr_warning').innerHTML = '警告：過度干預可能引發災難性的後果！<br>';
 		}
 	}
 }
@@ -583,7 +583,7 @@ function AddElementsToList(ekey,enums)
 	}
 	if(($('maxe' + ekey + 'num').value - enums) < 0)
 	{
-		window.alert("输入了超过了库存的数量。");
+		window.alert("輸入了超過了庫存的數量。");
 		return;
 	}
 	if(keyarr.length >= 6)
@@ -616,7 +616,7 @@ function AddMixElements(emix_arr) {
 	}
 	for (let i = 0; i < emix_arr.length; i++) {
 		if($('maxe' + emix_arr[i][0] + 'num') === null || ($('maxe' + emix_arr[i][0] + 'num').value - esum[emix_arr[i][0]]) < 0) {
-			window.alert("合成所需的元素数量不足。");
+			window.alert("合成所需的元素數量不足。");
 			return;
 		}
 	}
@@ -686,7 +686,7 @@ function changePages(mode,cPages)
 }
 
 ////////////////////////////////////////////////////////////////////////
-///////////////////////////称号技能鼠标悬浮特效////////////////////////////
+///////////////////////////稱號技能鼠標懸浮特效////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 
 function skill_unacquired_mouseover(e)
@@ -730,48 +730,48 @@ function selectRecordedFile() {
 
     input.click();
 
-    // 处理选择的文件
+    // 處理選擇的文件
     input.onchange = function (event) {
         var file = event.target.files[0];
-        console.log("选择的文件:", file);
+        console.log("選擇的文件:", file);
 
         displayRecordedData(file);
     };
 }
 
-// 显示单个页面的内容
+// 顯示單個頁面的內容
 function showPage(pageContent, currentPageIndex) {
     var recordedDataDiv = document.getElementById('recordedData');
     recordedDataDiv.innerHTML = pageContent[currentPageIndex];
 
     var previousPageButton = document.createElement('button');
-    previousPageButton.textContent = '上一页';
+    previousPageButton.textContent = '上一頁';
     previousPageButton.onclick = function () {
         if (currentPageIndex > 0) {
             currentPageIndex--;
             showPage(pageContent, currentPageIndex);
         } else {
-            recordedDataDiv.innerHTML = '已经到达第一页';
+            recordedDataDiv.innerHTML = '已經到達第一頁';
         }
     }
     var nextPageButton = document.createElement('button');
-    nextPageButton.textContent = '下一页';
+    nextPageButton.textContent = '下一頁';
     nextPageButton.onclick = function () {
         if (currentPageIndex < pageContent.length - 1) {
             currentPageIndex++;
             showPage(pageContent, currentPageIndex);
         } else {
-            recordedDataDiv.innerHTML = '已经到达最后一页';
+            recordedDataDiv.innerHTML = '已經到達最後一頁';
         }
     };
-    // 阻止链接跳转
+    // 阻止鏈接跳轉
     var links = recordedDataDiv.getElementsByTagName('a');
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener('click', function (event) {
             event.preventDefault();
         });
     }
-    // 删除具有 id="hidden-model" 的元素
+    // 刪除具有 id="hidden-model" 的元素
     var hiddenModelElement = document.getElementById('hidden-model');
     if (hiddenModelElement) {
         hiddenModelElement.remove();
@@ -798,43 +798,43 @@ function showPage(pageContent, currentPageIndex) {
 
 
 function displayRecordedData(file) {
-    // 检查是否选择了文件
+    // 檢查是否選擇了文件
     if (file) {
-        // 创建一个FileReader对象来读取文件内容
+        // 創建一個FileReader對象來讀取文件內容
         var reader = new FileReader();
         reader.onload = function () {
-            // 将文件内容转换为ArrayBuffer
+            // 將文件內容轉換為ArrayBuffer
             var arrayBuffer = reader.result;
-            // 创建一个Uint8Array来存储ArrayBuffer的数据
+            // 創建一個Uint8Array來存儲ArrayBuffer的數據
             var uint8Array = new Uint8Array(arrayBuffer);
 
-            // 解压缩文件数据
+            // 解壓縮文件數據
             var inflatedData = pako.inflate(uint8Array, { to: 'string' });
-            // 将解压缩后的数据按页进行切分
+            // 將解壓縮後的數據按頁進行切分
             var pages = inflatedData.split('\n<html>');
 
-            // 逐页展示记录的内容
+            // 逐頁展示記錄的內容
             var recordedDataDiv = document.getElementById('recordedData');
-            recordedDataDiv.innerHTML = ''; // 清空之前的内容
+            recordedDataDiv.innerHTML = ''; // 清空之前的內容
 
-            // 创建一个包含每页内容的数组
+            // 創建一個包含每頁內容的數組
             var pageContent = [];
             for (var i = 0; i < pages.length; i++) {
                 pageContent.push(pages[i]);
             }
 
-            // 显示第一页的内容
+            // 顯示第一頁的內容
             showPage(pageContent, 0);
         };
         reader.readAsArrayBuffer(file);
-    } else { // 如果没有选择文件，则显示选择文件的提示消息
-        var noticeDiv = document.getElementById('notice'); noticeDiv.textContent = '请先选择一个录像文件';
+    } else { // 如果沒有選擇文件，則顯示選擇文件的提示消息
+        var noticeDiv = document.getElementById('notice'); noticeDiv.textContent = '請先選擇一個錄像文件';
     }
 }
 
 /*window.onbeforeunload = function () {
     if (isRecording) {
-        window.alert('你正在录制游戏，之后将会自动下载录制数据。');
+        window.alert('你正在錄製遊戲，之後將會自動下載錄製數據。');
         downloadRecordedData();
     }
 };*/

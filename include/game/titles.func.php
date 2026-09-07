@@ -32,7 +32,7 @@ function get_title($t,$n)
 	else 
 	{
 		global $log;
-		$log .= "要获取的头衔{$t}不存在，请在\$titles_list内为其添加编号！<br>";
+		$log .= "要獲取的頭銜{$t}不存在，請在\$titles_list內為其添加編號！<br>";
 		return;
 	}
 }

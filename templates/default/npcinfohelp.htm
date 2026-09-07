@@ -9,7 +9,7 @@
 <!--{elseif isset($npcinfo[$kind][$ksub][$key]['description'])}-->
 	<!--{eval $description = $npcinfo[$kind][$ksub][$key]['description'];}-->
 <!--{else}-->
-	<!--{eval $description = '这个人似乎非常神秘，履历空空';}-->
+	<!--{eval $description = '這個人似乎非常神秘，履歷空空';}-->
 <!--{/if}-->
 <!--{if is_numeric($key) || $ksub == 'esub' }-->
 <table border="1" cellspacing="0" cellpadding="0" valign="middle">
@@ -38,13 +38,13 @@
 						<table border="1" height=100% width=100% cellspacing="0" cellpadding="0">
 							<tr>
 								<td width=100px align="center" class="b1">
-									NPC类别
+									NPC類別
 								</td>
 								<td width=100px align="center" class="b3">
 									$typeinfo[$kind]
 								</td>
 								<td width=100px align="center" class="b1">
-									数目
+									數目
 								</td>
 								<td width=100px align="center" class="b3">
 									<!--{if !empty($npcdescription[$kind][$ksub][$key]['count'])}-->
@@ -54,13 +54,13 @@
 									<!--{/if}-->
 								</td>
 								<td width=100px align="center" class="b1">
-									所处地点
+									所處地點
 								</td>
 								<td width=100px align="center" class="b3">
 								<!--{if $npcinfo[$kind][$ksub][$key]['horizon']}-->
-									<span class="darkviolet" tooltip="处于灵子视界中">
+									<span class="darkviolet" tooltip="處於靈子視界中">
 								<!--{else}-->
-									<span class="yellow" tooltip="处于标准视界中">
+									<span class="yellow" tooltip="處於標準視界中">
 								<!--{/if}-->
 									$npcinfo[$kind][$ksub][$key]['pls']
 									</span>
@@ -68,7 +68,7 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									NPC等级
+									NPC等級
 								</td>
 								<td width=100px align="center" class="b3">
 									<span>
@@ -76,7 +76,7 @@
 									</span>
 								</td>
 								<td width=100px align="center" class="b1">
-									NPC名称
+									NPC名稱
 								</td>	
 								<td width=100px align="center" class="b3">
 									<span class="lime">
@@ -84,7 +84,7 @@
 									</span>
 								</td>
 								<td width=100px align="center" class="b1">
-									性别
+									性別
 								</td>
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['gd']
@@ -92,7 +92,7 @@
 							</tr>					
 							<tr>
 								<td width=100px align="center" class="b1">
-									内定称号
+									內定稱號
 								</td>					
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['club']
@@ -118,13 +118,13 @@
 									$npcinfo[$kind][$ksub][$key]['mhp']
 								</td>
 								<td width=100px align="center" class="b1">
-									熟练度
+									熟練度
 								</td>
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['skill']
 								</td>
 								<td width=100px align="center" class="b1">
-									怒气值
+									怒氣值
 								</td>
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['rage']
@@ -132,19 +132,19 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									基础攻击
+									基礎攻擊
 								</td>
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['att']
 								</td>
 								<td width=100px align="center" class="b1">
-									基础防御
+									基礎防禦
 								</td>
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['def']
 								</td>
 								<td width=100px align="center" class="b1">
-									掉落金钱
+									掉落金錢
 								</td>
 								<td width=100px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['money']
@@ -167,7 +167,7 @@
 						<table border="1" cellspacing="0" cellpadding="0" valign="middle">
 							<tr>
 								<td width=100px align="center" class="b1">
-									武器名称
+									武器名稱
 								</td>
 								<td width=505px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['wep']/$npcinfo[$kind][$ksub][$key]['wepk']/$npcinfo[$kind][$ksub][$key]['wepe']/$npcinfo[$kind][$ksub][$key]['weps']<!--{if isset($npcinfo[$kind][$ksub][$key]['wepsk_words'])}-->/$npcinfo[$kind][$ksub][$key]['wepsk_words']<!--{/if}-->
@@ -175,7 +175,7 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									身体装备
+									身體裝備
 								</td>
 								<td width=505px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['arb']/$npcinfo[$kind][$ksub][$key]['arbe']/$npcinfo[$kind][$ksub][$key]['arbs']<!--{if isset($npcinfo[$kind][$ksub][$key]['arbsk_words'])}-->/$npcinfo[$kind][$ksub][$key]['arbsk_words']<!--{/if}-->
@@ -183,7 +183,7 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									头部装备
+									頭部裝備
 								</td>
 								<td width=505px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['arh']/$npcinfo[$kind][$ksub][$key]['arhe']/$npcinfo[$kind][$ksub][$key]['arhs']<!--{if isset($npcinfo[$kind][$ksub][$key]['arhsk_words'])}-->/$npcinfo[$kind][$ksub][$key]['arhsk_words']<!--{/if}-->
@@ -191,7 +191,7 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									手臂装备
+									手臂裝備
 								</td>
 								<td width=505px align="center" class="b3">
 									<!--{if !empty($npcinfo[$kind][$ksub][$key]['ara'])}-->
@@ -203,7 +203,7 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									腿部装备
+									腿部裝備
 								</td>
 								<td width=505px align="center" class="b3">
 									$npcinfo[$kind][$ksub][$key]['arf']/$npcinfo[$kind][$ksub][$key]['arfe']/$npcinfo[$kind][$ksub][$key]['arfs']<!--{if isset($npcinfo[$kind][$ksub][$key]['arfsk_words'])}-->/$npcinfo[$kind][$ksub][$key]['arfsk_words']<!--{/if}-->
@@ -211,7 +211,7 @@
 							</tr>
 							<tr>
 								<td width=100px align="center" class="b1">
-									饰品 
+									飾品 
 								</td>
 								<td width=505px align="center" class="b3">
 									<!--{if !empty($npcinfo[$kind][$ksub][$key]['art'])}-->

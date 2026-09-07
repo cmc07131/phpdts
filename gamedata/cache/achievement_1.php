@@ -5,51 +5,51 @@ if(!defined('IN_GAME')) exit('Access Denied');
 $ach_type = Array
 (
 	'daily' => Array(
-		'name' => '每日挑战',
-		'desc' => '<font color="olive">这里是用来为日常游玩调味的佐餐成就。<br>
-		虽然叫做每日挑战，但其实每六个小时就能刷新一次。</font>',
+		'name' => '每日挑戰',
+		'desc' => '<font color="olive">這裏是用來為日常遊玩調味的佐餐成就。<br>
+		雖然叫做每日挑戰，但其實每六個小時就能刷新一次。</font>',
 		'ach' => Array(601,602,603,604,605,606,607,608,609,610),
 	),
 	'end' => Array(
-		'name' => '结局成就',
-		'desc' => '<font color="olive">这里是与游戏结局相关的成就。<br>
-		虽说有些看起来帮助中没提到，但找寻它们也正是这游戏的醍醐味之一。<br></font>',
+		'name' => '結局成就',
+		'desc' => '<font color="olive">這裏是與遊戲結局相關的成就。<br>
+		雖説有些看起來幫助中沒提到，但找尋它們也正是這遊戲的醍醐味之一。<br></font>',
 		'ach' => Array(16,17,18,34,19,100,101,102),
 	),
 	'hunt' => Array(
-		'name' => '猎人成就',
-		'desc' => '<font color="olive">这里是与其他玩家战斗相关的成就。<br>
-		专注，战斗，取得胜利！<br></font>',
+		'name' => '獵人成就',
+		'desc' => '<font color="olive">這裏是與其他玩家戰鬥相關的成就。<br>
+		專注，戰鬥，取得勝利！<br></font>',
 		'ach' => Array(2,60,61,62,63,64,65,66,67,68,69),
 	),
 	'battle' => Array(
-		'name' => '战斗成就',
-		'desc' => '<font color="olive">这里是与击破特定NPC相关的成就。<br>
-		打倒他们来证明自己吧！<br></font>',
+		'name' => '戰鬥成就',
+		'desc' => '<font color="olive">這裏是與擊破特定NPC相關的成就。<br>
+		打倒他們來證明自己吧！<br></font>',
 		'ach' => Array(3,56,57,27,4,13,22,23,25,20,21,24,26,255),
 	),
 	'mixitem' => Array(
 		'name' => '合成成就',
-		'desc' => '<font color="olive">这里是与合成某些特殊物品相关的成就。<br>
-		物是人的延展，这些物品背后或许有些值得一听的故事。<br></font>',
+		'desc' => '<font color="olive">這裏是與合成某些特殊物品相關的成就。<br>
+		物是人的延展，這些物品背後或許有些值得一聽的故事。<br></font>',
 		'ach' => Array(0,14,15,49,51,52,50),
 	),
 	'explore' => Array(
 		'name' => '探索成就',
-		'desc' => '<font color="olive">这里是与你在游戏中会遇到的惊奇发现相关的成就。<br>
-		今天又会遇到些什么呢？<br></font>',
+		'desc' => '<font color="olive">這裏是與你在遊戲中會遇到的驚奇發現相關的成就。<br>
+		今天又會遇到些什麼呢？<br></font>',
 		'ach' => Array(33,31,32),
 	),
 	'lifetime' => Array(
 		'name' => '生涯成就',
-		'desc' => '<font color="olive">这里是记录了你在这个游戏中的积累相关的成就。<br>
-		呜呼——玩家们出发了……<br></font>',
+		'desc' => '<font color="olive">這裏是記錄了你在這個遊戲中的積累相關的成就。<br>
+		嗚呼——玩家們出發了……<br></font>',
 		'ach' => Array(29,30,53,54,55,208,600,611,255),
 	),
 	'challenge' => Array(
-		'name' => '挑战成就',
-		'desc' => '<font color="olive">这里是与特定游戏中挑战相关的成就。<br>
-		虽然颇为浮云，但毕竟山就在那里。<br></font>',
+		'name' => '挑戰成就',
+		'desc' => '<font color="olive">這裏是與特定遊戲中挑戰相關的成就。<br>
+		雖然頗為浮雲，但畢竟山就在那裏。<br></font>',
 		'ach' => Array(1,200,201,28,202,203,204,205,206,207,255),
 	),
 );
@@ -59,9 +59,9 @@ $diary_type = Array
 (
 	'mixdiary' => Array
 	(
-		'name' => '合成日记',
-		'desc' => '<font color="olive">这里记载着你在游戏中合成过的道具的记录。<br>
-		这些内容不会被统计在总成就完成度内。<br></font>',
+		'name' => '合成日記',
+		'desc' => '<font color="olive">這裏記載着你在遊戲中合成過的道具的記錄。<br>
+		這些內容不會被統計在總成就完成度內。<br></font>',
 		'ach' => Array(35,36,37,38,39,40,41,42,43,44,45,46,47,48),
 	),
 );
@@ -111,27 +111,27 @@ $ach_list = Array
 	),*/
 	0 => Array(
 		'lvl' => 3,
-		'name' => Array('永恒世界的住人','幻想世界的往人','永恒的覆唱'),
+		'name' => Array('永恆世界的住人','幻想世界的往人','永恆的覆唱'),
 		'title' => Array('','幻想','流星'),
 		'c1' => Array(0,200,700),
 		'c2' => Array(10,0,0),
 		'desc' => Array( 
-			'合成物品【KEY系催泪弹】1次',
-			'合成物品【KEY系催泪弹】5次',
-			'合成物品【KEY系催泪弹】30次',
+			'合成物品【KEY系催淚彈】1次',
+			'合成物品【KEY系催淚彈】5次',
+			'合成物品【KEY系催淚彈】30次',
 		),
 	),
 	3 => Array(
 		'lvl' => 3,
-		'name' => Array('脚本小子','黑客','幻境解离者？'),
-		'title' => Array('','黑客','最后一步'),
+		'name' => Array('腳本小子','黑客','幻境解離者？'),
+		'title' => Array('','黑客','最後一步'),
 		'c1' => Array(0,200,500),
 		'c2' => Array(5,0,15),
 		),
 	4 => Array(
 		'lvl' => 2,
-		'name' => Array('冒烟突火','红杀将军'),
-        'title' => Array('','越红者'),
+		'name' => Array('冒煙突火','紅殺將軍'),
+        'title' => Array('','越紅者'),
         'c1' => Array(50,0),
         'c2' => Array(75,0),
 	),
@@ -185,36 +185,36 @@ $ach_list = Array
 	),
 	13 => Array(
 		'lvl' => 2,
-		'name' => Array('深度冻结','跨过彩虹'),
-        'title' => Array('','跨过彩虹'),
+		'name' => Array('深度凍結','跨過彩虹'),
+        'title' => Array('','跨過彩虹'),
         'c1' => Array(150,0),
         'c2' => Array(250,0),
 	),
 	14 => Array(
 		'lvl' => 3,
-		'name' => Array('篝火的引导','世界的树形图','地=月'),
-        'title' => Array('','树形图','TERRA'),
+		'name' => Array('篝火的引導','世界的樹形圖','地=月'),
+        'title' => Array('','樹形圖','TERRA'),
         'c1' => Array(0,200,700),
         'c2' => Array(10,0,0),
 	),
 	15 => Array(
 		'lvl' => 3,
-		'name' => Array('不屈的生命','那种话最讨厌了','明亮的未来'),
-        'title' => Array('','素描本','未来战士'),
+		'name' => Array('不屈的生命','那種話最討厭了','明亮的未來'),
+        'title' => Array('','素描本','未來戰士'),
         'c1' => Array(0,200,700),
         'c2' => Array(10,0,0),
 	),
 	20 => Array(
 		'lvl' => 1,
-		'name' => Array('寻星急袭'),
-        'title' => Array('寻星者'),
+		'name' => Array('尋星急襲'),
+        'title' => Array('尋星者'),
         'c1' => Array(268),
         'c2' => Array(263),
 	),
 	21 => Array(
 		'lvl' => 1,
-		'name' => Array('权限【哔】的最期'),
-        'title' => Array('寂静洪流'),
+		'name' => Array('權限【嗶】的最期'),
+        'title' => Array('寂靜洪流'),
         'c1' => Array(233),
         'c2' => Array(233),
 	),
@@ -228,20 +228,20 @@ $ach_list = Array
 	23 => Array(
 		'lvl' => 1,
 		'name' => Array('真名解放'),
-        'title' => Array('赌玉狂魔'),
+        'title' => Array('賭玉狂魔'),
         'c1' => Array(0),
         'c2' => Array(888),
 	),
 	24 => Array(
 		'lvl' => 1,
 		'name' => Array('逆推'),
-        'title' => Array('时代眼泪'),
+        'title' => Array('時代眼淚'),
         'c1' => Array(211),
         'c2' => Array(299),
 	),
 	25 => Array(
 		'lvl' => 1,
-		'name' => Array('一尸两命'),
+		'name' => Array('一屍兩命'),
         'title' => Array('卸腿者'),
         'c1' => Array(111),
         'c2' => Array(333),
@@ -255,116 +255,116 @@ $ach_list = Array
 	),
 	27 => Array(
 		'lvl' => 3,
-		'name' => Array('秋后算账','报仇雪恨','血洗英灵殿'),
+		'name' => Array('秋後算賬','報仇雪恨','血洗英靈殿'),
         'title' => Array('','','替天行道'),
         'c1' => Array(0,300,500),
         'c2' => Array(10,0,0),
 	),
 	29 => Array(
 		'lvl' => 3,
-		'name' => Array('及时补给','衣食无忧','奥义很爽'),
-        'title' => Array('','美食家','补给掠夺者'),
+		'name' => Array('及時補給','衣食無憂','奧義很爽'),
+        'title' => Array('','美食家','補給掠奪者'),
         'c1' => Array(0,0,0),
         'c2' => Array(5,50,200),
 		'desc' => Array(
-			'使用无毒补给的总效果达到32767点',
-			'使用无毒补给的总效果达到142857点',
-			'使用无毒补给的总效果达到999983点',
+			'使用無毒補給的總效果達到32767點',
+			'使用無毒補給的總效果達到142857點',
+			'使用無毒補給的總效果達到999983點',
 		),
 	),
 	30 => Array(
 		'lvl' => 3,
-		'name' => Array('饥不择食','尝百草','吞食天地'),
-        'title' => Array('','神农','贝爷'),
+		'name' => Array('飢不擇食','嘗百草','吞食天地'),
+        'title' => Array('','神農','貝爺'),
         'c1' => Array(0,0,0),
         'c2' => Array(5,50,200),
 		'desc' => Array(
-			'食用30效以上的有毒补给5次',
-			'食用30效以上的有毒补给133次',
-			'食用30效以上的有毒补给365次',
+			'食用30效以上的有毒補給5次',
+			'食用30效以上的有毒補給133次',
+			'食用30效以上的有毒補給365次',
 		),
 	),
 	35 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看殴系吧！','热血的机师','殴系爱好者'),
-        'title' => Array('','热血机师','殴系爱好者'),
+		'name' => Array('試試看毆系吧！','熱血的機師','毆系愛好者'),
+        'title' => Array('','熱血機師','毆系愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	36 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看斩系吧！','苍蓝之光','斩系爱好者'),
-        'title' => Array('','苍蓝之光','斩系爱好者'),
+		'name' => Array('試試看斬系吧！','蒼藍之光','斬系愛好者'),
+        'title' => Array('','蒼藍之光','斬系愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	37 => Array(
 		'lvl' => 3,
-		'name' => Array('来精进斩系吧！','合二为一','钥刃大师'),
-        'title' => Array('','合二为一','钥刃大师'),
+		'name' => Array('來精進斬系吧！','合二為一','鑰刃大師'),
+        'title' => Array('','合二為一','鑰刃大師'),
 		'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	38 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看射系吧！','勇闯仙境','射系爱好者'),
-        'title' => Array('','勇闯仙境','射系爱好者'),
+		'name' => Array('試試看射系吧！','勇闖仙境','射系愛好者'),
+        'title' => Array('','勇闖仙境','射系愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	39 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看重枪吧！','黑洞边缘','重枪爱好者'),
-        'title' => Array('','黑洞边缘','重枪爱好者'),
+		'name' => Array('試試看重槍吧！','黑洞邊緣','重槍愛好者'),
+        'title' => Array('','黑洞邊緣','重槍愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	40 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看游戏王吧！','光的道路','决斗者'),
-        'title' => Array('','光的道路','决斗者'),
+		'name' => Array('試試看遊戲王吧！','光的道路','決鬥者'),
+        'title' => Array('','光的道路','決鬥者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	41 => Array(
 		'lvl' => 3,
-		'name' => Array('进行加速同调吧！','加速同调','聚集的祈愿'),
-        'title' => Array('','加速同调','聚集的祈愿'),
+		'name' => Array('進行加速同調吧！','加速同調','聚集的祈願'),
+        'title' => Array('','加速同調','聚集的祈願'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	42 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看投系吧！','平和之心','投系爱好者'),
-        'title' => Array('','平和之心','投系爱好者'),
+		'name' => Array('試試看投系吧！','平和之心','投系愛好者'),
+        'title' => Array('','平和之心','投系愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	43 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看爆系吧！','红烧天堂','爆系爱好者'),
-        'title' => Array('','红烧天堂','爆系爱好者'),
+		'name' => Array('試試看爆系吧！','紅燒天堂','爆系愛好者'),
+        'title' => Array('','紅燒天堂','爆系愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	44 => Array(
 		'lvl' => 3,
-		'name' => Array('来精进爆系吧！','★刷刷刷★','★啪啪啪★'),
+		'name' => Array('來精進爆系吧！','★刷刷刷★','★啪啪啪★'),
         'title' => Array('','★刷刷刷★','★啪啪啪★'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	45 => Array(
 		'lvl' => 3,
-		'name' => Array('试试看灵系吧！','皇家烈焰','灵系爱好者'),
-        'title' => Array('','皇家烈焰','灵系爱好者'),
+		'name' => Array('試試看靈系吧！','皇家烈焰','靈系愛好者'),
+        'title' => Array('','皇家烈焰','靈系愛好者'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	46 => Array(
 		'lvl' => 3,
-		'name' => Array('来精进灵系吧！','五行大师','贤者之石'),
-        'title' => Array('','五行大师','贤者之石'),
+		'name' => Array('來精進靈系吧！','五行大師','賢者之石'),
+        'title' => Array('','五行大師','賢者之石'),
         'c1' => Array(0,100,350),
         'c2' => Array(10),
 	),
@@ -377,43 +377,43 @@ $ach_list = Array
 	),
 	48 => Array(
 		'lvl' => 3,
-		'name' => Array('感受一下混沌吧！','混沌爱好者','混沌的深渊'),
-        'title' => Array('','混沌爱好者','混沌的深渊'),
+		'name' => Array('感受一下混沌吧！','混沌愛好者','混沌的深淵'),
+        'title' => Array('','混沌愛好者','混沌的深淵'),
         'c1' => Array(0,100,350),
         'c2' => Array(10,0,0),
 	),
 	53 => Array(
 		'lvl' => 3,
-		'name' => Array('来打钉子吧！','棍棒爱好者','无情打钉者'),
-        'title' => Array('','棍棒爱好者','无情打钉者'),
+		'name' => Array('來打釘子吧！','棍棒愛好者','無情打釘者'),
+        'title' => Array('','棍棒愛好者','無情打釘者'),
         'c1' => Array(0,0,0),
         'c2' => Array(5,50,200),
 	),
 	54 => Array(
 		'lvl' => 3,
-		'name' => Array('来磨刀吧！','磨刀爱好者','无情磨刀者'),
-        'title' => Array('','磨刀爱好者','无情磨刀者'),
+		'name' => Array('來磨刀吧！','磨刀愛好者','無情磨刀者'),
+        'title' => Array('','磨刀愛好者','無情磨刀者'),
         'c1' => Array(0,0,0),
         'c2' => Array(5,50,200),
 	),
 	55 => Array(
 		'lvl' => 3,
-		'name' => Array('来打补丁吧！','补丁爱好者','无情补丁'),
-        'title' => Array('','补丁爱好者','无情补丁'),
+		'name' => Array('來打補丁吧！','補丁愛好者','無情補丁'),
+        'title' => Array('','補丁愛好者','無情補丁'),
         'c1' => Array(0,0,0),
         'c2' => Array(5,50,200),
 	),
 	56 => Array(
 		'lvl' => 3,
-		'name' => Array('种火？那是啥？','是都市传说。','除错大师'),
-        'title' => Array('','都市传说','除错大师'),
+		'name' => Array('種火？那是啥？','是都市傳説。','除錯大師'),
+        'title' => Array('','都市傳説','除錯大師'),
         'c1' => Array(0,100,250),
         'c2' => Array(10,0,0),
 	),
 	57 => Array(
 		'lvl' => 3,
-		'name' => Array('外来的神秘','风驰电掣','暴雷骤雨'),
-        'title' => Array('','风驰电掣','暴雷骤雨'),
+		'name' => Array('外來的神秘','風馳電掣','暴雷驟雨'),
+        'title' => Array('','風馳電掣','暴雷驟雨'),
         'c1' => Array(0,100,250),
         'c2' => Array(10,0,0),
 	),
@@ -422,109 +422,109 @@ $ach_list = Array
 	# 最后幸存
 	16 => Array(
 		'lvl' => 3,
-		'name' => Array('最后幸存','只是运气好而已','不止是运气好而已？','不止是运气好而已！'),
-        'title' => Array('','生存者','生存大师'),
+		'name' => Array('最後倖存','只是運氣好而已','不止是運氣好而已？','不止是運氣好而已！'),
+        'title' => Array('','生存者','生存大師'),
 		'c1' => Array(0,0,0),
         'c2' => Array(77,777,2777),
 		'desc' => Array( 
-			'达成结局：最后幸存 1次',
-			'达成结局：最后幸存 17次',
-			'达成结局：最后幸存 177次',
+			'達成結局：最後倖存 1次',
+			'達成結局：最後倖存 17次',
+			'達成結局：最後倖存 177次',
 		),
 	),
 	# 独自逃脱
 	34 => Array(
 		'lvl' => 3,
-		'name' => Array('逃避可耻？','但它有用！','直面现实','逃脱大师'),
-		'title' => Array('实用主义者','现实主义者','脚底抹油'),
+		'name' => Array('逃避可恥？','但它有用！','直面現實','逃脱大師'),
+		'title' => Array('實用主義者','現實主義者','腳底抹油'),
 		'c1' => Array(0,0,0),
 		'c2' => Array(15,70,300),
 		'desc' => Array( 
-			'独自逃离幻境1次。',
-			'独自逃离幻境36次。',
-			'独自逃离幻境101次。',
+			'獨自逃離幻境1次。',
+			'獨自逃離幻境36次。',
+			'獨自逃離幻境101次。',
 		),
 	),
 	# 核爆全灭
 	17 => Array(
 		'lvl' => 2,
-		'name' => Array('核爆全灭','麻烦制造机？','麻烦制造机'),
-        'title' => Array('','叶子钦定！'),
+		'name' => Array('核爆全滅','麻煩製造機？','麻煩製造機'),
+        'title' => Array('','葉子欽定！'),
 		'c1' => Array(0,0,0),
         'c2' => Array(100,500),
 		'desc' => Array( 
-			'达成结局：核爆全灭 1次',
-			'达成结局：核爆全灭 7次',
+			'達成結局：核爆全滅 1次',
+			'達成結局：核爆全滅 7次',
 		),
 	),
 	# 锁定解除
 	18 => Array(
 		'lvl' => 3,
-		'name' => Array('锁定解除','最后的荣光','执念的残火','执念的焰火'),
-        'title' => Array('','最后的荣光','执念的焰火'),
+		'name' => Array('鎖定解除','最後的榮光','執念的殘火','執念的焰火'),
+        'title' => Array('','最後的榮光','執念的焰火'),
         'c1' => Array(0,0,0),
         'c2' => Array(300,1312,1777),
 		'desc' => Array( 
-			'<span tooltip="独自完成、或与团队共同达成结局时，均可达成此成就">参与达成结局：锁定解除 1次</span>',
-			'<span tooltip="独自完成、或与团队共同达成结局时，均可达成此成就">参与达成结局：锁定解除 17次</span>',
-			'<span tooltip="独自完成、或与团队共同达成结局时，均可达成此成就">参与达成结局：锁定解除 77次</span>',
+			'<span tooltip="獨自完成、或與團隊共同達成結局時，均可達成此成就">參與達成結局：鎖定解除 1次</span>',
+			'<span tooltip="獨自完成、或與團隊共同達成結局時，均可達成此成就">參與達成結局：鎖定解除 17次</span>',
+			'<span tooltip="獨自完成、或與團隊共同達成結局時，均可達成此成就">參與達成結局：鎖定解除 77次</span>',
 		),
 	),
 	# 幻境解离
 	19 => Array(
 		'lvl' => 3,
-		'name' => Array('幻境解离','奇迹的篝火','■■的■火','开路的明火'),
-		'title' => Array('奇迹的篝火','','开路的明火'),
+		'name' => Array('幻境解離','奇蹟的篝火','■■的■火','開路的明火'),
+		'title' => Array('奇蹟的篝火','','開路的明火'),
 		'c1' => Array(1000,0,0),
 		'c2' => Array(1000,3000,76531),
 		'desc' => Array( 
-			"<span tooltip=\"独自完成、或与团队共同达成结局时，均可达成此成就\">参与达成结局：幻境解离 1次</span>",
-			"<span tooltip=\"独自完成、或与团队共同达成结局时，均可达成此成就\">参与达成结局：幻境解离 17次</span>",
-			"<span tooltip=\"独自完成、或与团队共同达成结局时，均可达成此成就\">参与达成结局：幻境解离 77次</span>",
+			"<span tooltip=\"獨自完成、或與團隊共同達成結局時，均可達成此成就\">參與達成結局：幻境解離 1次</span>",
+			"<span tooltip=\"獨自完成、或與團隊共同達成結局時，均可達成此成就\">參與達成結局：幻境解離 17次</span>",
+			"<span tooltip=\"獨自完成、或與團隊共同達成結局時，均可達成此成就\">參與達成結局：幻境解離 77次</span>",
 		),
 	),
 	# 执行官解禁
 	100 => Array(
 		'lvl' => 1, 
-		'name' => Array('结束了？','未完待续'), 
-		'title' => Array('挑战者'),
+		'name' => Array('結束了？','未完待續'), 
+		'title' => Array('挑戰者'),
         'c1' => Array(0),
         'c2' => Array(450),
 		'desc' => Array( 
-			'使用 <span class="sienna">幻影执行官</span> 掉落的道具达成结局：锁定解除'
+			'使用 <span class="sienna">幻影執行官</span> 掉落的道具達成結局：鎖定解除'
 		),
 	),
 	# 真红蓝解禁
 	101 => Array(
 		'lvl' => 1, 
-		'name' => Array('势如水火','合纵连横'), 
+		'name' => Array('勢如水火','合縱連橫'), 
 		'title' => Array('超越自我'),
 		'c1' => Array(0),
 		'c2' => Array(950),
 		'desc' => Array( 
-			'使用 <span class="sienna">参战者 红暮&蓝凝</span> 掉落的道具达成结局：锁定解除',
+			'使用 <span class="sienna">參戰者 紅暮&藍凝</span> 掉落的道具達成結局：鎖定解除',
 		),
 	),
 	# DF解禁
 	102 => Array(
 		'lvl' => 1, 
-		'name' => Array('不可能的伟业','超越人类'), 
-		'title' => Array('超越人类'),
+		'name' => Array('不可能的偉業','超越人類'), 
+		'title' => Array('超越人類'),
 		'c1' => Array(0),
 		'c2' => Array(1730),
 		'desc' => Array( 
-			'使用 <span class="sienna">未名存在 Dark Force</span> 掉落的道具达成结局：锁定解除',
+			'使用 <span class="sienna">未名存在 Dark Force</span> 掉落的道具達成結局：鎖定解除',
 		),
 	),
 	# 元素大师达成幻境解离结局
 	103 => Array(
 		'lvl' => 1, 
 		'name' => Array('我的口袋呢？'), 
-		'title' => Array('元素大师'),
+		'title' => Array('元素大師'),
 		'c1' => Array(0),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'以<span class="sienna">追本溯源</span>的方式达成结局：幻境解离',
+			'以<span class="sienna">追本溯源</span>的方式達成結局：幻境解離',
 		),
 	),
 
@@ -537,135 +537,135 @@ $ach_list = Array
 		'c1' => Array(10,500,0),
 		'c2' => Array(0,0,200),
 		'desc' => Array( 
-			'累计击杀10名玩家',
-			'累计击杀100名玩家',
-			'累计击杀1000名玩家',
+			'累計擊殺10名玩家',
+			'累計擊殺100名玩家',
+			'累計擊殺1000名玩家',
 		),
 	),
 	# 击杀存在击杀数的玩家：
 	60 => Array(
 		'lvl' => 3, 
-		'name' => Array('螳螂在前','黄雀在后','猫咪在哪？','猫咪在这儿！'), 
-		'title' => Array('','黄雀在此','猫咪在这！'),
+		'name' => Array('螳螂在前','黃雀在後','貓咪在哪？','貓咪在這兒！'), 
+		'title' => Array('','黃雀在此','貓咪在這！'),
 		'c1' => Array(100,200,500),
 		'c2' => Array(0,200,500),
 		'desc' => Array( 
-			'击杀1名<span class="sienna">击杀过其他玩家</span>的玩家',
-			'击杀10名<span class="sienna">击杀过其他玩家</span>的玩家',
-			'击杀100名<span class="sienna">击杀过其他玩家</span>的玩家',
+			'擊殺1名<span class="sienna">擊殺過其他玩家</span>的玩家',
+			'擊殺10名<span class="sienna">擊殺過其他玩家</span>的玩家',
+			'擊殺100名<span class="sienna">擊殺過其他玩家</span>的玩家',
 		),
 	),
 	# 在死斗模式下击杀玩家
 	61 => Array(
 		'lvl' => 3, 
-		'name' => Array('惺惺相惜','罕逢敌手','无可匹敌？','无可匹敌！'), 
-		'title' => Array('','大侠无名','极轻很轻'),
+		'name' => Array('惺惺相惜','罕逢敵手','無可匹敵？','無可匹敵！'), 
+		'title' => Array('','大俠無名','極輕很輕'),
 		'c1' => Array(155,455,755),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'在<span class="sienna">死斗模式</span>下击杀1名玩家',
-			'在<span class="sienna">死斗模式</span>下击杀10名玩家',
-			'在<span class="sienna">死斗模式</span>下击杀100名玩家',
+			'在<span class="sienna">死鬥模式</span>下擊殺1名玩家',
+			'在<span class="sienna">死鬥模式</span>下擊殺10名玩家',
+			'在<span class="sienna">死鬥模式</span>下擊殺100名玩家',
 		),
 	),
 	# 使用毒补给杀死玩家
 	62 => Array(
 		'lvl' => 3, 
-		'name' => Array('好味！','呸呸呸！','呕呕呕呕！'), 
-		'title' => Array('','下毒党的希望','下毒党的荣光'),
+		'name' => Array('好味！','呸呸呸！','嘔嘔嘔嘔！'), 
+		'title' => Array('','下毒黨的希望','下毒黨的榮光'),
 		'c1' => Array(233,466,1791),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'使用<span class="sienna">毒性补给</span>毒杀1名玩家（不包括自己）',
-			'使用<span class="sienna">毒性补给</span>毒杀10名玩家（不包括自己）',
-			'使用<span class="sienna">毒性补给</span>毒杀100名玩家（不包括自己）',
+			'使用<span class="sienna">毒性補給</span>毒殺1名玩家（不包括自己）',
+			'使用<span class="sienna">毒性補給</span>毒殺10名玩家（不包括自己）',
+			'使用<span class="sienna">毒性補給</span>毒殺100名玩家（不包括自己）',
 		),
 	),
 	# 使用陷阱杀死玩家
 	63 => Array(
 		'lvl' => 3, 
-		'name' => Array('小心脚下','此面向敌','荆棘丛生'), 
-		'title' => Array('','下雷党的希望','下雷党的荣光'),
+		'name' => Array('小心腳下','此面向敵','荊棘叢生'), 
+		'title' => Array('','下雷黨的希望','下雷黨的榮光'),
 		'c1' => Array(213,409,1234),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'通过<span class="sienna">埋设陷阱</span>杀死1名玩家（不包括自己）',
-			'通过<span class="sienna">埋设陷阱</span>杀死10名玩家（不包括自己）',
-			'通过<span class="sienna">埋设陷阱</span>杀死100名玩家（不包括自己）',
+			'通過<span class="sienna">埋設陷阱</span>殺死1名玩家（不包括自己）',
+			'通過<span class="sienna">埋設陷阱</span>殺死10名玩家（不包括自己）',
+			'通過<span class="sienna">埋設陷阱</span>殺死100名玩家（不包括自己）',
 		),
 	),
 	# 使用■DeathNote■杀死玩家
 	64 => Array(
 		'lvl' => 1, 
 		'name' => Array('DeathNoter','K.I.R.A'), 
-		'title' => Array('删除！'),
+		'title' => Array('刪除！'),
 		'c1' => Array(77),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'使用<span class="sienna">■DeathNote■</span>杀死1名玩家',
+			'使用<span class="sienna">■DeathNote■</span>殺死1名玩家',
 		),
 	),
 	# 击杀1名使用过移动PC的玩家
 	65 => Array(
 		'lvl' => 3, 
-		'name' => Array('遵纪守法','绳之以法','私法制裁'), 
-		'title' => Array('','风纪委员','风卷的象征'),
+		'name' => Array('遵紀守法','繩之以法','私法制裁'), 
+		'title' => Array('','風紀委員','風捲的象徵'),
 		'c1' => Array(110,310,911),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'击杀1名使用过<span class="sienna">移动PC</span>的玩家',
-			'击杀10名使用过<span class="sienna">移动PC</span>的玩家',
-			'击杀100名使用过<span class="sienna">移动PC</span>的玩家',
+			'擊殺1名使用過<span class="sienna">移動PC</span>的玩家',
+			'擊殺10名使用過<span class="sienna">移動PC</span>的玩家',
+			'擊殺100名使用過<span class="sienna">移動PC</span>的玩家',
 		),
 	),
 	# 击杀1名改变过天气的玩家
 	66 => Array(
 		'lvl' => 3, 
-		'name' => Array('听风是雨','年轻稚嫩','一切未曾改变'), 
-		'title' => Array('','勤奋好学','提高水平'),
+		'name' => Array('聽風是雨','年輕稚嫩','一切未曾改變'), 
+		'title' => Array('','勤奮好學','提高水平'),
 		'c1' => Array(110,310,911),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'击杀1名<span class="sienna">改变过天气状况</span>的玩家',
-			'击杀10名<span class="sienna">改变过天气状况</span>的玩家',
-			'击杀100名<span class="sienna">改变过天气状况</span>的玩家',
+			'擊殺1名<span class="sienna">改變過天氣狀況</span>的玩家',
+			'擊殺10名<span class="sienna">改變過天氣狀況</span>的玩家',
+			'擊殺100名<span class="sienna">改變過天氣狀況</span>的玩家',
 		),
 	),
 	# 击杀1名使用了破灭之诗的活跃玩家
 	67 => Array(
 		'lvl' => 3, 
-		'name' => Array('幻境防火墙','幻境防火墙？','幻境千年虫'), 
-		'title' => Array('','复仇者','裁决者'),
+		'name' => Array('幻境防火牆','幻境防火牆？','幻境千年蟲'), 
+		'title' => Array('','復仇者','裁決者'),
 		'c1' => Array(334,667,1919),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'击杀1名使用过<span class="sienna">破灭之诗</span>的活跃玩家',
-			'在入场时间更晚的情况下，击杀1名使用过<span class="sienna">破灭之诗</span>的活跃玩家',
-			'在入场时间更晚的情况下，击杀13名使用过<span class="sienna">破灭之诗</span>的活跃玩家',
+			'擊殺1名使用過<span class="sienna">破滅之詩</span>的活躍玩家',
+			'在入場時間更晚的情況下，擊殺1名使用過<span class="sienna">破滅之詩</span>的活躍玩家',
+			'在入場時間更晚的情況下，擊殺13名使用過<span class="sienna">破滅之詩</span>的活躍玩家',
 		),
 	),
 	# 击杀数据碎片后，击杀1名发现过数据碎片尸体的玩家
 	68 => Array(
 		'lvl' => 1, 
-		'name' => Array('正当防卫','防卫过当'), 
+		'name' => Array('正當防衞','防衞過當'), 
 		'title' => Array('城堡'),
 		'c1' => Array(233),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'击杀任一数据碎片后，击杀1名<span class="sienna">发现数据碎片尸体</span>的活跃玩家',
+			'擊殺任一數據碎片後，擊殺1名<span class="sienna">發現數據碎片屍體</span>的活躍玩家',
 		),
 	),
 	# 击杀从福袋中开出稀有道具的玩家
 	69 => Array(
 		'lvl' => 3, 
-		'name' => Array('汪？','海豹？','欧鳇？'), 
-		'title' => Array('','海豹杀手','上帝之鞭'),
+		'name' => Array('汪？','海豹？','歐鰉？'), 
+		'title' => Array('','海豹殺手','上帝之鞭'),
 		'c1' => Array(233,234,235),
 		'c2' => Array(0,0,0),
 		'desc' => Array( 
-			'击杀1位<span class="sienna">从福袋中开出SR物品</span>的活跃玩家',
-			'击杀1位<span class="sienna">从福袋中开出SSR物品</span>的活跃玩家',
-			'在入场时间更晚的情况下，击杀13位<span class="sienna">从福袋中开出SSR物品</span>的活跃玩家',
+			'擊殺1位<span class="sienna">從福袋中開出SR物品</span>的活躍玩家',
+			'擊殺1位<span class="sienna">從福袋中開出SSR物品</span>的活躍玩家',
+			'在入場時間更晚的情況下，擊殺13位<span class="sienna">從福袋中開出SSR物品</span>的活躍玩家',
 		),
 	),
 
@@ -673,31 +673,31 @@ $ach_list = Array
 	# 合成春雨夏海 > 这个应该挪到合成成就里
 	49 => Array(
 		'lvl' => 3,
-		'name' => Array('超级ＫＥＹ爱好者','键·四季赞歌'),
-		'title' => Array('','键·四季赞歌'),
+		'name' => Array('超級ＫＥＹ愛好者','鍵·四季讚歌'),
+		'title' => Array('','鍵·四季讚歌'),
 		'c1' => Array(0,700),
 		'c2' => Array(100,0),
 		'desc' => Array( 
-			'合成物品【春雨夏海，秋叶冬雪】1次',
-			'合成物品【春雨夏海，秋叶冬雪】7次',
+			'合成物品【春雨夏海，秋葉冬雪】1次',
+			'合成物品【春雨夏海，秋葉冬雪】7次',
 		),
 	),
 	# 合成一发逆转神话 > 同上
 	50 => Array(
 		'lvl' => 2,
-		'name' => Array('人，能够挑战神吗？','★一发逆转！★'),
-		'title' => Array('','★一发逆转！★'),
+		'name' => Array('人，能夠挑戰神嗎？','★一發逆轉！★'),
+		'title' => Array('','★一發逆轉！★'),
 		'c1' => Array(0,700),
 		'c2' => Array(100,0),
 		'desc' => Array( 
-			'合成物品★一发逆转神话★1次',
-			'合成物品★一发逆转神话★7次',
+			'合成物品★一發逆轉神話★1次',
+			'合成物品★一發逆轉神話★7次',
 		),
 	),
 	# 合成EX 你们都挤在挑战里干什么？？
 	51 => Array(
 		'lvl' => 2,
-		'name' => Array('究极的灵魂','『ＥＸ』'),
+		'name' => Array('究極的靈魂','『ＥＸ』'),
 		'title' => Array('','『ＥＸ』'),
 		'c1' => Array(0,700),
 		'c2' => Array(100,0),
@@ -709,13 +709,13 @@ $ach_list = Array
 	# 合成光之创造神 ……
 	52 => Array(
 		'lvl' => 2,
-		'name' => Array('真正的决斗者','◎胜利之光◎'),
+		'name' => Array('真正的決鬥者','◎勝利之光◎'),
 		'title' => Array('','『ＥＸ』'),
 		'c1' => Array(0,700),
 		'c2' => Array(100,0),
 		'desc' => Array( 
-			'合成物品◎光之创造神◎1次',
-			'合成物品◎光之创造神◎7次',
+			'合成物品◎光之創造神◎1次',
+			'合成物品◎光之創造神◎7次',
 		),
 	),
 
@@ -723,8 +723,8 @@ $ach_list = Array
 	# 剑圣：这是一个存在固定模板的成就
 	33 => Array(
 		'lvl' => 1,
-		'name' => Array('诅咒之刃'),
-        'title' => Array('剑圣'),
+		'name' => Array('詛咒之刃'),
+        'title' => Array('劍聖'),
         'c1' => Array(0),
         'c2' => Array(522),
 	),
@@ -739,60 +739,60 @@ $ach_list = Array
 	# KEY系隐藏成就：吃下【像围棋子一样的饼干】【桔黄色的果酱】并且活下来
 	501 => Array(
 		'lvl' => 1,
-		'name' => Array('异世般的食材'),
-		'request' => '幸存次数：[:request:]次',
-		'title' => Array('✦约定的铁胃✦'),
+		'name' => Array('異世般的食材'),
+		'request' => '倖存次數：[:request:]次',
+		'title' => Array('✦約定的鐵胃✦'),
 		'c1' => Array(0),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'亲身体验了来自<span class="sienna">水濑秋子及月宫亚由</span>的无敌料理。',
+			'親身體驗了來自<span class="sienna">水瀨秋子及月宮亞由</span>的無敵料理。',
 		),
 	),
 	# KEY系隐藏成就：使用【翼人的羽毛】打出7230点以上伤害
 	502 => Array(
 		'lvl' => 1,
 		'name' => Array('空真理之威力'),
-		'request' => '最高造成伤害：[:request:]点',
+		'request' => '最高造成傷害：[:request:]點',
 		'title' => Array('✦空真理✦'),
 		'c1' => Array(0),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'亲身获得了匹敌与<span class="sienna">翼人</span>的力量。',
+			'親身獲得了匹敵與<span class="sienna">翼人</span>的力量。',
 		),
 	),
 	# 穿着【智代专用熊装】连续攻击同一个玩家/NPC64次以上
 	503 => Array(
 		'lvl' => 1,
-		'name' => Array('受难的马桶圈'),
-		'request' => '最高连击次数：[:request:]次',
-		'title' => Array('✦光坂最强✦'),
+		'name' => Array('受難的馬桶圈'),
+		'request' => '最高連擊次數：[:request:]次',
+		'title' => Array('✦光坂最強✦'),
 		'c1' => Array(0),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'亲身重现了<span class="sienna">坂上智代</span>的伟业。',
+			'親身重現了<span class="sienna">坂上智代</span>的偉業。',
 		),
 	),
 	# 在【RF高校】使用每一种系的武器各杀死一个目标
 	504 => Array(
 		'lvl' => 1,
 		'name' => Array('那就是Little Busters！'),
-		'request' => '完成击杀的系别：[:request:]种',
-		'title' => Array('✦ＬＢ的羁绊✦'),
+		'request' => '完成擊殺的系別：[:request:]種',
+		'title' => Array('✦ＬＢ的羈絆✦'),
 		'c1' => Array(0),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'亲身再现了<span class="sienna">Little Busters</span>的日常。',
+			'親身再現了<span class="sienna">Little Busters</span>的日常。',
 		),
 	),
 	# 一击秒杀【守卫者 静流】
 	505 => Array(
 		'lvl' => 1,
-		'name' => Array('可爱，温柔，强大，但……'),
-		'title' => Array('✦莫非无敌✦'),
+		'name' => Array('可愛，温柔，強大，但……'),
+		'title' => Array('✦莫非無敵✦'),
 		'c1' => Array(0),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'亲身让<span class="sienna">守卫者的尖兵 中津静流</span>了解到何为无奈。',
+			'親身讓<span class="sienna">守衞者的尖兵 中津靜流</span>瞭解到何為無奈。',
 		),
 	),
 
@@ -806,19 +806,19 @@ $ach_list = Array
 		'c1' => Array(30),
 		'c2' => Array(16),
 		'desc' => Array( 
-			'在开局<span class="sienna">5分钟内</span>合成【KEY系催泪弹】',
+			'在開局<span class="sienna">5分鐘內</span>合成【KEY系催淚彈】',
 		),
 	),
 	# 开局15分钟内合成贤者之石
 	200 => Array(
 		'lvl' => 1,
-		'name' => Array('不动的大图书馆'),
+		'name' => Array('不動的大圖書館'),
 		'request' => Array('最快速度：[:request:]秒'),
-		'title' => Array('哲学家'),
+		'title' => Array('哲學家'),
 		'c1' => Array(0),
 		'c2' => Array(666),
 		'desc' => Array( 
-			'在开局<span class="sienna">15分钟内</span>合成火水木金土符『贤者之石』',
+			'在開局<span class="sienna">15分鐘內</span>合成火水木金土符『賢者之石』',
 		),
 	),
 	# 开局7分钟内合成✦烈埋火
@@ -826,105 +826,105 @@ $ach_list = Array
 		'lvl' => 1,
 		'name' => Array('星星之火','滴水石穿'),
 		'request' => Array('最快速度：[:request:]秒'),
-		'title' => Array('铁头'),
+		'title' => Array('鐵頭'),
 		'c1' => Array(0),
 		'c2' => Array(666),
 		'desc' => Array( 
-			'在开局<span class="sienna">7分钟内</span>合成✦烈埋火',
+			'在開局<span class="sienna">7分鐘內</span>合成✦烈埋火',
 		),
 	),
 	# 神触
 	28 => Array(
 		'lvl' => 1,
-		'name' => Array('烈火疾风',),
+		'name' => Array('烈火疾風',),
 		'request' => Array('最快速度：[:request:]秒'),
-		'title' => Array('神触'),
+		'title' => Array('神觸'),
 		'c1' => Array(250),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'在开局<span class="sienna">30分钟内</span>开启死斗模式',
+			'在開局<span class="sienna">30分鐘內</span>開啓死鬥模式',
 		),
 	),
 	# 开局25分钟内达成锁定解除
 	202 => Array(
 		'lvl' => 1,
-		'name' => Array('锁孔','穿越无钥之门'),
+		'name' => Array('鎖孔','穿越無鑰之門'),
 		'request' => Array('最快速度：[:request:]秒'),
-		'title' => Array('银之键'),
+		'title' => Array('銀之鍵'),
 		'c1' => Array(0),
 		'c2' => Array(1024),
 		'desc' => Array( 
-			'在开局<span class="sienna">25分钟内</span>达成结局：锁定解除',
+			'在開局<span class="sienna">25分鐘內</span>達成結局：鎖定解除',
 		),
 	),
 	# 开局55分钟内达成幻境解离
 	203 => Array(
 		'lvl' => 1,
-		'name' => Array('宛如梦幻','幻境旅者'),
+		'name' => Array('宛如夢幻','幻境旅者'),
 		'request' => Array('最快速度：[:request:]秒'),
 		'title' => Array('前向星'),
 		'c1' => Array(0),
 		'c2' => Array(4096),
 		'desc' => Array( 
-			'在开局<span class="sienna">55分钟内</span>达成结局：幻境解离',
+			'在開局<span class="sienna">55分鐘內</span>達成結局：幻境解離',
 		),
 	),
 	# 套装收集挑战（这是一个存在固定模板的成就）
 	208 => Array(
 		'lvl' => 3,
-		'name' => Array('新绿的故事','百变魔法使','换装迷宫'),
-		'title' => Array('','百变魔法使','换装迷宫'),
+		'name' => Array('新綠的故事','百變魔法使','換裝迷宮'),
+		'title' => Array('','百變魔法使','換裝迷宮'),
 		'c1' => Array(0,0,0),
 		'c2' => Array(233,234,235),
 		'desc' => Array( 
-			'触发过任1种<span class="sienna">套装</span>的完整效果',
-			'触发过3种不同<span class="sienna">套装</span>的完整效果',
-			'触发过5种不同<span class="sienna">套装</span>的完整效果',
+			'觸發過任1種<span class="sienna">套裝</span>的完整效果',
+			'觸發過3種不同<span class="sienna">套裝</span>的完整效果',
+			'觸發過5種不同<span class="sienna">套裝</span>的完整效果',
 		),
 	),
 	# 使用混沌武器打满伤害
 	204 => Array(
 		'lvl' => 1,
-		'name' => Array('混沌的宠儿','随机数之神的庇佑'),
+		'name' => Array('混沌的寵兒','隨機數之神的庇佑'),
 		'title' => Array('四面骰'),
 		'c1' => Array(0),
 		'c2' => Array(444),
 		'desc' => Array( 
-			'使用带有<span class="sienna">混沌属性</span>的武器攻击时，造成1次满额伤害',
+			'使用帶有<span class="sienna">混沌屬性</span>的武器攻擊時，造成1次滿額傷害',
 		),
 	),
 	# 一击承受超过一百万伤害
 	205 => Array(
 		'lvl' => 1,
-		'name' => Array('磁场高手','磁场颠佬'),
-		'request' => Array('承受最多伤害：[:request:]点'),
-		'title' => Array('大只佬'),
+		'name' => Array('磁場高手','磁場顛佬'),
+		'request' => Array('承受最多傷害：[:request:]點'),
+		'title' => Array('大隻佬'),
 		'c1' => Array(0),
 		'c2' => Array(1919),
 		'desc' => Array( 
-			'在战斗中一次性受到超过<span class="sienna">1000000</span>点伤害',
+			'在戰鬥中一次性受到超過<span class="sienna">1000000</span>點傷害',
 		),
 	),
 	# 不使用合成/元素合成达成锁定解除/幻境解离结局
 	206 => Array(
 		'lvl' => 1,
-		'name' => Array('你是怎么做到的？'),
-		'title' => Array('草木飞花'),
+		'name' => Array('你是怎麼做到的？'),
+		'title' => Array('草木飛花'),
 		'c1' => Array(7777),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'不使用<span class="sienna">合成/元素合成/队伍</span>功能<br>达成结局：锁定解除 或 幻境解离',
+			'不使用<span class="sienna">合成/元素合成/隊伍</span>功能<br>達成結局：鎖定解除 或 幻境解離',
 		),
 	),
 	# 不击杀小兵/种火达成锁定解除结局
 	207 => Array(
 		'lvl' => 1,
-		'name' => Array('这是人能做到的吗？'),
+		'name' => Array('這是人能做到的嗎？'),
 		'title' => Array('手下留情'),
 		'c1' => Array(0),
 		'c2' => Array(7777),
 		'desc' => Array( 
-			'不击杀<span class="sienna">各路党派与种火</span>达成结局：锁定解除',
+			'不擊殺<span class="sienna">各路黨派與種火</span>達成結局：鎖定解除',
 		),
 	),
 	# LOOP > TODO：修改为一个版本成就
@@ -940,131 +940,131 @@ $ach_list = Array
 	# 混进来一个生涯成就：累计完成每日任务1/10/100/1001次
 	600 => Array(
 		'lvl' => 4,
-		'name' => Array('新篇','十日谈','百言诗','一千零一夜','尾声？'),
-        'title' => Array('','','虚拟体','Daemon'),
-		'request' => '累计完成次数：[:request:]次',
+		'name' => Array('新篇','十日談','百言詩','一千零一夜','尾聲？'),
+        'title' => Array('','','虛擬體','Daemon'),
+		'request' => '累計完成次數：[:request:]次',
         'c1' => Array(1,10,101,1001),
         'c2' => Array(1,10,101,1001),
 		'desc' => Array( 
-			'累计完成1次<span class="sienna">每日挑战</span>',
-			'累计完成10次<span class="sienna">每日挑战</span>',
-			'累计完成100次<span class="sienna">每日挑战</span>',
-			'累计完成1001次<span class="sienna">每日挑战</span>',
+			'累計完成1次<span class="sienna">每日挑戰</span>',
+			'累計完成10次<span class="sienna">每日挑戰</span>',
+			'累計完成100次<span class="sienna">每日挑戰</span>',
+			'累計完成1001次<span class="sienna">每日挑戰</span>',
 		),
 	),
 	# 日常任务1：击杀10名NPC
 	601 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('蜂群挑战者'),
+		'name' => Array('蜂羣挑戰者'),
         'title' => Array(''),
         'c1' => Array(150),
         'c2' => Array(0),
 		'desc' => Array( 
-			'击杀10名NPC',
+			'擊殺10名NPC',
 		),
 	),
 	# 日常任务2：击杀1名活跃玩家
 	602 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('触手挑战者'),
+		'name' => Array('觸手挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(0),
 		'c2' => Array(150),
 		'desc' => Array( 
-			"击杀1名<span class=\"sienna\" tooltip=\"什么是活跃玩家？\r总之小号是不行的！\">活跃玩家</span>",
+			"擊殺1名<span class=\"sienna\" tooltip=\"什麼是活躍玩家？\r總之小號是不行的！\">活躍玩家</span>",
 		),
 	),
 	# 日常任务3：达成一次解禁/解离结局
 	603 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('尖兵挑战者'),
+		'name' => Array('尖兵挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(250),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'达成结局：<span class="sienna">锁定解除</span>或<span class="sienna">幻境解离</span>',
+			'達成結局：<span class="sienna">鎖定解除</span>或<span class="sienna">幻境解離</span>',
 		),
 	),
 	# 日常任务4：开启一次死斗模式
 	604 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('荣耀挑战者'),
+		'name' => Array('榮耀挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(250),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'开启1次<span class="sienna">死斗模式</span>',
+			'開啓1次<span class="sienna">死鬥模式</span>',
 		),
 	),
 	# 日常任务5：击杀10名种火
 	605 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('循环挑战者'),
+		'name' => Array('循環挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(177),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'击杀10名<span class="sienna">种火</span>',
+			'擊殺10名<span class="sienna">種火</span>',
 		),
 	),
 	# 日常任务6：以毒药/陷阱的方式击杀1名活跃玩家
 	606 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('偏门挑战者'),
+		'name' => Array('偏門挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(0),
 		'c2' => Array(188),
 		'desc' => Array( 
-			'使用<span class="sienna">毒性补给</span>或<span class="sienna">陷阱</span>杀死1名活跃玩家',
+			'使用<span class="sienna">毒性補給</span>或<span class="sienna">陷阱</span>殺死1名活躍玩家',
 		),
 	),
 	# 日常任务7：使用凸眼鱼一次吸收20具尸体
 	607 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('暴食挑战者'),
+		'name' => Array('暴食挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(0),
 		'c2' => Array(155),
 		'desc' => Array( 
-			'使用道具<span class="sienna">凸眼鱼</span>一次性吸收20具尸体',
+			'使用道具<span class="sienna">凸眼魚</span>一次性吸收20具屍體',
 		),
 	),
 	# 日常任务8：使用移动PC解除一次禁区
 	608 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('无月挑战者'),
+		'name' => Array('無月挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(155),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'使用道具<span class="sienna">移动PC</span>解除1次禁区',
+			'使用道具<span class="sienna">移動PC</span>解除1次禁區',
 		),
 	),
 	# 日常任务9：合成一次KEY系催泪弹
 	609 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('雕像挑战者'),
+		'name' => Array('雕像挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(233),
 		'c2' => Array(0),
 		'desc' => Array( 
-			'合成道具<span class="sienna">【KEY系催泪弹】</span>1次',
+			'合成道具<span class="sienna">【KEY系催淚彈】</span>1次',
 		),
 	),
 	# 日常任务10：使用一次歌唱功能
 	610 => Array(
 		'lvl' => 1,
 		'daily' => 1,
-		'name' => Array('摇滚挑战者'),
+		'name' => Array('搖滾挑戰者'),
 		'title' => Array(''),
 		'c1' => Array(0),
 		'c2' => Array(233),
@@ -1076,13 +1076,13 @@ $ach_list = Array
 	# RAID lifetime record: stores the player's highest settled score.
 	611 => Array(
 		'lvl' => 1,
-		'name' => Array('满载而归'),
-		'request' => '最高RAID积分：[:request:]点',
-		'title' => Array('Lv.3 鸟类学者'),
+		'name' => Array('滿載而歸'),
+		'request' => '最高RAID積分：[:request:]點',
+		'title' => Array('Lv.3 鳥類學者'),
 		'c1' => Array(100),
 		'c2' => Array(50),
 		'desc' => Array(
-			'完成一次<span class="sienna">RAID积分结算</span>；成就进度记录个人历史最高RAID积分。',
+			'完成一次<span class="sienna">RAID積分結算</span>；成就進度記錄個人歷史最高RAID積分。',
 		),
 	),
 );

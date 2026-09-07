@@ -90,7 +90,7 @@ function item_platform($itmn, &$data)
     $itmpara_key = 'itmpara' . $itmn;
 
     if (empty($data[$itm_key])) {
-        $log .= '此道具不存在，请重新选择。<br>';
+        $log .= '此道具不存在，請重新選擇。<br>';
         return;
     }
 
@@ -102,23 +102,23 @@ function item_platform($itmn, &$data)
     }
 
     if (!empty($data['clbpara']['platform']['active'])) {
-        $log .= '投射平台仍在运行中，无法叠加新的投射。<br>';
+        $log .= '投射平台仍在運行中，無法疊加新的投射。<br>';
         return;
     }
 
     $source = platform_resolve_source_data($itmpara);
     if (empty($source['data'])) {
-        $log .= '投射平台中没有有效的投射数据。<br>';
+        $log .= '投射平台中沒有有效的投射數據。<br>';
         return;
     }
 
-    $target_name = !empty($source['name']) ? $source['name'] : '未知目标';
+    $target_name = !empty($source['name']) ? $source['name'] : '未知目標';
     $duration = platform_get_duration($itmpara);
     $is_stat_persistent = platform_bool(platform_config_value($itmpara, array('isStatPersistent', 'IsStatPersistent'), false));
     $project_data = platform_filter_projectable_data($source['data']);
 
     if (empty($project_data)) {
-        $log .= '投射平台没有可套用的数据。<br>';
+        $log .= '投射平台沒有可套用的數據。<br>';
         return;
     }
 
@@ -126,13 +126,13 @@ function item_platform($itmn, &$data)
 
     if ($duration > 0) {
         platform_save_state($data, $project_data, $target_name, $duration, $is_stat_persistent);
-        $log .= "投射平台启动：你的本体数据已被暂存，投射稳定度阈值为<span class=\"yellow\">{$duration}</span>。<br>";
+        $log .= "投射平台啓動：你的本體數據已被暫存，投射穩定度閾值為<span class=\"yellow\">{$duration}</span>。<br>";
     } else {
-        $log .= '投射平台启动：未设置生效时间，本次投射将永久写入当前角色数据。<br>';
+        $log .= '投射平台啓動：未設置生效時間，本次投射將永久寫入當前角色數據。<br>';
     }
 
     platform_apply_data($data, $project_data, $target_name);
-    $log .= "投射完成。当前投射对象：<span class=\"yellow\">{$target_name}</span>。<br>";
+    $log .= "投射完成。當前投射對象：<span class=\"yellow\">{$target_name}</span>。<br>";
 }
 
 function platform_record_current_player($itmn, &$data, $itmpara)
@@ -178,7 +178,7 @@ function platform_record_current_player($itmn, &$data, $itmpara)
     $data[$itmsk_key] = platform_config_value($itmpara, array('GeneratedItmsk', 'generatedItmsk'), isset($data[$itmsk_key]) ? $data[$itmsk_key] : '');
     $data[$itmpara_key] = $new_para;
 
-    $log .= "记录完成：<span class=\"yellow\">{$generated_name}</span>已经写入当前槽位。<br>";
+    $log .= "記錄完成：<span class=\"yellow\">{$generated_name}</span>已經寫入當前槽位。<br>";
 }
 
 function platform_tick(&$data, $act = '')
@@ -206,7 +206,7 @@ function platform_tick(&$data, $act = '')
 
     if ($data['clbpara']['platform']['progress'] > $state['duration']) {
         restorePlayerOriginalData($data);
-        $log .= "投射稳定度耗尽，平台投射已经结束。<br>";
+        $log .= "投射穩定度耗盡，平台投射已經結束。<br>";
         return true;
     }
 
@@ -222,14 +222,14 @@ function restorePlayerOriginalData(&$data)
         $data = &$pdata;
     }
     if (empty($data['clbpara']) || !is_array($data['clbpara']) || empty($data['clbpara']['platform']['active'])) {
-        $log .= '没有找到保存的投射平台数据，无法恢复。<br>';
+        $log .= '沒有找到保存的投射平台數據，無法恢復。<br>';
         return false;
     }
 
     $state = $data['clbpara']['platform'];
     if (empty($state['original']) || !is_array($state['original'])) {
         platform_clear_state($data);
-        $log .= '投射平台恢复数据损坏，已清理投射状态。<br>';
+        $log .= '投射平台恢復數據損壞，已清理投射狀態。<br>';
         return false;
     }
 
@@ -243,7 +243,7 @@ function restorePlayerOriginalData(&$data)
     }
 
     platform_clear_state($data);
-    $log .= '投射解除：你恢复了原来的数据。<br>';
+    $log .= '投射解除：你恢復了原來的數據。<br>';
     return true;
 }
 

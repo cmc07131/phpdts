@@ -95,10 +95,10 @@ function roommng_verify_db_game_structure()
 		if(!empty($gr['Key_name']))
 		{
 			$db->query("ALTER TABLE`{$gtablepre}game` DROP PRIMARY KEY");
-			echo "取消了game表的主键{$gr['Key_name']}<br>";
+			echo "取消了game表的主鍵{$gr['Key_name']}<br>";
 		}
 		$db->query("ALTER TABLE`{$gtablepre}game` ADD PRIMARY KEY (`groomid`)");
-		echo "将game表的主键变更为groomid<br>";
+		echo "將game表的主鍵變更為groomid<br>";
 	}
 	return;
 }
@@ -286,7 +286,7 @@ function roommng_exit_room(&$udata)
 		return;
 	}
 
-	echo "已退出房间{$udata['roomid']}<br>";
+	echo "已退出房間{$udata['roomid']}<br>";
 
 	# 退出房间时更新房间状态
 	$result = $db->query("SELECT * FROM {$gtablepre}game WHERE groomid='{$udata['roomid']}'");
@@ -305,7 +305,7 @@ function roommng_exit_room(&$udata)
 				{
 					$udata2 = $db->fetch_array($result2);
 					$new_ownid = $udata2['username'];
-					echo "将房主权限移交给了{$udata2['username']}<br>";
+					echo "將房主權限移交給了{$udata2['username']}<br>";
 				}
 			}
 			if(isset($new_ownid))
@@ -369,7 +369,7 @@ function roommng_close_room($rkey,$adminlog = 0,$check_in_game = 0)
 
 	if(!$rkey)
 	{
-		$cmd_info .=  "不能关闭大房间！<br>";
+		$cmd_info .=  "不能關閉大房間！<br>";
 		return;
 	}
 
@@ -383,7 +383,7 @@ function roommng_close_room($rkey,$adminlog = 0,$check_in_game = 0)
 			# 不能解散正在游戏中的房间
 			if($gdata['gamestate'] > 10 && $gdata['alivenum'])
 			{
-				$cmd_info .= "房间 {$rkey} 内仍有存活玩家，无法关闭。<br>";
+				$cmd_info .= "房間 {$rkey} 內仍有存活玩家，無法關閉。<br>";
 				return;
 			}
 		}
@@ -391,12 +391,12 @@ function roommng_close_room($rkey,$adminlog = 0,$check_in_game = 0)
 		if($gdata['groomnums']) $db->query("UPDATE {$gtablepre}users SET roomid=0 WHERE roomid='{$rkey}'");
 		# 关闭房间
 		$db->query("DELETE FROM {$gtablepre}game WHERE groomid='{$rkey}'");
-		$cmd_info .= "已关闭房间 {$rkey} 号<br>";
+		$cmd_info .= "已關閉房間 {$rkey} 號<br>";
 		if($adminlog) adminlog('closeroom',$rkey);
 	}
 	else 
 	{
-		$cmd_info .= "房间 {$rkey} 未开启，或房间不存在！<br>";
+		$cmd_info .= "房間 {$rkey} 未開啓，或房間不存在！<br>";
 	}
 	return;
 }

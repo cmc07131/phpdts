@@ -20,22 +20,22 @@ function item_tool($itmn, &$data) {
     $itms = & ${'itms' . $itmn};
     $itmsk = & ${'itmsk' . $itmn};
     
-    if ($itm == '电池') {
+    if ($itm == '電池') {
         // 功能需要修改，改为选择道具使用YE类型道具可充电
         $flag = false;
         for($i = 1; $i <= 6; $i++) {
-            if (${'itm' . $i} == '移动PC') {
+            if (${'itm' . $i} == '移動PC') {
                 ${'itme' . $i} += $itme;
                 $itms--;
                 $flag = true;
-                $log .= "为<span class=\"yellow\">{${'itm'.$i}}</span>充了电。";
+                $log .= "為<span class=\"yellow\">{${'itm'.$i}}</span>充了電。";
                 break;
             }
         }
         if (!$flag) {
-            $log .= '你没有需要充电的物品。<br>';
+            $log .= '你沒有需要充電的物品。<br>';
         }
-    } elseif ($itm == '群青多面体') {
+    } elseif ($itm == '羣青多面體') {
         $result = $db->query("SELECT pid,name,pls FROM {$tablepre}players WHERE type = 14 && hp > 0");
         $ndata = array();
         while($nd = $db->fetch_array($result)){
@@ -48,14 +48,14 @@ function item_tool($itmn, &$data) {
                     $npls = rand(1,count($plsinfo)-1);
                 }                
                 $val['pls'] = $npls;$npls = $plsinfo[$npls];
-                $log .= "<span class=\"yellow\">{$key}</span>响应道具号召，移动到了<span class=\"yellow\">{$npls}</span>。<br>";
+                $log .= "<span class=\"yellow\">{$key}</span>響應道具號召，移動到了<span class=\"yellow\">{$npls}</span>。<br>";
                 addnews($now,'npcmove',$name,$key,$nick);
             }
             $db->multi_update("{$tablepre}players",$ndata,'pid');
             if($itms != $nosta){$itms--;}
         }
         return;
-    } elseif ($itm == '残响兵器') {
+    } elseif ($itm == '殘響兵器') {
         global $cmd, $mode;
         foreach(Array('wep','arb','arh','ara','arf','art') as $val) {
             // 全局变量已在extract中处理
@@ -70,7 +70,7 @@ function item_tool($itmn, &$data) {
         ob_clean();
         // 不要设置mode，让二级菜单显示
         return;
-    } elseif ($itm == '超臆想时空') {
+    } elseif ($itm == '超臆想時空') {
         global $cmd, $mode;
         foreach(Array('wep','arb','arh','ara','arf','art') as $val) {
             // 全局变量已在extract中处理
@@ -85,7 +85,7 @@ function item_tool($itmn, &$data) {
         ob_clean();
         // 不要设置mode，让二级菜单显示
         return;
-    } elseif ($itm == '毒药') {
+    } elseif ($itm == '毒藥') {
         global $cmd, $mode;
         for($i = 1; $i <= 6; $i++) {
             // 全局变量已在extract中处理
@@ -96,7 +96,7 @@ function item_tool($itmn, &$data) {
         ob_clean();
         // 不要设置mode，让二级菜单显示
         return;
-    } elseif ($itm == '探测器电池') {
+    } elseif ($itm == '探測器電池') {
         $flag = false;
         for($i = 1; $i <= 6; $i++) {
             if (${'itmk' . $i} == 'R') {
@@ -105,38 +105,38 @@ function item_tool($itmn, &$data) {
                     $itms--;
                 }
                 $flag = true;
-                $log .= "为<span class=\"yellow\">{${'itm'.$i}}</span>充了电。";
+                $log .= "為<span class=\"yellow\">{${'itm'.$i}}</span>充了電。";
                 break;
             }
         }
         if (!$flag) {
-            $log .= '你没有探测仪器。<br>';
+            $log .= '你沒有探測儀器。<br>';
         }
-    } elseif ($itm == '御神签') {
+    } elseif ($itm == '御神籤') {
         $log .= "使用了<span class=\"yellow\">$itm</span>。<br>";
         include_once GAME_ROOT . './include/game/item2.func.php';
         divining();
         if ($itms != $nosta) {
             $itms--;
         }
-    } elseif ($itm == '凸眼鱼') {
+    } elseif ($itm == '凸眼魚') {
         $tm = $now - $corpseprotect; // 尸体保护
         $db->query("UPDATE {$tablepre}players SET weps='0',wep2s='0',arbs='0',arhs='0',aras='0',arfs='0',arts='0',itms0='0',itms1='0',itms2='0',itms3='0',itms4='0',itms5='0',itms6='0',money='0' WHERE hp <= 0 AND endtime <= $tm");
         $cnum = $db->affected_rows();
         addnews($now, 'corpseclear', $name, $cnum, $nick);
-        $log .= "使用了<span class=\"yellow\">$itm</span>。<br>突然刮起了一阵怪风，吹走了地上的{$cnum}具尸体！<br>";
+        $log .= "使用了<span class=\"yellow\">$itm</span>。<br>突然颳起了一陣怪風，吹走了地上的{$cnum}具屍體！<br>";
         if ($itms != $nosta) {
             $itms--;
         }
         $isk = $cnum;
-    } elseif ($itm == '鱼眼凸') {
+    } elseif ($itm == '魚眼凸') {
         $tm = $now - $corpseprotect; // 尸体保护
         $db->query("UPDATE {$tablepre}players SET pls='$pls' WHERE hp <= 0 AND endtime <= $tm");
         $cnum = $db->affected_rows();
         addnews($now, 'corpsegather', $name, $cnum, $nick);
-        $log .= "使用了<span class=\"yellow\">$itm</span>。<br>突然刮起了一阵怪风，将遍布全场的{$cnum}具尸体吹到了你所在的地方！<br>";
+        $log .= "使用了<span class=\"yellow\">$itm</span>。<br>突然颳起了一陣怪風，將遍佈全場的{$cnum}具屍體吹到了你所在的地方！<br>";
         $rp += diceroll(1024);
-        $log .= "<span class=\"lime\">这过于惨无人道了！</span><br>你觉得罪恶感爬上了你的脊梁！<br>";
+        $log .= "<span class=\"lime\">這過於慘無人道了！</span><br>你覺得罪惡感爬上了你的脊樑！<br>";
         if ($itms != $nosta) {
             $itms--;
         }
@@ -147,27 +147,27 @@ function item_tool($itmn, &$data) {
             include_once GAME_ROOT . './include/system.func.php';
             save_gameinfo();
             addnews($now, 'wthchange', $name, $weather, $nick);
-            $log .= "你转动了几下天候棒。<br>天气突然转变成了<span class=\"red\">$wthinfo[$weather]</span>！<br>";
+            $log .= "你轉動了幾下天候棒。<br>天氣突然轉變成了<span class=\"red\">$wthinfo[$weather]</span>！<br>";
         } else {
             addnews($now, 'wthfail', $name, $weather, $nick);
-            $log .= "你转动了几下天候棒。<br>但天气并未发生改变！<br>";
+            $log .= "你轉動了幾下天候棒。<br>但天氣並未發生改變！<br>";
         }
         if ($itms != $nosta) {
             $itms--;
         }
     } elseif ($itm == '消音器') {
         if (strpos($wepk, 'WG') !== 0) {
-            $log .= '你没有装备枪械，不能使用消音器。<br>';
+            $log .= '你沒有裝備槍械，不能使用消音器。<br>';
         } elseif (strpos($wepsk, 'S') === false) {
             $wepsk .= 'S';
-            $log .= "你给<span class=\"yellow\">$wep</span>安装了<span class=\"yellow\">$itm</span>。<br>";
+            $log .= "你給<span class=\"yellow\">$wep</span>安裝了<span class=\"yellow\">$itm</span>。<br>";
             if ($itms != $nosta) {
                 $itms--;
             }
         } else {
-            $log .= "你的武器已经安装了消音器。<br>";
+            $log .= "你的武器已經安裝了消音器。<br>";
         }
-    } elseif ($itm == '■DeathNote■' || $itm == '四面亲手制作的■DeathNote■') {
+    } elseif ($itm == '■DeathNote■' || $itm == '四面親手製作的■DeathNote■') {
         // 打开死亡笔记二级菜单
         // 说明：item.main.php 末尾会在 $cmd 为空时强制设置 $mode='command'
         // 因此这里必须设置 $cmd（而不是仅设置 $mode），以便二级菜单正确显示
@@ -179,7 +179,7 @@ function item_tool($itmn, &$data) {
         ob_clean();
         // 不设置 $mode，交由框架根据 $cmd 渲染表单
         return;
-    } elseif ($itm == '游戏解除钥匙') {
+    } elseif ($itm == '遊戲解除鑰匙') {
         $state = 6;
         $url = 'end.php';
         include_once GAME_ROOT . './include/system.func.php';

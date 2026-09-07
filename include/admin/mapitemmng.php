@@ -25,7 +25,7 @@ foreach(Array('log','chat','mapitem','newsinfo') as $v){
 	
 	$b = getmicrotime();
 	$time = ($b-$a)*1000 ;
-	echo "{$v}.sql 执行时间：$time 毫秒 <br>";
+	echo "{$v}.sql 執行時間：$time 毫秒 <br>";
 }
 
 

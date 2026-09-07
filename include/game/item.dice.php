@@ -26,7 +26,7 @@ function item_dice($itmn, &$data) {
 	// 示例框架:
 	if ($itm == '［Ｄ３］') {
 		// 处理D3骰子逻辑
-		$log .= '你向天空投出了骰子！<br><br>进行１ｄ３检定！<br>';
+		$log .= '你向天空投出了骰子！<br><br>進行１ｄ３檢定！<br>';
 			fortuneCookie1(diceroll($clbpara['randver1']));
 			//D3 - Randomly shuffle the effect and stamina of player's equipment and weapon.
 			//grabbing the effect and stamina of player equipment and weapon
@@ -66,25 +66,25 @@ function item_dice($itmn, &$data) {
 			//echo "$wepe,$wep2e,$arbe,$arhe,$arae,$arfe,$weps,$wep2s,$arbs,$arhs,$aras,$arfs";
 
 			//output description logs.
-			$log .= '似乎你身上的装备的效果和耐久都出现了变化！<br>';
+			$log .= '似乎你身上的裝備的效果和耐久都出現了變化！<br>';
 			//Generate a random number based on player's 1st Yume Value.
 			$dicebreak = diceroll($clbpara['randver1']);
 
 			//check if this value is greater than half of player's 1st Yume Value, if so, we do not destroy the item.
 			if($dicebreak > $clbpara['randver1'] / 3){
-				$log .= '骰子落了下来，令人惊奇的是，它竟然没有被摔坏，还可以继续使用！<br>';
+				$log .= '骰子落了下來，令人驚奇的是，它竟然沒有被摔壞，還可以繼續使用！<br>';
 			}else{
 			//destroy the dice item.
-			$log .= '骰子落了下来，化为一缕青烟消失了……<br>';
+			$log .= '骰子落了下來，化為一縷青煙消失了……<br>';
 			$itm = $itmk = $itmsk = '';
 			$itme = $itms = 0;
 		}
 	} elseif ($itm == '［Ｄ６］') {
 		// 处理D6骰子逻辑
-		$log .= '你向天空投出了骰子！<br><br>进行１ｄ６检定！<br>';
+		$log .= '你向天空投出了骰子！<br><br>進行１ｄ６檢定！<br>';
 			fortuneCookie1(diceroll($clbpara['randver1']));
 			//D6 - spawn a random item to player's hand.
-			$log .= '骰子骨碌碌地旋转起来，变成了一件【空想道具】！<br>';
+			$log .= '骰子骨碌碌地旋轉起來，變成了一件【空想道具】！<br>';
 			//Populate an array desinating which kind of item this would turn into.
 			$randomtype = Array('DB','DH','DA','DF','WGK','WCF','WCP','WKF','WKP','WFK','WDG','WDF','WJ','WB','HB');
 			//Populate an array desinating which property can be added onto the item, we need to include an empty value for an empty roll.
@@ -98,7 +98,7 @@ function item_dice($itmn, &$data) {
 			//Thus, this check is omitted - On PURPOSE!!!
 
 			//populate this item.
-			$itm0 = "【异色·空想道具】";
+			$itm0 = "【異色·空想道具】";
 			//itmk is one of the values in above array, $randomtype.
 			$itmk0 = $randomtype[$rtype];
 			//We roll 5 times to populate the itmsk value.
@@ -121,19 +121,19 @@ function item_dice($itmn, &$data) {
 			$dicebreak = diceroll($clbpara['randver1']);
 			//check if this value is greater than half of player's 1st Yume Value, if so, we do not destroy the item.
 			if($dicebreak > $clbpara['randver1'] / 3){
-				$log .= '令人惊讶的是，你在出现的空想道具里面又发现了一枚骰子！<br>';
+				$log .= '令人驚訝的是，你在出現的空想道具裏面又發現了一枚骰子！<br>';
 			}else{
 			//destroy the dice item.
-			$log .= '骰子落了下来，化为一缕青烟消失了……<br>';
+			$log .= '骰子落了下來，化為一縷青煙消失了……<br>';
 			$itm = $itmk = $itmsk = '';
 			$itme = $itms = 0;
 			}
 	} elseif ($itm == '［Ｄ１０］') {
 		// 处理D10骰子逻辑
-		$log .= '你向天空投出了骰子！<br><br>进行１ｄ１０检定！<br>';
+		$log .= '你向天空投出了骰子！<br><br>進行１ｄ１０檢定！<br>';
 			fortuneCookie1(diceroll($clbpara['randver1']));
 			//D10 - spawn a random item to player's hand - Enhanced D6 with a better item pool.
-			$log .= '骰子骨碌碌地旋转起来，变成了一件【空想道具】！<br>';
+			$log .= '骰子骨碌碌地旋轉起來，變成了一件【空想道具】！<br>';
 			//Populate an array desinating which kind of item this would turn into.
 			$randomtype = Array('DB','DH','DA','DF','WGK','WCF','WCP','WKF','WKP','WFK','WDG','WDF','WJ','WB','HB');
 			//Populate an array desinating which property can be added onto the item, we need to include an empty value for an empty roll.
@@ -145,7 +145,7 @@ function item_dice($itmn, &$data) {
 			//AGAIN, this check is omitted - On PURPOSE!!!
 
 			//populate this item.
-			$itm0 = "【超异色·空想道具】";
+			$itm0 = "【超異色·空想道具】";
 			//itmk is one of the values in above array, $randomtype.
 			$itmk0 = $randomtype[$rtype];
 			//We roll 10 times to populate the itmsk value.
@@ -168,16 +168,16 @@ function item_dice($itmn, &$data) {
 			$dicebreak = diceroll($clbpara['randver1']);
 			//check if this value is greater than half of player's 1st Yume Value, if so, we do not destroy the item.
 			if($dicebreak > $clbpara['randver1'] / 3){
-				$log .= '令人惊讶的是，你在出现的空想道具里面又发现了一枚骰子！<br>';
+				$log .= '令人驚訝的是，你在出現的空想道具裏面又發現了一枚骰子！<br>';
 			}else{
 			//destroy the dice item.
-			$log .= '骰子落了下来，化为一缕青烟消失了……<br>';
+			$log .= '骰子落了下來，化為一縷青煙消失了……<br>';
 			$itm = $itmk = $itmsk = '';
 			$itme = $itms = 0;
 			}
 	} elseif ($itm == '［Ｄ２０］') {
 		// 处理D20骰子逻辑
-		$log .= '你向天空投出了骰子！<br><br>进行１ｄ２０检定！<br><br>';
+		$log .= '你向天空投出了骰子！<br><br>進行１ｄ２０檢定！<br><br>';
 			fortuneCookie1(diceroll($clbpara['randver1']));
 			//D20 - Randomly fill player's bag with items from player's location.
 			//Get item from database.
@@ -186,7 +186,7 @@ function item_dice($itmn, &$data) {
 			//First we deal with some special cases...
 			//What if there's no item， or not enough items on the map?
 			if($itemnum <= 6){
-				$log .= '骰子落在了地上，突然碎裂成了六个更小的骰子，你的背包被骰子占满，其他物品都消失了！<br>';
+				$log .= '骰子落在了地上，突然碎裂成了六個更小的骰子，你的揹包被骰子佔滿，其他物品都消失了！<br>';
 				$itm1 = $itm2 = $itm3 = $itm4 = $itm5 = $itm6 = '［Ｄ６］';
 				$itmk1 = $itmk2 = $itmk3 = $itmk4 = $itmk5 = $itmk6 = '🎲';
 				$itme1 = $itme2 = $itme3 = $itme4 = $itme5 = $itme6 = 1;
@@ -195,7 +195,7 @@ function item_dice($itmn, &$data) {
 				$itmpara0 = $itmpara1 = $itmpara2 = $itmpara3 = $itmpara4 = $itmpara5 = $itmpara6 = '';
 			}else{
 				//Otherwise, we swap every item in player's bag with random items at player's location.
-				$log .= '一道白光闪过，你背包中的物品都消失了，但是……<br>';
+				$log .= '一道白光閃過，你揹包中的物品都消失了，但是……<br>';
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
 				$mi=$db->fetch_array($result);
@@ -206,7 +206,7 @@ function item_dice($itmn, &$data) {
 				$itmsk1=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm1}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm1}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -218,7 +218,7 @@ function item_dice($itmn, &$data) {
 				$itmsk2=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm2}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm2}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -230,7 +230,7 @@ function item_dice($itmn, &$data) {
 				$itmsk3=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm3}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm3}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -242,7 +242,7 @@ function item_dice($itmn, &$data) {
 				$itmsk4=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm4}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm4}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -254,7 +254,7 @@ function item_dice($itmn, &$data) {
 				$itmsk5=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm5}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm5}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -266,12 +266,12 @@ function item_dice($itmn, &$data) {
 				$itmsk6=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm6}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm6}</span>！<br>";
 			}
 			//Generate a random number based on player's 1st Yume Value.
 			$dicebreak = diceroll($clbpara['randver1']);
 			if($dicebreak > $clbpara['randver1'] / 3){
-				$log .= '骰子落了下来，令人惊奇的是，它竟然没有被摔坏，还可以继续使用！<br>';
+				$log .= '骰子落了下來，令人驚奇的是，它竟然沒有被摔壞，還可以繼續使用！<br>';
 				$itm0 = '［Ｄ２０］';
 				$itmk0 = '🎲';
 				$itme0 = $itms0 = 1;
@@ -279,7 +279,7 @@ function item_dice($itmn, &$data) {
 			}
 	} elseif ($itm == '［Ｄ４０］') {
 		// 处理D40骰子逻辑
-		$log .= '你向天空投出了骰子！<br><br>进行１ｄ４０检定！<br><br>';
+		$log .= '你向天空投出了骰子！<br><br>進行１ｄ４０檢定！<br><br>';
 			fortuneCookie1(diceroll($clbpara['randver1']));
 			//D40 - Randomly fill player's bag with items from all mapitems. - Enhanced D20
 			//Get item from database.
@@ -288,7 +288,7 @@ function item_dice($itmn, &$data) {
 			//First we deal with some special cases...
 			//What if there's no item， or not enough items on the map?
 			if($itemnum <= 6){
-				$log .= '骰子落在了地上，突然碎裂成了六个更小的骰子，你的背包被骰子占满，其他物品都消失了！<br>';
+				$log .= '骰子落在了地上，突然碎裂成了六個更小的骰子，你的揹包被骰子佔滿，其他物品都消失了！<br>';
 				$itm1 = $itm2 = $itm3 = $itm4 = $itm5 = $itm6 = '［Ｄ１０］';
 				$itmk1 = $itmk2 = $itmk3 = $itmk4 = $itmk5 = $itmk6 = '🎲';
 				$itme1 = $itme2 = $itme3 = $itme4 = $itme5 = $itme6 = 1;
@@ -297,7 +297,7 @@ function item_dice($itmn, &$data) {
 				$itmpara1 = $itmpara2 = $itmpara3 = $itmpara4 = $itmpara5 = $itmpara6 = '';
 			}else{
 				//Otherwise, we swap every item in player's bag with random items at player's location.
-				$log .= '一道白光闪过，你背包中的物品都消失了，但是……<br>';
+				$log .= '一道白光閃過，你揹包中的物品都消失了，但是……<br>';
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
 				$mi=$db->fetch_array($result);
@@ -308,7 +308,7 @@ function item_dice($itmn, &$data) {
 				$itmsk1=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm1}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm1}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -320,7 +320,7 @@ function item_dice($itmn, &$data) {
 				$itmsk2=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm2}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm2}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -332,7 +332,7 @@ function item_dice($itmn, &$data) {
 				$itmsk3=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm3}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm3}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -344,7 +344,7 @@ function item_dice($itmn, &$data) {
 				$itmsk4=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm4}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm4}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -356,7 +356,7 @@ function item_dice($itmn, &$data) {
 				$itmsk5=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm5}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm5}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -368,12 +368,12 @@ function item_dice($itmn, &$data) {
 				$itmsk6=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm6}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm6}</span>！<br>";
 			}
 			//Generate a random number based on player's 1st Yume Value.
 			$dicebreak = diceroll($clbpara['randver1']);
 			if($dicebreak > $clbpara['randver1'] / 4){
-				$log .= '骰子落了下来，令人惊奇的是，它竟然没有被摔坏，还可以继续使用！<br>';
+				$log .= '骰子落了下來，令人驚奇的是，它竟然沒有被摔壞，還可以繼續使用！<br>';
 				$itm0 = '［Ｄ４０］';
 				$itmk0 = '🎲';
 				$itme0 = $itms0 = 1;
@@ -381,7 +381,7 @@ function item_dice($itmn, &$data) {
 			}
 	} elseif ($itm == '［Ｄ１００］') {
 		// 处理D100骰子逻辑
-		$log .= '你向天空投出了骰子！<br><br>进行１ｄ１００检定！<br><br>';
+		$log .= '你向天空投出了骰子！<br><br>進行１ｄ１００檢定！<br><br>';
 			fortuneCookie1(diceroll($clbpara['randver1']));
 			//D100 - Shuffle the player's mhp, msp, mss, atk, def and all w values.
 			//Firstly, are you the chosen one?
@@ -396,7 +396,7 @@ function item_dice($itmn, &$data) {
 				$chosenone += 1;
 			}
 			//Then, we calculate your new values:
-			$log .= '你突然觉得头晕目眩！<br>';
+			$log .= '你突然覺得頭暈目眩！<br>';
 			//->mhp and msp
 			$tvalue = round(($mhp + $msp + $mss) / 2);
 			//Make sure you don't die from this.
@@ -404,12 +404,12 @@ function item_dice($itmn, &$data) {
 			$sp = $msp = (diceroll($tvalue) + 1) * $chosenone;
 			$mss = (diceroll($tvalue) + 1) * $chosenone;
 			$ss = round($mss / 2);
-			$log .= '你的最大生命，最大体力值与歌魂发生了变化！<br>';
+			$log .= '你的最大生命，最大體力值與歌魂發生了變化！<br>';
 			//->atk and def
 			$avalue = round(($att + $def) / 1.5);
 			$att = (diceroll($avalue) + 1) * $chosenone;
 			$def = (diceroll($avalue) + 1) * $chosenone;
-			$log .= '你的攻击力与防御力发生了变化！<br>';
+			$log .= '你的攻擊力與防禦力發生了變化！<br>';
 			//->w values
 			$wvalue = round(($wp + $wk + $wd + $wc + $wg + $wf) / 4);
 			$wp = (diceroll($wvalue) + 1) * $chosenone;
@@ -418,22 +418,22 @@ function item_dice($itmn, &$data) {
 			$wc = (diceroll($wvalue) + 1) * $chosenone;
 			$wg = (diceroll($wvalue) + 1) * $chosenone;
 			$wf = (diceroll($wvalue) + 1) * $chosenone;
-			$log .= '你的武器熟练度发生了变化！<br>';
+			$log .= '你的武器熟練度發生了變化！<br>';
 
 			//Generate a random number based on player's 1st Yume Value.
 			$dicebreak = diceroll($clbpara['randver2']);
 			//check if this value is greater than player's 1st Yume Value, if so, we do not destroy the item.
 			if($dicebreak > $clbpara['randver1']){
-				$log .= '骰子落了下来，令人惊奇的是，它竟然没有被摔坏，还可以继续使用！<br>';
+				$log .= '骰子落了下來，令人驚奇的是，它竟然沒有被摔壞，還可以繼續使用！<br>';
 			}else{
 			//destroy the dice item.
-			$log .= '骰子落了下来，化为一缕青烟消失了……<br>';
+			$log .= '骰子落了下來，化為一縷青煙消失了……<br>';
 			$itm = $itmk = $itmsk = '';
 			$itme = $itms = 0;
 			}
 	} elseif ($itm == '［Ｄ１０００］') {
 		// 处理D1000骰子逻辑
-		$log .= '你投出了这个骰子！<br>骰子飞上了天空，变成了三个不同的骰子！这真是太炫酷了！<br>';
+		$log .= '你投出了這個骰子！<br>骰子飛上了天空，變成了三個不同的骰子！這真是太炫酷了！<br>';
 			//D1000 - Does all of the above, based on player's Yume Values.
 			//D3
 			if ($clbpara['randver1'] > 64){
@@ -480,9 +480,9 @@ function item_dice($itmn, &$data) {
 			$arfs = $rand_s[5]* 2;
 
 			//output description logs.
-			$log .= '似乎你身上的装备的效果和耐久都出现了变化！<br>';
+			$log .= '似乎你身上的裝備的效果和耐久都出現了變化！<br>';
 			}else{
-				$log .= '其中一个骰子就这么飞出了你的视野，你看不到它的出目！<br>';
+				$log .= '其中一個骰子就這麼飛出了你的視野，你看不到它的出目！<br>';
 			}
 
 			//D20
@@ -494,7 +494,7 @@ function item_dice($itmn, &$data) {
 			//First we deal with some special cases...
 			//What if there's no item， or not enough items on the map?
 			if($itemnum <= 6){
-				$log .= '骰子落在了地上，突然碎裂成了六个更小的骰子，你的背包被骰子占满，其他物品都消失了！<br>';
+				$log .= '骰子落在了地上，突然碎裂成了六個更小的骰子，你的揹包被骰子佔滿，其他物品都消失了！<br>';
 				$itm1 = $itm2 = $itm3 = $itm4 = $itm5 = $itm6 = '［Ｄ６］';
 				$itmk1 = $itmk2 = $itmk3 = $itmk4 = $itmk5 = $itmk6 = '🎲';
 				$itme1 = $itme2 = $itme3 = $itme4 = $itme5 = $itme6 = 1;
@@ -503,7 +503,7 @@ function item_dice($itmn, &$data) {
 				$itmpara1 = $itmpara2 = $itmpara3 = $itmpara4 = $itmpara5 = $itmpara6 = '';
 			}else{
 				//Otherwise, we swap every item in player's bag with random items at player's location.
-				$log .= '一道白光闪过，你背包中的物品都消失了，但是……<br>';
+				$log .= '一道白光閃過，你揹包中的物品都消失了，但是……<br>';
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
 				$mi=$db->fetch_array($result);
@@ -514,7 +514,7 @@ function item_dice($itmn, &$data) {
 				$itmsk1=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm1}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm1}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -526,7 +526,7 @@ function item_dice($itmn, &$data) {
 				$itmsk2=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm2}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm2}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -538,7 +538,7 @@ function item_dice($itmn, &$data) {
 				$itmsk3=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm3}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm3}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -550,7 +550,7 @@ function item_dice($itmn, &$data) {
 				$itmsk4=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm4}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm4}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -562,7 +562,7 @@ function item_dice($itmn, &$data) {
 				$itmsk5=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm5}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm5}</span>！<br>";
 
 				$itemno = rand(0,$itemnum-1);
 				$db->data_seek($result,$itemno);
@@ -574,10 +574,10 @@ function item_dice($itmn, &$data) {
 				$itmsk6=$mi['itmsk'];
 				$iid=$mi['iid'];
 				$db->query("DELETE FROM {$tablepre}mapitem WHERE iid='$iid'");
-				$log .= "你获得了<span class=\"yellow\">{$itm6}</span>！<br>";
+				$log .= "你獲得了<span class=\"yellow\">{$itm6}</span>！<br>";
 			}
 			}else{
-				$log .= '其中一个骰子就这么飞出了你的视野，你看不到它的出目！<br>';
+				$log .= '其中一個骰子就這麼飛出了你的視野，你看不到它的出目！<br>';
 			}
 			
 			//D100
@@ -595,7 +595,7 @@ function item_dice($itmn, &$data) {
 					$chosenone += 2;
 				}
 				//Then, we calculate your new values:
-				$log .= '你突然觉得头晕目眩！<br>';
+				$log .= '你突然覺得頭暈目眩！<br>';
 				//->mhp and msp
 				$tvalue = $mhp + $msp + $mss;
 				//Make sure you don't die from this.
@@ -603,12 +603,12 @@ function item_dice($itmn, &$data) {
 				$sp = $msp = (diceroll($tvalue) + 1) * $chosenone;
 				$mss = (diceroll($tvalue) + 1) * $chosenone;
 				$ss = round($mss / 2);
-				$log .= '你的最大生命，最大体力值与歌魂发生了变化！<br>';
+				$log .= '你的最大生命，最大體力值與歌魂發生了變化！<br>';
 				//->atk and def
 				$avalue = $att + $def;
 				$att = (diceroll($avalue) + 1) * $chosenone;
 				$def = (diceroll($avalue) + 1) * $chosenone;
-				$log .= '你的攻击力与防御力发生了变化！<br>';
+				$log .= '你的攻擊力與防禦力發生了變化！<br>';
 				//->w values
 				$wvalue = $wp + $wk + $wd + $wc + $wg + $wf;
 				$wp = (diceroll($wvalue) + 1) * $chosenone;
@@ -617,18 +617,18 @@ function item_dice($itmn, &$data) {
 				$wc = (diceroll($wvalue) + 1) * $chosenone;
 				$wg = (diceroll($wvalue) + 1) * $chosenone;
 				$wf = (diceroll($wvalue) + 1) * $chosenone;
-				$log .= '你的武器熟练度发生了变化！<br>';
+				$log .= '你的武器熟練度發生了變化！<br>';
 			}else{
-				$log .= '其中一个骰子就这么飞出了你的视野，你看不到它的出目！<br>';
+				$log .= '其中一個骰子就這麼飛出了你的視野，你看不到它的出目！<br>';
 			}
 			//Generate a random number based on player's 1st Yume Value.
 			$dicebreak = diceroll($clbpara['randver1']);
 			//check if this value is greater than half of player's 1st Yume Value, if so, we do not destroy the item.
 			if($dicebreak > $clbpara['randver1'] / 3){
-				$log .= '骰子再次合成一体，落了下来，令人惊奇的是，它竟然没有被摔坏，还可以继续使用！<br>';
+				$log .= '骰子再次合成一體，落了下來，令人驚奇的是，它竟然沒有被摔壞，還可以繼續使用！<br>';
 			}else{
 			//destroy the dice item.
-			$log .= '骰子落了下来，化为一缕青烟消失了……<br>';
+			$log .= '骰子落了下來，化為一縷青煙消失了……<br>';
 			$itm = $itmk = $itmsk = '';
 			$itme = $itms = 0;
 			}

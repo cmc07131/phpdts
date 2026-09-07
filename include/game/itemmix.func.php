@@ -6,7 +6,7 @@ if(!defined('IN_GAME')) {
 
 include_once GAME_ROOT.'./include/game/itemmain.func.php';
 
-$mix_type = Array('normal' => '通常','sync' => '同调', 'overlay' => '超量');
+$mix_type = Array('normal' => '通常','sync' => '同調', 'overlay' => '超量');
 
 // 合成功能
 function itemmix_rev($mlist, $itemselect=-1, &$data=NULL)
@@ -122,25 +122,25 @@ function itemmix_place_check($mlist,&$data=NULL)
 	}
 	extract($data,EXTR_REFS);
 	if($club == 20){
-		$log .= "<span class=\"yellow\">无法使用合成功能！</span><br>";
+		$log .= "<span class=\"yellow\">無法使用合成功能！</span><br>";
 		$mode = 'command'; $main = '';
 		return false;
 	}
 	$main = 'itemmix_tips';
 	$mlist2 = array_unique($mlist);
 	if(count($mlist) != count($mlist2)) {
-		$log .= '相同道具不能进行合成！<br>';
+		$log .= '相同道具不能進行合成！<br>';
 		$mode = 'itemmix'; 	$itemcmd = 'itemmix';
 		return false;
 	}
 	if(count($mlist) < 2){
-		$log .= '至少需要2个道具才能进行合成！';
+		$log .= '至少需要2個道具才能進行合成！';
 		$mode = 'itemmix'; 	$itemcmd = 'itemmix';
 		return false;
 	}
 	foreach($mlist as $val){
 		if(!$data['itm'.$val]){
-			$log .= '所选择的道具'.$val.'不存在！';
+			$log .= '所選擇的道具'.$val.'不存在！';
 			$mode = 'itemmix'; 	$itemcmd = 'itemmix';
 			return false;
 		}
@@ -335,12 +335,12 @@ function check_valid_overlay_material($itm, $itmsk, $star)
 }
 function itemmix_name_proc($n){
 	$n = trim($n);
-	$itmname_ignore = Array('/锋利的/si','/电气/si','/毒性/si','/-改/si');
+	$itmname_ignore = Array('/鋒利的/si','/電氣/si','/毒性/si','/-改/si');
 	foreach(Array($itmname_ignore) as $value){
 		$n = preg_replace($value,'',$n);
 	}
-	if(strpos($n, '小黄的')!==false) $n = preg_replace('/\[\+[0-9]+?\]/si','',$n);//小黄强化特判可以合成
-	$n = str_replace('钉棍棒','棍棒',$n);
+	if(strpos($n, '小黃的')!==false) $n = preg_replace('/\[\+[0-9]+?\]/si','',$n);//小黄强化特判可以合成
+	$n = str_replace('釘棍棒','棍棒',$n);
 	return $n;
 }
 //执行合成
@@ -423,19 +423,19 @@ function itemmix_events(&$data=NULL)
 	if(($itmk0 == 'EE' || $itmk0 == 'ER') && ($club == 7)){ $itme0 *= 5; }
 
 	# 合成皇家蔷薇时，获得进一步合成的线索
-	if($itm0 == '「皇家蔷薇」')
+	if($itm0 == '「皇家薔薇」')
 	{
 		if(empty($gamevars['random_mixlist']['royal_rose']))
 		{
 			# 可能出现的随机素材列表
-			$slip_list = Array('红石榴汁','红色的发圈','粉红雏菊','红豆面包',
-				'☆红楼梦精装本☆','红色方块','红宝石方块','院长红酒','冴月麟的生日蛋糕-红',
-				'鲜红的生血','真-红色的发圈','『红石电路』','【烈焰红唇】','红宝石方块','红莲魔龙 ★8');
+			$slip_list = Array('紅石榴汁','紅色的髮圈','粉紅雛菊','紅豆麪包',
+				'☆紅樓夢精裝本☆','紅色方塊','紅寶石方塊','院長紅酒','冴月麟的生日蛋糕-紅',
+				'鮮紅的生血','真-紅色的髮圈','『紅石電路』','【烈焰紅唇】','紅寶石方塊','紅蓮魔龍 ★8');
 			$royal_rose_stuff = $slip_list[array_rand($slip_list)];
 			$royal_rose = Array(
 				'class' => 'hidden',
-				'stuff' => array('「皇家蔷薇」','龙虎旗帜',$royal_rose_stuff),
-				'result' => array('「猩红蔷薇」','WK',179310,'∞','BNnrfcV'),
+				'stuff' => array('「皇家薔薇」','龍虎旗幟',$royal_rose_stuff),
+				'result' => array('「猩紅薔薇」','WK',179310,'∞','BNnrfcV'),
 			);
 			$gamevars['random_mixlist']['royal_rose'] = $royal_rose;
 			save_gameinfo();
@@ -446,33 +446,33 @@ function itemmix_events(&$data=NULL)
 			$royal_rose_stuff = $royal_rose['stuff'][2];
 		}
 		# 混淆
-		$royal_rose_stuff = preg_replace('/[^红]/u', '＊', $royal_rose_stuff);
+		$royal_rose_stuff = preg_replace('/[^紅]/u', '＊', $royal_rose_stuff);
 		# 获得提示
-		$log .= "然后，你收到了来自某人的私聊——<br>
+		$log .= "然後，你收到了來自某人的私聊——<br>
 		<br>
-		<span class='redseed'>“……嗯嗯嗯嗯，你在搜集这个东西啊……<br>
-		如果你还打算进一步合成的话，<br>
-		接下来就得去找‘{$royal_rose_stuff}’了。<br>
-		……你问‘＊’是什么……？<br>
-		‘＊’就是连在一起被和谐了，打不出来……你也是在网上冲浪的，应该能明白吧！<br>
-		嘛，总之你先对着字数找找吧！”</span><br>
+		<span class='redseed'>“……嗯嗯嗯嗯，你在蒐集這個東西啊……<br>
+		如果你還打算進一步合成的話，<br>
+		接下來就得去找‘{$royal_rose_stuff}’了。<br>
+		……你問‘＊’是什麼……？<br>
+		‘＊’就是連在一起被和諧了，打不出來……你也是在網上衝浪的，應該能明白吧！<br>
+		嘛，總之你先對着字數找找吧！”</span><br>
 		<br>
 		啊……？<br>";
 	}
 
 	# If one attempts to mix 我头四, check if they have used all 4 我太XX item, if they do, replace the result with the miracle mine, if not, then it's just a normal mine.
-	if($itm0 =='「我头四」'){
+	if($itm0 =='「我頭四」'){
 		# Check if all 4 「我太XX」 have been used.
 		if($clbpara['iAmHandsome'] > 0 && $clbpara['iAmGreat'] > 0 && $clbpara['iAmRich'] > 0 && $clbpara['iAmStrong'] > 0){
-			$log .= "<span class='minirainbow'>很帅，很强，很棒，很牛的你拿起了你刚刚合成的这个名为「我头四」的陷阱。<br>
-			你手上的东西响应着你的灵魂，竟然产生了变化！</span><br>";
+			$log .= "<span class='minirainbow'>很帥，很強，很棒，很牛的你拿起了你剛剛合成的這個名為「我頭四」的陷阱。<br>
+			你手上的東西響應着你的靈魂，竟然產生了變化！</span><br>";
 
-			$itm0 = '破则战术「我头四」';
+			$itm0 = '破則戰術「我頭四」';
 			$itme0 = 1;
 			$itmk0 = 'TNd';
 			$itmsk0 = 'xX';
 
-			$log .= "但是你的预感告诉你，要再做一个这样的东西，<br><span class='minirainbow'>恐怕需要重新将你之前做过的某些事情做一遍了……</span><br>";
+			$log .= "但是你的預感告訴你，要再做一個這樣的東西，<br><span class='minirainbow'>恐怕需要重新將你之前做過的某些事情做一遍了……</span><br>";
 			# Clear the 4「我太XX」 $clbpara values to prevent abuse of this trap.
 			$clbpara['iAmHandsome'] = 0;
 			$clbpara['iAmGreat'] = 0;
@@ -480,22 +480,22 @@ function itemmix_events(&$data=NULL)
 			$clbpara['iAmStrong'] = 0;
 		}else{
 			# Output a hint about the above trap.
-			$log .= "<span class='lime'>你捧着这个刚刚合成出来的陷阱……<br>你有一种预感，它可以在特定条件下变成一个更强的东西，但那条件是什么呢？</span><br>";
+			$log .= "<span class='lime'>你捧着這個剛剛合成出來的陷阱……<br>你有一種預感，它可以在特定條件下變成一個更強的東西，但那條件是什麼呢？</span><br>";
 		}
 	}
 
 	# If one attempts to mix Untainted Glory - clear their bag.
 	if($itm0 == 'Untainted Glory'){
-		$log .= "<span class='minirainbow'>一道强光闪过——<br>
-			你背包中的物品一瞬间全部消失了！<br>这是获得无毁荣光的必要代价！</span><br>";
+		$log .= "<span class='minirainbow'>一道強光閃過——<br>
+			你揹包中的物品一瞬間全部消失了！<br>這是獲得無毀榮光的必要代價！</span><br>";
 		$itm1 = $itmk1 = $itmsk1 = $itm2 = $itmk2 = $itmsk2 = $itm3 = $itmk3 = $itmsk3 = $itm4 = $itmk4 = $itmsk4 = $itm5 = $itmk5 = $itmsk5 = $itm6 = $itmk6 = $itmsk6 = '';
 		$itmpara1 = $itmpara2 = $itmpara3 = $itmpara4 = $itmpara5 = $itmpara6 = '';
 		$itme1 = $itms1 = $itme2 = $itms2 = $itme3 = $itms3 = $itme4 = $itms4 = $itme5 = $itms5 = $itme6 = $itms6 = 0;
 	}
 
 	if($itm0 == '☢核子核心☢'){
-		$log .= "<span class='lime'>这是何等强大的力量——<br>
-			核子核心的能量融化了你背包里面全部的东西！</span><br>";
+		$log .= "<span class='lime'>這是何等強大的力量——<br>
+			核子核心的能量融化了你揹包裏面全部的東西！</span><br>";
 		$itm1 = $itmk1 = $itmsk1 = $itm2 = $itmk2 = $itmsk2 = $itm3 = $itmk3 = $itmsk3 = $itm4 = $itmk4 = $itmsk4 = $itm5 = $itmk5 = $itmsk5 = $itm6 = $itmk6 = $itmsk6 = '';
 		$itmpara1 = $itmpara2 = $itmpara3 = $itmpara4 = $itmpara5 = $itmpara6 = '';
 		$itme1 = $itms1 = $itme2 = $itms2 = $itme3 = $itms3 = $itme4 = $itms4 = $itme5 = $itms5 = $itme6 = $itms6 = 0;

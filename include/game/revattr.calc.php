@@ -36,7 +36,7 @@ namespace revattr
 			if(!empty($sk_fix))
 			{
 				$wep_skill += $sk_fix;
-				$pa['bskilllog2'] .='<span class="yellow">「天威」使'.$pa['nm'].'的熟练度暂时增加了'.ceil($sk_fix).'点！</span><br>';
+				$pa['bskilllog2'] .='<span class="yellow">「天威」使'.$pa['nm'].'的熟練度暫時增加了'.ceil($sk_fix).'點！</span><br>';
 			}
 		}
 
@@ -292,7 +292,7 @@ namespace revattr
 		# 「高能」效果判定：
 		if(isset($pa['bskill_c5_higheg']) && $ex == 'd')
 		{
-			$log.="<span class='yellow'>「高能」使{$pa['nm']}造成的爆炸伤害不受影响！</span><br>";
+			$log.="<span class='yellow'>「高能」使{$pa['nm']}造成的爆炸傷害不受影響！</span><br>";
 			return $ex_dmg;
 		}
 		# 「死疗」效果判定（不会受其他技能加成）：
@@ -301,7 +301,7 @@ namespace revattr
 			$sk_p = get_skillvars('c8_deadheal','exdmgr');
 			$ex_dmg = min($pd['mhp']-$pd['hp'],ceil($ex_dmg*($sk_p/100)));
 			$pd['hp'] += $ex_dmg;
-			$log .= "<span class='purple'>{$pd['nm']}从毒雾中汲取养分，恢复了<span class='lime'>{$ex_dmg}</span>点生命！</span><br>";
+			$log .= "<span class='purple'>{$pd['nm']}從毒霧中汲取養分，恢復了<span class='lime'>{$ex_dmg}</span>點生命！</span><br>";
 			return 0;
 		}
 		//计算社团技能对单个属性伤害的系数补正
@@ -312,8 +312,8 @@ namespace revattr
 		if(isset($ex_inf[$ex]) && strpos($pd['inf'],$ex_inf[$ex])!==false && isset($ex_inf_punish[$ex]))
 		{
 			$ex_dmg *= $ex_inf_punish[$ex];
-			$pa['ex_dmgpsh_log'] .= "由于{$pd['nm']}已经{$exdmginf[$ex_inf[$ex]]}，{$exdmgname[$ex]}的伤害";
-			$pa['ex_dmgpsh_log'] .= $ex_inf_punish[$ex]>1 ? "增加了！" : "减少了！";
+			$pa['ex_dmgpsh_log'] .= "由於{$pd['nm']}已經{$exdmginf[$ex_inf[$ex]]}，{$exdmgname[$ex]}的傷害";
+			$pa['ex_dmgpsh_log'] .= $ex_inf_punish[$ex]>1 ? "增加了！" : "減少了！";
 		}
 		//计算属性伤害是否被防御
 		if(!empty($pd['ex_def_flag']) && ($pd['ex_def_flag'] == 1 || (is_array($pd['ex_def_flag']) && in_array($ex,$pd['ex_def_flag']))))

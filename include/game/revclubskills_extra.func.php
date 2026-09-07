@@ -34,7 +34,7 @@
 			{
 				$inf = ''; 
 				$heal_flag = 1;
-				$log .= "你的所有异常状态全部解除了！<br>";
+				$log .= "你的所有異常狀態全部解除了！<br>";
 			}
 			if($hp < $mhp || $sp < $msp)
 			{
@@ -42,11 +42,11 @@
 				if($hp < $mhp){$hp = $mhp;}
 				if($sp < $msp){$sp = $msp;}
 				$heal_flag = 1;
-				$log .= "你的生命与体力完全恢复了！<br>";
+				$log .= "你的生命與體力完全恢復了！<br>";
 			}
 			if(!$heal_flag)
 			{
-				$log .= "你不需要使用这个技能！<br>";
+				$log .= "你不需要使用這個技能！<br>";
 				return 0;
 			}
 			return 1;
@@ -56,7 +56,7 @@
 		{
 			if($rage >= 255)
 			{
-				$log .= "你不需要使用这个技能！<br>";
+				$log .= "你不需要使用這個技能！<br>";
 				return 0;
 			}
 			$rage = min(255,$rage + get_skillvars($sk,'rageadd'));
@@ -92,7 +92,7 @@
 				}while(get_skilltags($get_skill,'player'));
 				// 检查是否为未学习技能
 				$gsk_name = $cskills[$get_skill]['name'];
-				$log .= "你灵光一现，忽然想到了技能<span class='lime'>「{$gsk_name}」</span>的用法！<br>";
+				$log .= "你靈光一現，忽然想到了技能<span class='lime'>「{$gsk_name}」</span>的用法！<br>";
 				if(!in_array($get_skill,$data['clbpara']['skill']))
 				{
 					getclubskill($get_skill,$data['clbpara']);
@@ -100,14 +100,14 @@
 				}
 				else
 				{
-					$log .= "但是你已经学过<span class='lime'>「{$gsk_name}」</span>了……<br>";
+					$log .= "但是你已經學過<span class='lime'>「{$gsk_name}」</span>了……<br>";
 					addnews($now,'inssk_failed',$name,$sk);
 				}
 				return 1;
 			}
 			else 
 			{
-				$log .= "所选称号无可学习技能，这可能是一个BUG，请联系管理员。<br>";
+				$log .= "所選稱號無可學習技能，這可能是一個BUG，請聯繫管理員。<br>";
 			}
 			return 0;
 		}
@@ -136,7 +136,7 @@
 					set_skillpara('buff_shield','svar',$slde,$sdata['clbpara']);
 					$sldt++;
 					player_save($sdata);
-					$w_log = "<span class=\"yellow\">{$name}发动了技能「晶璧」，你被一层晶体护盾保护了起来！</span><br>";
+					$w_log = "<span class=\"yellow\">{$name}發動了技能「晶璧」，你被一層晶體護盾保護了起來！</span><br>";
 					logsave ($sdata['pid'],$now,$w_log,'c');
 				}
 			}
@@ -148,11 +148,11 @@
 				# 扣除怒气
 				$ragecost = get_skillvars($sk,'ragecost');
 				$rage -= $ragecost;
-				$log .= "<span class='lime'>你用心感应，唤出晶体之盾为战场上{$sldt}名参战者提供了庇佑！</span><br>善行点数增加了！<br>";
+				$log .= "<span class='lime'>你用心感應，喚出晶體之盾為戰場上{$sldt}名參戰者提供了庇佑！</span><br>善行點數增加了！<br>";
 			}
 			else 
 			{
-				$log .= "你用心感应，但是战场上似乎已经没有需要你提供庇护的人了。<br>";
+				$log .= "你用心感應，但是戰場上似乎已經沒有需要你提供庇護的人了。<br>";
 				return 0;
 			}
 			return 1;
@@ -162,7 +162,7 @@
 		{
 			if($weather == 18)
 			{
-				$log .= "战场已经处于{$wthinfo[18]}下，不能重复发动！<br>";
+				$log .= "戰場已經處於{$wthinfo[18]}下，不能重複發動！<br>";
 				return 0;
 			}
 			else 
@@ -173,15 +173,15 @@
 				$gamevars['wth18etime'] = $now + get_skillvars('c19_woesea','wtht');
 				$gamevars['wth18pid'] = $pid;
 				save_gameinfo();
-				addnews($now, 'wthchange', $name, $weather, '自己积攒的善德');
+				addnews($now, 'wthchange', $name, $weather, '自己積攢的善德');
 				$sn = 'song';
 				addnoise($sn,'__',$now,$pls,0,0,$sn);
 				$clbpara['event_bgmbook'] = Array('wth18');
 
-				$log .= "你闭上双眼，伴着记忆中那轻快的旋律轻轻哼唱起来……<br>
-				歌声悠然飘扬，朦胧间，你似乎感到有雨滴淅沥落下，轻轻拍在你的脸上。<br>
-				当你再度睁开眼时，<br>
-				不知从何而来、如妖精般飞舞着的光球们抚过你的面颊，然后飘往虚拟战场的每个角落——<br>
+				$log .= "你閉上雙眼，伴着記憶中那輕快的旋律輕輕哼唱起來……<br>
+				歌聲悠然飄揚，朦朧間，你似乎感到有雨滴淅瀝落下，輕輕拍在你的臉上。<br>
+				當你再度睜開眼時，<br>
+				不知從何而來、如妖精般飛舞着的光球們撫過你的面頰，然後飄往虛擬戰場的每個角落——<br>
 				……<br>
 				下雨了。";
 				return 1;
@@ -225,7 +225,7 @@
 			$clbpara['skillpara'][$sk]['mms'][$mid] = 0;
 			# 检查佣兵能否协战（出生时在同一地图，默认可以协战）
 			$clbpara['skillpara'][$sk]['cancover'][$mid] = 1;
-			$log .= "你掏出千元大钞振臂一呼，「{$mercinfo[$merc]['name']}」突然出现在了你的面前！<br>";
+			$log .= "你掏出千元大鈔振臂一呼，「{$mercinfo[$merc]['name']}」突然出現在了你的面前！<br>";
 			return 1;
 		}
 		# 事件：横财
@@ -234,7 +234,7 @@
 			$tot = $element0 + $element1 + $element2 + $element3 + $element4 + $element5;
 			if($tot < 5)
 			{
-				$log .= "你口袋中的元素太少了！再去捡点吧！<br>";
+				$log .= "你口袋中的元素太少了！再去撿點吧！<br>";
 				return 0;
 			}
 			$numbers = array_fill(0, 6, 14);
@@ -247,7 +247,7 @@
 				$numbers[$i] += $at;
 			}
 			$numbers[5] += $t;
-			$log .= "你把口袋中的元素搅混在一起……然后满怀期待得等着它们自己把自己整理好……<br>";
+			$log .= "你把口袋中的元素攪混在一起……然後滿懷期待得等着它們自己把自己整理好……<br>";
 			foreach($elements_info as $key => $info)
 			{
 				${'element'.$key} = 0;
@@ -255,7 +255,7 @@
 				include_once GAME_ROOT.'./include/game/elementmix.calc.php';
 				$add_ev = get_clbskill_emgain_r($add_ev,$data);
 				${'element'.$key} += $add_ev;
-				$log .= "获得了{$add_ev}份{$info}！<br>";
+				$log .= "獲得了{$add_ev}份{$info}！<br>";
 			}
 			return 1;
 		}
@@ -289,19 +289,19 @@
 					if ($sp + $skillpoint_value * $skillpoint >= $sp_cost)
 					{
 						$skillpoint_cost = ceil(($sp_cost - $sp) / $skillpoint_value);
-						$log .= "消耗" . $skillpoint_cost . "技能点，代替了体力消耗。<br>";
+						$log .= "消耗" . $skillpoint_cost . "技能點，代替了體力消耗。<br>";
 						$skillpoint -= $skillpoint_cost;
 						$sp_cost = $sp;
 					}
 					else
 					{
-						$log .= "体力与技能点不足，无法制造代码片段。<br>";
+						$log .= "體力與技能點不足，無法制造代碼片段。<br>";
 						return 1;
 					}
 				}
-				$log .= "消耗体力" . $sp_cost . "点，制造了该代码片段。<br>";
+				$log .= "消耗體力" . $sp_cost . "點，製造了該代碼片段。<br>";
 				$sp = $sp - $sp_cost;
-				$itm0 = "数据结成的属性代码片段";
+				$itm0 = "數據結成的屬性代碼片段";
 				$itmk0 = '🥚'; 
 				$itme0 = 0; 
 				$itms0 = 1; 
@@ -310,7 +310,7 @@
 			}
 			else 
 			{
-				$log .= "该属性代码片段无法制造！这可能是一个BUG，请联系管理员。<br>";
+				$log .= "該屬性代碼片段無法制造！這可能是一個BUG，請聯繫管理員。<br>";
 			}
 			return 0;
 		}
@@ -326,8 +326,8 @@
 			
 			if (($sp > $spcost) && ($hp > $hpcost))
 			{
-				$log .= "消耗体力上限" . $spcost . "点。<br>";
-				$log .= "消耗生命上限" . $hpcost . "点。<br>";
+				$log .= "消耗體力上限" . $spcost . "點。<br>";
+				$log .= "消耗生命上限" . $hpcost . "點。<br>";
 				$msp -= $spcost;
 				$mhp -= $hpcost;
 				if ($sp > $msp) $sp = $msp;
@@ -335,12 +335,12 @@
 				// 随机抽取一个当前技能等级的字段
 				$rand_key = array_rand($gamevars['name_fragment_list'][$rank]);
 				$new_frag = $gamevars['name_fragment_list'][$rank][$rand_key];
-				$log .= "发现了字段<span class='yellow'>「" . $new_frag . "」</span>。<br>";
+				$log .= "發現了字段<span class='yellow'>「" . $new_frag . "」</span>。<br>";
 				set_skillpara($sk,'frag',$new_frag,$clbpara);
 				return 1;
 			}
 			else{
-				$log .= "你的体力与生命上限无法支撑你的这次尝试。<br>";
+				$log .= "你的體力與生命上限無法支撐你的這次嘗試。<br>";
 			}
 			return 0;			
 		}
@@ -355,7 +355,7 @@
 			}
 			else 
 			{
-				$log .= "技能{$gskid}不存在！这可能是一个BUG，请联系管理员。<br>";
+				$log .= "技能{$gskid}不存在！這可能是一個BUG，請聯繫管理員。<br>";
 				return 0;
 			}
 			return 1;
@@ -379,7 +379,7 @@
 			}
 			else 
 			{
-				$log .= "参数设置错误<br>";
+				$log .= "參數設置錯誤<br>";
 				return 0;
 			}
 		}
@@ -393,7 +393,7 @@
 			}
 			else 
 			{
-				$log .= "技能{$gskid}不存在！这可能是一个BUG，请联系管理员。<br>";
+				$log .= "技能{$gskid}不存在！這可能是一個BUG，請聯繫管理員。<br>";
 				return 0;
 			}
 			return 1;
@@ -410,7 +410,7 @@
 			}
 			else 
 			{
-				$log .= "技能{$gskid}不存在或持续时间{$gsklst}无效！这可能是一个BUG，请联系管理员。<br>";
+				$log .= "技能{$gskid}不存在或持續時間{$gsklst}無效！這可能是一個BUG，請聯繫管理員。<br>";
 				return 0;
 			}
 		}
@@ -463,18 +463,18 @@
 		global $log,$pdata,$cskills;
 		if(($csk != 'c4_roar' && $csk != 'c4_sniper') || !in_array($csk,$pdata['clbpara']['skill']))
 		{
-			$log .= "要解锁的技能{$csk}不存在。<br>";
+			$log .= "要解鎖的技能{$csk}不存在。<br>";
 			return;
 		}
 		if(!check_skill_unlock('c4_roar',$pdata) || !check_skill_unlock('c4_sniper',$pdata))
 		{
-			$log .= "无法重复解锁。<br>";
+			$log .= "無法重複解鎖。<br>";
 			return;
 		}
 		//include_once GAME_ROOT.'./include/game/revclubskills.func.php';
 		set_skillpara($csk,'active',1,$pdata['clbpara']);
 		set_skillpara(get_skillvars($csk,'disableskill'),'disable',1,$pdata['clbpara']);
-		$log .= "<span class='yellow'>已解锁技能「{$cskills[$csk]['name']}」！</span><br>";
+		$log .= "<span class='yellow'>已解鎖技能「{$cskills[$csk]['name']}」！</span><br>";
 		return;
 	}
 	# 佣兵工资判定
@@ -499,7 +499,7 @@
 			if($money >= $paid)
 			{
 				$mdata['money'] += $paid; $money -= $paid; 
-				$log .= "<span class='yellow'>花费了{$paid}元，向{$mdata['name']}(佣兵{$mkey}号)支付了工资。</span><br>";
+				$log .= "<span class='yellow'>花費了{$paid}元，向{$mdata['name']}(傭兵{$mkey}號)支付了工資。</span><br>";
 				$clbpara['skillpara'][$sk]['mms'][$mkey] = 0;
 				//成功支付佣金，信任度+3，最多不超过90
 				if($clbpara['skillpara'][$sk]['coverp'][$mkey] < 90) $clbpara['skillpara'][$sk]['coverp'][$mkey] += 3;
@@ -509,9 +509,9 @@
 			{
 				$mdata['money'] += $money; $money = 0; $hp = 1;
 				player_save($mdata);
-				$log .= "<span class='yellow'>眼看又到了结账的时候，但你身上的钱不足以支付{$mdata['name']}(佣兵{$mkey}号)的工资……<br>被拖欠工资而恼羞成怒的佣兵狠揍了你一顿！并拿走了你所有剩下的钱！</span><br>";
+				$log .= "<span class='yellow'>眼看又到了結賬的時候，但你身上的錢不足以支付{$mdata['name']}(傭兵{$mkey}號)的工資……<br>被拖欠工資而惱羞成怒的傭兵狠揍了你一頓！並拿走了你所有剩下的錢！</span><br>";
 				include_once GAME_ROOT.'./include/game/revclubskills_extra.func.php';
-				$log .= "<span clas='red'>由于欠薪，";
+				$log .= "<span clas='red'>由於欠薪，";
 				skill_merc_fire($sk,$mkey,$mdata,1);
 				return;
 			}
@@ -537,7 +537,7 @@
 			$mdata = fetch_playerdata_by_pid($mpid);
 			if($mdata['hp'] <= 0)
 			{
-				$log .= "{$mdata['name']}已经西去了！放过他吧！<br>";
+				$log .= "{$mdata['name']}已經西去了！放過他吧！<br>";
 				return;
 			}
 			# 移动……？这个太扯了！
@@ -548,13 +548,13 @@
 			$mpaid = get_skillvars($sk,'movep') * get_skillpara($sk,'paid',$clbpara)[$mkey];
 			if($money < $mpaid)
 			{
-				$log .= "你身上的钱不足以让佣兵离开岗位！<br>";
+				$log .= "你身上的錢不足以讓傭兵離開崗位！<br>";
 				return;
 			}
 			$money -= $mpaid; 
 			$mdata['pls'] = $moveto;
 			addnews($now,'mercmove',$name,$mdata['name'],$moveto);
-			$log .= "花费了{$mpaid}元，你将{$mdata['name']}叫到了{$plsinfo[$moveto]}！<br>";
+			$log .= "花費了{$mpaid}元，你將{$mdata['name']}叫到了{$plsinfo[$moveto]}！<br>";
 			// 移动后佣兵失去追击焦点
 			if(!empty($mdata['clbpara']['mercchase'])) $mdata['clbpara']['mercchase'] = 0;
 			# 检查下工资情况
@@ -582,7 +582,7 @@
 			# 判断离场事件
 			$mpid = get_skillpara($sk,'id',$clbpara)[$mkey];
 			$leave_flag = get_skillpara($sk,'leave',$clbpara)[$mkey];
-			$leave_desc = $leave_flag ? '直接离开了战场！' : '决定留在原地。';
+			$leave_desc = $leave_flag ? '直接離開了戰場！' : '決定留在原地。';
 			# 清除对应的佣兵数据
 			unset($clbpara['skillpara'][$sk]['id'][$mkey]);
 			unset($clbpara['skillpara'][$sk]['paid'][$mkey]);
@@ -593,12 +593,12 @@
 			if(!isset($mdata)) $mdata = fetch_playerdata_by_pid($mpid);
 			if($mlog)
 			{
-				$log .= "{$mdata['name']}与你的合作关系中止了！</span><br>";
+				$log .= "{$mdata['name']}與你的合作關係中止了！</span><br>";
 			}
 			else 
 			{
-				$log .= "你决定解雇{$mdata['name']}！";
-				$log .= $mdata['hp']>0 ? "对方似乎{$leave_desc}<br>" : "虽然对方已经倒在工作岗位上了……<br>";
+				$log .= "你決定解僱{$mdata['name']}！";
+				$log .= $mdata['hp']>0 ? "對方似乎{$leave_desc}<br>" : "雖然對方已經倒在工作崗位上了……<br>";
 			}
 			# 彻底离场类佣兵：
 			if($leave_flag)
@@ -638,7 +638,7 @@
 				}
 				else
 				{
-					$log .= "你身上的钱不够！<br>";
+					$log .= "你身上的錢不夠！<br>";
 					return;
 				}
 			}
@@ -669,19 +669,19 @@
 		{
 			# 扣除怒气
 			$pdata['rage'] -= get_skillvars('tl_cstick','ragecost');
-			addnews($now,'bsk_tl_cstick',$pdata['name'],$edata['name'].'的尸体');
-			addnews($now,'cstick',$pdata['name'],$edata['name'].'的尸体');
+			addnews($now,'bsk_tl_cstick',$pdata['name'],$edata['name'].'的屍體');
+			addnews($now,'cstick',$pdata['name'],$edata['name'].'的屍體');
 			# 炼到了不该炼的尸体
 			if(in_array($edata['type'],get_skillvars('tl_cstick','notype')))
 			{
-				$log .= "仿佛觉察到了你那邪恶的念头，你刚一伸出手，{$edata['name']}的尸体便化作尘埃随风散去了……<br>不知为何，你感到有些惭愧。<br>";
+				$log .= "彷彿覺察到了你那邪惡的念頭，你剛一伸出手，{$edata['name']}的屍體便化作塵埃隨風散去了……<br>不知為何，你感到有些慚愧。<br>";
 				destory_corpse($edata);
 				$pdata['rp'] += 333;
 				return;
 			}
 			# 开抡！
-			$log .= "你干脆利落地把<span class='red'>{$edata['name']}</span>从地上拽了起来！然后卯足力气，在空中挥舞了两下。<br>……<br>";
-			$pdata['itm0'] = "{$edata['name']}尸体模样的棍棒";
+			$log .= "你乾脆利落地把<span class='red'>{$edata['name']}</span>從地上拽了起來！然後卯足力氣，在空中揮舞了兩下。<br>……<br>";
+			$pdata['itm0'] = "{$edata['name']}屍體模樣的棍棒";
 			$pdata['itmk0'] = 'WP'; 
 			// Bugfix 240110
 			$pdata['itme0'] = round($edata['msp']); 
@@ -695,16 +695,16 @@
 			if($dice < $N_obbs)
 			{
 				$pdata['itmsk0'] .= 'N'; 
-				$log .= "不错！份量不轻不重刚刚好！<br>";
+				$log .= "不錯！份量不輕不重剛剛好！<br>";
 			}
 			if($dice < $z_obbs)
 			{
 				$pdata['itmsk0'] .= 'Z'; 
-				$log .= "越是挥舞，越觉趁手！这尸体仿佛死来就是为你准备的！<br>哇，这下真正捡到宝了！<br>";
+				$log .= "越是揮舞，越覺趁手！這屍體彷彿死來就是為你準備的！<br>哇，這下真正撿到寶了！<br>";
 			}
 			if(empty($pdata['itmsk0']))
 			{
-				$log .= "哎呀……好像这具尸体和你的相性不是很好。但是无所谓啦！<br>";
+				$log .= "哎呀……好像這具屍體和你的相性不是很好。但是無所謂啦！<br>";
 			}
 			# 出生啊！
 			$max_rp_dice = $pdata['itme0']+$pdata['itms0'] > 300 ? $pdata['itme0']+$pdata['itms0'] : 300;
@@ -735,7 +735,7 @@
 		
 		if(!$edata)
 		{
-			$log .= "就当你刚拿出道具的时候，却发现先前看到的尸体已经不见了。这是怎么做到的？<br>";
+			$log .= "就當你剛拿出道具的時候，卻發現先前看到的屍體已經不見了。這是怎麼做到的？<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
@@ -755,7 +755,7 @@
 			//诅咒物品都放？做个人吧！
 			elseif(strpos($pdata['itmsk'.$itmn],'V')!==false)
 			{
-				$log .= "你刚拿起这个道具，就感觉脑内一片空白。<br>……你本来打算干什么来着？<br>不知为何，你感到了强烈的负罪感。<br>";
+				$log .= "你剛拿起這個道具，就感覺腦內一片空白。<br>……你本來打算幹什麼來着？<br>不知為何，你感到了強烈的負罪感。<br>";
 				$pdata['rp'] += 2333;
 				$action = ''; $bid = 0;
 				return;
@@ -763,7 +763,7 @@
 			//灵魂绑定物品放上去会消失，赛博烧纸
 			elseif(strpos($pdata['itmsk'.$itmn],'v')!==false)
 			{
-				$log .= "你将这个道具放到了尸体上，它瞬间化作灰烬消散了。<br>……<br>你感到内心稍微平静了一些。<br>";
+				$log .= "你將這個道具放到了屍體上，它瞬間化作灰燼消散了。<br>……<br>你感到內心稍微平靜了一些。<br>";
 				destory_single_item($pdata, $itmn);
 				$pdata['rp'] -= 777;
 				$action = ''; $bid = 0;
@@ -780,7 +780,7 @@
 					$edata['itms'.$i] = $pdata['itms'.$itmn];
 					$edata['itmsk'.$i] = $pdata['itmsk'.$itmn];
 					player_save($edata);
-					$log .= '你冷静下来张望四周，然后迅速将一个道具放入了尸体身上的物品中。<br>希望不要有人发现……？<br>';
+					$log .= '你冷靜下來張望四周，然後迅速將一個道具放入了屍體身上的物品中。<br>希望不要有人發現……？<br>';
 					destory_single_item($pdata, $itmn);	
 					//坏东西！
 					$pdata['rp'] += 233;				
@@ -788,7 +788,7 @@
 					return;
 				}
 			}
-			$log .= "尸体身上已经放了不少东西，你找不到一个合适的位置来放下你的物品。<br>";
+			$log .= "屍體身上已經放了不少東西，你找不到一個合適的位置來放下你的物品。<br>";
 		}
 		else 
 		{

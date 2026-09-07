@@ -10,8 +10,8 @@
 	$console_tips = Array
 	(
 		0 => "<span class='red'>※ 警告：",
-		1 => "<span class='lime'>※ 反馈：",
-		2 => "<span class='grey'>※ 维持该效果将占用一条信道</span>",
+		1 => "<span class='lime'>※ 反饋：",
+		2 => "<span class='grey'>※ 維持該效果將佔用一條信道</span>",
 	);
 
 	# 天气控制 
@@ -22,29 +22,29 @@
 
 		if(!isset($clbpara['console']))
 		{
-			$log.= "输入了无效的指令。<br>";
+			$log.= "輸入了無效的指令。<br>";
 			return;
 		}
 		elseif(empty($gamevars['api']))
 		{
-			$log.= "{$console_tips[0]}可用信道不足，无法执行指令。</span><br>";
+			$log.= "{$console_tips[0]}可用信道不足，無法執行指令。</span><br>";
 			return;
 		}
 		elseif(!array_key_exists($w,$wthinfo))
 		{
-			$log.= "{$console_tips[0]}输入了非法的天气参数，请检查你提交的指令。</span><br>";
+			$log.= "{$console_tips[0]}輸入了非法的天氣參數，請檢查你提交的指令。</span><br>";
 			return;
 		}
 		else 
 		{
 			if($weather == 18 || $w == 18)
 			{
-				$log .= "你像往常一样提交指令后，终端那头却陷入了诡异的沉默中。<br>……这是怎么回事……死机了？<br>";
+				$log .= "你像往常一樣提交指令後，終端那頭卻陷入了詭異的沉默中。<br>……這是怎麼回事……死機了？<br>";
 				return;
 			}
 			$weather = $w;
-			$log .= "提交了检索指令后，你眼前的数据流开始闪烁。<br>与此同时，整处虚拟空间也开始发生变化……<br>
-			{$console_tips[1]}已将天气转变为【{$wthinfo[$weather]}】</span><br>
+			$log .= "提交了檢索指令後，你眼前的數據流開始閃爍。<br>與此同時，整處虛擬空間也開始發生變化……<br>
+			{$console_tips[1]}已將天氣轉變為【{$wthinfo[$weather]}】</span><br>
 			{$console_tips[2]}<br><br>";
 			$gamevars['api'] --;
 			save_gameinfo();
@@ -70,40 +70,40 @@
 
 		if(!isset($clbpara['console']))
 		{
-			$log.= "输入了无效的指令。<br>";
+			$log.= "輸入了無效的指令。<br>";
 			return;
 		}
 		elseif(empty($gamevars['api']))
 		{
-			$log.= "{$console_tips[0]}可用信道不足，无法执行指令。</span><br>";
+			$log.= "{$console_tips[0]}可用信道不足，無法執行指令。</span><br>";
 			return;
 		}
 		elseif(empty($nm) || ($kind == 2 && !array_key_exists($ntype,$typeinfo)))
 		{
-			$log.= "{$console_tips[0]}输入了非法的命名或类别参数，请检查你提交的指令。</span><br>";
+			$log.= "{$console_tips[0]}輸入了非法的命名或類別參數，請檢查你提交的指令。</span><br>";
 			return;
 		}
 		elseif(!isset($skind[$kind]))
 		{
-			$log.= "{$console_tips[0]}输入了非法的检索类别，请检查你提交的指令。</span><br>";
+			$log.= "{$console_tips[0]}輸入了非法的檢索類別，請檢查你提交的指令。</span><br>";
 			return;
 		}
 
 		if($skind[$kind] == 'pc')
 		{
 			$result = $db->query("SELECT * FROM {$tablepre}players WHERE name = '$nm' AND type = '$ntype' AND hp>0 ");
-			$log.="提交了检索指令后，你眼前的数据流开始闪烁……<br>片刻后，稳定下来的数据流";
+			$log.="提交了檢索指令後，你眼前的數據流開始閃爍……<br>片刻後，穩定下來的數據流";
 			if(!$db->num_rows($result)) 
 			{ 
-				$log.="给出了一个令人失望的结果：<br><br>
-				{$console_tips[1]}检索对象【{$typeinfo[$ntype]} {$nm}】并不存在于系统中，或是ta已经死了。</span><br><br>";
+				$log.="給出了一個令人失望的結果：<br><br>
+				{$console_tips[1]}檢索對象【{$typeinfo[$ntype]} {$nm}】並不存在於系統中，或是ta已經死了。</span><br><br>";
 				return;
 			}
 			else 
 			{
 				$spnums = $db->num_rows($result);
-				$log.="打印出了一组数据：<br><br>
-				{$console_tips[1]}检索到<span class='clan'>{$spnums}</span>位符合条件的对象，如下所示：</span><br><br>";
+				$log.="打印出了一組數據：<br><br>
+				{$console_tips[1]}檢索到<span class='clan'>{$spnums}</span>位符合條件的對象，如下所示：</span><br><br>";
 			}
 			if($db->num_rows($result) > 1)
 			{
@@ -114,7 +114,7 @@
 				}
 				foreach($sparr as $spls => $snums)
 				{
-					$log .="·于<span class='yellow'>【{$plsinfo[$spls]}】</span>检索到<span class='yellow'>【{$snums}】</span>名目标对象；<br>";
+					$log .="·於<span class='yellow'>【{$plsinfo[$spls]}】</span>檢索到<span class='yellow'>【{$snums}】</span>名目標對象；<br>";
 				}
 			}
 			else 
@@ -122,26 +122,26 @@
 				$spdata = $db->fetch_array($result);
 				$snm = $typeinfo[$spdata['type']].' '.$spdata['name']; $spls = $spdata['pls'];
 				if($spdata['hp'] < $spdata['mhp']*0.5){$shp = ($spdata['hp'] < $spdata['mhp']*0.2) ? 2 : 1;} else{$shp = 0;}
-				$log .="·于<span class='yellow'>【{$plsinfo[$spls]}】</span>检索到目标【{$snm}】<br>目标当前状态：【{$hpinfo[$shp]}】<br>";
+				$log .="·於<span class='yellow'>【{$plsinfo[$spls]}】</span>檢索到目標【{$snm}】<br>目標當前狀態：【{$hpinfo[$shp]}】<br>";
 			}
 		}
 		elseif($skind[$kind] == 'itm' || $skind[$kind] == 'trap')
 		{
 			$tablename = $skind[$kind] == 'itm' ? 'mapitem' : 'maptrap';
-			$tipdesc = $skind[$kind] == 'itm' ? '被放置在' : '被埋设于';
+			$tipdesc = $skind[$kind] == 'itm' ? '被放置在' : '被埋設於';
 			$result = $db->query("SELECT * FROM {$tablepre}{$tablename} WHERE itm = '$nm'");
-			$log.="提交了检索指令后，你眼前的数据流开始闪烁……<br>片刻后，稳定下来的数据流";
+			$log.="提交了檢索指令後，你眼前的數據流開始閃爍……<br>片刻後，穩定下來的數據流";
 			if(!$db->num_rows($result)) 
 			{ 
-				$log.="给出了一个令人失望的结果：<br><br>
-				{$console_tips[1]}检索对象【{$nm}】并不存在于系统中。</span><br><br>";
+				$log.="給出了一個令人失望的結果：<br><br>
+				{$console_tips[1]}檢索對象【{$nm}】並不存在於系統中。</span><br><br>";
 				return;
 			}
 			else 
 			{
 				$inums = $db->num_rows($result);
-				$log.="打印出了一组数据：<br><br>
-				{$console_tips[1]}检索到<span class='clan'>【{$inums}】</span>份符合条件的对象，如下所示：</span><br><br>";
+				$log.="打印出了一組數據：<br><br>
+				{$console_tips[1]}檢索到<span class='clan'>【{$inums}】</span>份符合條件的對象，如下所示：</span><br><br>";
 			}
 			$sumidata = $idata = Array();
 			while($idata = $db->fetch_array($result)) 
@@ -171,17 +171,17 @@
 
 		if(!isset($clbpara['console']))
 		{
-			$log.= "输入了无效的指令。<br>";
+			$log.= "輸入了無效的指令。<br>";
 			return;
 		}
 		elseif(!isset($skind[$kind]))
 		{
-			$log.= "{$console_tips[0]}提交了无效的禁区控制指令，请检查你提交的指令。</span><br>";
+			$log.= "{$console_tips[0]}提交了無效的禁區控制指令，請檢查你提交的指令。</span><br>";
 			return;
 		}
 		elseif(empty($gamevars['api']) && $skind[$kind] !== 'hack')
 		{
-			$log.="{$console_tips[0]}可用信道不足，无法执行指令。</span><br>";
+			$log.="{$console_tips[0]}可用信道不足，無法執行指令。</span><br>";
 			return;
 		}
 
@@ -189,7 +189,7 @@
 		{
 			if(!$hack)
 			{
-				$log .= "提交指令后，你眼前的数据流开始闪烁。<br>与此同时，整处虚拟空间也开始发生变化……<br>{$console_tips[1]}已解除全部禁区</span><br>";
+				$log .= "提交指令後，你眼前的數據流開始閃爍。<br>與此同時，整處虛擬空間也開始發生變化……<br>{$console_tips[1]}已解除全部禁區</span><br>";
 				$hack = 1;
 				movehtm();
 				storyputchat($now,'hack');
@@ -198,14 +198,14 @@
 			}
 			else 
 			{
-				$log .= "{$console_tips[0]}当前禁区已被解除，无法重复执行指令。</span><br>";
+				$log .= "{$console_tips[0]}當前禁區已被解除，無法重複執行指令。</span><br>";
 			}
 		}
 		elseif($skind[$kind] == 'addarea')
 		{
 			if(!$areawarn)
 			{
-				$log .= "提交指令后，你眼前的数据流开始闪烁。<br>与此同时，整处虚拟空间也开始发生变化……<br>{$console_tips[1]}已将下回禁区到来时间调整至5秒后</span><br>{$console_tips[2]}<br><br>";
+				$log .= "提交指令後，你眼前的數據流開始閃爍。<br>與此同時，整處虛擬空間也開始發生變化……<br>{$console_tips[1]}已將下回禁區到來時間調整至5秒後</span><br>{$console_tips[2]}<br><br>";
 				$areatime = $now+5;
 				addnews($now,'csl_addarea',$name,$nick);
 				areawarn();
@@ -213,7 +213,7 @@
 			}
 			else 
 			{
-				$log .= "{$console_tips[0]}新一回禁区即将到来，目前无法执行添加禁区指令。</span><br>";
+				$log .= "{$console_tips[0]}新一回禁區即將到來，目前無法執行添加禁區指令。</span><br>";
 			}
 		}
 		return;
@@ -226,21 +226,21 @@
 
 		if(!isset($clbpara['console']) || isset($clbpara['nobutton']))
 		{
-			$log.= "输入了无效的指令。<br>";
+			$log.= "輸入了無效的指令。<br>";
 			return;
 		}
 		include_once GAME_ROOT . './include/game/dice.func.php';
 		$button_dice = diceroll(99);
-		$log .= "这么大个按钮摆在这！哪会有人能忍住不按呢？<br>你果断出手按下了按钮！<br>……<br>";
+		$log .= "這麼大個按鈕擺在這！哪會有人能忍住不按呢？<br>你果斷出手按下了按鈕！<br>……<br>";
 		if ($button_dice < 75) 
 		{
-			$log .= "但是好像什么也没有发生……？<br><br>";
+			$log .= "但是好像什麼也沒有發生……？<br><br>";
 		} 
 		elseif($button_dice < 95) 
 		{
 			global $itm0,$itmk0,$itme0,$itms0,$itmsk0;
-			$log .= "<span class='yellow'>但是因为你按的太过用力，按钮直接从界面上掉了出来！</span><br>等等……这不对吧！？<br><br>";
-			$itm0 = '奇怪的按钮';$itmk0 = 'Z';
+			$log .= "<span class='yellow'>但是因為你按的太過用力，按鈕直接從界面上掉了出來！</span><br>等等……這不對吧！？<br><br>";
+			$itm0 = '奇怪的按鈕';$itmk0 = 'Z';
 			$itme0 = $itms0 = 1;$itmsk0 = '';
 			$clbpara['nobutton'] = 1;
 			include_once GAME_ROOT . './include/game/itemmain.func.php';
@@ -249,7 +249,7 @@
 		else 
 		{
 			include_once GAME_ROOT . './include/state.func.php';
-			$log .= '<span class="red">呜哇，按钮爆炸了！</span><br><br>';
+			$log .= '<span class="red">嗚哇，按鈕爆炸了！</span><br><br>';
 			death ( 'button', '', 0, 'dangerbutton');
 		}
 		return;

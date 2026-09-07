@@ -13,7 +13,7 @@
 				</div>	
 			</td></tr>
 			<tr><td>
-				<!--{if ($curuser) }--><button type="button" onclick="window.location.href='user.php'">编辑我的账户资料</button><!--{/if}-->
+				<!--{if ($curuser) }--><button type="button" onclick="window.location.href='user.php'">編輯我的賬户資料</button><!--{/if}-->
 			</td></tr>
 			<tr><td>
 				<input type="hidden" id="achmode" name="achmode" value="ach">
@@ -22,22 +22,22 @@
 						$('achmode').value='diary';
 						$('normal_ach').style.display='none';
 						$('diary_ach').style.display='';
-						$('achtitle').innerHTML='查看成就完成情况';
+						$('achtitle').innerHTML='查看成就完成情況';
 					}else{
 						$('achmode').value='ach';
 						$('normal_ach').style.display='';
 						$('diary_ach').style.display='none';
-						$('achtitle').innerHTML='查看累计游戏记录';
+						$('achtitle').innerHTML='查看累計遊戲記錄';
 					}
 					return false;">
-				<span id="achtitle">查看累计游戏记录</span>
+				<span id="achtitle">查看累計遊戲記錄</span>
 				</button>
 			</td></tr>
 			</table>
 		</td>
 	</tr>
 	</table>
-	<!-- 成就显示界面（新） -->
+	<!-- 成就顯示界面（新） -->
 	<div id="normal_ach">
 	<table>
 		<!--{loop $atype $tid $tarr}-->
@@ -51,7 +51,7 @@
 						<!--{if !empty($reset_daily_flag)}-->
 							{$reset_daily_flag}
 						<!--{elseif !isset($_REQUEST["action"])}-->
-							<button type="button" onclick="window.location.href='user_profile.php?action=refdaily';this.disabled=true">点击获得新的每日挑战</button>
+							<button type="button" onclick="window.location.href='user_profile.php?action=refdaily';this.disabled=true">點擊獲得新的每日挑戰</button>
 						<!--{/if}-->
 						<br>
 					<!--{/if}-->

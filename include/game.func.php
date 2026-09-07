@@ -108,7 +108,7 @@ function init_profile($data=NULL)
 	if(!check_skill_unlock('buff_shield',$pdata))
 	{
 		global $shield_info;
-		$shield_info = "<span class=\"blueseed\" tooltip2=\"【护盾】：可抵消等同于护盾值的伤害。护盾值只在抵消属性伤害时消耗，抵消电击伤害时双倍消耗。护盾存在时不会受到反噬伤害或陷入异常状态。\">(".get_skillpara('buff_shield','svar',$clbpara).")</span>";
+		$shield_info = "<span class=\"blueseed\" tooltip2=\"【護盾】：可抵消等同於護盾值的傷害。護盾值只在抵消屬性傷害時消耗，抵消電擊傷害時雙倍消耗。護盾存在時不會受到反噬傷害或陷入異常狀態。\">(".get_skillpara('buff_shield','svar',$clbpara).")</span>";
 	}
 
 	include_once GAME_ROOT.'./include/game/revattr.func.php';
@@ -253,9 +253,9 @@ function init_mapdata(){
 	}
 
 	$mapcontent = '<TABLE border="1" cellspacing="0" cellpadding="0" background="map/neomap.jpg" style="background-size:478px 418px;position:relative;background-repeat:no-repeat;background-position:right bottom;">';
-	$mapcontent .= '<TR align="center"><TD colspan="11" height="24" class=b1 align=center>战场地图</TD></TR>';
+	$mapcontent .= '<TR align="center"><TD colspan="11" height="24" class=b1 align=center>戰場地圖</TD></TR>';
 	$mapcontent .= '<TR align="center">
-			<TD width="42" height="36" class=map align=center><div class=nttx>坐标</div></TD>';
+			<TD width="42" height="36" class=map align=center><div class=nttx>座標</div></TD>';
 	for($x=1;$x<=10;$x++)
 	{
 		$mapcontent .= '<TD width="42" height="36" class=map align=center><div class=nttx>'.$x.'</div></TD>';
@@ -312,7 +312,7 @@ function check_add_searchmemory($id,$itp,$nm,&$data=NULL)
 		{
 			lost_searchmemory(NULL,$data);
 		}
-		$nm_desc = $itp == 'corpse' ? $nm.'的尸体' : $nm;
+		$nm_desc = $itp == 'corpse' ? $nm.'的屍體' : $nm;
 		$flag = 0;
 		if(empty($data['clbpara']['smeo']))
 		{
@@ -324,7 +324,7 @@ function check_add_searchmemory($id,$itp,$nm,&$data=NULL)
 			{
 				if($sm[0] == $id && $sm[1] == $itp)
 				{
-					$log .= "<span class='grey'>{$nm_desc}本来就在你的视野里，不过这回你对它的印象更深了。</span><br>";
+					$log .= "<span class='grey'>{$nm_desc}本來就在你的視野裏，不過這回你對它的印象更深了。</span><br>";
 					lost_searchmemory($sid,$data);
 					$flag = 1;
 					break;
@@ -332,7 +332,7 @@ function check_add_searchmemory($id,$itp,$nm,&$data=NULL)
 			}
 		}
 		array_push($data['clbpara']['smeo'], Array($id,$itp,$nm));
-		if(!$flag) $log .= "<span class='grey'>你设法将{$nm_desc}保持在视野范围内。</span><br>";
+		if(!$flag) $log .= "<span class='grey'>你設法將{$nm_desc}保持在視野範圍內。</span><br>";
 	}
 	return;
 }
@@ -351,7 +351,7 @@ function lost_searchmemory($key=NULL,&$data=NULL)
 		if($key == 'all')
 		{
 			$data['clbpara']['smeo'] = Array();
-			$log .= '<span class="grey">你先前所见的一切东西都离开了视线。</span><br>';
+			$log .= '<span class="grey">你先前所見的一切東西都離開了視線。</span><br>';
 		}
 		elseif(isset($key))
 		{
@@ -360,8 +360,8 @@ function lost_searchmemory($key=NULL,&$data=NULL)
 		else
 		{
 			$n0 = reset($data['clbpara']['smeo']);
-			$n0_nm_desc = $n0[1] == 'corpse' ? $n0[2].'的尸体' : $n0[2];
-			$log .= "<span class=\"grey\">{$n0_nm_desc}从你的视野里消失了。</span><br>";
+			$n0_nm_desc = $n0[1] == 'corpse' ? $n0[2].'的屍體' : $n0[2];
+			$log .= "<span class=\"grey\">{$n0_nm_desc}從你的視野裏消失了。</span><br>";
 			array_shift($data['clbpara']['smeo']);
 		}
 	}
@@ -398,11 +398,11 @@ function check_skilllasttimes(&$data)
 				$sk_name = $cskills[$sk]['name'];
 				if(get_skilltags($sk,'buff'))
 				{
-					$log.="<span class='yellow'>「{$sk_name}」</span>的效果结束了！<br>";
+					$log.="<span class='yellow'>「{$sk_name}」</span>的效果結束了！<br>";
 				}
 				else
 				{
-					$log.="{$nm}从<span class='yellow'>「{$sk_name}」</span>状态中恢复了！<br>";
+					$log.="{$nm}從<span class='yellow'>「{$sk_name}」</span>狀態中恢復了！<br>";
 				}
 				lostclubskill($sk,$data['clbpara']);
 				$data['pure_flag'] = 1;
@@ -677,7 +677,7 @@ function npc_changewep_rev(&$pa,&$pd,$acitve)
 			$pa['wep_range'] = \revattr\get_wep_range($pa);
 			$pa['wep_skill'] = \revattr\get_wep_skill($pa);
 			$pa['wep_name'] = $pa['wep'];
-			$pa['change_wep_log'] = "<span class=\"yellow\">{$pa['nm']}</span>将手中的<span class=\"yellow\">{$oldwep}</span>卸下，装备了<span class=\"yellow\">{$pa['wep']}</span>！<br>";
+			$pa['change_wep_log'] = "<span class=\"yellow\">{$pa['nm']}</span>將手中的<span class=\"yellow\">{$oldwep}</span>卸下，裝備了<span class=\"yellow\">{$pa['wep']}</span>！<br>";
 		}
 	}
 	return;
@@ -742,7 +742,7 @@ function npc_chat_rev(&$pa,&$pd,$mode='')
 				$npcwords .= "{$nchat[12]}";
 				break;
 			case 'kill' :
-				$npcwords .= "{$pa['nm']}对{$pd['nm']}说道：{$nchat[13]}";
+				$npcwords .= "{$pa['nm']}對{$pd['nm']}説道：{$nchat[13]}";
 				break;
 		}
 		$npcwords .= '</span><br>';

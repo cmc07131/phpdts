@@ -171,7 +171,7 @@ function print_itm_namelist()
 			}
 		}
 		//加入些特殊道具
-		$sp_arr = Array('悲叹之种','面包','矿泉水','秋刀鱼罐头',);
+		$sp_arr = Array('悲嘆之種','麪包','礦泉水','秋刀魚罐頭',);
 		foreach($sp_arr as $spi)
 		{
 			if(!in_array($spi,$iarr)) $iarr[] = $spi;
@@ -185,7 +185,7 @@ function print_itm_namelist()
 	}
 	else 
 	{
-		echo "道具名列表已存在，如需要重新生成，请删除{$in_file}后再次打开本页面。<br>".$exit;
+		echo "道具名列表已存在，如需要重新生成，請刪除{$in_file}後再次打開本頁面。<br>".$exit;
 	}
 }
 

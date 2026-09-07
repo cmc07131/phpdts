@@ -5,20 +5,20 @@
 
 	<table class="admin" cellspacing="1" cellpadding="4">
 		<tr>
-			<td colspan="4" class="tdtitle">游戏资源管理</td>
+			<td colspan="4" class="tdtitle">遊戲資源管理</td>
 		</tr>
 		<tr>
-			<td>资源类型</td>
+			<td>資源類型</td>
 			<td>
 				<select name="res_type">
-					<option value="mapitem" <!--{if $res_type=='mapitem'}-->selected<!--{/if}-->>地图物品</option>
+					<option value="mapitem" <!--{if $res_type=='mapitem'}-->selected<!--{/if}-->>地圖物品</option>
 					<option value="shopitem" <!--{if $res_type=='shopitem'}-->selected<!--{/if}-->>商店物品</option>
-					<option value="stitem" <!--{if $res_type=='stitem'}-->selected<!--{/if}-->>开局物品</option>
-					<option value="stwep" <!--{if $res_type=='stwep'}-->selected<!--{/if}-->>开局武器</option>
-					<option value="npc" <!--{if $res_type=='npc'}-->selected<!--{/if}-->>开局NPC</option>
+					<option value="stitem" <!--{if $res_type=='stitem'}-->selected<!--{/if}-->>開局物品</option>
+					<option value="stwep" <!--{if $res_type=='stwep'}-->selected<!--{/if}-->>開局武器</option>
+					<option value="npc" <!--{if $res_type=='npc'}-->selected<!--{/if}-->>開局NPC</option>
 				</select>
 			</td>
-			<td>配置来源</td>
+			<td>配置來源</td>
 			<td>
 				<select name="ruleset">
 					<!--{loop $ruleset_list $rid $rinfo}-->
@@ -44,7 +44,7 @@
 				<input type="file" name="cfgfile">
 				<input type="submit" name="action" value="upload">
 				<!--{else}-->
-				<span class="grey">上传覆盖仅限管理员等级 &gt; 10</span>
+				<span class="grey">上傳覆蓋僅限管理員等級 &gt; 10</span>
 				<!--{/if}-->
 			</td>
 		</tr>
@@ -68,8 +68,8 @@
 			<td>$row[$ci]</td>
 			<!--{/loop}-->
 			<td>
-				<button type="submit" name="edit_id" value="$row['_idx']">编辑</button>
-				<button type="submit" name="delete_id" value="$row['_idx']" onclick="return confirm('确认删除该记录？');">删除</button>
+				<button type="submit" name="edit_id" value="$row['_idx']">編輯</button>
+				<button type="submit" name="delete_id" value="$row['_idx']" onclick="return confirm('確認刪除該記錄？');">刪除</button>
 			</td>
 		</tr>
 		<!--{/loop}-->
@@ -77,8 +77,8 @@
 	<!--{else}-->
 	<table class="admin" cellspacing="1" cellpadding="4">
 		<tr>
-			<th>NPC类别</th>
-			<th>子键数量</th>
+			<th>NPC類別</th>
+			<th>子鍵數量</th>
 			<th>操作</th>
 		</tr>
 		<!--{loop $paged_records_html $idx $row}-->
@@ -86,8 +86,8 @@
 			<td>$row['_idx']</td>
 			<td>$row['_sub_count']</td>
 			<td>
-				<button type="submit" name="edit_id" value="$row['_idx']">编辑</button>
-				<button type="submit" name="delete_id" value="$row['_idx']" onclick="return confirm('确认删除该类别？');">删除</button>
+				<button type="submit" name="edit_id" value="$row['_idx']">編輯</button>
+				<button type="submit" name="delete_id" value="$row['_idx']" onclick="return confirm('確認刪除該類別？');">刪除</button>
 			</td>
 		</tr>
 		<!--{/loop}-->
@@ -98,7 +98,7 @@
 
 	<table class="admin" cellspacing="1" cellpadding="4">
 		<tr>
-			<td colspan="2" class="tdtitle">编辑/新增</td>
+			<td colspan="2" class="tdtitle">編輯/新增</td>
 		</tr>
 		<!--{if $res_type!='npc'}-->
 		<tr>
@@ -113,13 +113,13 @@
 		<!--{/loop}-->
 		<tr>
 			<td colspan="2">
-				<button type="submit" name="action" value="save_record">保存当前ID</button>
-				<button type="submit" name="action" value="add">新增记录</button>
+				<button type="submit" name="action" value="save_record">保存當前ID</button>
+				<button type="submit" name="action" value="add">新增記錄</button>
 			</td>
 		</tr>
 		<!--{else}-->
 		<tr>
-			<td>NPC类别ID</td>
+			<td>NPC類別ID</td>
 			<td><input type="text" name="record_id" value="$record_id"></td>
 		</tr>
 		<tr>
@@ -130,15 +130,15 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<button type="submit" name="action" value="save_record">保存当前类别</button>
-				<button type="submit" name="action" value="add">新增类别</button>
+				<button type="submit" name="action" value="save_record">保存當前類別</button>
+				<button type="submit" name="action" value="add">新增類別</button>
 			</td>
 		</tr>
 		<!--{/if}-->
 	</table>
 
 	<div style="margin-top:8px;">
-		<button type="submit" name="pagemode" value="up">上一页</button>
-		<button type="submit" name="pagemode" value="down">下一页</button>
+		<button type="submit" name="pagemode" value="up">上一頁</button>
+		<button type="submit" name="pagemode" value="down">下一頁</button>
 	</div>
 </form>

@@ -24,11 +24,11 @@ function print_titles_list()
 		$cont .= '$titles = ' . var_export($tarr,1).";\r\n?>";
 		writeover($t_file, $cont);
 		chmod($t_file,0777);
-		echo "成功生成了头衔列表。<br>".$exit;
+		echo "成功生成了頭銜列表。<br>".$exit;
 	}
 	else 
 	{
-		echo "头衔名列表已存在，如需要重新生成，请删除{$t_file}后再次打开本页面。<br>".$exit;
+		echo "頭銜名列表已存在，如需要重新生成，請刪除{$t_file}後再次打開本頁面。<br>".$exit;
 	}
 }
 

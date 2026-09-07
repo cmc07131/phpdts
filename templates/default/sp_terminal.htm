@@ -1,15 +1,15 @@
 <dialog id="terminal" style="max-width: 90%;max-height: 80%;">
-<!-- 宽度设计：战场地图476+2px 控制菜单118+2px 间距10px-->
+<!-- 寬度設計：戰場地圖476+2px 控制菜單118+2px 間距10px-->
 <div style="text-align: center; width: 608px;">
-    <!-- 背景音乐 -->
+    <!-- 背景音樂 -->
     <div>
         <!--{if !isset($bgmname)}-->
             <!--{eval $nowbgmid = isset($_COOKIE["nowbgmid"]) ? filter_var($_COOKIE["nowbgmid"],FILTER_VALIDATE_INT) : 0; $bgmname = $bgmlist[$nowbgmid]['name'];}-->
         <!--{/if}-->
         <span class="grey">正在播放：～ <span id="bgmname">$bgmname</span> ～</span>
     </div>
-    <!-- 战场地图 -->
-    <!-- 这是人能干出来的事吗? -->
+    <!-- 戰場地圖 -->
+    <!-- 這是人能幹出來的事嗎? -->
     <!--{if !$horizon}-->
     <div style="width: 476px; float: left; margin-right: 5px;border-radius: 3px; border:2px solid rgba(225, 124, 226, 0.2);">
     <!--{else}-->
@@ -18,9 +18,9 @@
         <!--{eval $mapdata = init_mapdata();}-->
         $mapdata 
     </div>
-    <!-- 控制菜单 -->
+    <!-- 控制菜單 -->
     <div style="width: 118px; float: right; margin-left: 5px;">
-        <!-- 音乐控制指令 -->
+        <!-- 音樂控制指令 -->
         <!--{if !$horizon}-->
         <table cellspacing="0" cellpadding="0" style="position:relative;border-radius: 3px; border:2px solid rgba(225, 124, 226, 0.2);">
         <!--{else}-->    
@@ -38,7 +38,7 @@
                 </td>
             </tr>
             <tr height="24">
-                <TD colspan="2" class=b1>音量调节</TD>
+                <TD colspan="2" class=b1>音量調節</TD>
             </tr>
             <tr class="map" height="32">
                 <td colspan="2">
@@ -48,7 +48,7 @@
                 </td>
             </tr>
         </table>
-        <!-- 战场控制指令 -->
+        <!-- 戰場控制指令 -->
         <!--{if !isset($clbpara['console'])}-->
         <!--<div style="position:relative; height:100%; width:100%;">
         <div class="blurtext">-->
@@ -68,7 +68,7 @@
                 </td>
             </tr>
             <tr height="24">
-                <TD colspan="2" class=b1>天气控制</TD>
+                <TD colspan="2" class=b1>天氣控制</TD>
             </tr>
             <tr class="map" height="32">
                 <td colspan="2">
@@ -82,31 +82,31 @@
                 </td>
             </tr>
             <tr height="24">
-                <TD colspan="2" class=b1>数据控制</TD>
+                <TD colspan="2" class=b1>數據控制</TD>
             </tr>
             <tr class="map" height="32">
                 <td width="42">
-                    <input type="button" value="数据检索" onclick="closeDialog($('terminal'));showModalDialog($('consle_search'));">
+                    <input type="button" value="數據檢索" onclick="closeDialog($('terminal'));showModalDialog($('consle_search'));">
                 </td>
                 <td width="42">
-                    <input type="button" value="生命探测" onclick="closeDialog($('terminal'));$('command').value='consle_radar';postCmd('gamecmd','command.php');this.disabled=true;">
+                    <input type="button" value="生命探測" onclick="closeDialog($('terminal'));$('command').value='consle_radar';postCmd('gamecmd','command.php');this.disabled=true;">
                 </td>
             </tr>
             <tr height="24">
-                <TD colspan="2" class=b1>禁区控制</TD>
+                <TD colspan="2" class=b1>禁區控制</TD>
             </tr>
             <tr class="map" height="32">
                 <td width="42">
-                    <input type="button" value="增设禁区" onclick="closeDialog($('terminal'));$('command').value='consle_areactrl1';postCmd('gamecmd','command.php');this.disabled=true;">
+                    <input type="button" value="增設禁區" onclick="closeDialog($('terminal'));$('command').value='consle_areactrl1';postCmd('gamecmd','command.php');this.disabled=true;">
                 </td>
                 <td width="42">
-                    <input type="button" value="解除禁区" onclick="closeDialog($('terminal'));$('command').value='consle_areactrl0';postCmd('gamecmd','command.php');this.disabled=true;">
+                    <input type="button" value="解除禁區" onclick="closeDialog($('terminal'));$('command').value='consle_areactrl0';postCmd('gamecmd','command.php');this.disabled=true;">
                 </td>
             </tr>
             <tr class="map">
                 <td colspan="2">
                     <!--{if !isset($clbpara['nobutton'])}-->
-                    <div class="dangerbutton" onclick="closeDialog($('terminal'));$('command').value='consle_dbutton';postCmd('gamecmd','command.php');this.disabled=true;">DON'T PUSH<br>危险勿触</div>
+                    <div class="dangerbutton" onclick="closeDialog($('terminal'));$('command').value='consle_dbutton';postCmd('gamecmd','command.php');this.disabled=true;">DON'T PUSH<br>危險勿觸</div>
                     <!--{else}-->
                     <div class="lockmap"><img src="img/lock.png" ></div>
                     <!--{/if}-->

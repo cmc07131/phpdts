@@ -251,7 +251,7 @@ namespace revbattle
 		# pd处于「眩晕」状态下的效果判定：
 		if(!check_skill_unlock('inf_dizzy',$pd))
 		{
-			$log.="{$pd['name']}正处于眩晕状态！<br>";
+			$log.="{$pd['name']}正處於眩暈狀態！<br>";
 			$r = 100;
 		}
 

@@ -1,13 +1,13 @@
 <dialog id="consle_search" style="max-width: 90%;max-height: 80%;">
     <center>      
-    <span class="grey">提交指令后，你眼前的数据流开始闪烁……<br>
-    片刻后，你的战术界面上显现出了几行额外的选项。<br>
-    你打算怎么做呢？</span><br><br>
+    <span class="grey">提交指令後，你眼前的數據流開始閃爍……<br>
+    片刻後，你的戰術界面上顯現出了幾行額外的選項。<br>
+    你打算怎麼做呢？</span><br><br>
     <input type="radio" name="csc" id="csearch2" value="csearch2" checked><a onclick="sl('csearch2'); $('cstype').style.display='';">【查找角色/NPC位置】</a><br>
-    <input type="radio" name="csc" id="csearch0" value="csearch0"><a onclick="sl('csearch0'); $('cstype').style.display='none';">【查找物品数量及位置】</a><br>
-    <input type="radio" name="csc" id="csearch1" value="csearch1"><a onclick="sl('csearch1'); $('cstype').style.display='none';">【查找陷阱数量及位置】</a><br>
-    <br><span class="grey">※ 请在此输入查找的道具/陷阱/人物/NPC的完整名称<br>
-    （不支持关键字搜索）</span><br>
+    <input type="radio" name="csc" id="csearch0" value="csearch0"><a onclick="sl('csearch0'); $('cstype').style.display='none';">【查找物品數量及位置】</a><br>
+    <input type="radio" name="csc" id="csearch1" value="csearch1"><a onclick="sl('csearch1'); $('cstype').style.display='none';">【查找陷阱數量及位置】</a><br>
+    <br><span class="grey">※ 請在此輸入查找的道具/陷阱/人物/NPC的完整名稱<br>
+    （不支持關鍵字搜索）</span><br>
     <select id="cstype" name="cstype" style="display;">
         <!--{loop $typeinfo $nt $ntnm}-->
             <!--{if !empty($ntnm)}--><option value="$nt">$ntnm<!--{/if}-->
@@ -21,7 +21,7 @@
         <!--{/loop}-->
     </datalist>
     <br><br>
-    <input type="button" class="cmdbutton" name="submit" value="开始检索" onclick="$('command').value='consle_search';postCmd('gamecmd','command.php');this.disabled=true;">
+    <input type="button" class="cmdbutton" name="submit" value="開始檢索" onclick="$('command').value='consle_search';postCmd('gamecmd','command.php');this.disabled=true;">
     </center>
 <img class="dialog-background" src="img/profile.gif" onclick="closeDialog($('consle_search'))">
 </dialog>

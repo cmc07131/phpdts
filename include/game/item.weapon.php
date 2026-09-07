@@ -48,21 +48,21 @@ function item_weapon($itmn, &$data) {
 	//global ${$eqp}, ${$eqp.'k'}, ${$eqp.'e'}, ${$eqp.'s'}, ${$eqp.'sk'};
 	//global $artk;
 	if((($artk=='XX')||($artk=='XY'))&&($eqp == 'art')){
-		$log .= '你的饰品不能替换！<br>';
+		$log .= '你的飾品不能替換！<br>';
 		$mode = 'command';
 		return;
 	}
 	# 诅咒装备不能主动卸下
 	if(in_array('V',get_itmsk_array(${$eqp.'sk'})))
 	{
-		$log .= "你尝试着将{$$eqp}替换下来……但它就像长在了你身上一样，纹丝不动！<br>";
+		$log .= "你嘗試着將{$$eqp}替換下來……但它就像長在了你身上一樣，紋絲不動！<br>";
 		$mode = 'command';
 		return;
 	}
 	# 主动装备诅咒装备时，会变得不幸！
 	if(in_array('V',get_itmsk_array($itmsk)))
 	{
-		$log .= "<span class=\"grey\">你感觉自己要倒大霉了……</span><br>";
+		$log .= "<span class=\"grey\">你感覺自己要倒大黴了……</span><br>";
 		getclubskill('inf_cursed',$clbpara);
 	}
 
@@ -83,7 +83,7 @@ function item_weapon($itmn, &$data) {
 		${$eqp.'s'} = $itms;
 		${$eqp.'sk'} = $itmsk;
 		${$eqp.'para'} = $itmpara;
-		$log .= "装备了<span class=\"yellow\">$itm</span>。<br>";
+		$log .= "裝備了<span class=\"yellow\">$itm</span>。<br>";
 		$itm = $itmk = $itmsk = '';
 		$itme = $itms = 0;
 		// 清除背包中的itmpara字段，但保留itmpara变量中的值
@@ -117,6 +117,6 @@ function item_weapon($itmn, &$data) {
 		$itmpara = $itmparat;
 		// 将背包中的itmpara字段设置为卸下装备的itmpara值
 		${'itmpara' . $itmn} = $itmparat;
-		$log .= "卸下了<span class=\"red\">$itm</span>，装备了<span class=\"yellow\">{${$eqp}}</span>。<br>";
+		$log .= "卸下了<span class=\"red\">$itm</span>，裝備了<span class=\"yellow\">{${$eqp}}</span>。<br>";
 	}
 }

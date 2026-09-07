@@ -24,9 +24,9 @@ if($urcmd){
 		}
 	}
 	if(!$db->num_rows($result)) {
-		$cmd_info = '没有符合条件的帐户！';
+		$cmd_info = '沒有符合條件的帳户！';
 		$startno = $start + 1;
-		$resultinfo = '位置：第'.$startno.'条记录';
+		$resultinfo = '位置：第'.$startno.'條記錄';
 	} else {
 		while($ur = $db->fetch_array($result)) {
 			if(!$ur['gender']){$ur['gender']='0';}
@@ -35,7 +35,7 @@ if($urcmd){
 		}
 		$startno = $start + 1;
 		$endno = $start + count($urdata);
-		$resultinfo = '第'.$startno.'条-第'.$endno.'条记录';
+		$resultinfo = '第'.$startno.'條-第'.$endno.'條記錄';
 	}
 }
 if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmessage' || $urcmd == 'reverse_migrate') {
@@ -62,7 +62,7 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 	if($operlist || $gfaillist || $ffaillist){
 		$cmd_info = '';
 		if($urcmd == 'sendmessage'){
-			$operword = '发送邮件给';
+			$operword = '發送郵件給';
 		}elseif($urcmd == 'ban'){
 			$operword = '封停';
 			$qryword = "UPDATE {$gtablepre}users SET groupid='0' ";
@@ -70,10 +70,10 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 			$operword = '解封';
 			$qryword = "UPDATE {$gtablepre}users SET groupid='1' ";
 		}elseif($urcmd == 'del'){
-			$operword = '删除';
+			$operword = '刪除';
 			$qryword = "DELETE FROM {$gtablepre}users ";
 		}elseif($urcmd == 'reverse_migrate'){
-			$operword = '反向迁移';
+			$operword = '反向遷移';
 		}
 		if($operlist){
 			if($urcmd == 'sendmessage'){
@@ -82,16 +82,16 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 					message_create($receiver, $stitle, $scontent, $senclosure, $from='sys');
 				}
 				$opernames = implode(',',($operlist));
-				$cmd_info .= " 给帐户 $opernames 发送了邮件 。<br>";
+				$cmd_info .= " 給帳户 $opernames 發送了郵件 。<br>";
 				adminlog($urcmd.'ur',$opernames,json_encode($stitle,$scontent,$senclosure));
 			}elseif($urcmd == 'reverse_migrate'){
 				// 处理反向迁移
 				if(!is_reverse_migration_mode()) {
-					$cmd_info .= " 错误：当前不是反向迁移模式 (slave_level != -1)。<br>";
+					$cmd_info .= " 錯誤：當前不是反向遷移模式 (slave_level != -1)。<br>";
 				} elseif(empty($master_password)) {
-					$cmd_info .= " 错误：请输入远端从服务器密码。<br>";
+					$cmd_info .= " 錯誤：請輸入遠端從服務器密碼。<br>";
 				} elseif(empty($remote_username)) {
-					$cmd_info .= " 错误：请输入远端从服务器用户名。<br>";
+					$cmd_info .= " 錯誤：請輸入遠端從服務器用户名。<br>";
 				} else {
 					$opernames = array();
 					$success_count = 0;
@@ -105,32 +105,32 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 							$opernames[] = $username . '(成功)';
 						} else {
 							$fail_count++;
-							$opernames[] = $username . '(失败: ' . $migrate_result['message'] . ')';
+							$opernames[] = $username . '(失敗: ' . $migrate_result['message'] . ')';
 						}
 					}
 
 					$opernames_str = implode(', ', $opernames);
-					$cmd_info .= " 反向迁移结果：成功 $success_count 个，失败 $fail_count 个。详情：$opernames_str<br>";
-					adminlog($urcmd.'ur', implode(',', array_values($operlist)), "成功:$success_count,失败:$fail_count");
+					$cmd_info .= " 反向遷移結果：成功 $success_count 個，失敗 $fail_count 個。詳情：$opernames_str<br>";
+					adminlog($urcmd.'ur', implode(',', array_values($operlist)), "成功:$success_count,失敗:$fail_count");
 				}
 			}else{
 				$qrywhere = '('.implode(',',array_keys($operlist)).')';
 				$opernames = implode(',',($operlist));
 				$db->query("$qryword WHERE uid IN $qrywhere");
-				$cmd_info .= " 帐户 $opernames 被 $operword 。<br>";
+				$cmd_info .= " 帳户 $opernames 被 $operword 。<br>";
 			}
 
 		}
 		if($gfaillist){
 			$gfailnames = implode(',',($gfaillist));
-			$cmd_info .= " 权限不够，无法 $operword 帐户 $gfailnames 。<br>";
+			$cmd_info .= " 權限不夠，無法 $operword 帳户 $gfailnames 。<br>";
 		}
 		if($ffaillist){
 			$ffailnames = implode(',',($ffaillist));
-			$cmd_info .= " UID为 $ffailnames 的帐户不在当前查询范围。<br>";
+			$cmd_info .= " UID為 $ffailnames 的帳户不在當前查詢範圍。<br>";
 		}
 	}else{
-		$cmd_info = "指定的帐户超出查询范围或指令错误。";
+		$cmd_info = "指定的帳户超出查詢範圍或指令錯誤。";
 	}
 	$urcmd = 'list';
 }  elseif($urcmd == 'del2') {
@@ -138,7 +138,7 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 	while($ddata = $db->fetch_array($result)){
 		$n = $ddata['username'];$u = $ddata['uid'];
 		adminlog('delur',$n);
-		echo " 帐户 $n 被删除。<br>";
+		echo " 帳户 $n 被刪除。<br>";
 		$db->query("DELETE FROM {$gtablepre}users WHERE uid='$u'");
 	}
 }elseif(strpos($urcmd ,'edit')===0) {
@@ -146,11 +146,11 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 	$no = (int)$uid[1];
 	$uid = (int)$uid[2];
 	if(!$uid){
-		$cmd_info = "帐户UID错误。";
+		$cmd_info = "帳户UID錯誤。";
 	}elseif(!isset($urdata[$no]) || $urdata[$no]['uid'] != $uid){
-		$cmd_info = "该帐户不存在或超出查询范围。";
+		$cmd_info = "該帳户不存在或超出查詢範圍。";
 	}elseif($urdata[$no]['groupid'] > $mygroup){
-		$cmd_info = "权限不够，不能修改此帐户信息！";
+		$cmd_info = "權限不夠，不能修改此帳户信息！";
 	}else{
 		$urdata[$no]['motto'] = $urmotto = astrfilter(${'motto_'.$no});
 		$urdata[$no]['killmsg'] = $urkillmsg = astrfilter(${'killmsg_'.$no});
@@ -171,12 +171,12 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 			$flag = titles_get_new($urdata[$no],$nkey);
 			if($flag)
 			{
-				$cmd_info .= "".$urdata[$no]['username']." 获得了头衔 {$titles_list[$nkey]} <br>";
+				$cmd_info .= "".$urdata[$no]['username']." 獲得了頭銜 {$titles_list[$nkey]} <br>";
 				$db->query("UPDATE {$gtablepre}users SET nicksrev='{$urdata[$no]['nicksrev']}' WHERE uid='$uid'");
 			}
 			else 
 			{
-				$cmd_info .= "".$urdata[$no]['username']." 已拥有头衔 {$titles_list[$nkey]} ，不能重复获取<br>";
+				$cmd_info .= "".$urdata[$no]['username']." 已擁有頭銜 {$titles_list[$nkey]} ，不能重複獲取<br>";
 			}
 		}
 		if(!empty(${'deltitles_'.$no}) && isset($titles_list[${'deltitles_'.$no}]))
@@ -185,21 +185,21 @@ if($urcmd == 'ban' || $urcmd == 'unban' || $urcmd == 'del' || $urcmd == 'sendmes
 			$flag = titles_delete($urdata[$no],$nkey);
 			if($flag)
 			{
-				$cmd_info .= "从".$urdata[$no]['username']." 的头衔列表中删去了 {$titles_list[$nkey]} <br>";
+				$cmd_info .= "從".$urdata[$no]['username']." 的頭銜列表中刪去了 {$titles_list[$nkey]} <br>";
 				$db->query("UPDATE {$gtablepre}users SET nicksrev='{$urdata[$no]['nicksrev']}' WHERE uid='$uid'");
 			}
 			else 
 			{
-				$cmd_info .= "".$urdata[$no]['username']." 未持有头衔 {$titles_list[$nkey]}<br>";
+				$cmd_info .= "".$urdata[$no]['username']." 未持有頭銜 {$titles_list[$nkey]}<br>";
 			}
 		}
 		if(!empty(${'pass_'.$no})){
 			$urpass = md5(${'pass_'.$no});
 			$db->query("UPDATE {$gtablepre}users SET motto='$urmotto',killmsg='$urkillmsg',lastword='$urlastword',icon='$uricon',gender='$urgender',password='$urpass',credits='$urcredits',credits2='$urcredits2' WHERE uid='$uid'");
-			$cmd_info .= "帐户 ".$urdata[$no]['username']." 的密码及其他信息已修改！";
+			$cmd_info .= "帳户 ".$urdata[$no]['username']." 的密碼及其他信息已修改！";
 		}else{
 			$db->query("UPDATE {$gtablepre}users SET motto='$urmotto',killmsg='$urkillmsg',lastword='$urlastword',icon='$uricon',gender='$urgender',credits='$urcredits',credits2='$urcredits2' WHERE uid='$uid'");
-			$cmd_info .= "帐户 ".$urdata[$no]['username']." 的信息已修改！";
+			$cmd_info .= "帳户 ".$urdata[$no]['username']." 的信息已修改！";
 		}
 		$urdata[$no] = fetch_userdata_by_username($urdata[$no]['username']);
 	}

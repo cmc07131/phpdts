@@ -35,14 +35,14 @@ if($command == 'edit') {
 				if(${$key}===''){
 					$cmd_info .= "$lang[$key] 已清空<br>";
 				}else{
-					$cmd_info .= "$lang[$key] 修改为 ${$key} <br>";
+					$cmd_info .= "$lang[$key] 修改為 ${$key} <br>";
 				}
 				$edlist[$key] = ${$key};
 			}
 		}
 	}
 	
-	$cmd_info .= "提交的修改请求数量： $ednum <br>";
+	$cmd_info .= "提交的修改請求數量： $ednum <br>";
 	
 	if($ednum){
 		//$adminlog = '';
@@ -59,7 +59,7 @@ if($command == 'edit') {
 		file_put_contents('./config.inc.php',$configfile);
 		//putadminlog($adminlog);
 		adminlog('configmng');
-		$cmd_info .= '服务参数已修改';
+		$cmd_info .= '服務參數已修改';
 	}
 }
 $sysnow = time();

@@ -88,8 +88,8 @@ function calc_trap_damage(&$pa,$pd=NULL,$playerflag=0,$selflag=0)
 	}
 	// 普通普通我头四
 	if($pa['itmk0'] == 'TOe'){
-		$log .= "<br>突然从地上窜出了四个大只佬！<br>他们似乎对你做了什么不可描述的事情……<br>
-		总之在他们心满意足地沉回地面之后，你头晕目眩地站了起来。<br>";
+		$log .= "<br>突然從地上竄出了四個大隻佬！<br>他們似乎對你做了什麼不可描述的事情……<br>
+		總之在他們心滿意足地沉回地面之後，你頭暈目眩地站了起來。<br>";
 		$pa['inf'] = 'hbafpuie';
 		$damage = 300;
 		return $damage;
@@ -97,8 +97,8 @@ function calc_trap_damage(&$pa,$pd=NULL,$playerflag=0,$selflag=0)
 	// 超级无敌我头四
 	if($pa['itmk0'] == 'TOd')
 	{
-		$log .= "<br>一阵强劲的音乐突然响起，似乎是一首最近的歌，但有着一种老歌的气息……<br>
-		<br><span class=\"minirainbow\">一种很帅，很强，很棒，很牛的力量将你的生命改写成了虚无！</span><br>";
+		$log .= "<br>一陣強勁的音樂突然響起，似乎是一首最近的歌，但有着一種老歌的氣息……<br>
+		<br><span class=\"minirainbow\">一種很帥，很強，很棒，很牛的力量將你的生命改寫成了虛無！</span><br>";
 		$pa['clbpara']['event_bgmbook'] = Array('notYMCA');
 		$damage = $pa['hp'];
 		return $damage;
@@ -112,8 +112,8 @@ function calc_trap_damage(&$pa,$pd=NULL,$playerflag=0,$selflag=0)
 	// TRUE DAMAGE!
 	if($pa['itmk0'] == 'TOt')
 	{
-		$log .= "<br>可能是因为制作陷阱的人的熟练度过于高强，<br>
-		<span class=\"yellow\">这个陷阱对你造成了等同于其效果的真实伤害！</span><br>";
+		$log .= "<br>可能是因為製作陷阱的人的熟練度過於高強，<br>
+		<span class=\"yellow\">這個陷阱對你造成了等同於其效果的真實傷害！</span><br>";
 		$damage = $pa['itme0'];
 		return $damage;
 	}
@@ -121,8 +121,8 @@ function calc_trap_damage(&$pa,$pd=NULL,$playerflag=0,$selflag=0)
 	// RANDOM DAMAGE!
 	if($pa['itmk0'] == 'TOr')
 	{
-		$log .= "<br>可能是因为制作陷阱的人正在反叛随机数大神，<br>
-		<span class=\"yellow\">你看到天上突然有一颗骰子掉了下来，爆炸在你的头上！</span><br>";
+		$log .= "<br>可能是因為製作陷阱的人正在反叛隨機數大神，<br>
+		<span class=\"yellow\">你看到天上突然有一顆骰子掉了下來，爆炸在你的頭上！</span><br>";
 		$damage = diceroll($pa['mhp']);
 		return $damage;
 	}
@@ -135,9 +135,9 @@ function calc_trap_damage(&$pa,$pd=NULL,$playerflag=0,$selflag=0)
 	# 技能「宗师」效果判定
 	if(!check_skill_unlock('c13_master',$pa))
 	{
-		$pa['skilllog'] = "大祸临头，你却呵呵笑道：“雕虫小技，不足为惧！”<br>";
+		$pa['skilllog'] = "大禍臨頭，你卻呵呵笑道：“雕蟲小技，不足為懼！”<br>";
 		$damage_p = get_skillvars('c13_master','trapdmgloss');
-		$pa['skilllog'] .= "已经跳到你腿上的<span class='yellow'>{$pa['itm0']}</span>显然被你非凡的气魄震慑到了！你仅";
+		$pa['skilllog'] .= "已經跳到你腿上的<span class='yellow'>{$pa['itm0']}</span>顯然被你非凡的氣魄震懾到了！你僅";
 		$damage = round($damage * (1 - ($damage_p/100)));
 	}
 
@@ -168,7 +168,7 @@ function check_trap_def_event(&$pa,$damage,$playerflag=0,$selflag=0)
 	if($damage && !check_skill_unlock('buff_godbless',$pa))
 	{
 		$damage = 0;
-		$log .= "<span class=\"yellow\">「天佑」使你免疫了陷阱伤害！</span><br>";
+		$log .= "<span class=\"yellow\">「天佑」使你免疫了陷阱傷害！</span><br>";
 	}
 
 	return $damage;
@@ -219,7 +219,7 @@ function trap(&$data=NULL){
 		$wdata = $db->fetch_array($result);
 		if(!empty($wdata))
 		{
-			$trname = $wdata['name'];$trtype = $wdata['type'];$trperfix = '<span class="yellow">'.$trname.'</span>设置的';
+			$trname = $wdata['name'];$trtype = $wdata['type'];$trperfix = '<span class="yellow">'.$trname.'</span>設置的';
 		}
 		else
 		{
@@ -228,7 +228,7 @@ function trap(&$data=NULL){
 	}
 	elseif($selflag)
 	{
-		$trname = $name;$trtype = 0;$trperfix = '你自己设置的';
+		$trname = $name;$trtype = 0;$trperfix = '你自己設置的';
 	}
 	else
 	{
@@ -246,13 +246,13 @@ function trap(&$data=NULL){
 		# 「种火IV」效果判定：
 		if(!empty($data['clbpara']['skill']) && in_array('fireseed4', $data['clbpara']['skill']))
 		{
-			$log .= "<span class='yellow'>「种火IV」使{$name}受到的所有伤害变为0！</span><br>";
+			$log .= "<span class='yellow'>「種火IV」使{$name}受到的所有傷害變為0！</span><br>";
 			$damage = 0;
 		}
 		# 「勇谍」效果判定：
 		elseif(!empty($data['clbpara']['skill']) && in_array('npc_perfectspy', $data['clbpara']['skill']))
 		{
-			$log .= "<span class='yellow'>{$name}可谓完美间谍，久经百战啦！免疫了陷阱伤害！</span><br>";
+			$log .= "<span class='yellow'>{$name}可謂完美間諜，久經百戰啦！免疫了陷阱傷害！</span><br>";
 			$damage = 0;
 		}
 		else
@@ -280,9 +280,9 @@ function trap(&$data=NULL){
 			{
 				addnews($now,'trap',$name,$trname,$itm0,$nick);
 			}
-			$log .= "糟糕，你触发了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>！<br>";
+			$log .= "糟糕，你觸發了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>！<br>";
 			if(!empty($data['skilllog'])) $log.= $data['skilllog'];
-			$log .= "受到<span class=\"dmg\">$damage</span>点伤害！<br>";
+			$log .= "受到<span class=\"dmg\">$damage</span>點傷害！<br>";
 
 			# 踩雷rp结算
 			$rp_up = -1 * $rp / 2;
@@ -307,11 +307,11 @@ function trap(&$data=NULL){
 				{
 					include_once GAME_ROOT.'./include/state.func.php';
 					$killmsg = death('trap',$trname,$trtype,$itm0,$data);
-					$log .= "你被{$trperfix}陷阱杀死了！";
+					$log .= "你被{$trperfix}陷阱殺死了！";
 					if($killmsg && !$selflag){
-						$log .= "<span class=\"yellow\">{$trname}对你说：“{$killmsg}”</span><br>";
+						$log .= "<span class=\"yellow\">{$trname}對你説：“{$killmsg}”</span><br>";
 					}
-					if ($tmp_club==99) $log.="<span class=\"lime\">但由于你及时按下了BOMB键，你原地满血复活了！</span><br>";
+					if ($tmp_club==99) $log.="<span class=\"lime\">但由於你及時按下了BOMB鍵，你原地滿血復活了！</span><br>";
 				}
 				$trapkill = true;
 				# 检查成就
@@ -328,7 +328,7 @@ function trap(&$data=NULL){
 					if($damage >= $data['mhp']*($actmhp/100))
 					{
 						getclubskill('buff_godbless',$data['clbpara']);
-						$log .= "<span class=\"yellow\">你的技能「天佑」被触发，暂时进入了无敌状态！</span><br>";
+						$log .= "<span class=\"yellow\">你的技能「天佑」被觸發，暫時進入了無敵狀態！</span><br>";
 					}
 				}
 				# 检查成就
@@ -338,14 +338,14 @@ function trap(&$data=NULL){
 			# logsave
 			if($playerflag && !$selflag && $trapkill)
 			{
-				$w_log = "<span class=\"red\">{$name}触发了你设置的陷阱{$itm0}并被杀死了！</span>";
-				if ($tmp_club==99) $w_log.="<span class=\"lime\">但由于{$name}及时按下了BOMB键，{$name}原地满血复活了！</span>";
+				$w_log = "<span class=\"red\">{$name}觸發了你設置的陷阱{$itm0}並被殺死了！</span>";
+				if ($tmp_club==99) $w_log.="<span class=\"lime\">但由於{$name}及時按下了BOMB鍵，{$name}原地滿血復活了！</span>";
 				$w_log.="<br>";
 				logsave ( $itmsk0, $now, $w_log ,'b');
 			}
 			elseif($playerflag && !$selflag)
 			{
-				$w_log = "<span class=\"yellow\">{$name}触发了你设置的陷阱{$itm0}！</span><br>";
+				$w_log = "<span class=\"yellow\">{$name}觸發了你設置的陷阱{$itm0}！</span><br>";
 				logsave ( $itmsk0, $now, $w_log ,'b');
 			}
 		}
@@ -358,19 +358,19 @@ function trap(&$data=NULL){
 				addnews($now,'trapdef',$name,$trname,$itm0,$nick);
 				if(!$selflag)
 				{
-					$w_log = "<span class=\"yellow\">{$name}触发了你设置的陷阱{$itm0}，但是没有受到任何伤害！</span><br>";
+					$w_log = "<span class=\"yellow\">{$name}觸發了你設置的陷阱{$itm0}，但是沒有受到任何傷害！</span><br>";
 					logsave ( $itmsk0, $now, $w_log ,'b');
 				}
 			}
-			$log .= "糟糕，你触发了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>！";
+			$log .= "糟糕，你觸發了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>！";
 			if(!empty($data['minedetect']))
 			{
 				unset($data['minedetect']);
-				$log .= "<br>不过，身上装备着的自动迎击系统启动了！<span class=\"yellow\">在迎击功能的保护下你毫发无伤。</span><br>";
+				$log .= "<br>不過，身上裝備着的自動迎擊系統啓動了！<span class=\"yellow\">在迎擊功能的保護下你毫髮無傷。</span><br>";
 			}
 			else
 			{
-				$log .= "但是没有受到任何伤害！<br>";
+				$log .= "但是沒有受到任何傷害！<br>";
 			}
 			# 检查成就
 			// include_once GAME_ROOT.'./include/game/achievement.func.php';
@@ -391,7 +391,7 @@ function trap(&$data=NULL){
 		if($playerflag && !$selflag)
 		{
 			addnews($now,'trapmiss',$name,$trname,$itm0,$nick);
-			$w_log = "<span class=\"yellow\">{$name}回避了你设置的陷阱{$itm0}！</span><br>";
+			$w_log = "<span class=\"yellow\">{$name}迴避了你設置的陷阱{$itm0}！</span><br>";
 			logsave ( $itmsk0, $now, $w_log ,'b');
 		}
 
@@ -403,11 +403,11 @@ function trap(&$data=NULL){
 			if(!empty($data['minedetect']))
 			{
 				unset($data['minedetect']);
-				$log .= "在探雷装备的辅助下，你发现了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>并且拆除了它。陷阱看上去还可以重复使用。<br>";
+				$log .= "在探雷裝備的輔助下，你發現了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>並且拆除了它。陷阱看上去還可以重複使用。<br>";
 			}
 			else
 			{
-				$log .= "你发现了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>，不过你并没有触发它。陷阱看上去还可以重复使用。<br>";
+				$log .= "你發現了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>，不過你並沒有觸發它。陷阱看上去還可以重複使用。<br>";
 			}
 			$itmsk0 = '';$itmk0 = str_replace('TO','TN',$itmk0);
 			$mode = 'itemfind';
@@ -418,11 +418,11 @@ function trap(&$data=NULL){
 			if(isset($data['minedetect']))
 			{
 				unset($data['minedetect']);
-				$log .= "在探雷装备的辅助下，你发现了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>并且拆除了它。不过陷阱好像被你搞坏了。<br>";
+				$log .= "在探雷裝備的輔助下，你發現了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>並且拆除了它。不過陷阱好像被你搞壞了。<br>";
 			}
 			else
 			{
-				$log .= "你触发了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>，不过你成功地回避了陷阱。<br>";
+				$log .= "你觸發了{$trperfix}陷阱<span class=\"yellow\">$itm0</span>，不過你成功地迴避了陷阱。<br>";
 			}
 			$itm0 = $itmk0 = $itmsk0 = '';
 			$itme0 = $itms0 = 0;
@@ -445,7 +445,7 @@ function itemfind(&$data=NULL) {
 	extract($data,EXTR_REFS);
 
 	if(!$itm0||!$itmk0||!$itms0){
-		$log .= '获取物品信息错误！';
+		$log .= '獲取物品信息錯誤！';
 		$mode = 'command';
 		return;
 	}
@@ -480,12 +480,12 @@ function itemget(&$data=NULL)
 		extract($data,EXTR_REFS); // 重新提取可能被修改的变量
 	}
 
-	$log .= "获得了物品<span class=\"yellow\">$itm0</span>。<br>";
+	$log .= "獲得了物品<span class=\"yellow\">$itm0</span>。<br>";
 
 	# 拾取诅咒物品时，触发霉运
 	if(!empty($itmsk0) && in_array('V',get_itmsk_array($itmsk0)))
 	{
-		$log .= "<span class=\"grey\">你感觉自己要倒大霉了……</span><br>";
+		$log .= "<span class=\"grey\">你感覺自己要倒大黴了……</span><br>";
 		getclubskill('inf_cursed',$clbpara);
 	}
 
@@ -502,7 +502,7 @@ function itemget(&$data=NULL)
 		//global $wep,$wepk,$wepe,$weps,$wepsk;
 		if($wep == $itm0 && $wepk == $itmk0 && $wepe == $itme0 && $wepsk == $itmsk0 && $weppara == $itmpara0){
 			$weps += $itms0;
-			$log .= "与装备着的武器<span class=\"yellow\">$wep</span>合并了。";
+			$log .= "與裝備着的武器<span class=\"yellow\">$wep</span>合併了。";
 			$itm0 = $itmk0 = $itmsk0 = $itmpara0 = '';
 			$itme0 = $itms0 = 0;
 			$mode = 'command';
@@ -512,7 +512,7 @@ function itemget(&$data=NULL)
 				//global ${'itm'.$i},${'itmk'.$i},${'itme'.$i},${'itms'.$i},${'itmsk'.$i};
 				if((${'itms'.$i})&&($itm0 == ${'itm'.$i})&&($itmk0 == ${'itmk'.$i})&&($itme0 == ${'itme'.$i})&&($itmsk0 == ${'itmsk'.$i})&&($itmpara0 == ${'itmpara'.$i})){
 					${'itms'.$i} += $itms0;
-					$log .= "与包裹里的<span class=\"yellow\">$itm0</span>合并了。";
+					$log .= "與包裹裏的<span class=\"yellow\">$itm0</span>合併了。";
 					$itm0 = $itmk0 = $itmsk0 = '';
 					$itme0 = $itms0 = 0;
 					$itmpara0 = '';
@@ -563,7 +563,7 @@ function itemdrop($item,&$data=NULL) {
 
 	if(strpos($item,'itm')===false)
 	{
-		$log .= '只能丢弃包裹内的道具！<br>';
+		$log .= '只能丟棄包裹內的道具！<br>';
 		$mode = 'command';
 		return;
 	}
@@ -615,45 +615,45 @@ function itemdrop($item,&$data=NULL) {
 		}
 	}
 	if(($itmk=='XX')||(($itmk=='XY'))){
-		$log .= '该物品不能丢弃。<br>';
+		$log .= '該物品不能丟棄。<br>';
 		$mode = 'command';
 		return;
 	}
 	# 诅咒装备不能被丢弃
 	if(in_array('V',get_itmsk_array($itmsk)))
 	{
-		$log .= "你丢弃了……<br>你忽然忘记自己原本想干什么了。<br>";
+		$log .= "你丟棄了……<br>你忽然忘記自己原本想幹什麼了。<br>";
 		$mode = 'command';
 		return;
 	}
 	if((empty($itms) && $itms !== $nosta)||!$itmk||$itmk=='WN'||$itmk=='DN'){
-		$log .= '该物品不存在！<br>';
+		$log .= '該物品不存在！<br>';
 		$mode = 'command';
 		return;
 	}
 
-	if ((strpos ( $itmk, 'Y' ) === 0 || strpos ( $itmk, 'Z' ) === 0) && ($itm == '棱镜八面体'))
+	if ((strpos ( $itmk, 'Y' ) === 0 || strpos ( $itmk, 'Z' ) === 0) && ($itm == '稜鏡八面體'))
 	{
 		$theitem = array('itm' => &$itm, 'itmk' => &$itmk, 'itme' => &$itme,'itms' => &$itms,'itmsk' => &$itmsk);
-		$log .= "<span class=\"yellow b\">{$itm}</span>似乎发生了变化……<br>";
+		$log .= "<span class=\"yellow b\">{$itm}</span>似乎發生了變化……<br>";
 		include_once GAME_ROOT . './include/game/item.nachster_booster.php';
 		octitem_rotate($theitem, 7);
 	}
 
 	if(strpos($itmsk,'v')!==false)
 	{
-		$log .= "{$itm}在地上化作点点碎片，随风消逝了。<br>";
-		$log .= "你摧毁了<span class=\"red\">$itm</span>。<br>";
+		$log .= "{$itm}在地上化作點點碎片，隨風消逝了。<br>";
+		$log .= "你摧毀了<span class=\"red\">$itm</span>。<br>";
 	}
 	else
 	{
 		$db->query("INSERT INTO {$tablepre}mapitem (itm, itmk, itme, itms, itmsk ,itmpara, pls) VALUES ('$itm', '$itmk', '$itme', '$itms', '$itmsk', '$itmpara', '$pls')");
 		$drop_iid = $db->insert_id();
-		$log .= "你丢弃了<span class=\"red\">$itm</span>。<br>";
+		$log .= "你丟棄了<span class=\"red\">$itm</span>。<br>";
 		check_add_searchmemory($drop_iid,'itm',$itm,$data);
 	}
 	if($item == 'wep'){
-		$itm = '拳头';
+		$itm = '拳頭';
 		$itmsk = '';
 		$itmk = 'WN';
 		$itme = 0;
@@ -689,19 +689,19 @@ function itemoff($item){
 		$itmpara = & ${'ar'.$itmn.'para'};
 	}
 	if((empty($itms) && $itms !== $nosta)||!$itmk||$itmk=='WN'||$itmk=='DN'){
-		$log .= '该物品不存在！<br>';
+		$log .= '該物品不存在！<br>';
 		$mode = 'command';
 		return;
 	}
 	if(($itmk=='XX')||(($itmk=='XY'))){
-		$log .= '该物品不能卸下。<br>';
+		$log .= '該物品不能卸下。<br>';
 		$mode = 'command';
 		return;
 	}
 	# 诅咒装备不能主动卸下
 	if(in_array('V',get_itmsk_array($itmsk)))
 	{
-		$log .= "你尝试着卸下{$itm}……但它就像长在了你身上一样，纹丝不动！<br>";
+		$log .= "你嘗試着卸下{$itm}……但它就像長在了你身上一樣，紋絲不動！<br>";
 		$mode = 'command';
 		return;
 	}
@@ -709,7 +709,7 @@ function itemoff($item){
 	//卸下装备时，进行单次套装检测
 	reload_single_set_item($pdata,$item,$itm);
 
-	$log .= "你卸下了装备<span class=\"yellow\">$itm</span>。<br>";
+	$log .= "你卸下了裝備<span class=\"yellow\">$itm</span>。<br>";
 
 	$itm0 = $itm;
 	$itmk0 = $itmk;
@@ -719,7 +719,7 @@ function itemoff($item){
 	$itmpara0 = $itmpara;
 
 	if($item == 'wep'){
-	$itm = '拳头';
+	$itm = '拳頭';
 	$itmsk = '';
 	$itmk = 'WN';
 	$itme = 0;
@@ -745,14 +745,14 @@ function itemadd(&$data=NULL)
 	extract($data,EXTR_REFS);
 
 	if(empty($itms0) && $itms0 !== $nosta){
-		$log .= '你没有捡取物品。<br>';
+		$log .= '你沒有撿取物品。<br>';
 		$mode = 'command';
 		return;
 	}
 	for($i = 1;$i <= 6;$i++){
 		//global ${'itm'.$i},${'itmk'.$i},${'itme'.$i},${'itms'.$i},${'itmsk'.$i};
 		if(empty(${'itms'.$i})){
-			$log .= "将<span class=\"yellow\">$itm0</span>放入包裹。<br>";
+			$log .= "將<span class=\"yellow\">$itm0</span>放入包裹。<br>";
 			${'itm'.$i} = $itm0;
 			${'itmk'.$i} = $itmk0;
 			${'itme'.$i} = $itme0;
@@ -785,7 +785,7 @@ function itemmerge($itn1,$itn2){
 	global $log,$mode;
 
 	if($itn1 == $itn2) {
-		$log .= '需要选择两个物品才能进行合并！';
+		$log .= '需要選擇兩個物品才能進行合併！';
 		$mode = 'itemmerge';
 		return;
 	}
@@ -806,13 +806,13 @@ function itemmerge($itn1,$itn2){
 	$itpara2 = & ${'itmpara'.$itn2};
 
 	if((empty($its1) && $its1 !== $nosta) || (empty($its2) && $its2 !== $nosta)) {
-		$log .= '请选择正确的物品进行合并！';
+		$log .= '請選擇正確的物品進行合併！';
 		$mode = 'itemmerge';
 		return;
 	}
 
 	if($its1==$nosta || $its2==$nosta) {
-		$log .= '耐久是无限的物品不能合并！';
+		$log .= '耐久是無限的物品不能合併！';
 		$mode = 'itemmerge';
 		return;
 	}
@@ -822,7 +822,7 @@ function itemmerge($itn1,$itn2){
 			$its2 += $its1;
 			$it1 = $itk1 = $itsk1 = $itpara1 = '';
 			$ite1 = $its1 = 0;
-			$log .= "你合并了<span class=\"yellow\">$it2</span>。";
+			$log .= "你合併了<span class=\"yellow\">$it2</span>。";
 			$mode = 'command';
 			return;
 		} elseif(preg_match('/^(H|P)/',$itk1)&&preg_match('/^(H|P)/',$itk2)) {
@@ -840,18 +840,18 @@ function itemmerge($itn1,$itn2){
 			$it1 = $itk1 = $itsk1 = $itpara1 = '';
 			$ite1 = $its1 = 0;
 
-			$log .= "你合并了 <span class=\"yellow\">$it2</span>。";
+			$log .= "你合併了 <span class=\"yellow\">$it2</span>。";
 			$mode = 'command';
 			return;
 		} elseif($itk1!=$itk2||$itsk1!=$itsk2) {
-			$log .= "<span class=\"yellow\">$it1</span>与<span class=\"yellow\">$it2</span>不是同类型同属性物品，不能合并！";
+			$log .= "<span class=\"yellow\">$it1</span>與<span class=\"yellow\">$it2</span>不是同類型同屬性物品，不能合併！";
 			$mode = 'itemmerge';
 		} else{
-			$log .= "<span class=\"yellow\">$it1</span>与<span class=\"yellow\">$it2</span>完全是两个东西，想合并也不可能啊……";
+			$log .= "<span class=\"yellow\">$it1</span>與<span class=\"yellow\">$it2</span>完全是兩個東西，想合併也不可能啊……";
 			$mode = 'itemmerge';
 		}
 	} else {
-		$log .= "<span class=\"yellow\">$it1</span>与<span class=\"yellow\">$it2</span>不是同名同效果物品，不能合并！";
+		$log .= "<span class=\"yellow\">$it1</span>與<span class=\"yellow\">$it2</span>不是同名同效果物品，不能合併！";
 		$mode = 'itemmerge';
 	}
 
@@ -1228,10 +1228,10 @@ function itemreduce($item,$mode=0){ //只限合成使用！！
 function itemmove($from,$to){
 	global $log,$nosta;
 	if(!$from || !is_numeric($from) || !$to || !is_numeric($to) || $from < 1 || $to < 1 || $from > 6 || $to > 6){
-		$log .= '错误的包裹位置参数。<br>';
+		$log .= '錯誤的包裹位置參數。<br>';
 		return;
 	}	elseif($from == $to){
-		$log .= '同一物品无法互换。<br>';
+		$log .= '同一物品無法互換。<br>';
 		return;
 	}
 	global ${'itm'.$from},${'itmk'.$from},${'itme'.$from},${'itms'.$from},${'itmsk'.$from},${'itm'.$to},${'itmk'.$to},${'itme'.$to},${'itms'.$to},${'itmsk'.$to},${'itmpara'.$from},${'itmpara'.$to};
@@ -1248,11 +1248,11 @@ function itemmove($from,$to){
 	$tsk = & ${'itmsk'.$to};
 	$tpara = & ${'itmpara'.$to};
 	if(empty($fs) && $fs !== $nosta){
-		$log .= '错误的道具参数。<br>';
+		$log .= '錯誤的道具參數。<br>';
 		return;
 	}
 	if(empty($ts)){
-		$log .= "将<span class=\"yellow\">{$f}</span>移动到了<span class=\"yellow\">包裹{$to}</span>。<br>";
+		$log .= "將<span class=\"yellow\">{$f}</span>移動到了<span class=\"yellow\">包裹{$to}</span>。<br>";
 		$t = $f;
 		$tk = $fk;
 		$te = $fe;
@@ -1263,7 +1263,7 @@ function itemmove($from,$to){
 		$fe = $fs = 0;
 
 	}else {
-		$log .= "将<span class=\"yellow\">{$f}</span>与<span class=\"yellow\">{$t}</span>互换了位置。<br>";
+		$log .= "將<span class=\"yellow\">{$f}</span>與<span class=\"yellow\">{$t}</span>互換了位置。<br>";
 		$temp = $t;
 		$tempk = $tk;
 		$tempe = $te;
@@ -1307,7 +1307,7 @@ function itembuy($item,$shop,$bnum=1,&$data=NULL)
 	//$itemlist = openfile($file);
 	//$iteminfo = $itemlist[$item];
 	if(!$iteminfo) {
-		$log .= '要购买的道具不存在！<br><br>';
+		$log .= '要購買的道具不存在！<br><br>';
 		$mode = 'command';
 		return;
 	}
@@ -1319,27 +1319,27 @@ function itembuy($item,$shop,$bnum=1,&$data=NULL)
 	$bnum = (int)$bnum;
 	//list($num,$price,$iname,$ikind,$ieff,$ista,$isk) = explode(',',$iteminfo);
 	if($iteminfo['num'] <= 0) {
-		$log .= '此物品已经售空！<br><br>';
+		$log .= '此物品已經售空！<br><br>';
 		$mode = 'command';
 		return;
 	} elseif($bnum<=0) {
-		$log .= '购买数量必须为大于0的整数。<br><br>';
+		$log .= '購買數量必須為大於0的整數。<br><br>';
 		$mode = 'command';
 		return;
 	} elseif($bnum>$iteminfo['num']) {
-		$log .= '购买数量必须小于存货数量。<br><br>';
+		$log .= '購買數量必須小於存貨數量。<br><br>';
 		$mode = 'command';
 		return;
 	} elseif($money < $price*$bnum) {
-		$log .= '你的钱不够，不能购买此物品！<br><br>';
+		$log .= '你的錢不夠，不能購買此物品！<br><br>';
 		$mode = 'command';
 		return;
 	} elseif(!preg_match('/^(WC|WD|WF|X|Y|B|C|TN|GA|GB|H|V|M|ygo|p)/',$iteminfo['itmk'])&&$bnum>1) {
-		$log .= '此物品一次只能购买一个。<br><br>';
+		$log .= '此物品一次只能購買一個。<br><br>';
 		$mode = 'command';
 		return;
 	}elseif($iteminfo['area']> $areanum/$areaadd){
-		$log .= '此物品尚未开放出售！<br><br>';
+		$log .= '此物品尚未開放出售！<br><br>';
 		$mode = 'command';
 		return;
 	}
@@ -1360,7 +1360,7 @@ function itembuy($item,$shop,$bnum=1,&$data=NULL)
 //	$itemlist[$item] = "$num,$price,$iname,$ikind,$ieff,$ista,$isk,\n";
 //	writeover($file,implode('',$itemlist));
 	addnews($now,'itembuy',$name,$iteminfo['item']);
-	$log .= "购买成功。";
+	$log .= "購買成功。";
 	$itm0 = $iteminfo['item'];
 	$itmk0 = $iteminfo['itmk'];
 	$itme0 = $iteminfo['itme'];
@@ -1393,7 +1393,7 @@ function getcorpse($item,&$data=NULL)
 	//$corpseid = strpos($action,'corpse')===0 ? str_replace('corpse','',$action) : str_replace('pacorpse','',$action);
 	$corpseid = $bid;
 	if(!$corpseid || ($action != 'corpse' && $action != 'pacorpse')){
-		$log .= '<span class="yellow">你没有遇到尸体，或已经离开现场！</span><br>';
+		$log .= '<span class="yellow">你沒有遇到屍體，或已經離開現場！</span><br>';
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
@@ -1403,7 +1403,7 @@ function getcorpse($item,&$data=NULL)
 	$edata = fetch_playerdata_by_pid($corpseid);
 
 	if(!$edata){
-		$log .= '对方不存在！<br>';
+		$log .= '對方不存在！<br>';
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
@@ -1412,12 +1412,12 @@ function getcorpse($item,&$data=NULL)
 	//$edata = $db->fetch_array($result);
 
 	if($edata['hp']>0) {
-		$log .= '对方尚未死亡！<br>';
+		$log .= '對方尚未死亡！<br>';
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
 	} elseif($edata['pls'] != $pls) {
-		$log .= '对方跟你不在同一个地图！<br>';
+		$log .= '對方跟你不在同一個地圖！<br>';
 		$action = ''; $bid = 0;
 		$mode = 'command';
 		return;
@@ -1427,19 +1427,19 @@ function getcorpse($item,&$data=NULL)
 	{
 		if(!$allow_destory_corpse || in_array($edata['type'],$no_destory_corpse_type))
 		{
-			$log.="你还想对这具可怜的尸体干什么？麻烦给死者一点基本的尊重！<br>";
+			$log.="你還想對這具可憐的屍體幹什麼？麻煩給死者一點基本的尊重！<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
 		}
 
-		$log.="你销毁了{$edata['name']}的尸体。<br>但这一切值得吗……？<br>";
+		$log.="你銷燬了{$edata['name']}的屍體。<br>但這一切值得嗎……？<br>";
 		# 销毁尸体rp结算
 		$rp_up = diceroll($rpup_destory_corpse);
 		if ($clbpara['BGMBrand'] == 'azure'){
 			$check = diceroll(20);
 			if ($check > 15){
-				$log .= "<span class=\"ltazure\">不过你想到了蓝凝的天真烂漫没心没肺，<br>因此没受到销毁尸体的罪恶感影响。<br></span>";
+				$log .= "<span class=\"ltazure\">不過你想到了藍凝的天真爛漫沒心沒肺，<br>因此沒受到銷燬屍體的罪惡感影響。<br></span>";
 				$rp_up = 0;
 			}
 		}
@@ -1456,7 +1456,7 @@ function getcorpse($item,&$data=NULL)
 	{
 		if($club != 20)
 		{
-			$log.="你还想对这具可怜的尸体干什么？麻烦给死者一点基本的尊重！<br>";
+			$log.="你還想對這具可憐的屍體幹什麼？麻煩給死者一點基本的尊重！<br>";
 			$action = ''; $bid = 0;
 			$mode = 'command';
 			return;
@@ -1507,8 +1507,8 @@ function getcorpse($item,&$data=NULL)
 	$is_corpse_item = ($item == 'wep' || $item == 'wep2' || strpos($item,'ar') === 0 || strpos($item,'itm') === 0);
 	if($is_corpse_item && !empty($itms0))
 	{
-		$log .= '你的手上已经拿着<span class="yellow">'.$itm0.'</span>，不能再从尸体上拾取其他物品。<br>';
-		$log .= '请先处理手上的物品。<br>';
+		$log .= '你的手上已經拿着<span class="yellow">'.$itm0.'</span>，不能再從屍體上拾取其他物品。<br>';
+		$log .= '請先處理手上的物品。<br>';
 		check_add_searchmemory($edata['pid'],'corpse',$edata['name'],$data);
 		$action = ''; $bid = 0;
 		$mode = 'command';
@@ -1545,7 +1545,7 @@ function getcorpse($item,&$data=NULL)
 		$edata['itme'.$itmn] = $edata['itms'.$itmn] = 0;
 	} elseif($item == 'money') {
 		$money += $edata['money'];
-		$log .= '获得了金钱 <span class="yellow">'.$edata['money'].'</span>。<br>';
+		$log .= '獲得了金錢 <span class="yellow">'.$edata['money'].'</span>。<br>';
 		$edata['money'] = 0;
 		player_save($edata);
 		$action = ''; $bid = 0;
@@ -1559,7 +1559,7 @@ function getcorpse($item,&$data=NULL)
 	player_save($edata);
 
 	if((empty($itms0) && $itms0 !== $nosta)||!$itmk0||$itmk0=='WN'||$itmk0=='DN') {
-		$log .= '该物品不存在！';
+		$log .= '該物品不存在！';
 	} else {
 		itemget($data);
 	}
@@ -1624,7 +1624,7 @@ function change_subwep($s=2,&$data=NULL)
         $sweplog .="拿出了<span class='yellow'>{$wep}</span>";
     }
 
-    if(!$sweplog) $log .= '你左手交叠右手，大喝一声：“我特殊召唤两个拳头！”<br>';
+    if(!$sweplog) $log .= '你左手交疊右手，大喝一聲：“我特殊召喚兩個拳頭！”<br>';
     else $log .= $sweplog."。<br>";
 
     return;
@@ -1645,7 +1645,7 @@ function destory_single_equip(&$pa,$equip)
 	}
 	else
 	{
-		$log .= "传入了非法的道具位名。";
+		$log .= "傳入了非法的道具位名。";
 		return;
 	}
 	return;
@@ -1669,7 +1669,7 @@ function destory_single_item(&$pa,$i,$costlog=0)
 	}
 	else
 	{
-		$log .= "传入了非法的道具位名。";
+		$log .= "傳入了非法的道具位名。";
 		return;
 	}
 	return;
@@ -1856,8 +1856,8 @@ function weapon_loss(&$pa,$hurtvalue,$force_imp=0,$check_sk=0)
 				$pa['wepe'] = max(0,$pa['wepe']-$hurtvalue);
 				if(!$pa['type'])
 				{
-					if($hurtvalue > 0) $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的攻击力下降了{$hurtvalue}。</span><br>";
-					else $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的攻击力上升了".abs($hurtvalue)."！……为什么啊？</span><br>";
+					if($hurtvalue > 0) $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的攻擊力下降了{$hurtvalue}。</span><br>";
+					else $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的攻擊力上升了".abs($hurtvalue)."！……為什麼啊？</span><br>";
 				}
 			}
 			else
@@ -1866,12 +1866,12 @@ function weapon_loss(&$pa,$hurtvalue,$force_imp=0,$check_sk=0)
 				if(!$pa['type'])
 				{
 					if($hurtvalue > 0) $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的耐久度下降了{$hurtvalue}。</span><br>";
-					else $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的耐久度上升了".abs($hurtvalue)."！……为什么啊？</span><br>";
+					else $log.= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的耐久度上升了".abs($hurtvalue)."！……為什麼啊？</span><br>";
 				}
 			}
 			if((empty($pa['weps']) && $pa['weps'] !== $nosta) || empty($pa['wepe']))
 			{
-				$log .= "{$pa['nm']}的<span class=\"red\">{$pa['wep']}</span>使用过度，已经损坏，无法再装备了！<br>";
+				$log .= "{$pa['nm']}的<span class=\"red\">{$pa['wep']}</span>使用過度，已經損壞，無法再裝備了！<br>";
 				$wep_loss_flag = 1;
 			}
 		}
@@ -1885,8 +1885,8 @@ function weapon_loss(&$pa,$hurtvalue,$force_imp=0,$check_sk=0)
 				{
 					if(!$pa['type'])
 					{
-						if($hurtvalue > 0) $log .= "<span class='grey'>{$pa['nm']}用掉了{$hurtvalue}个{$pa['wep']}。</span><br>";
-						else $log .= "<span class='grey'>{$pa['wep']}凭空增殖出了".abs($hurtvalue)."个……啊？？</span><br>";
+						if($hurtvalue > 0) $log .= "<span class='grey'>{$pa['nm']}用掉了{$hurtvalue}個{$pa['wep']}。</span><br>";
+						else $log .= "<span class='grey'>{$pa['wep']}憑空增殖出了".abs($hurtvalue)."個……啊？？</span><br>";
 					}
 					if(empty($pa['weps']) && $pa['weps'] !== $nosta)
 					{
@@ -1898,12 +1898,12 @@ function weapon_loss(&$pa,$hurtvalue,$force_imp=0,$check_sk=0)
 				{
 					if(!$pa['type'])
 					{
-						if($hurtvalue > 0) $log .= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的弹药数减少了{$hurtvalue}。</span><br>";
-						else $log .= "<span class='grey'>{$pa['wep']}的弹药数凭空多出了".abs($hurtvalue)."……啊？？</span><br>";
+						if($hurtvalue > 0) $log .= "<span class='grey'>{$pa['nm']}的{$pa['wep']}的彈藥數減少了{$hurtvalue}。</span><br>";
+						else $log .= "<span class='grey'>{$pa['wep']}的彈藥數憑空多出了".abs($hurtvalue)."……啊？？</span><br>";
 					}
 					if(empty($pa['weps']) && $pa['weps'] !== $nosta)
 					{
-						$log .= "{$pa['nm']}的<span class=\"red\">{$pa['wep']}</span>弹药用光了！<br>";
+						$log .= "{$pa['nm']}的<span class=\"red\">{$pa['wep']}</span>彈藥用光了！<br>";
 						$pa['weps'] = $nosta;
 					}
 				}
@@ -1912,7 +1912,7 @@ function weapon_loss(&$pa,$hurtvalue,$force_imp=0,$check_sk=0)
 					if(!$pa['type'])
 					{
 						if($hurtvalue > 0) $log .= "<span class='grey'>{$pa['nm']}的{$pa['wep']}用掉了{$hurtvalue}支箭。</span><br>";
-						else $log .= "<span class='grey'>{$pa['wep']}的箭矢数凭空多出了".abs($hurtvalue)."……啊？？</span><br>";
+						else $log .= "<span class='grey'>{$pa['wep']}的箭矢數憑空多出了".abs($hurtvalue)."……啊？？</span><br>";
 					}
 					if(empty($pa['weps']) && $pa['weps'] !== $nosta)
 					{
@@ -1932,7 +1932,7 @@ function weapon_loss(&$pa,$hurtvalue,$force_imp=0,$check_sk=0)
 			//剔除武器属性
 			if($check_sk && !empty($pa['wepsk'])) unset_ex_from_array($pa,get_itmsk_array($pa['wepsk']));
 
-			$pa['wep'] = '拳头'; $pa['wep_kind'] = 'N'; $pa['wepk'] = 'WN';
+			$pa['wep'] = '拳頭'; $pa['wep_kind'] = 'N'; $pa['wepk'] = 'WN';
 			$pa['wepe'] = 0; $pa['weps'] = $nosta; $pa['wepsk'] = ''; $pa['weppara'] = '';
 			return -1;
 		}
@@ -1960,7 +1960,7 @@ function armor_hurt(&$pa,$which,$hurtvalue,$check_sk=0)
 		//耐久为0 装备损坏
 		if($pa[$which.'s'] <= 0)
 		{
-			$log .= "{$pa['nm']}的<span class=\"red\">".$pa[$which]."</span>受损过重，无法再装备了！<br>";
+			$log .= "{$pa['nm']}的<span class=\"red\">".$pa[$which]."</span>受損過重，無法再裝備了！<br>";
 
 			//剔除防具属性
 			if($check_sk && !empty($pa[$which.'sk'])) unset_ex_from_array($pa,get_itmsk_array($pa[$which.'sk']));
@@ -1970,7 +1970,7 @@ function armor_hurt(&$pa,$which,$hurtvalue,$check_sk=0)
 
 			if($which == 'arb')
 			{
-				$pa[$which] = '内衣'; $pa[$which.'k'] = 'DN';
+				$pa[$which] = '內衣'; $pa[$which.'k'] = 'DN';
 				$pa[$which.'e'] = 0; $pa[$which.'s'] = $nosta; $pa[$which.'sk'] = ''; $pa[$which.'para'] = '';
 			}
 			else

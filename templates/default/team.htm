@@ -1,7 +1,7 @@
 <input type="hidden" name="mode" value="team">
 <input type="hidden" name="command" value="$teamcmd">
 <!--{if $teamcmd == 'teammake'}-->
-<div>队伍头像 :
+<div>隊伍頭像 :
 <select id="ticon" name="ticon" onchange="IconMover('ticonImg','ticon','t')">
     <!--{loop range(0,12) $icon}-->
         <option value="$icon">$icon</option>
@@ -12,8 +12,8 @@
     <img src="img/t_0.gif" alt="0">
 </div>
 <!--{/if}-->
-<div>队伍名称 : <input size="15" type="text" name="nteamID" maxlength="30"></div>
-<div>15个字以内。<div>
-<div>队伍密码 : <input size="15" type="text" name="nteamPass" maxlength="30"></div>
-<div>15个字以内。<div>
+<div>隊伍名稱 : <input size="15" type="text" name="nteamID" maxlength="30"></div>
+<div>15個字以內。<div>
+<div>隊伍密碼 : <input size="15" type="text" name="nteamPass" maxlength="30"></div>
+<div>15個字以內。<div>
 <input type="button" class="cmdbutton" id="zz" name="submit" value="[Z]提交" onclick="postCmd('gamecmd','command.php');this.disabled=true;">

@@ -42,12 +42,12 @@ namespace revcombat
 			if($active)
 			{
 				init_battle_rev($pa,$pd,1);
-				$battle_title = '战斗发生';
+				$battle_title = '戰鬥發生';
 			}
 			else 
 			{
 				init_battle_rev($pd,$pa,1);
-				$battle_title = '遭遇突袭';
+				$battle_title = '遭遇突襲';
 			}
 			$main = 'battle_rev';
 		}
@@ -130,7 +130,7 @@ namespace revcombat
 			$counter_flag = attack_check_can_counter($pa,$pd,$active);
 			if($counter_flag)
 			{
-				$log .= "<span class=\"red\">{$pd['nm']}的反击！</span><br>";
+				$log .= "<span class=\"red\">{$pd['nm']}的反擊！</span><br>";
 				# NPC反击前事件
 				if($pd['type'])
 				{
@@ -152,7 +152,7 @@ namespace revcombat
 					else $pd['cannot_counter'] = 1;
 				}
 				# 输出一段描述不能反击的原因的log
-				$pd['cannot_counter_log'] = !empty($pd['cannot_counter_log']) ? $pd['cannot_counter_log'] : "<span class=\"red\">{$pd['nm']}转身逃开了！</span><br>";
+				$pd['cannot_counter_log'] = !empty($pd['cannot_counter_log']) ? $pd['cannot_counter_log'] : "<span class=\"red\">{$pd['nm']}轉身逃開了！</span><br>";
 				$log .= "<span class=\"red\">".$pd['cannot_counter_log']."</span><br>";
 			}
 		}
@@ -195,18 +195,18 @@ namespace revcombat
 		# 敌人是玩家，更新logsave
 		if($active && !$pd['type'])
 		{
-			$w_log = "手持<span class=\"red\">{$pa['wep_name']}</span>的<span class=\"yellow\">{$pa['name']}</span>向你袭击！<br>";
+			$w_log = "手持<span class=\"red\">{$pa['wep_name']}</span>的<span class=\"yellow\">{$pa['name']}</span>向你襲擊！<br>";
 			if(isset($pd['logsave'])) $w_log .= $pd['logsave'];
 			if(isset($pd['lvlup_log'])) $w_log .= $pd['lvlup_log'];
-			$w_log .= "你受到其<span class=\"yellow\">$att_dmg</span>点攻击，对其做出了<span class=\"yellow\">$def_dmg</span>点反击。<br>";
+			$w_log .= "你受到其<span class=\"yellow\">$att_dmg</span>點攻擊，對其做出了<span class=\"yellow\">$def_dmg</span>點反擊。<br>";
 			logsave ($pd['pid'],$now,$w_log,'c');
 		}
 		elseif(!$active && !$pa['type'])
 		{
-			$w_log = "你发现了手持<span class=\"red\">{$pd['wep_name']}</span>的<span class=\"yellow\">{$pd['name']}</span>并且先发制人！<br>";
+			$w_log = "你發現了手持<span class=\"red\">{$pd['wep_name']}</span>的<span class=\"yellow\">{$pd['name']}</span>並且先發制人！<br>";
 			if(isset($pa['logsave'])) $w_log .= $pa['logsave'];
 			if(isset($pa['lvlup_log'])) $w_log .= $pa['lvlup_log'];
-			$w_log .= "你对其做出<span class=\"yellow\">$att_dmg</span>点攻击，受到其<span class=\"yellow\">$def_dmg</span>点反击。<br>";
+			$w_log .= "你對其做出<span class=\"yellow\">$att_dmg</span>點攻擊，受到其<span class=\"yellow\">$def_dmg</span>點反擊。<br>";
 			logsave ($pa['pid'],$now,$w_log,'c');
 		}
 
@@ -306,7 +306,7 @@ namespace revcombat
 			# 检查是否有需要转移到玩家身上的动作
 			if(isset($saction) && isset($sid))
 			{
-				if(isset($pa['is_merc']) || isset($pd['is_merc'])) $log .= "<span class='lime'>结束战斗后，佣兵将你带到{$pd['nm']}的尸体面前。</span><br>";
+				if(isset($pa['is_merc']) || isset($pd['is_merc'])) $log .= "<span class='lime'>結束戰鬥後，傭兵將你帶到{$pd['nm']}的屍體面前。</span><br>";
 				$action = $saction; $bid = $sid;
 			}
 			# 根据玩家身上的标记($action) 判断接下来要跳转的页面
@@ -353,7 +353,7 @@ namespace revcombat
 		# 技能抽取判定
 		if(in_array('+',array_merge($pa['ex_wep_keys'],$pa['ex_equip_keys'])) || in_array('+',array_merge($pd['ex_wep_keys'],$pd['ex_equip_keys'])))
 		{
-			$log .= "<span class=\"yellow\">技能抽取使双方的武器熟练度在战斗中大幅下降！</span><br>";
+			$log .= "<span class=\"yellow\">技能抽取使雙方的武器熟練度在戰鬥中大幅下降！</span><br>";
 			$pa['skdr_flag'] = $pd['skdr_flag'] = 1;
 			# 应用技抽效果
 			if(!empty($pa['skdr_flag']) || !empty($pd['skdr_flag'])) $pa['wep_skill']=sqrt($pa['wep_skill']);
@@ -361,13 +361,13 @@ namespace revcombat
 		# 灵魂抽取判定
 		if(in_array('*',array_merge($pa['ex_wep_keys'],$pa['ex_equip_keys'])) || in_array('*',array_merge($pd['ex_wep_keys'],$pd['ex_equip_keys'])))
 		{
-			$log .= "<span class=\"yellow\">灵魂抽取使双方的武器和饰物属性全部失效！</span><br>";
+			$log .= "<span class=\"yellow\">靈魂抽取使雙方的武器和飾物屬性全部失效！</span><br>";
 			$pa['sldr_flag'] = $pd['sldr_flag'] = 1;
 		}
 		# 精神抽取判定
 		if(in_array('-',array_merge($pa['ex_wep_keys'],$pa['ex_equip_keys'])) || in_array('-',array_merge($pd['ex_wep_keys'],$pd['ex_equip_keys'])))
 		{
-			$log .= "<span class=\"yellow\">精神抽取使双方的防具属性全部失效！</span><br>";
+			$log .= "<span class=\"yellow\">精神抽取使雙方的防具屬性全部失效！</span><br>";
 			$pa['mdr_flag'] = $pd['mdr_flag'] = 1;
 		}
 		# 灵、精抽应用
@@ -411,7 +411,7 @@ namespace revcombat
 			{
 				$damage = $fix_dmg;
 				$pa['final_damage'] = $damage;
-				$log .= "<span class=\"yellow\">造成的总伤害：<span class=\"red\">{$damage}</span>。</span><br>";
+				$log .= "<span class=\"yellow\">造成的總傷害：<span class=\"red\">{$damage}</span>。</span><br>";
 			}
 			//如无，则正常计算伤害
 			else
@@ -454,7 +454,7 @@ namespace revcombat
 					}
 				}
 				$damage = $damage > 1 ? round ( $damage ) : $pa['hitrate_times']; //命中了至少会造成1x连击次数的伤害
-				$log.="<span class=\"red\">$damage</span>点伤害！<br>";
+				$log.="<span class=\"red\">$damage</span>點傷害！<br>";
 				//造成的最终物理伤害
 				$pdamage = $damage;
 				$pa['phy_damage'] = $pdamage;
@@ -519,7 +519,7 @@ namespace revcombat
 						}
 						$ex_damage = round($ex_damage);
 						//存在额外的属性伤害文本，输出
-						if(isset($elog)) $log .= $elog."＝<span class=\"red\">{$ex_damage}</span>点属性伤害！<br>";
+						if(isset($elog)) $log .= $elog."＝<span class=\"red\">{$ex_damage}</span>點屬性傷害！<br>";
 					}
 					//将造成的最终属性伤害登记在$pa['ex_damage'] 并入最终伤害
 					$pa['ex_damage'] = $ex_damage;
@@ -549,7 +549,7 @@ namespace revcombat
 				//存在物理伤害以外的其他伤害 输出一段最终伤害log：
 				if($pdamage != $damage)
 				{
-					$log .= "<span class=\"yellow\">造成的总伤害：";
+					$log .= "<span class=\"yellow\">造成的總傷害：";
 					if(isset($fd_log)) $log .= $fd_log.'＝';
 					$log .= "<span class=\"red\">{$damage}";
 					if(isset($o_damage) && $o_damage != $damage) $log .= "（{$o_damage}）";
@@ -568,7 +568,7 @@ namespace revcombat
 		else 
 		{
 			$pa['final_damage'] = $damage = 0;
-			$log .= "但是没有击中！<br>";
+			$log .= "但是沒有擊中！<br>";
 		}
 		//经验结算
 		expup_rev($pa,$pd,$active);
@@ -624,7 +624,7 @@ namespace revcombat
 				$log .= npc_chat_rev ($pd,$pa, 'death' );
 				include_once GAME_ROOT . './include/system.func.php';
 				$npcdata = evonpc ($pd['type'],$pd['name']);
-				$log .= '<span class="yellow">'.$pd['name'].'却没死去，反而爆发出真正的实力！</span><br>';
+				$log .= '<span class="yellow">'.$pd['name'].'卻沒死去，反而爆發出真正的實力！</span><br>';
 				# add additional logic for 百命猫
 				if($pd['name']=='是TSEROF啦！'){
 					$pd['clbpara']['lifedestroyed'] += 1;
@@ -647,13 +647,13 @@ namespace revcombat
 				{
 					$death_flag = $pd['gg_flag'];
 					unset($pd['gg_flag']);
-					$log .= "<span class=\"red\">{$pd['nm']}在与{$pa['nm']}的战斗中意外身亡！</span><br>";
+					$log .= "<span class=\"red\">{$pd['nm']}在與{$pa['nm']}的戰鬥中意外身亡！</span><br>";
 				}
 				# 否则，pd作为防守方被打死，发送正常击杀log
 				else 
 				{
 					$death_flag = $pa['wep_kind'];
-					$log .= "<span class=\"red\">{$pd['nm']}被{$pa['nm']}杀死了！</span><br>";
+					$log .= "<span class=\"red\">{$pd['nm']}被{$pa['nm']}殺死了！</span><br>";
 				}
 				# 执行不需要考虑复活问题的击杀事件：
 				$lastword = pre_kill_events($pa,$pd,$active,$death_flag);
@@ -685,37 +685,37 @@ namespace revcombat
 	function checkdmg($p1, $p2, $d) 
 	{
 		if ($d < 0) {
-			$words = "{$p1}为{$p2}回复了<span class=\"lime\">".abs($d)."</span>点生命……这是咋回事呢？";
+			$words = "{$p1}為{$p2}回覆了<span class=\"lime\">".abs($d)."</span>點生命……這是咋回事呢？";
 		} elseif (($d >= 100) && ($d < 150)) {
-			$words = "{$p1}对{$p2}施加了一定程度的伤害。（100-150）";
+			$words = "{$p1}對{$p2}施加了一定程度的傷害。（100-150）";
 		} elseif (($d >= 150) && ($d < 200)) {
-			$words = "{$p1}拿了什么神兵？{$p2}所受的损伤已经不可忽略了。（150-200）";
+			$words = "{$p1}拿了什麼神兵？{$p2}所受的損傷已經不可忽略了。（150-200）";
 		} elseif (($d >= 200) && ($d < 250)) {
-			$words = "{$p1}简直不是人！{$p2}只能狼狈招架。（200-250）";
+			$words = "{$p1}簡直不是人！{$p2}只能狼狽招架。（200-250）";
 		} elseif (($d >= 250) && ($d < 300)) {
-			$words = "{$p1}发出会心一击！{$p2}瞬间损失了大量生命！（250-300）";
+			$words = "{$p1}發出會心一擊！{$p2}瞬間損失了大量生命！（250-300）";
 		} elseif (($d >= 300) && ($d < 400)) {
-			$words = "{$p1}使出浑身解数奋力一击！{$p2}想必凶多吉少！（300-400）";
+			$words = "{$p1}使出渾身解數奮力一擊！{$p2}想必凶多吉少！（300-400）";
 		} elseif (($d >= 400) && ($d < 500)) {
-			$words = "{$p1}使出武器中内藏的力量！可怜的{$p2}已经承受不住凶残的攻击了！（400-500）";
+			$words = "{$p1}使出武器中內藏的力量！可憐的{$p2}已經承受不住兇殘的攻擊了！（400-500）";
 		} elseif (($d >= 500) && ($d < 600)) {
-			$words = "{$p1}眼色一变使出绝招！{$p2}无法抵挡，只能任人宰割！（500-600）";
+			$words = "{$p1}眼色一變使出絕招！{$p2}無法抵擋，只能任人宰割！（500-600）";
 		} elseif (($d >= 600) && ($d < 750)) {
-			$words = "{$p1}手中的武器闪耀出七彩光芒！{$p2}的身躯几乎融化在光芒中！（600-750）";
+			$words = "{$p1}手中的武器閃耀出七彩光芒！{$p2}的身軀幾乎融化在光芒中！（600-750）";
 		} elseif (($d >= 750) && ($d < 1000)) {
-			$words = "{$p1}受到天神的加护，打出惊天动地的一击！{$p2}此刻已不成人形！（750-1000）";
+			$words = "{$p1}受到天神的加護，打出驚天動地的一擊！{$p2}此刻已不成人形！（750-1000）";
 		} elseif (($d >= 1000) && ($d < 5000)) {
-			$words = "{$p1}燃烧自己的生命得到了不可思议的力量！{$p2}，你还活着吗？（1000-5000）";
+			$words = "{$p1}燃燒自己的生命得到了不可思議的力量！{$p2}，你還活着嗎？（1000-5000）";
 		} elseif (($d >= 5000) && ($d < 10000)) {
-			$words = "{$p1}超越自己的极限爆发出了震天动地的力量！受此神力摧残的{$p2}化作了一颗流星！（5000-10000）";
+			$words = "{$p1}超越自己的極限爆發出了震天動地的力量！受此神力摧殘的{$p2}化作了一顆流星！（5000-10000）";
 		} elseif (($d >= 10000) && ($d < 50000)) {
-			$words = "{$p1}运转百万匹周天，吐气扬声，一道霸气的光束直逼{$p2}，后者的身躯瞬间被力量的洪流所吞没！（10000-50000）";
+			$words = "{$p1}運轉百萬匹周天，吐氣揚聲，一道霸氣的光束直逼{$p2}，後者的身軀瞬間被力量的洪流所吞沒！（10000-50000）";
 		} elseif (($d >= 50000) && ($d < 200000)) {
-			$words = "{$p1}已然超越了人类的极限！【{$d}】点的伤害——疾风怒涛般的攻击令大地崩塌，而{$p2}几乎化为齑粉！";
+			$words = "{$p1}已然超越了人類的極限！【{$d}】點的傷害——疾風怒濤般的攻擊令大地崩塌，而{$p2}幾乎化為齏粉！";
 		}	elseif (($d >= 200000) && ($d < 500000)) {
-			$words = "鬼哭神嚎！风暴既逝，{$p1}仍然屹立在战场上，而受到了【{$d}】点伤害的{$p2}想必已化为宇宙的尘埃了！";
+			$words = "鬼哭神嚎！風暴既逝，{$p1}仍然屹立在戰場上，而受到了【{$d}】點傷害的{$p2}想必已化為宇宙的塵埃了！";
 		} elseif ( $d >= 500000) {
-			$words = "残虐的攻击已经无法用言语形容！将{$p2}击飞出【{$d}】点伤害的英雄——{$p1}！让我们记住他的名字吧！";
+			$words = "殘虐的攻擊已經無法用言語形容！將{$p2}擊飛出【{$d}】點傷害的英雄——{$p1}！讓我們記住他的名字吧！";
 		} else {
 			$words = '';
 		}

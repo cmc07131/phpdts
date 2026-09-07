@@ -60,7 +60,7 @@ function achrev_update()
 			}
 			$new_ach = json_encode($new_ach);
 			$db->query("UPDATE {$gtablepre}users SET achievement='',achrev='$new_ach' WHERE username='".$udata['username']."'" );
-			echo "更新了用户 {$udata['username']} 的成就状态<br>";
+			echo "更新了用户 {$udata['username']} 的成就狀態<br>";
 			$nums++;
 			unset($cpl); unset($prc);
 			unset($alist); unset($new_ach); unset($n);
@@ -69,13 +69,13 @@ function achrev_update()
 		{
 			$db->query("UPDATE {$gtablepre}users SET achievement='' WHERE username='".$udata['username']."'" );
 			$nums++;
-			echo "删除了用户 {$udata['username']} 的旧成就数据<br>";
+			echo "刪除了用户 {$udata['username']} 的舊成就數據<br>";
 		}
 		unset($udatas[$ukey]);
 	}
 
-	if(!$nums) echo "没有需要迁移的成就数据。<br>";
-	else echo "<br>累计更新了{$nums}位用户的成就数据。<br>";
+	if(!$nums) echo "沒有需要遷移的成就數據。<br>";
+	else echo "<br>累計更新了{$nums}位用户的成就數據。<br>";
 
 	echo $exit;
 
@@ -115,7 +115,7 @@ function nicksrev_update()
 			}
 			$db->query("UPDATE {$gtablepre}users SET nicksrev='{$udata['nicksrev']}' WHERE username='{$udata['username']}'" );
 			unset($nicks); 
-			echo "更新了用户 {$udata['username']} 的头衔数据<br>";
+			echo "更新了用户 {$udata['username']} 的頭銜數據<br>";
 			$nums++;
 		}
 		/*elseif(!empty($udata['nicks']))
@@ -127,8 +127,8 @@ function nicksrev_update()
 		unset($udatas[$ukey]);
 	}
 
-	if(!$nums) echo "没有需要迁移的头衔数据。<br>";
-	else echo "<br>累计更新了{$nums}位用户的头衔数据。<br>";
+	if(!$nums) echo "沒有需要遷移的頭銜數據。<br>";
+	else echo "<br>累計更新了{$nums}位用户的頭銜數據。<br>";
 
 	echo $exit;
 

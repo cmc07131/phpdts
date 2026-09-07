@@ -8,20 +8,20 @@ function aievent($rate){
 	global $validtime,$killnum;
 	
 	$sanmachat = Array(
-		'showup' => Array('不需要伪装了，上吧。','我是静流，任务开始。'),
-		'selfbuff' => Array('……这个叫做拍BUFF……！','进行自我强化！'),
-		'selfcure' => Array('进行自我回复。','一般人大概是活不下刚才那一下的，但是我不是一般人。','下次再取你的小命！'),
-		'move' => Array('我已抵达[pls]，开始执行任务。','目标地点：[pls]。开始搜索。','在[pls]发现触手，进入警戒模式。'),
-		'move2' => Array('非目标范围。回避至[pls]。','暂时回避。已抵达[pls]。','上一地点会误伤无辜，我已回避至[pls]。','不能加害无辜的人……目前我位于[pls]。'),
-		'combat' => Array('……歼灭[plyr]。','[plyr]，吃招！','目标：[plyr]，抹杀开始！'),
-		'itm' => Array('[itm]位于[plss]。','在[plss]地点发现[itm]。','[itm]存在于[plss]。'),
-		'unfound' => Array('……[unfound]在地图上不存在。欺骗风纪委员是违反校规的。','找不到这个物品啊：[unfound]……要我做一个出来么？'),
+		'showup' => Array('不需要偽裝了，上吧。','我是靜流，任務開始。'),
+		'selfbuff' => Array('……這個叫做拍BUFF……！','進行自我強化！'),
+		'selfcure' => Array('進行自我回復。','一般人大概是活不下剛才那一下的，但是我不是一般人。','下次再取你的小命！'),
+		'move' => Array('我已抵達[pls]，開始執行任務。','目標地點：[pls]。開始搜索。','在[pls]發現觸手，進入警戒模式。'),
+		'move2' => Array('非目標範圍。迴避至[pls]。','暫時迴避。已抵達[pls]。','上一地點會誤傷無辜，我已迴避至[pls]。','不能加害無辜的人……目前我位於[pls]。'),
+		'combat' => Array('……殲滅[plyr]。','[plyr]，吃招！','目標：[plyr]，抹殺開始！'),
+		'itm' => Array('[itm]位於[plss]。','在[plss]地點發現[itm]。','[itm]存在於[plss]。'),
+		'unfound' => Array('……[unfound]在地圖上不存在。欺騙風紀委員是違反校規的。','找不到這個物品啊：[unfound]……要我做一個出來麼？'),
 	);
 	
 	//echo "进入AIEVENT";
 	//TESTCASE: IF GOLDEN MINION SURVIVES: DO NOTHING.
 	if(!isset($gamevars['sanmaact']) && !isset($gamevars['sanmadead'])){//$sanmaact = 0表示静流没放出，需要判断小兵状态，$sanmaact = 1表示静流已放出
-		$checkMinionSurvive = "SELECT * FROM {$tablepre}players WHERE `type` =91 AND `name` = 'AC专业职人'";
+		$checkMinionSurvive = "SELECT * FROM {$tablepre}players WHERE `type` =91 AND `name` = 'AC專業職人'";
 		$ifMinionSurvive = $db->query($checkMinionSurvive);
 		$minionHP = $db->fetch_array($ifMinionSurvive);
 		//echo "成功获得$minionHP";
@@ -97,17 +97,17 @@ function aievent($rate){
 			
 			if(!empty($chatdata)){
 				foreach($chatdata as $val){
-					if((strpos($val['msg'],'静流')!==false || strpos($val['msg'],'SANMA')!==false) && (strpos($val['msg'],'位置')!==false || strpos($val['msg'],'哪')!==false)){//聊天记录中存在对位置的询问
+					if((strpos($val['msg'],'靜流')!==false || strpos($val['msg'],'SANMA')!==false) && (strpos($val['msg'],'位置')!==false || strpos($val['msg'],'哪')!==false)){//聊天记录中存在对位置的询问
 						$checkcdata[] = $val;
 					}
 				}
 			}
 			//$ylwdh = $ylwda = $ylwdf = $key1 = $key2 = $key3 = $key4 = $key5 = $key6 = $keymd1 = $keymd2 = false;
 			$prcslist = Array(
-				'草帽' => '《小黄的草帽》', '钓鱼竿' => '《小黄的钓鱼竿》', '行军靴' => '《小黄的行军靴》',
-				'月宫 亚由' => '月宫 亚由的半身像', '神尾 观铃' => '神尾 观铃的半身像', '古河 渚' => '古河 渚的半身像',
-				'天泽 郁末' => '天泽 郁末的半身像', '长森 瑞佳' => '长森 瑞佳的半身像', '枣 铃' => '枣 铃的半身像', 
-				'咏叹调' => '四季流转的咏叹调', '覆唱诗' => '旁观轮回的覆唱诗', 
+				'草帽' => '《小黃的草帽》', '釣魚竿' => '《小黃的釣魚竿》', '行軍靴' => '《小黃的行軍靴》',
+				'月宮 亞由' => '月宮 亞由的半身像', '神尾 觀鈴' => '神尾 觀鈴的半身像', '古河 渚' => '古河 渚的半身像',
+				'天澤 鬱末' => '天澤 鬱末的半身像', '長森 瑞佳' => '長森 瑞佳的半身像', '棗 鈴' => '棗 鈴的半身像', 
+				'詠歎調' => '四季流轉的詠歎調', '覆唱詩' => '旁觀輪迴的覆唱詩', 
 			);
 			
 			$checkitms = Array();

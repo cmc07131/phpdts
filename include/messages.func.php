@@ -150,7 +150,7 @@ function message_disp($messages)
 		if(!empty($mv['enclosure'])){
 			
 			if($mv['checked']) $mv['encl_hint'] = '<span class="grey b">附件已收</span>';
-			else $mv['encl_hint'] = "<a class='L5 b' onclick=\"$('extracmd').name='sl$mi';$('extracmd').value='1';$('mode').value='check';postCmd('message_cmd', 'messages.php');$('extracmd').name='extracmd';$('extracmd').value='';\">附件<br>点此查收</a>";
+			else $mv['encl_hint'] = "<a class='L5 b' onclick=\"$('extracmd').name='sl$mi';$('extracmd').value='1';$('mode').value='check';postCmd('message_cmd', 'messages.php');$('extracmd').name='extracmd';$('extracmd').value='';\">附件<br>點此查收</a>";
 
 			//切糕判定
 			$getqiegao = message_get_encl_num($mv['enclosure'], 'getqiegao');
@@ -164,7 +164,7 @@ function message_disp($messages)
 				$nownew = !in_array($gettitle, $nicksrev_disp['nicks']);
 				$title_class = '';
 				if(isset($title_desc[$gettitle]['class'])) $title_class=$title_desc[$gettitle]['class'];
-				$mv['encl_disp'] .= '<div>头衔：<span class="'.$title_class.'">'.$titles_list[$gettitle].($nownew ? ' <span class="L5 b">NEW!</span>' : '').'</span></div>';
+				$mv['encl_disp'] .= '<div>頭銜：<span class="'.$title_class.'">'.$titles_list[$gettitle].($nownew ? ' <span class="L5 b">NEW!</span>' : '').'</span></div>';
 			}
 		}
 	}
@@ -188,7 +188,7 @@ function message_check($checklist, $messages)
 			//获得切糕
 			$getqiegao = message_get_encl_num($messages[$cid]['enclosure'], 'getqiegao');
 			if($getqiegao) {
-				$info[] = '获得了<span class="gold b">'.$getqiegao.'切糕</span>';
+				$info[] = '獲得了<span class="gold b">'.$getqiegao.'切糕</span>';
 				$getqiegaosum += $getqiegao;
 			}
 			//获得卡片
@@ -196,10 +196,10 @@ function message_check($checklist, $messages)
 			if(!empty($gettitle)) {
 				$getname = $titles_list[$gettitle];
 				if(!in_array($gettitle, $nicksrev_disp['nicks'])) {
-					$info[] = '获得了头衔 “<span class="'.$title_desc[$gettitle]['class'].'">'.$titles_list[$gettitle].'</span>”！';
+					$info[] = '獲得了頭銜 “<span class="'.$title_desc[$gettitle]['class'].'">'.$titles_list[$gettitle].'</span>”！';
 					titles_get_new($udata, $gettitle);
 				}else {
-					$info[] = '已有头衔 “<span class="'.$title_desc[$gettitle]['class'].'">'.$titles_list[$gettitle].'</span>”，转化为了'.$title2qiegao.'切糕！';
+					$info[] = '已有頭銜 “<span class="'.$title_desc[$gettitle]['class'].'">'.$titles_list[$gettitle].'</span>”，轉化為了'.$title2qiegao.'切糕！';
 					$getqiegaosum += $title2qiegao;
 				}
 				$gettitleflag = 1;

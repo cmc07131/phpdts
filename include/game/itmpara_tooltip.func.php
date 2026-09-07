@@ -17,14 +17,14 @@ function parse_itmpara_tooltip($itmpara, $item_type = '')
         // 直接定义默认的 $itmpara_tooltip 数组
         $itmpara_tooltip = array(
             'AddDamageRaw' => array(
-                'title' => '最终伤害增加',
+                'title' => '最終傷害增加',
                 'format' => '{value}',
                 'suffix' => '',
                 'color' => 'red',
                 'condition' => function($item_type, $value) { return true; }
             ),
             'AddDamagePercentage' => array(
-                'title' => '最终伤害增加',
+                'title' => '最終傷害增加',
                 'format' => '{value}',
                 'suffix' => '%',
                 'color' => 'red',
@@ -152,14 +152,14 @@ function parse_itmpara_tooltip($itmpara, $item_type = '')
             if(!is_array($itmpara_tooltip)) {
                 $itmpara_tooltip = array(
                     'AddDamageRaw' => array(
-                        'title' => '最终伤害增加',
+                        'title' => '最終傷害增加',
                         'format' => '{value}',
                         'suffix' => '',
                         'color' => 'red',
                         'condition' => function($item_type, $value) { return true; }
                     ),
                     'AddDamagePercentage' => array(
-                        'title' => '最终伤害增加',
+                        'title' => '最終傷害增加',
                         'format' => '{value}',
                         'suffix' => '%',
                         'color' => 'red',

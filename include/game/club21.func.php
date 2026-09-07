@@ -21,13 +21,13 @@
 		extract($data,EXTR_REFS);
 		
 		if ($club != 21) {
-			$log .= '你的称号不能使用该技能。';
+			$log .= '你的稱號不能使用該技能。';
 			$mode = 'command';
 			return;
 		}
 
 		if ($item_position < 1 || $item_position > 6) {
-			$log .= '此道具不存在，请重新选择。';
+			$log .= '此道具不存在，請重新選擇。';
 			$mode = 'command';
 			return;
 		}
@@ -46,8 +46,8 @@
 
 		// See if there's a 🔰 hidden in $itmsk, if they do, output an easter egg and skip the entire process.
 		if (strpos($itmsk, '🔰') !== false) {
-			$log .= "「为啥为啥小问号！物品已经动过了！<br>物品纯度已打破，这可啥都做不了！」<br><br>";
-			$log .= "…………似乎你没办法从这个物品上抽取代码片段了……这是为什么呢？<br>";
+			$log .= "「為啥為啥小問號！物品已經動過了！<br>物品純度已打破，這可啥都做不了！」<br><br>";
+			$log .= "…………似乎你沒辦法從這個物品上抽取代碼片段了……這是為什麼呢？<br>";
 			return;
 		}
 
@@ -64,7 +64,7 @@
 						if (mb_strpos($itm, $discover_frag) !== false)
 						{
 							$log .= "你成功找到了字段<span class='yellow'>「" . $discover_frag . "」</span>。<br>";
-							$clbpara['skillpara']['c21_discovery']['frag'] = '暂无';
+							$clbpara['skillpara']['c21_discovery']['frag'] = '暫無';
 							if (empty($clbpara['skillpara']['c21_discovery']['count'])) $clbpara['skillpara']['c21_discovery']['count'] = 1;
 							else
 							{
@@ -72,26 +72,26 @@
 								if ($clbpara['skillpara']['c21_discovery']['count'] >= 4) $clbpara['skillpara']['c21_discovery']['rank'] = 2;
 								if ($clbpara['skillpara']['c21_discovery']['count'] == 7)
 								{
-									$log .= '你成功克服了「斥血」的妨碍。<br>';
+									$log .= '你成功克服了「斥血」的妨礙。<br>';
 									$exp = $exp + 888;
 								}
 							}						
 						}						
-						$itm = "🥚" . $namefrags . '🥚的代码片段';
+						$itm = "🥚" . $namefrags . '🥚的代碼片段';
 						$itmk = '🥚';
 						$itme = '0';
 						$itms = '1';
 						$itmsk = '';
-						$log .= '成功将物品转换为代码片段。<br>';
+						$log .= '成功將物品轉換為代碼片段。<br>';
 						return;
 					}
 					else {
-						$log .= '该物品无法转换为代码片段。<br>';
+						$log .= '該物品無法轉換為代碼片段。<br>';
 						return;
 					}
 				}
 				else {
-					$log .= '该物品无法转换为代码片段。<br>';
+					$log .= '該物品無法轉換為代碼片段。<br>';
 					return;
 				}
 			} elseif ($which == 'itme') {
@@ -115,13 +115,13 @@
 					}
 					else
 					{
-						$log .= '体力不足，无法转换为代码片段。<br>';
+						$log .= '體力不足，無法轉換為代碼片段。<br>';
 							return;
 					}
 				}
 				//$itm = "效果" . ${$which . $item_position} . '代码片段';
-				$itm = '🥚' . $oriitm . '🥚的效果代码片段';
-				$log .= '消耗体力' . $sp_cost . '点。<br>';
+				$itm = '🥚' . $oriitm . '🥚的效果代碼片段';
+				$log .= '消耗體力' . $sp_cost . '點。<br>';
 				$sp -= $sp_cost;
 			} elseif ($which == 'itms') {
 				//如果itms为∞
@@ -147,12 +147,12 @@
 						}
 						else
 						{
-							$log .= '体力不足，无法转换为代码片段。<br>';
+							$log .= '體力不足，無法轉換為代碼片段。<br>';
 								return;
 						}
 					}
-					$itm = '🥚' . $oriitm . '🥚的耐久代码片段';
-					$log .= '消耗体力' . $sp_cost . '点。<br>';
+					$itm = '🥚' . $oriitm . '🥚的耐久代碼片段';
+					$log .= '消耗體力' . $sp_cost . '點。<br>';
 					$sp -= $sp_cost;
 					$itmk = '';
 					$itme = '0';
@@ -161,7 +161,7 @@
 					${$which . $item_position} = $tmp_trait;
 					// 将itmk替换为代码片段的itmk
 					$itmk = '🥚';
-					$log .= '成功将物品转换为代码片段。<br>';
+					$log .= '成功將物品轉換為代碼片段。<br>';
 					return;
 				}
 				$sp_cost = $itms_extract_rate * $itms;
@@ -185,20 +185,20 @@
 					}
 					else
 					{
-						$log .= '体力不足，无法转换为代码片段。<br>';
+						$log .= '體力不足，無法轉換為代碼片段。<br>';
 							return;
 					}
 				}
 				//$itm = "耐久" . ${$which . $item_position} . '代码片段';
-				$itm = '🥚' . $oriitm . '🥚的耐久代码片段';
-				$log .= '消耗体力' . $sp_cost . '点。<br>';
+				$itm = '🥚' . $oriitm . '🥚的耐久代碼片段';
+				$log .= '消耗體力' . $sp_cost . '點。<br>';
 				$sp -= $sp_cost;
 			} elseif ($which == 'itmsk') {
 				preg_match_all('/./u', $itmsk, $matches);
 				//var_dump($matches);
 				//如果matches没有
 				if (empty($matches[0])) {
-					$log .= '该物品无法转换为代码片段。<br>';
+					$log .= '該物品無法轉換為代碼片段。<br>';
 					return;
 				}
 				$sp_cost = 0;
@@ -227,13 +227,13 @@
 					}
 					else
 					{
-						$log .= '体力不足，无法转换为代码片段。<br>';
+						$log .= '體力不足，無法轉換為代碼片段。<br>';
 							return;
 					}
 				}
 				//$itm = "属性" . ${$which . $item_position} . '代码片段';
-				$itm = '🥚' . $oriitm . '🥚的属性代码片段';
-				$log .= '消耗体力' . $sp_cost . '点。<br>';
+				$itm = '🥚' . $oriitm . '🥚的屬性代碼片段';
+				$log .= '消耗體力' . $sp_cost . '點。<br>';
 				$sp -= $sp_cost;
 			}
 			$itmk = '';
@@ -244,9 +244,9 @@
 			$itms += 1;
 			// 将itmk替换为代码片段的itmk
 			$itmk = '🥚';
-			$log .= '成功将物品转换为代码片段。<br>';
+			$log .= '成功將物品轉換為代碼片段。<br>';
 		} else {
-			$log .= '该物品无法转换为代码片段。<br>';
+			$log .= '該物品無法轉換為代碼片段。<br>';
 		}
 		return;
 	}
@@ -258,7 +258,7 @@
 		//var_dump($choice1, $choice2);
 		global $log, $mode, $club, $sp, $rage, $pdata;
 		if ($club != 21) {
-			$log .= '你的称号不能使用该技能。';
+			$log .= '你的稱號不能使用該技能。';
 			$mode = 'command';
 			return;
 		}
@@ -277,7 +277,7 @@
 		$itmskc2 = &${'itmsk' . $choice2};
 		//检查itmk1是否为🥚,itmk2是否为D或W开头或者是否为🥚
 		if ($itmkc1 != '🥚' || (strpos($itmkc2, 'D') !== 0 && strpos($itmkc2, 'W') !== 0 && ($itmkc2 !== '🥚'))) {
-			$log .= '该物品无法合并。<br>';
+			$log .= '該物品無法合併。<br>';
 			return;
 		}
 		//让itm2属性合并itm1
@@ -288,10 +288,10 @@
 			$itmn_result = item_extract_namefrag_check($itmc1.$itmc2);
 			if (!empty($itmn_result))
 			{
-				$itmc2 = '🥚' . $itmn_result . '🥚复合代码片段';
+				$itmc2 = '🥚' . $itmn_result . '🥚複合代碼片段';
 			}
 			else {
-				$itmc2 = '🥚复合代码片段🥚';
+				$itmc2 = '🥚複合代碼片段🥚';
 			}   
 			$itmkc2 = $itmkc1 . $itmkc2;
 			$itmec2 = (int)$itmec1 + (int)$itmec2;
@@ -304,13 +304,13 @@
 			}
 			$itmskc2 = $itmskc1 . $itmskc2;
 			$itmkc2 = '🥚';
-			$log .= '合并了代码片段。<br>';
+			$log .= '合併了代碼片段。<br>';
 			//清空itm1
 			destory_single_item($pdata, $choice1);
 			return;
 		}
 		elseif ($rage < 50 ) {
-			$log .= '怒气不足，无法合并代码片段。<br>';
+			$log .= '怒氣不足，無法合併代碼片段。<br>';
 			return;
 		}
 		$rage -= 50;
@@ -346,7 +346,7 @@
 			$itmsc2 = (int)$itmsc1 + (int)$itmsc2 - 1;
 		}
 		$itmskc2 = $itmskc1 . $itmskc2;
-		$log .= '成功插入了代码片段。<br>';
+		$log .= '成功插入了代碼片段。<br>';
 		//清空itm1
 		destory_single_item($pdata, $choice1);
 		//去除itm2重复的属性
@@ -472,12 +472,12 @@
 	{		
 		global $log, $mode, $club;
 		if ($club != 21) {
-			$log .= '你的称号不能使用该技能。';
+			$log .= '你的稱號不能使用該技能。';
 			$mode = 'command';
 			return;
 		}
 		if ($item_position < 1 || $item_position > 6) {
-			$log .= '此道具不存在，请重新选择。';
+			$log .= '此道具不存在，請重新選擇。';
 			$mode = 'command';
 			return;
 		}
@@ -496,7 +496,7 @@
 		if(empty($clbpara['consumpt'])) $clbpara['consumpt'] = 0;
 		$clbpara['consumpt'] = $clbpara['consumpt'] + $itme + $itms;
 		destory_single_item($pdata, $item_position);
-		$log.="你消耗了该代码片段。<br>";
+		$log.="你消耗了該代碼片段。<br>";
 		return;
 	}
 	
@@ -508,17 +508,17 @@
 			$hp_difference = $hp - $mhp;
 			if ($hp_reset_dice > 90){
 				$hp = $mhp;
-				$log .= '你体内的<span class="glitchb">数据风暴</span>疯狂卷动，重置了你的生命值！';
+				$log .= '你體內的<span class="glitchb">數據風暴</span>瘋狂捲動，重置了你的生命值！';
 			}elseif($hp_reset_dice > 75){
 				$hp -= round($hp_difference / 2);
-				$log .= '你体内的<span class="glitchb">数据风暴</span>疯狂卷动，消耗了你更多的生命值！';
+				$log .= '你體內的<span class="glitchb">數據風暴</span>瘋狂捲動，消耗了你更多的生命值！';
 			}elseif($hp_reset_dice > 50){
 				$hp -= round($hp_difference / 3);
-				$log .= '你体内的<span class="glitchb">数据风暴</span>疯狂卷动，消耗了你更多的生命值！';
+				$log .= '你體內的<span class="glitchb">數據風暴</span>瘋狂捲動，消耗了你更多的生命值！';
 				
 			}else{
 				$hp -= round($hp_difference / 4);
-				$log .= '你体内的<span class="glitchb">数据风暴</span>疯狂卷动，消耗了你更多的生命值！';
+				$log .= '你體內的<span class="glitchb">數據風暴</span>瘋狂捲動，消耗了你更多的生命值！';
 			}
 		}
 
@@ -528,7 +528,7 @@
 			$death_obbs = get_skillvars('c21_sacrifice','death_obbs');
 			if ($sacrifice_dice < $death_obbs)
 			{
-				$log .= '你尝试着引导着你体内的<span class="glitchb">数据风暴</span>，让它变成你想要的东西……<br>但什么都没发生。<br>';
+				$log .= '你嘗試着引導着你體內的<span class="glitchb">數據風暴</span>，讓它變成你想要的東西……<br>但什麼都沒發生。<br>';
 				$death_flag = -1;
 				return $death_flag;
 			}
@@ -537,7 +537,7 @@
 				$hp_cost = $hp - 1;
 				$hp -= $hp_cost;
 				$sp_cost = $sp;
-				$log .= '你一咬牙关，让<span class="glitchb">数据风暴</span>透支了你的生命，<br>因此消耗生命' . $hp_cost . '点代替了体力消耗。<br>';
+				$log .= '你一咬牙關，讓<span class="glitchb">數據風暴</span>透支了你的生命，<br>因此消耗生命' . $hp_cost . '點代替了體力消耗。<br>';
 			}
 		}
 		else
@@ -545,7 +545,7 @@
 			$hp_cost = $sp_cost - $sp;
 			$hp -= $hp_cost;
 			$sp_cost = $sp;
-			$log .= '消耗生命' . $hp_cost . '点代替了体力消耗。<br>';
+			$log .= '消耗生命' . $hp_cost . '點代替了體力消耗。<br>';
 		}
 		return $sp_cost;
 	}

@@ -1,15 +1,15 @@
 {template header}
-<span class="subtitle">历史优胜者</span>
+<span class="subtitle">歷史優勝者</span>
 
 <!--{if $command == 'info'}-->
 {template winnerinfo}
 <!--{elseif $command == 'news'}-->
 <form method="post" name="info" action="winner.php">
-<input type="submit" value="返回优胜列表">
+<input type="submit" value="返回優勝列表">
 <div align="left">
 $hnewsinfo
 </div>
-<input type="submit" value="返回优胜列表">
+<input type="submit" value="返回優勝列表">
 </form>
 <!--{else}-->
 {template winnerlist}

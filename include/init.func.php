@@ -19,7 +19,7 @@ function init_icon_states(&$pa,$pd,$ismeet=0)
 		return;
 	}
 	//更新编号情报
-	$pa['sNoinfo'] = "(".$sexinfo[$pa['gd']].$pa['sNo']."号)";
+	$pa['sNoinfo'] = "(".$sexinfo[$pa['gd']].$pa['sNo']."號)";
 	$pa['typeinfo'] = $typeinfo[$pa['type']];
 	
 	# 更新头像情报
@@ -117,7 +117,7 @@ function init_hp_states(&$pa,$pd,$ismeet=0)
 	# 「护盾」数值显示
 	if(!check_skill_unlock('buff_shield',$pa))
 	{
-		$pa['shield_info'] = "<span class=\"blueseed\" tooltip2=\"【护盾】：可抵消等同于护盾值的伤害。护盾值只在抵消属性伤害时消耗，抵消电击伤害时双倍消耗。护盾存在时不会受到反噬伤害或陷入异常状态。\">(".get_skillpara('buff_shield','svar',$pa['clbpara']).")</span>";
+		$pa['shield_info'] = "<span class=\"blueseed\" tooltip2=\"【護盾】：可抵消等同於護盾值的傷害。護盾值只在抵消屬性傷害時消耗，抵消電擊傷害時雙倍消耗。護盾存在時不會受到反噬傷害或陷入異常狀態。\">(".get_skillpara('buff_shield','svar',$pa['clbpara']).")</span>";
 	}
 	# 「天眼」技能判定
 	if(!check_skill_unlock('c6_godeyes',$pd))
@@ -254,7 +254,7 @@ function init_inf_states(&$pa,$pd,$ismeet=0)
 	}
 	else 
 	{
-		$pa['infdata'] = '无';
+		$pa['infdata'] = '無';
 	}
 }
 

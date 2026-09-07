@@ -9,7 +9,7 @@ $dir = GAME_ROOT.'./gamedata/';
 
 if($write){
 	write_valid_limit($dir,$postnmlmt,$postiplmt);
-	echo '新的屏蔽列表已经写入。<br>';
+	echo '新的屏蔽列表已經寫入。<br>';
 }
 
 include_once $dir.'banlist.list';
@@ -55,7 +55,7 @@ echo <<<EOT
 <input type="hidden" name="mode" value="banlistmng">
 <input type="hidden" name="command" value="banlistmng">
 <input type="hidden" name="write" value="1">
-<div>输入要屏蔽的用户名和IP段，用|隔开。</div>
+<div>輸入要屏蔽的用户名和IP段，用|隔開。</div>
 <div>用户名屏蔽：<br><textarea name="postnmlmt" style="width:450;height:150">$nmlist</textarea></div><br>
 <div>IP段屏蔽：<br><textarea name="postiplmt" style="width:450;height:150">$iplist</textarea></div>
 <input type="submit" value="提交">

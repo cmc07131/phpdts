@@ -68,8 +68,8 @@ function get_queue_vnmix_list($id=NULL)
 function check_exists_queue_vnmix($id,$name,$gmflag=0)
 {
 	$varr = get_queue_vnmix_list($id);
-	if(empty($varr)) return '<span class="red">错误：该配方不存在！<br>';
-	if(empty($gmflag) && $name != $varr['creator']) '<span class="red">错误：你没有权限编辑别人的配方！<br>';
+	if(empty($varr)) return '<span class="red">錯誤：該配方不存在！<br>';
+	if(empty($gmflag) && $name != $varr['creator']) '<span class="red">錯誤：你沒有權限編輯別人的配方！<br>';
 	return $varr;
 }
 
@@ -88,7 +88,7 @@ function check_post_queue_vmix(&$arr,$gmflag=0)
 			$snums ++;
 		}
 	}
-	if($snums<2 || $snums>5) return "合成素材数量非法，需要2-5种合成素材。<br>";
+	if($snums<2 || $snums>5) return "合成素材數量非法，需要2-5種合成素材。<br>";
 	# 检查配方道具名
 	$flag = check_post_queue_vitm($arr['itm']);
 	if($flag) return $flag;
@@ -105,7 +105,7 @@ function check_post_queue_vmix(&$arr,$gmflag=0)
 	if(!empty($arr['itmsk']))
 	{
 		$tmp_sk = get_itmsk_array($arr['itmsk']);
-		if(count($tmp_sk)>$vnmix_max_sk) return "合成结果最多只能拥有{$vnmix_max_sk}种属性。<br>";
+		if(count($tmp_sk)>$vnmix_max_sk) return "合成結果最多隻能擁有{$vnmix_max_sk}種屬性。<br>";
 		foreach($tmp_sk as $sk)
 		{
 			$flag = check_post_queue_vitmsk($sk,$gmflag);
@@ -119,16 +119,16 @@ function check_post_queue_vmix(&$arr,$gmflag=0)
 function check_post_queue_vitm(&$itm,$stf=0)
 {
 	//检查道具名
-	$itm = preg_replace('/[,\#;\p{Cc}]+|锋利的|电气|毒性|[\r\n]|-改|<|>|\"/u','',$itm);
+	$itm = preg_replace('/[,\#;\p{Cc}]+|鋒利的|電氣|毒性|[\r\n]|-改|<|>|\"/u','',$itm);
 	$itm = preg_replace('/^\s+|\s+$/m', '',$itm);
 	if(!$stf && !$itm)
 	{
-		$vlog .= '<span class="red">错误：道具名不能为空。</span><br>';
+		$vlog .= '<span class="red">錯誤：道具名不能為空。</span><br>';
 		return $vlog;
 	}
 	if(mb_strlen($itm,'utf-8')>40)
 	{
-		$vlog .= '<span class="red">错误：道具名长度超过了40个字符。</span><br>';
+		$vlog .= '<span class="red">錯誤：道具名長度超過了40個字符。</span><br>';
 		return $vlog;
 	}
 	return;
@@ -141,7 +141,7 @@ function check_post_queue_vitmk(&$itmk,$gmflag=0)
 	$temp_vn_iteminfo = $gmflag ? $vn_iteminfo+$vn_gm_iteminfo : $vn_iteminfo;
 	if(!isset($itmk) || !isset($temp_vn_iteminfo[$itmk]))
 	{
-		$vlog = '<span class="red">错误：输入了无效的道具用途。</span><br>';
+		$vlog = '<span class="red">錯誤：輸入了無效的道具用途。</span><br>';
 		return $vlog;
 	}
 	return;
@@ -153,7 +153,7 @@ function check_post_queue_vitme(&$itme)
 	//检查道具效果、耐久
 	if($itme<1 || $itme>16777214)
 	{
-		$vlog = '<span class="red">错误：输入了无效的道具效果（道具效果范围：1~16777214）。</span><br>';
+		$vlog = '<span class="red">錯誤：輸入了無效的道具效果（道具效果範圍：1~16777214）。</span><br>';
 		return $vlog;
 	}
 	return;
@@ -166,7 +166,7 @@ function check_post_queue_vitms(&$itms)
 	//检查道具耐久
 	if($itms<0 || $itms>65535)
 	{
-		$vlog = '<span class="red">错误：输入了无效的道具耐久（道具耐久范围：0~65535）。</span><br>';
+		$vlog = '<span class="red">錯誤：輸入了無效的道具耐久（道具耐久範圍：0~65535）。</span><br>';
 		return $vlog;
 	}
 	if($itms == 0) $itms = $nosta;
@@ -180,7 +180,7 @@ function check_post_queue_vitmsk($sk,$gmflag=0)
 	$temp_vn_itemspkinfo = $gmflag ? $vn_itemspkinfo+$vn_gm_itemspkinfo : $vn_itemspkinfo;
 	if(!isset($temp_vn_itemspkinfo[$sk]))
 	{
-		$vlog = "<span class='red'>错误：选择了无效的道具属性{$sk}。</span><br>";
+		$vlog = "<span class='red'>錯誤：選擇了無效的道具屬性{$sk}。</span><br>";
 		return $vlog;
 	}
 	return;
@@ -239,7 +239,7 @@ function edit_vn_mixilst($varr,$t)
 	$lock_file = GAME_ROOT.'./gamedata/bak/vnmix2.lock';
 	if(file_exists($lock_file))
 	{
-		return '有其他管理员正在进行编辑操作，请稍等一会儿再试！';
+		return '有其他管理員正在進行編輯操作，請稍等一會兒再試！';
 	}
 	else
 	{
@@ -253,7 +253,7 @@ function edit_vn_mixilst($varr,$t)
 		}
 		else
 		{
-			return '合成配方文件不存在！不能进行编辑操作。';
+			return '合成配方文件不存在！不能進行編輯操作。';
 		}
 	}
 

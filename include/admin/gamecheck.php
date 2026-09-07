@@ -21,10 +21,10 @@ if($gamestate >= 20){
 	
 	adminlog('infomng');
 	
-	$cmd_info = "状态更新：激活人数 {$validnum},生存人数 {$alivenum},死亡人数 {$deathnum}<br>";
-	$cmd_info .= "已重置移动地点缓存数据<br>";
+	$cmd_info = "狀態更新：激活人數 {$validnum},生存人數 {$alivenum},死亡人數 {$deathnum}<br>";
+	$cmd_info .= "已重置移動地點緩存數據<br>";
 }else{
-	$cmd_info = "当前游戏未开始！<br>";
+	$cmd_info = "當前遊戲未開始！<br>";
 }
 
 # 暂时把房间人数自检放在这里
@@ -37,12 +37,12 @@ if(!empty($roomlist))
 		{
 			$join_nums = $db->num_rows($result);
 			$db->query("UPDATE {$gtablepre}game SET groomnums = {$join_nums} WHERE groomid = {$rkey}");
-			$cmd_info .= "房间 {$rkey} 状态更新：房间内人数 {$join_nums}<br>";
+			$cmd_info .= "房間 {$rkey} 狀態更新：房間內人數 {$join_nums}<br>";
 		}
 		else 
 		{
 			$db->query("DELETE FROM {$gtablepre}game WHERE groomid = {$rkey}");
-			$cmd_info .= "房间 {$rkey} 无人参与：已关闭<br>";
+			$cmd_info .= "房間 {$rkey} 無人蔘與：已關閉<br>";
 		}
 	}
 }

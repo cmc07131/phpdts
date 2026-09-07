@@ -299,12 +299,12 @@ class dbstuff {
 	
 	function halt($message = '', $sql = '') {
 		header('Content-Type: text/HTML; charset=utf-8');
-		echo '数据库错误。请联系管理员。<br><br>';
-		echo '类错误信息：'.$message.'<br>';
-		if(!empty($sql)) echo 'SQL语句：'.$sql;
+		echo '數據庫錯誤。請聯繫管理員。<br><br>';
+		echo '類錯誤信息：'.$message.'<br>';
+		if(!empty($sql)) echo 'SQL語句：'.$sql;
 		echo '<br><br>';
 		$dberror = $this->errno().' '.$this->error();
-		echo '数据库错误提示：'.$dberror.'<br><br>';
+		echo '數據庫錯誤提示：'.$dberror.'<br><br>';
 		//echo '以下是stack dump<br>';
 		//var_export(debug_backtrace());
 		die();

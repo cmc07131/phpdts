@@ -72,7 +72,7 @@ function diceroll($dice){
         $wk += $rollRandomizer2;
         $wf += $rollRandomizer2;
         $wg += $rollRandomizer2;
-        $log .= "<span class=\"lime\">你对随机数大神的反叛令力量注入了你的身体！<br>";
+        $log .= "<span class=\"lime\">你對隨機數大神的反叛令力量注入了你的身體！<br>";
 
         // 确保 clbpara 是数组
         if(!is_array($clbpara)) {
@@ -112,12 +112,12 @@ function diceroll($dice){
         $wf -= $clbpara['traitorRoll'] * 3;
         $wg -= $clbpara['traitorRoll'] * 3;
         $power = $clbpara['traitorRoll'] * 26;
-        $log .= "<span class=\"lime\">你已经不再反叛随机数大神！随机数大神对你很失望！<br>你从反叛中获得的<span class=\"yellow\">$power</span>点力量都被夺走了！<br>";
+        $log .= "<span class=\"lime\">你已經不再反叛隨機數大神！隨機數大神對你很失望！<br>你從反叛中獲得的<span class=\"yellow\">$power</span>點力量都被奪走了！<br>";
         $clbpara['traitorRoll'] = 0;
     }
 
     if($nick == 69){
-        $log .= "<span class=\"lime\">你本次骰子的检定结果为：</span><span class=\"red\">$result</span>＼<span class=\"yellow\">$dice</span>！<br>";
+        $log .= "<span class=\"lime\">你本次骰子的檢定結果為：</span><span class=\"red\">$result</span>＼<span class=\"yellow\">$dice</span>！<br>";
     }
     //$log .= "【DEBUG】你本次骰子的检定结果为：<br><span class=\"red\">$result</span>＼<span class=\"yellow\">$dice</span>！<br>";
 

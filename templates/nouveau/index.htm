@@ -2,7 +2,7 @@
 <div class="nv-page nv-page--center">
     <section class="nv-window" id="nv-index-status" data-window-title="System">
         <div class="nv-window__titlebar">
-            <span class="nv-window__title">System Board / 系统看板</span>
+            <span class="nv-window__title">System Board / 系統看板</span>
             <span class="nv-window__actions"><button type="button" class="nv-window__action" data-window-minimize title="Minimize">_</button></span>
         </div>
         <div class="nv-window__body">
@@ -11,26 +11,26 @@
                 <dt>{lang now}</dt><dd>{lang gamedate}</dd>
                 <dt>{lang systemmsg}</dt><dd>$systemmsg</dd>
                 <dt>{lang gameinfo}</dt><dd>{lang numinfo}{$gstate[$gamestate]}</dd>
-                <dt>激活人数</dt><dd>$validnum</dd>
-                <dt>生存人数</dt><dd>$alivenum</dd>
-                <dt>死亡总数</dt><dd>$deathnum</dd>
+                <dt>激活人數</dt><dd>$validnum</dd>
+                <dt>生存人數</dt><dd>$alivenum</dd>
+                <dt>死亡總數</dt><dd>$deathnum</dd>
             </dl>
             <div style="margin-top:12px">
                 <!--{if $gamestate > 10 }-->
-                本局游戏已经进行 <span id="timing"></span><script type="text/javascript">updateTime($timing,1);</script><br>
-                <!--{if $hplayer}-->当前最高伤害 $hplayer ($hdamage)<br><!--{/if}-->
+                本局遊戲已經進行 <span id="timing"></span><script type="text/javascript">updateTime($timing,1);</script><br>
+                <!--{if $hplayer}-->當前最高傷害 $hplayer ($hdamage)<br><!--{/if}-->
                 <!--{else}-->
                 <!--{if $starttime > $now}-->
-                下局游戏开始于 <span id="timing"></span><script type="text/javascript">updateTime($timing,0);</script> 后<br>
+                下局遊戲開始於 <span id="timing"></span><script type="text/javascript">updateTime($timing,0);</script> 後<br>
                 <!--{else}-->
-                下局游戏开始时间 <span id="timing"></span>未定<br>
+                下局遊戲開始時間 <span id="timing"></span>未定<br>
                 <!--{/if}-->
-                <!--{if $hplayer}-->上局最高伤害 $hplayer ($hdamage)<br><!--{/if}-->
+                <!--{if $hplayer}-->上局最高傷害 $hplayer ($hdamage)<br><!--{/if}-->
                 <!--{/if}-->
                 <!--{if $groomid}-->
-                <span class="yellow">当前房间：{$groomid} 号</span>
+                <span class="yellow">當前房間：{$groomid} 號</span>
                 <!--{else}-->
-                上局结果：<span id="lastwin">$gwin[$winmode]</span><!--{if $winner}-->，优胜者：<span id="lastwinner">$winner</span><!--{/if}-->
+                上局結果：<span id="lastwin">$gwin[$winmode]</span><!--{if $winner}-->，優勝者：<span id="lastwinner">$winner</span><!--{/if}-->
                 <!--{/if}-->
             </div>
         </div>
@@ -38,7 +38,7 @@
 
     <section class="nv-window" id="nv-index-entry" data-window-title="Entry">
         <div class="nv-window__titlebar">
-            <span class="nv-window__title">Entry Gate / 进入游戏</span>
+            <span class="nv-window__title">Entry Gate / 進入遊戲</span>
             <span class="nv-window__actions"><button type="button" class="nv-window__action" data-window-minimize title="Minimize">_</button></span>
         </div>
         <div class="nv-window__body">
@@ -60,20 +60,20 @@
                 <input type="submit" name="enter" value="{lang login}">
             </form>
             <!--{/if}-->
-            <p class="nv-note">新手玩家或初次游玩玩家，务必先阅读 <a href="help.php">{lang help}</a>。</p>
+            <p class="nv-note">新手玩家或初次遊玩玩家，務必先閲讀 <a href="help.php">{lang help}</a>。</p>
         </div>
     </section>
 
     <section class="nv-window" id="nv-index-adminmsg" data-window-title="Message">
         <div class="nv-window__titlebar">
-            <span class="nv-window__title">Admin Message / 站长留言</span>
+            <span class="nv-window__title">Admin Message / 站長留言</span>
             <span class="nv-window__actions"><button type="button" class="nv-window__action" data-window-minimize title="Minimize">_</button></span>
         </div>
         <div class="nv-window__body nv-compat">
             $adminmsg
             <div style="margin-top:12px">
-                当前房间列表：
-                <input type="button" value="点击查看房间列表" onclick="showModalDialog($('roomlist'));">
+                當前房間列表：
+                <input type="button" value="點擊查看房間列表" onclick="showModalDialog($('roomlist'));">
                 {template roomlist}
             </div>
         </div>

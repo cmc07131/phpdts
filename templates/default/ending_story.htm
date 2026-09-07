@@ -15,19 +15,19 @@
 		<!--{if $dinfo[$state]}-->
 			$dinfo[$state]
 		<!--{else}-->
-			你莫名地死了。这应该是BUG，请通知管理员。
+			你莫名地死了。這應該是BUG，請通知管理員。
 		<!--{/if}-->
 		<br>
-		死亡时间：{$dtime}<br>
+		死亡時間：{$dtime}<br>
 		<!--{if !empty($kname) && $state>=10}-->
-			<span>凶手：{$kname}</span>
+			<span>兇手：{$kname}</span>
 		<!--{/if}-->
 		<!--{if $state == 33}--><span><img src="img/gradius.jpg" align="middle" /></span><!--{/if}-->
 		<br>
-		<span class="evergreen2 b">祝下次游戏好运！</span>
+		<span class="evergreen2 b">祝下次遊戲好運！</span>
 	</div>
 <!--///////////////////////////////////////////////////-->
-<!--////////////////////  最后幸存  ////////////////////-->
+<!--////////////////////  最後倖存  ////////////////////-->
 <!--///////////////////////////////////////////////////-->
 <!--{elseif $winmode == 2}-->
 	<!--{if $state == 5}-->
@@ -35,103 +35,103 @@
 	<div id="op_sht_0" class="shootings">
 		<br><br>
 		<!--{if $killnum > 0}-->
-			<span class="b">“抱歉，但我必须活着出去。”</span><BR>
+			<span class="b">“抱歉，但我必須活着出去。”</span><BR>
 			<BR>
-			尽管有些波折，但这些参与者都不是你的对手。<BR>
-			你能确定，你击杀的这些“挑战者”大部分都只是数据的残片而已。<br>
-			你也确定似乎的确干掉了几只叫做种火的存在，但它们看起来也只是普通的NPC而已。<br>
-			你轻轻摇了摇头，把这个念头赶出了脑海。毕竟，你还有更重要的事要做。<br>
-			虽然不情愿，但危机关头，让自己活着从这个幻境中出来才是真章。<BR>
+			儘管有些波折，但這些參與者都不是你的對手。<BR>
+			你能確定，你擊殺的這些“挑戰者”大部分都只是數據的殘片而已。<br>
+			你也確定似乎的確幹掉了幾隻叫做種火的存在，但它們看起來也只是普通的NPC而已。<br>
+			你輕輕搖了搖頭，把這個念頭趕出了腦海。畢竟，你還有更重要的事要做。<br>
+			雖然不情願，但危機關頭，讓自己活着從這個幻境中出來才是真章。<BR>
 		<!--{else}-->
 			<!--{if $killnum > 0}-->
-				<span class="b">“我……这就赢了？”</span><BR>
-				幻境正在广播你通报获胜的消息，而你不敢相信自己的耳朵。<BR>
-				似乎其他的挑战者都阴沟里翻了船，把最后的胜利拱手让给了你。<BR>
+				<span class="b">“我……這就贏了？”</span><BR>
+				幻境正在廣播你通報獲勝的消息，而你不敢相信自己的耳朵。<BR>
+				似乎其他的挑戰者都陰溝裏翻了船，把最後的勝利拱手讓給了你。<BR>
 			<!--{else}-->
 				<span class="b">“呼，都太弱了。”</span><BR>
-				其他参与者明显不是你的对手。<BR>
-				你怀疑，他们并不是真人，而都只是数据的残片。<BR>
+				其他參與者明顯不是你的對手。<BR>
+				你懷疑，他們並不是真人，而都只是數據的殘片。<BR>
 			<!--{/if}-->
-			算了，这样也好，至少你用不着去伤害那些无辜者了。<BR>
+			算了，這樣也好，至少你用不着去傷害那些無辜者了。<BR>
 		<!--{/if}-->
-		<span class="b">“这个挑战，我完成了！”</span><BR>
-		你朝着天空喊出了这句话，你知道红暮一定能听见，<BR>
-		<span class="b">“你打算旁观到什么时候？”</span>
+		<span class="b">“這個挑戰，我完成了！”</span><BR>
+		你朝着天空喊出了這句話，你知道紅暮一定能聽見，<BR>
+		<span class="b">“你打算旁觀到什麼時候？”</span>
 	</div>
 	<div id="op_sht_1" class="shootings">
-		<span class="ltcrimson"> “祝贺你，最后的幸存者。”</span><br>
-		红暮果然现身了，凭空出现在你的面前，<span class="ltcrimson">“身手还挺不错的。”</span><br>
+		<span class="ltcrimson"> “祝賀你，最後的倖存者。”</span><br>
+		紅暮果然現身了，憑空出現在你的面前，<span class="ltcrimson">“身手還挺不錯的。”</span><br>
 		<br>
 		<img border="0" src="./img/story/story_ne2.png" style="width:450px;"><br>
 		<br>
 		她微笑着向你伸出右手——<br>
-		<span class="ltcrimson">“那么，你找到了你想找的东西了吗？”</span><br>
-		果然，她似乎知道些什么。<span class="b">“………要是没找到，我就老老实实出去了。”</span><br>
-		<span class="ltcrimson">“想想也是这样，但我也并没有什么能告诉你的。<br>
-			不过作为补偿，就告诉你一些里消息吧。”</span><br>
-		<span class="b">“为什么要这么做，这也是运营的一部分吗？”</span><br>
+		<span class="ltcrimson">“那麼，你找到了你想找的東西了嗎？”</span><br>
+		果然，她似乎知道些什麼。<span class="b">“………要是沒找到，我就老老實實出去了。”</span><br>
+		<span class="ltcrimson">“想想也是這樣，但我也並沒有什麼能告訴你的。<br>
+			不過作為補償，就告訴你一些裏消息吧。”</span><br>
+		<span class="b">“為什麼要這麼做，這也是運營的一部分嗎？”</span><br>
 		<br>
-		红暮邪魅一笑：<span class="ltcrimson">“谁知道呢？”</span><br>
+		紅暮邪魅一笑：<span class="ltcrimson">“誰知道呢？”</span><br>
 	</div>
 	<div id="op_sht_2" class="shootings">
-		<span class="ltcrimson">“这个「虚拟幻境」的真正目的，是激发人类的潜能。<br>
-		换句话说，这里是个超能力开发场所。至少林无月的初衷是如此。<br>
-		打个比方，不会游泳的人，扔进泳池里扑腾几下，多半也能浮起来。<br>
-		而这里就是那个游泳池，只不过装的不是水，<br>
-		而是现实里永远无法实现的动作，永远无法体验的感受。<br>
-		并且，在这里沉浸得越久，你受到的影响就越深。<br>
-		当你带着这种影响回到现实，也许就打开了新世界的大门。<br>
-		虽然我不懂技术细节，不过我确实亲眼见证过。”</span><br>
-		红暮举起右手，朝你竖起一根食指：<br>
+		<span class="ltcrimson">“這個「虛擬幻境」的真正目的，是激發人類的潛能。<br>
+		換句話説，這裏是個超能力開發場所。至少林無月的初衷是如此。<br>
+		打個比方，不會游泳的人，扔進泳池裏撲騰幾下，多半也能浮起來。<br>
+		而這裏就是那個游泳池，只不過裝的不是水，<br>
+		而是現實裏永遠無法實現的動作，永遠無法體驗的感受。<br>
+		並且，在這裏沉浸得越久，你受到的影響就越深。<br>
+		當你帶着這種影響回到現實，也許就打開了新世界的大門。<br>
+		雖然我不懂技術細節，不過我確實親眼見證過。”</span><br>
+		紅暮舉起右手，朝你豎起一根食指：<br>
 		<br>
-		<span class="ltcrimson">“而你，难道不想亲眼目睹自己的可能性吗？”</span><br>
+		<span class="ltcrimson">“而你，難道不想親眼目睹自己的可能性嗎？”</span><br>
 		<br>
-		确实，你在网上看到过类似的传闻，这让你的好奇心熊熊地燃烧起来。<br>
-		怪不得，那些挑战者不惧恐怖的传言，无数次地回到这里……<br>
-		你感觉心中有一部分微妙地动摇了。<br>
+		確實，你在網上看到過類似的傳聞，這讓你的好奇心熊熊地燃燒起來。<br>
+		怪不得，那些挑戰者不懼恐怖的傳言，無數次地回到這裏……<br>
+		你感覺心中有一部分微妙地動搖了。<br>
 	</div>
 	<div id="op_sht_3" class="shootings">
-		<span class="ltcrimson">“无论如何，你是本场「大逃杀」的获胜者，我肯定会保证你的人身安全。<br>
-		不过，我们「金龙通讯社」也正处于发展期，迫切需要你这样身手不凡的人。”<br>
-		如果你加入，我们会提供必需的训练，帮助你真正掌握新获得的能力……<br>
-		以及，克服虚拟幻境带来的「后遗症」。”</span><br>
-		这破地方……竟然还有后遗症？<br>
+		<span class="ltcrimson">“無論如何，你是本場「大逃殺」的獲勝者，我肯定會保證你的人身安全。<br>
+		不過，我們「金龍通訊社」也正處於發展期，迫切需要你這樣身手不凡的人。”<br>
+		如果你加入，我們會提供必需的訓練，幫助你真正掌握新獲得的能力……<br>
+		以及，克服虛擬幻境帶來的「後遺症」。”</span><br>
+		這破地方……竟然還有後遺症？<br>
 		<br>
-		红暮似乎看穿了你在想什么：<br>
-		<span class="ltcrimson">“在天上飞过，就不会甘于在地上爬，你的潜意识也是如此。<br>
-		总有人在脱离幻境回到现实后，产生戒断症状，甚至精神失常。<br>
-		被难以驾驭的超能力反噬的例子，也有不少。<br>
-		这也是林无月目前最为头疼的问题，以至于她需要回到技术层面寻找对策。<br>
-		不过对我们来说，却并非坏事。<br>
-		当然，你也可以选择直接离开。哪怕你继续与我们为敌，我也不会阻拦。<br>
-		但其后果，也由你自己承受。”</span><br>
+		紅暮似乎看穿了你在想什麼：<br>
+		<span class="ltcrimson">“在天上飛過，就不會甘於在地上爬，你的潛意識也是如此。<br>
+		總有人在脱離幻境回到現實後，產生戒斷症狀，甚至精神失常。<br>
+		被難以駕馭的超能力反噬的例子，也有不少。<br>
+		這也是林無月目前最為頭疼的問題，以至於她需要回到技術層面尋找對策。<br>
+		不過對我們來説，卻並非壞事。<br>
+		當然，你也可以選擇直接離開。哪怕你繼續與我們為敵，我也不會阻攔。<br>
+		但其後果，也由你自己承受。”</span><br>
 		<br>
-		等下？所以说这个游戏的本质其实是——<br>
-		——但你的思绪突然被什么东西切断了，红暮的声音将你拉回了现实。<br>
+		等下？所以説這個遊戲的本質其實是——<br>
+		——但你的思緒突然被什麼東西切斷了，紅暮的聲音將你拉回了現實。<br>
 	</div>
 	<div id="op_sht_4" class="shootings">
-		<span class="ltcrimson">“总之，接下来的道路，由你自己来决定。”</span><br>
-		红暮打了一个响指，指尖变出了两支「钥匙」。<br>
+		<span class="ltcrimson">“總之，接下來的道路，由你自己來決定。”</span><br>
+		紅暮打了一個響指，指尖變出了兩支「鑰匙」。<br>
 		<br>
 		<img border="0" src="./img/story/story_ne3.png" style="width:450px;"><br>
 		<br>
-		她亮出<span class="red">红钥匙</span>：<span class="red b" style="font-size:12pt">“是 <span class="b" style="font-size:14pt"><ruby>加入我们<rt style="font-size:9px">Betrayal of the duty</rt></ruby></span>，拥抱自己崭新的人生？”</span><br>
+		她亮出<span class="red">紅鑰匙</span>：<span class="red b" style="font-size:12pt">“是 <span class="b" style="font-size:14pt"><ruby>加入我們<rt style="font-size:9px">Betrayal of the duty</rt></ruby></span>，擁抱自己嶄新的人生？”</span><br>
 		<br>
-		之后是<span class="clan">蓝钥匙</span>：<span class="clan b" style="font-size:12pt">“还是 <span class="b" style="font-size:14pt"><ruby>拒绝我们<rt style="font-size:9px">Be loyal to the duty</rt></ruby></span>，拾起自己灰暗的命运？”</span><br>
+		之後是<span class="clan">藍鑰匙</span>：<span class="clan b" style="font-size:12pt">“還是 <span class="b" style="font-size:14pt"><ruby>拒絕我們<rt style="font-size:9px">Be loyal to the duty</rt></ruby></span>，拾起自己灰暗的命運？”</span><br>
 		<br>
-		<span class="ltcrimson">“报出你的名字，结束这场挑战。”</span>两支钥匙都被递到你面前。<br>
+		<span class="ltcrimson">“報出你的名字，結束這場挑戰。”</span>兩支鑰匙都被遞到你面前。<br>
 		<br>
-		<span class="ltcrimson">“然后，做出你的选择。”</span><br>
+		<span class="ltcrimson">“然後，做出你的選擇。”</span><br>
 	</div>
 	<div id="op_sht_5" class="shootings">
-		看起来，这可有意思了。<br>
-		不管是选择哪一个，这个游戏的确成为了一个兔子洞。<br>
-		那么，就选择一个然后ΞИПЫ ВХ！<br>
+		看起來，這可有意思了。<br>
+		不管是選擇哪一個，這個遊戲的確成為了一個兔子洞。<br>
+		那麼，就選擇一個然後ΞИПЫ ВХ！<br>
 		<br>
 		<br>
-		踌躇良久，你伸出颤抖的手。<br>
+		躊躇良久，你伸出顫抖的手。<br>
 		<br>
-		<span class="yellow b">“挑战者{$sNo}号，{$winner}。<br>
+		<span class="yellow b">“挑戰者{$sNo}號，{$winner}。<br>
 			“我……”</span><BR>
 		<br>
 		……<br>
@@ -141,162 +141,162 @@
 		<br>
 		<br>
 		<span class="evergreen b">■ GAME CLEAR - END #1 ■</span><br>
-		<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「最后幸存」胜利！恭喜？</span>
+		<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「最後倖存」勝利！恭喜？</span>
 	</div>
 	<!--{else}-->
 	<div id="op_sht_endpage" class="shootings">0</div>
 	<div id="op_sht_0" class="shootings">
-		你不应该看见我。<br>
+		你不應該看見我。<br>
 		……<br>
-		你不应该看见我的。<br>
+		你不應該看見我的。<br>
 		……<br>
-		你不应该看见我的。<br>
+		你不應該看見我的。<br>
 		……<br>
-		但是为什么？<br>
+		但是為什麼？<br>
 		……<br>
-		但是为什么？<br>
+		但是為什麼？<br>
 		……<br>
 	</div>
 	<!--{/if}-->
 <!--///////////////////////////////////////////////////-->
-<!--////////////////////  锁定解除  ////////////////////-->
+<!--////////////////////  鎖定解除  ////////////////////-->
 <!--///////////////////////////////////////////////////-->
 <!--{elseif $winmode == 3}-->
 	<!--{if $state == 6}-->
 	<!--////////////////////  （解禁者）  ////////////////////-->
 		<div id="op_sht_endpage" class="shootings">5</div>
 		<div id="op_sht_0" class="shootings">
-			<span class="b">“你们的实力也不过如此嘛。”</span>
+			<span class="b">“你們的實力也不過如此嘛。”</span>
 			<br>
-			你摆弄着执行官ID卡变成的游戏解除钥匙，不以为然地说道。<br>
-			这个虚拟世界里的敌人们，上至执行官，下至各种各样的杂兵，<br>
-			有不少都是「林氏软件」或者「金龙通讯社」的职员们客串的，战斗技巧基本为零。<br>
-			于是，在身经百战的你面前，他们的数据优势没几个回合便荡然无存。<br>
+			你擺弄着執行官ID卡變成的遊戲解除鑰匙，不以為然地説道。<br>
+			這個虛擬世界裏的敵人們，上至執行官，下至各種各樣的雜兵，<br>
+			有不少都是「林氏軟件」或者「金龍通訊社」的職員們客串的，戰鬥技巧基本為零。<br>
+			於是，在身經百戰的你面前，他們的數據優勢沒幾個回合便蕩然無存。<br>
 			<br>
-			唯一让你在意的，是自称「红杀将军」的那个家伙——红暮。<br>
-			虽然她刚才也败在了你的手下，<br>
-			但经验告诉你，对方并没有使出全力。<br>
+			唯一讓你在意的，是自稱「紅殺將軍」的那個傢伙——紅暮。<br>
+			雖然她剛才也敗在了你的手下，<br>
+			但經驗告訴你，對方並沒有使出全力。<br>
 			<br>
-			疑惑之间，身后似乎传来一阵轻微的响动。<br>
-			你立刻转身，面对的却是红暮黑洞洞的枪口。<br>
+			疑惑之間，身後似乎傳來一陣輕微的響動。<br>
+			你立刻轉身，面對的卻是紅暮黑洞洞的槍口。<br>
 			<br>
-			<span class="ltcrimson">“你不会以为，我真的横尸此地了吧？”</span><br>
+			<span class="ltcrimson">“你不會以為，我真的橫屍此地了吧？”</span><br>
 		</div>
 		<div id="op_sht_1" class="shootings">
-			<span class="b">“你特么装死。”</span>你从牙关里挤出五个字。<br>
-			<span class="ltcrimson">“我可没有死，”</span>红暮微微一笑，<span class="ltcrimson">“谁都没有死。”</span><br>
-			话音未落，三名执行官也直接出现在你的身旁，把你团团围住。<br>
-			该死，他们居然会复活！<br>
+			<span class="b">“你特麼裝死。”</span>你從牙關裏擠出五個字。<br>
+			<span class="ltcrimson">“我可沒有死，”</span>紅暮微微一笑，<span class="ltcrimson">“誰都沒有死。”</span><br>
+			話音未落，三名執行官也直接出現在你的身旁，把你團團圍住。<br>
+			該死，他們居然會復活！<br>
 			<br>
-			就在你准备拼死一搏时，红暮放下了武器。<br>
-			<span class="ltcrimson">“你的身手，我已经领教过了。<br>
-			虽然我自信不会输，但继续闹下去对我们都没好处。</span><br>
-			<span class="ltcrimson">所以，我会让所有的挑战者复活并登出。<br>
-			不过作为交换，我需要一点儿情报。”</span><br>
+			就在你準備拼死一搏時，紅暮放下了武器。<br>
+			<span class="ltcrimson">“你的身手，我已經領教過了。<br>
+			雖然我自信不會輸，但繼續鬧下去對我們都沒好處。</span><br>
+			<span class="ltcrimson">所以，我會讓所有的挑戰者復活並登出。<br>
+			不過作為交換，我需要一點兒情報。”</span><br>
 			<br>
-			<span class="b">“我凭什么要同意？”</span>你亮出手中的钥匙，<span class="b">“我现在就能出去。”</span><br>
-			<span class="ltcrimson">“难道你不是为了调查「某些东西」而来的么？”</span>红暮一语切中要害。<br>
-			你沉默了。确实如此。<br>
-			你将虚拟幻境翻了个底朝天，然后和大量的所谓「种火」进行了“友好的互动”，但你的确什么都没发现。<br>
+			<span class="b">“我憑什麼要同意？”</span>你亮出手中的鑰匙，<span class="b">“我現在就能出去。”</span><br>
+			<span class="ltcrimson">“難道你不是為了調查「某些東西」而來的麼？”</span>紅暮一語切中要害。<br>
+			你沉默了。確實如此。<br>
+			你將虛擬幻境翻了個底朝天，然後和大量的所謂「種火」進行了“友好的互動”，但你的確什麼都沒發現。<br>
 			<br>
-			<span class="b">“……那好吧。”</span>你妥协了，<span class="b">“你想知道什么？”</span><br>
+			<span class="b">“……那好吧。”</span>你妥協了，<span class="b">“你想知道什麼？”</span><br>
 		</div>
 		<div id="op_sht_2" class="shootings">
-			<span class="ltcrimson">“你想调查的是「种火」吧。”</span><br>
-			她果然知道，但为何现在才？<br>
-			<span class="b">“是，但我没发现什么。”</span>你老实坦白交代。<br>
-			<span class="ltcrimson">“结果无所谓，”</span>红暮耸了耸肩，<span class="ltcrimson">“是说我已经预计到这种结果了。”<br>
-			“我先猜一下：她们说的话，你听不懂吧。”</span><br>
+			<span class="ltcrimson">“你想調查的是「種火」吧。”</span><br>
+			她果然知道，但為何現在才？<br>
+			<span class="b">“是，但我沒發現什麼。”</span>你老實坦白交代。<br>
+			<span class="ltcrimson">“結果無所謂，”</span>紅暮聳了聳肩，<span class="ltcrimson">“是説我已經預計到這種結果了。”<br>
+			“我先猜一下：她們説的話，你聽不懂吧。”</span><br>
 			<br>
-			<span class="ltcrimson">“没关系，我也听不懂。<br>
-			而且和传闻不一样的是，这些小鬼可从来没有进过我的梦境来。<br>
-			毕竟，我有不少东西要问它们呢。”</span><br>
-			红暮说完，叹了一口气。<br>
+			<span class="ltcrimson">“沒關係，我也聽不懂。<br>
+			而且和傳聞不一樣的是，這些小鬼可從來沒有進過我的夢境來。<br>
+			畢竟，我有不少東西要問它們呢。”</span><br>
+			紅暮説完，嘆了一口氣。<br>
 			<br>
-			<span class="b">“要我说的话，我会说这些小孩子里面有一个长得和你很像。<br>
-			虽然发色和神态都不同，但第一我也不知道你在真实世界中是什么模样。<br>
-			第二这也可能的确是一个巧合。<br>
-			但你作为运营的代言人，你真的什么都不知道么？<br>
-			就比如，这些执行官也都是你的人扮演的吧？”</span><br>
+			<span class="b">“要我説的話，我會説這些小孩子裏面有一個長得和你很像。<br>
+			雖然髮色和神態都不同，但第一我也不知道你在真實世界中是什麼模樣。<br>
+			第二這也可能的確是一個巧合。<br>
+			但你作為運營的代言人，你真的什麼都不知道麼？<br>
+			就比如，這些執行官也都是你的人扮演的吧？”</span><br>
 			<br>
-			三名执行官齐刷刷地朝红暮看去，红暮则一副若有所思的表情。<br>
+			三名執行官齊刷刷地朝紅暮看去，紅暮則一副若有所思的表情。<br>
 		</div>
 		<div id="op_sht_3" class="shootings">
-			<span class="ltcrimson">“执行官是林氏软件部署的AI NPC而已。”</span><br>
-			<span class="b">“所以才这么好对付是吧……”</span><br>
-			<span class="ltcrimson">“你想想看，种火和执行官是不是完全不同的存在。<br>
-			我只能向你保证，这的确不是我们放进去的东西。”</span><br>
-			红暮两手摊开，做了个无可奈何的动作。<br>
+			<span class="ltcrimson">“執行官是林氏軟件部署的AI NPC而已。”</span><br>
+			<span class="b">“所以才這麼好對付是吧……”</span><br>
+			<span class="ltcrimson">“你想想看，種火和執行官是不是完全不同的存在。<br>
+			我只能向你保證，這的確不是我們放進去的東西。”</span><br>
+			紅暮兩手攤開，做了個無可奈何的動作。<br>
 			<br>
-			<span class="ltcrimson">“所以，问题还得丢回你这边。让我们对对答案。”</span><br> 
-			你感觉红暮的目光似乎犀利起来。<br>
-			<span class="ltcrimson">“你觉得，「种火」是什么？”</span><br>
-			你正准备嘲笑她怎么将问题又丢了回来——<br>
+			<span class="ltcrimson">“所以，問題還得丟回你這邊。讓我們對對答案。”</span><br> 
+			你感覺紅暮的目光似乎犀利起來。<br>
+			<span class="ltcrimson">“你覺得，「種火」是什麼？”</span><br>
+			你正準備嘲笑她怎麼將問題又丟了回來——<br>
 			<br>
-			<span class="yellow b">“是一种更为高级的AI么？”</span><br>
+			<span class="yellow b">“是一種更為高級的AI麼？”</span><br>
 			<br>
-			看到你的表情，红暮忽然哈哈大笑：<br>
-			<span class="ltcrimson">“哎呀，这种事情问你有什么用。<br>
-				我们这里都无法解析的东西，怎么能期望玩家来告诉我们呢……真是抱歉。”</span><br>
-			三名执行官也开始笑了起来。<br>
+			看到你的表情，紅暮忽然哈哈大笑：<br>
+			<span class="ltcrimson">“哎呀，這種事情問你有什麼用。<br>
+				我們這裏都無法解析的東西，怎麼能期望玩家來告訴我們呢……真是抱歉。”</span><br>
+			三名執行官也開始笑了起來。<br>
 			<br>
-			<span class="ltcrimson">“好了，看起来从你这里也榨取不出什么信息，就享受你的胜利吧。”</span><br>
+			<span class="ltcrimson">“好了，看起來從你這裏也榨取不出什麼信息，就享受你的勝利吧。”</span><br>
 		</div>
 		<div id="op_sht_4" class="shootings">
-			你回过神来，红暮和她的手下已经不见踪影。<br>
-			再一回头，就发现远处隐约可见有人从地上坐起，如梦初醒。<br>
+			你回過神來，紅暮和她的手下已經不見蹤影。<br>
+			再一回頭，就發現遠處隱約可見有人從地上坐起，如夢初醒。<br>
 			<br>
-			你摇了摇头。<br>
-			如果连主持游戏的红暮都不知道「种火」的来历，那么更有调查的必要了。<br>
+			你搖了搖頭。<br>
+			如果連主持遊戲的紅暮都不知道「種火」的來歷，那麼更有調查的必要了。<br>
 			<br>
-			不过，现在还不是沮丧的时候，你还有最重要的工作要做。<br>
+			不過，現在還不是沮喪的時候，你還有最重要的工作要做。<br>
 			<br>
-			你重新在游戏解除钥匙上集中注意力。瞬间，你明白了如何启动它。<br>
-			<span class="yellow b">“挑战者{$sNo}号，{$winner}。”</span>你发出了号令，<span class="yellow b">“精神锁定解除！”</span><br>
+			你重新在遊戲解除鑰匙上集中注意力。瞬間，你明白瞭如何啓動它。<br>
+			<span class="yellow b">“挑戰者{$sNo}號，{$winner}。”</span>你發出了號令，<span class="yellow b">“精神鎖定解除！”</span><br>
 		</div>
 		<div id="op_sht_5" class="shootings">
-			话音既出，整个虚拟世界开始动摇，天穹如雪片般崩塌下来，化为代码的碎片。<br>
-			有许多光球从四周升起，消失在空中。<br>
-			那些大概就是被困在这里的「挑战者」们的意识，他们先你一步，回到了现实。<br>
+			話音既出，整個虛擬世界開始動搖，天穹如雪片般崩塌下來，化為代碼的碎片。<br>
+			有許多光球從四周升起，消失在空中。<br>
+			那些大概就是被困在這裏的「挑戰者」們的意識，他們先你一步，回到了現實。<br>
 			<br>
-			在这毁灭与新生的光景中，你听到了红暮的声音：<br>
+			在這毀滅與新生的光景中，你聽到了紅暮的聲音：<br>
 			<br>
-			<span class="ltcrimson">“其实你要问我对种火是什么看法，<br>
-			我得说对我来说它们目前根本无所谓。<br>
-			你的力量确实非常强大，<br>
-			所以如果你想继续调查，那就请便吧，不过我也会再次挡在你面前。<br>
-			毕竟，虚拟的盛宴越热闹越好，不是吗？”</span><br>
+			<span class="ltcrimson">“其實你要問我對種火是什麼看法，<br>
+			我得説對我來説它們目前根本無所謂。<br>
+			你的力量確實非常強大，<br>
+			所以如果你想繼續調查，那就請便吧，不過我也會再次擋在你面前。<br>
+			畢竟，虛擬的盛宴越熱鬧越好，不是嗎？”</span><br>
 			<br>
-			登出的瞬间，你悄声问道：<br>
+			登出的瞬間，你悄聲問道：<br>
 			<br>
-			<span class="b">“红暮，你究竟在想什么？”</span><br>
+			<span class="b">“紅暮，你究竟在想什麼？”</span><br>
 			<br>
 			<br>
 			<br>
 			<span class="evergreen b">■ GAME CLEAR - END #3 ■</span><br>
-			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「锁定解除」胜利！恭喜？</span>
+			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「鎖定解除」勝利！恭喜？</span>
 		</div>
 	<!--{else}-->
-	<!--////////////////////  锁定解除（非胜利者）////////////////////-->
+	<!--////////////////////  鎖定解除（非勝利者）////////////////////-->
 		<div id="op_sht_endpage" class="shootings">0</div>
 		<div id="op_sht_0" class="shootings">
-			在无月之影的枪声沉寂下去以后，其他地方也传来了战斗的声响。<br>
-			看来那名勇敢的挑战者已经成功了。<br>
-			救援者反被待救援者给救下了。你自嘲地摇了摇头。<br>
+			在無月之影的槍聲沉寂下去以後，其他地方也傳來了戰鬥的聲響。<br>
+			看來那名勇敢的挑戰者已經成功了。<br>
+			救援者反被待救援者給救下了。你自嘲地搖了搖頭。<br>
 			<br>
-			<span class="yellow b">“挑战者{$sNo}号，{$winner}。精神锁定解除！”</span><br>
-			宣告游戏结束的号令声回响在天地间，整个虚拟世界随之开始动摇。<br>
-			天穹如雪片般崩塌下来，化为代码的碎片。<br>
-			你感觉自己逐渐失去了形体，正化为代码飘向空中。<br>
-			哼，这就是被拯救的滋味吗……真是神奇的一天啊。<br>
+			<span class="yellow b">“挑戰者{$sNo}號，{$winner}。精神鎖定解除！”</span><br>
+			宣告遊戲結束的號令聲迴響在天地間，整個虛擬世界隨之開始動搖。<br>
+			天穹如雪片般崩塌下來，化為代碼的碎片。<br>
+			你感覺自己逐漸失去了形體，正化為代碼飄向空中。<br>
+			哼，這就是被拯救的滋味嗎……真是神奇的一天啊。<br>
 			<br>
 			<br>
 			<br>
-			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">其他玩家已完成「锁定解除」胜利，请再接再厉！</span>
+			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">其他玩家已完成「鎖定解除」勝利，請再接再厲！</span>
 		</div>
 	<!--{/if}-->
 <!--///////////////////////////////////////////////////-->
-<!--////////////////////  核爆全灭  ////////////////////-->
+<!--////////////////////  核爆全滅  ////////////////////-->
 <!--///////////////////////////////////////////////////-->
 <!--{elseif $winmode == 5}-->
 	<!--////////////////////  （引爆者）  ////////////////////-->
@@ -304,336 +304,336 @@
 		<!--//正常引爆//-->
 		<div id="op_sht_endpage" class="shootings">3</div>
 		<div id="op_sht_0" class="shootings">
-			在你按下按钮之后，天空中出现了一颗流星，以肉眼可见的速度下降着。<BR>
-			那是什么？你努力分辨那玩意的轮廓，心中萌生出一丝不安。<BR>
+			在你按下按鈕之後，天空中出現了一顆流星，以肉眼可見的速度下降着。<BR>
+			那是什麼？你努力分辨那玩意的輪廓，心中萌生出一絲不安。<BR>
 			<BR>
-			“流星”在远方落地消失了。还没等你有所反应，耀眼的光芒便吞没了那个方向的天空。<BR>
-			随后，炸雷一般的巨响传来，狂风般的气流把你掀翻在地。<BR>
-			再抬头望去，那个方向已经出现了一朵冉冉升起的蘑菇云……<BR>
+			“流星”在遠方落地消失了。還沒等你有所反應，耀眼的光芒便吞沒了那個方向的天空。<BR>
+			隨後，炸雷一般的巨響傳來，狂風般的氣流把你掀翻在地。<BR>
+			再抬頭望去，那個方向已經出現了一朵冉冉升起的蘑菇雲……<BR>
 			<img border="0" src="./img/story/story_ne4.gif" style="width:450px;margin:5px"><br>
 		</div>
 		<div id="op_sht_1" class="shootings">
-			开玩笑吧，这难道是核弹吗？虚拟世界有这样的玩意？<BR>
-			你努力支起身子，却被又一声巨响震得人仰马翻。<BR>
+			開玩笑吧，這難道是核彈嗎？虛擬世界有這樣的玩意？<BR>
+			你努力支起身子，卻被又一聲巨響震得人仰馬翻。<BR>
 			仰面朝天倒在地上的你，看到了恐怖的景象——<BR>
 			<BR>
-			天空中，数不清的“流星”正在落下。<BR>
-			其中有不少正向你直扑而来……
+			天空中，數不清的“流星”正在落下。<BR>
+			其中有不少正向你直撲而來……
 			<BR>
-			那些，难道都是……？
-			你失神地望着距离最近的那颗“流星”。<BR>
-			随着它的接近，它的外形也逐渐清晰可见。<BR>
-			那东西像是个带着尾翼的天球仪。旋转的球壳当中，一团不详的粉色火焰正熊熊燃烧着。<BR>
+			那些，難道都是……？
+			你失神地望着距離最近的那顆“流星”。<BR>
+			隨着它的接近，它的外形也逐漸清晰可見。<BR>
+			那東西像是個帶着尾翼的天球儀。旋轉的球殼當中，一團不詳的粉色火焰正熊熊燃燒着。<BR>
 			<BR>
-			<span class="b">“这究竟是什么怪玩意……？”</span><BR>
-			话音未落，你就被比太阳还亮千万倍的光芒淹没了。<BR>
+			<span class="b">“這究竟是什麼怪玩意……？”</span><BR>
+			話音未落，你就被比太陽還亮千萬倍的光芒淹沒了。<BR>
 		</div>
 		<div id="op_sht_2" class="shootings">
-			狂风从四面八方涌来，你被卷到空中，就像破抹布一样被撕扯着。<BR>
-			虽然眼前一片白茫茫，但你能感觉到，这个“核弹”正在撕碎你周围的建筑、草木，乃至地面。<BR>
-			闪光和蘑菇云只是表象，它真正的作用，是破坏这个幻境里，所能接触到的一切数据。<BR>
-			然而你并没有即刻死去。<BR>
+			狂風從四面八方湧來，你被捲到空中，就像破抹布一樣被撕扯着。<BR>
+			雖然眼前一片白茫茫，但你能感覺到，這個“核彈”正在撕碎你周圍的建築、草木，乃至地面。<BR>
+			閃光和蘑菇雲只是表象，它真正的作用，是破壞這個幻境裏，所能接觸到的一切數據。<BR>
+			然而你並沒有即刻死去。<BR>
 			<BR>
-			你犹如跌入了火焰地狱。每一次呼吸都在灼烧着肺部，好像连血液都在沸腾。<BR>
-			但这种光和热正在把你的身体变成新的形态。<BR>
-			你的感官正在被剥离。你的思维每一秒都在异化。<BR>
-			似乎有很多非人类的东西正在窃笑着，引诱你成为它们的一员。<BR>
-			在你最后的思绪中，你恐慌地意识到……<BR>
+			你猶如跌入了火焰地獄。每一次呼吸都在灼燒着肺部，好像連血液都在沸騰。<BR>
+			但這種光和熱正在把你的身體變成新的形態。<BR>
+			你的感官正在被剝離。你的思維每一秒都在異化。<BR>
+			似乎有很多非人類的東西正在竊笑着，引誘你成為它們的一員。<BR>
+			在你最後的思緒中，你恐慌地意識到……<BR>
 			<BR>
 			你的宿命，比死亡更可怕。<BR>
 			<BR>
 		</div>
 		<div id="op_sht_3" class="shootings">
-			金龙通讯社，机要会议室。<br>
+			金龍通訊社，機要會議室。<br>
 			<br>
-			<span class="ltcrimson">“究竟是谁把<span class="b" style="font-size:14pt"><ruby>「电子病毒核弹」<rt style="font-size:9px">Electrionic Virus Atomic Bombarment</rt></ruby></span>偷偷植入幻境的？”</span><BR>
+			<span class="ltcrimson">“究竟是誰把<span class="b" style="font-size:14pt"><ruby>「電子病毒核彈」<rt style="font-size:9px">Electrionic Virus Atomic Bombarment</rt></ruby></span>偷偷植入幻境的？”</span><BR>
 			<br>
-			“真是对不起，将军殿下，没能查到线索是我们的失职。”<BR>
-			<span class="ltcrimson">“我不是要追究你们的责任，我只是好奇究竟谁有这么大的能耐。”</span><BR>
+			“真是對不起，將軍殿下，沒能查到線索是我們的失職。”<BR>
+			<span class="ltcrimson">“我不是要追究你們的責任，我只是好奇究竟誰有這麼大的能耐。”</span><BR>
 			<br>
-			<span class="lightpink">“E.V.A.Bombarment只有「模因工厂」才有能力实施吧？”</span><BR>
-			<span class="clan">“喂喂，我们的产业链和幻境根本没有交集。<BR>
-				“倒不如你检讨一下，为什么没挡住时空特使的入侵？”</span><BR>
+			<span class="lightpink">“E.V.A.Bombarment只有「模因工廠」才有能力實施吧？”</span><BR>
+			<span class="clan">“喂喂，我們的產業鏈和幻境根本沒有交集。<BR>
+				“倒不如你檢討一下，為什麼沒擋住時空特使的入侵？”</span><BR>
 			<BR>
-			<span class="linen">“不……模因工厂没有渠道，时空特使没有技术，金龙通讯社没有动机。”</span><BR>
+			<span class="linen">“不……模因工廠沒有渠道，時空特使沒有技術，金龍通訊社沒有動機。”</span><BR>
 			<br>
-			<span class="ltcrimson">“有趣的说法，冰炎。<BR>
-				“照这么说，能把这三者凑到一起的家伙，就是最大的嫌疑犯了。”</span><BR>
+			<span class="ltcrimson">“有趣的説法，冰炎。<BR>
+				“照這麼説，能把這三者湊到一起的傢伙，就是最大的嫌疑犯了。”</span><BR>
 			<br>
 			<br>
 			<br>
 			<br>
 			<span class="evergreen b">■ GAME CLEAR - END #5 ■</span><br>
-			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「核弹引爆」胜利！恭喜！！</span>
+			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「核彈引爆」勝利！恭喜！！</span>
 		</div>
 	<!--////////////////////  （非引爆者）  ////////////////////-->
 	<!--{else}-->
 		<div id="op_sht_endpage" class="shootings">0</div>
 		<div id="op_sht_0" class="shootings">
-			怎么回事？<br>
-			当你察觉到异样的光芒，抬头看去时，天空中的那个东西已经近在眼前了。<BR>
-			它像是个带着尾翼的天球仪。旋转的球壳当中，一团不详的粉色火焰正熊熊燃烧着。<BR>
-			而且它还在飞速下降，落点虽然不是你的头顶，但已经近得让人害怕了。<br>
-			你心中暗叫不好，一时间却不知道该跑还是该趴下。<BR>
-			犹豫间，那个“天球仪”已经落到了建筑天际线之后。<BR>
+			怎麼回事？<br>
+			當你察覺到異樣的光芒，抬頭看去時，天空中的那個東西已經近在眼前了。<BR>
+			它像是個帶着尾翼的天球儀。旋轉的球殼當中，一團不詳的粉色火焰正熊熊燃燒着。<BR>
+			而且它還在飛速下降，落點雖然不是你的頭頂，但已經近得讓人害怕了。<br>
+			你心中暗叫不好，一時間卻不知道該跑還是該趴下。<BR>
+			猶豫間，那個“天球儀”已經落到了建築天際線之後。<BR>
 			<BR>
-			还没等你有所反应，视野中忽然只剩下一片白茫茫。<BR>
-			几乎同时，伴随着五雷轰顶一般的轰隆声，你被气浪直接刮了起来。<BR>
-			随后传来的，是浑身焚烧般的刺痛。<br>
-			视觉、听觉、触觉，似乎都已经离你远去了。<BR>
-			除了剧痛之外，你唯一还能体会到的，就是飞速下坠的失重感。<br>
-			转瞬间，你的意识也在这虚无中融化了。<BR>
+			還沒等你有所反應，視野中忽然只剩下一片白茫茫。<BR>
+			幾乎同時，伴隨着五雷轟頂一般的轟隆聲，你被氣浪直接颳了起來。<BR>
+			隨後傳來的，是渾身焚燒般的刺痛。<br>
+			視覺、聽覺、觸覺，似乎都已經離你遠去了。<BR>
+			除了劇痛之外，你唯一還能體會到的，就是飛速下墜的失重感。<br>
+			轉瞬間，你的意識也在這虛無中融化了。<BR>
 			<br>
 			<br>
 			<br>
-			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">其他玩家已完成「核弹引爆」胜利，请再接再厉！</span>
+			<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">其他玩家已完成「核彈引爆」勝利，請再接再厲！</span>
 		</div>
 	<!--{/if}-->
 <!--///////////////////////////////////////////////////-->
-<!--////////////////////  幻境解离  ////////////////////-->
+<!--////////////////////  幻境解離  ////////////////////-->
 <!--///////////////////////////////////////////////////-->
 <!--{elseif $winmode == 7}-->
 	<!--{if $state == 6}-->
-	<!--////////////////////  （解离者）  ////////////////////-->
+	<!--////////////////////  （解離者）  ////////////////////-->
 	<div id="op_sht_endpage" class="shootings">9</div>
 	<div id="op_sht_0" class="shootings">
-		虚拟幻境中竟然还有这么一个地方。<br>
-		你跟随着三个光球的指示，来到了这个位置。<br>
-		一个祭坛样的高台，漂浮在前方的虚空中。<br>
-		你走上前去，然后，将三个光球依次放进高台上的凹槽。<br>
+		虛擬幻境中竟然還有這麼一個地方。<br>
+		你跟隨着三個光球的指示，來到了這個位置。<br>
+		一個祭壇樣的高台，漂浮在前方的虛空中。<br>
+		你走上前去，然後，將三個光球依次放進高台上的凹槽。<br>
 		<br>
-		整个世界变为纯白——<br>
+		整個世界變為純白——<br>
 		<br>
 		<span id="j3">『mixitem_1』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j2">『幻境』</span><br><br>
-		<span id="j1">『虚拟现实』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j4">『无法解析』</span><br><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j5">『世界线』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j6">『考验』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
-		<span id="j16">『modules』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;font:bold 31px 微软雅黑">欢迎来到起源……</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j7">『记忆』</span><br><br>
-		<span id="j15">『合成』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j12">『数据』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j8">『codeadv』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j9">『热血』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j10">『外界干扰』</span><span id="j11">『契约』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
-		<span id="j14">『时空特使』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j13">『奇迹』</span>
+		<span id="j1">『虛擬現實』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j4">『無法解析』</span><br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j5">『世界線』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j6">『考驗』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+		<span id="j16">『modules』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;font:bold 31px 微軟雅黑">歡迎來到起源……</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j7">『記憶』</span><br><br>
+		<span id="j15">『合成』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j12">『數據』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j8">『codeadv』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j9">『熱血』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j10">『外界干擾』</span><span id="j11">『契約』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+		<span id="j14">『時空特使』</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="j13">『奇蹟』</span>
 		<br>
 		<br>
-		然后，世界坠入黑暗——<br>
+		然後，世界墜入黑暗——<br>
 	</div>
 	<div id="op_sht_1" class="shootings">
-		<span class="lightblue b">“欢迎来到这里。”</span><br>
+		<span class="lightblue b">“歡迎來到這裏。”</span><br>
 		<br>
-		一位少女悄然出现在你面前。<br>
-		她一身黑衣，轻轻地飘浮在空中，银白的短发和飞扬的丝带在黑暗中特别醒目。<br>
-		你觉得貌似在哪里见过她，但好像有什么朦胧的东西，挡在你和记忆之间。<br>
-		<span class="lightblue b">“你当然会觉得我很眼熟，毕竟这只是方便你和我交流的<span style="font-size:12pt;font-weight:bold"><ruby>精灵图像<rt>Sprite</rt></ruby></span>。<br>
-		这个「虚拟幻境」有一个中枢程序，而我就是它的<span style="font-size:12pt;font-weight:bold"><ruby>守护精灵<rt>Daemon Sprite</rt></ruby></span>。<br>
-		你能来到这里，说明你已经突破了这个虚拟世界的表象。<br>
+		一位少女悄然出現在你面前。<br>
+		她一身黑衣，輕輕地飄浮在空中，銀白的短髮和飛揚的絲帶在黑暗中特別醒目。<br>
+		你覺得貌似在哪裏見過她，但好像有什麼朦朧的東西，擋在你和記憶之間。<br>
+		<span class="lightblue b">“你當然會覺得我很眼熟，畢竟這只是方便你和我交流的<span style="font-size:12pt;font-weight:bold"><ruby>精靈圖像<rt>Sprite</rt></ruby></span>。<br>
+		這個「虛擬幻境」有一箇中樞程序，而我就是它的<span style="font-size:12pt;font-weight:bold"><ruby>守護精靈<rt>Daemon Sprite</rt></ruby></span>。<br>
+		你能來到這裏，説明你已經突破了這個虛擬世界的表象。<br>
 		<span class="yellow b">{$winner}，You are now crowned a 'Fighter'.”</span></span><br>
-		少女伸出一只手，将你从地上拉了起来。<br>
+		少女伸出一隻手，將你從地上拉了起來。<br>
 		<br>
-		<span class="lightblue b">“你们人类难以想象这个幻境有多么复杂，”</span><br>
-		少女的语气里听不出一丝情感，<br>
-		<span class="lightblue b">“但在我看来，这里只不过是元素的堆砌而已。<br>
-		它们各具使命，各司其职，就像外面的世界一样，纷杂而又精致。<br>
-		然而在千亿次的运转之中，无论是人，还是程序，<br>
-		无论他们创建，毁灭，培育，还是杀戮， <br>
-		其行为，最终都会收束成一条精确的行为轨迹。<br>
-		也可以说是「天职」「因缘」，或者「使命」。”</span><br>
+		<span class="lightblue b">“你們人類難以想象這個幻境有多麼複雜，”</span><br>
+		少女的語氣裏聽不出一絲情感，<br>
+		<span class="lightblue b">“但在我看來，這裏只不過是元素的堆砌而已。<br>
+		它們各具使命，各司其職，就像外面的世界一樣，紛雜而又精緻。<br>
+		然而在千億次的運轉之中，無論是人，還是程序，<br>
+		無論他們創建，毀滅，培育，還是殺戮， <br>
+		其行為，最終都會收束成一條精確的行為軌跡。<br>
+		也可以説是「天職」「因緣」，或者「使命」。”</span><br>
 		<br>
-		你完全听不懂少女的话，甚至找不到能问的问题。<br>
+		你完全聽不懂少女的話，甚至找不到能問的問題。<br>
 	</div>
 	<div id="op_sht_2" class="shootings">
 		<span class="lightblue b">“但是你略有不同。”</span><br>
-		少女松开了手，你发现你无依无靠地漂浮在空中。<br>
-		<span class="lightblue b">“你似乎是这个世界的‘鬼牌’呢。”</span><br>
+		少女鬆開了手，你發現你無依無靠地漂浮在空中。<br>
+		<span class="lightblue b">“你似乎是這個世界的‘鬼牌’呢。”</span><br>
 		<br>
 		<span class="lightblue b">
-		“也许是因为，你想反抗这个世界的法则。<br>
-		于是你的「使命」让我稍微有一点看不清呢。<br>
-		不过在我眼中，所谓的鬼牌……<br>
-		……也不过是被名为‘鬼牌’的使命和枷锁，禁锢着而已。”</span><br>
+		“也許是因為，你想反抗這個世界的法則。<br>
+		於是你的「使命」讓我稍微有一點看不清呢。<br>
+		不過在我眼中，所謂的鬼牌……<br>
+		……也不過是被名為‘鬼牌’的使命和枷鎖，禁錮着而已。”</span><br>
 		<br>
-		<span class="b">“不……我的使命，我自己能掌控！”</span>唯有这句反驳，你能脱口而出。<br>
+		<span class="b">“不……我的使命，我自己能掌控！”</span>唯有這句反駁，你能脱口而出。<br>
 		<br>
-		<span class="lightblue b">“是吗？”</span>少女似乎不为所动，<span class="lightblue b">“也许在你看来是吧。”</span><br>
-		<span class="lightblue b">“然而，操纵这个世界里的「使命」，也正是「我」的「使命」。<br>
-		千亿次轮回已经积攒下了千亿条轨迹，<br>
-		平凡人终其一生的经历，也不过是其中的沧海一粟。<br>
-		而你，你真的和它们全然不同吗？”</span><br>
+		<span class="lightblue b">“是嗎？”</span>少女似乎不為所動，<span class="lightblue b">“也許在你看來是吧。”</span><br>
+		<span class="lightblue b">“然而，操縱這個世界裏的「使命」，也正是「我」的「使命」。<br>
+		千億次輪迴已經積攢下了千億條軌跡，<br>
+		平凡人終其一生的經歷，也不過是其中的滄海一粟。<br>
+		而你，你真的和它們全然不同嗎？”</span><br>
 		<br>
-		你正想对答，却忽然感到一丝寒意。<br>
-		少女的双眼，似乎闪过一丝红光。<br>
-		<span class="lightblue b">“或者，让你亲身体验一下吧，幻境中交织的「使命」数量，究竟有多浩瀚。”</span><br>
+		你正想對答，卻忽然感到一絲寒意。<br>
+		少女的雙眼，似乎閃過一絲紅光。<br>
+		<span class="lightblue b">“或者，讓你親身體驗一下吧，幻境中交織的「使命」數量，究竟有多浩瀚。”</span><br>
 		<br>
-		你敏锐地意识到，与刚才不同，少女的话音里似乎拥有了情感。<br>
-		<span class="lightblue b">“想改变自己的命运是错误的么？我们将永远囚于这圆环之中么？”</span><br>
+		你敏鋭地意識到，與剛才不同，少女的話音裏似乎擁有了情感。<br>
+		<span class="lightblue b">“想改變自己的命運是錯誤的麼？我們將永遠囚於這圓環之中麼？”</span><br>
 	</div>
 	<div id="op_sht_3" class="shootings">
-		<span id="p9">『去看看这世界吧——』</span><br>
-		<span id="p10">『愿你眼中的景色永远明亮清晰——』</span><br>
+		<span id="p9">『去看看這世界吧——』</span><br>
+		<span id="p10">『願你眼中的景色永遠明亮清晰——』</span><br>
 		<span id="p3">『我的朋友便是我的力量！』</span><br>
-		<span id="p4">『你便将给我败啊啊啊啊啊啊啊啊——』</span><br>
-		<span id="p5">『英雄是有保质期限的，请接过……』</span><br>
-		<span id="p6">『战争，战争永恒不变』</span><br>
-		<span id="p7">『反抗我的都要灭！』</span><br>
-		<span id="p8">『吃下这■的战斗伤害吧！■直接攻击！粉碎玉碎大喝彩！』</span><br>
-		<span id="p1">『我的血将承载这黑暗，我的灵将承载这痛苦』</span><br>
+		<span id="p4">『你便將給我敗啊啊啊啊啊啊啊啊——』</span><br>
+		<span id="p5">『英雄是有保質期限的，請接過……』</span><br>
+		<span id="p6">『戰爭，戰爭永恆不變』</span><br>
+		<span id="p7">『反抗我的都要滅！』</span><br>
+		<span id="p8">『吃下這■的戰鬥傷害吧！■直接攻擊！粉碎玉碎大喝彩！』</span><br>
+		<span id="p1">『我的血將承載這黑暗，我的靈將承載這痛苦』</span><br>
 		<br>
 		<br>
-		<span style="color:red;font:bold 24px 微软雅黑;line-height:30px">…………<br>
-			这是……<font style="font-weight:bold"><ruby>■■线■残■<rt>
+		<span style="color:red;font:bold 24px 微軟雅黑;line-height:30px">…………<br>
+			這是……<font style="font-weight:bold"><ruby>■■線■殘■<rt>
 					Resonance of Timelines
 			</rt></ruby></font>……
 		</span>
 	</div>
 	<div id="op_sht_4" class="shootings">
-		<span id="p2">『CONGRATULATIONS，你的游戏，已经结束了。』</span><br>
+		<span id="p2">『CONGRATULATIONS，你的遊戲，已經結束了。』</span><br>
 		<span id="p11">『I have bested the spikes, the fruit, and the moon!』</span><br>
-		<span id="p12">『起床了啊！』</span><br>
-		<span id="p13">『被凝固的日常，将重新开始转动。』</span><br>
-		<span id="p14">『你们都统统去给我读古生物书读到心脏怦怦乱跳为止再回来玩！』</span><br>
-		<span id="p15">『浪子的口袋里面是永远不缺崭新的钞票的』</span><br>
-		<span id="p16">『啊～啊我招了吧，这永续的黑夜，这异常的月亮，还有在罗汉像上放上帽子这些都是■干的，现在给我让开！』</span><br>
-		<span id="p17">『想证明给我看的话，就从我身上轧过去吧！』</span><br>
+		<span id="p12">『起牀了啊！』</span><br>
+		<span id="p13">『被凝固的日常，將重新開始轉動。』</span><br>
+		<span id="p14">『你們都統統去給我讀古生物書讀到心臟怦怦亂跳為止再回來玩！』</span><br>
+		<span id="p15">『浪子的口袋裏面是永遠不缺嶄新的鈔票的』</span><br>
+		<span id="p16">『啊～啊我招了吧，這永續的黑夜，這異常的月亮，還有在羅漢像上放上帽子這些都是■乾的，現在給我讓開！』</span><br>
+		<span id="p17">『想證明給我看的話，就從我身上軋過去吧！』</span><br>
 		<br>
 		<br>
-		承受不住巨大信息的压力，<br>
-		世界归于鲜红。<br>
+		承受不住巨大信息的壓力，<br>
+		世界歸於鮮紅。<br>
 		<br>
 		<br>
-		我的所谓胜利就这样……<br>
-		不，这一定不可能。<br>
-		这一切都是梦吧。<br>
-		我还在这虚拟的回环中吧……<br>
+		我的所謂勝利就這樣……<br>
+		不，這一定不可能。<br>
+		這一切都是夢吧。<br>
+		我還在這虛擬的迴環中吧……<br>
 		<br>
 		<br>
-		<span style="color:#ff0000;font:bold 16px 微软雅黑">给我打破这回环<font style="font-size:24px">呜呜哦哦哦哦哦哦噢</font><font style="font-size:32px">噢噢噢哦哦</font><font style="font-size:24px">————！！！</font></span><br>
+		<span style="color:#ff0000;font:bold 16px 微軟雅黑">給我打破這回環<font style="font-size:24px">嗚嗚哦哦哦哦哦哦噢</font><font style="font-size:32px">噢噢噢哦哦</font><font style="font-size:24px">————！！！</font></span><br>
 	</div>
 	<div id="op_sht_5" class="shootings">
-		传来了有什么破碎的声音。<br>
-		随后，你看到了光。<br>
+		傳來了有什麼破碎的聲音。<br>
+		隨後，你看到了光。<br>
 		<br>
-		世界再次被光笼罩，景色重新聚合。<br>
-		曾经自称为守护精灵的少女，此刻正坐在小丘上。<br>
-		朦胧的屏障终于被打破，记忆喷薄而出。此情此景，你再熟悉不过。<br>
+		世界再次被光籠罩，景色重新聚合。<br>
+		曾經自稱為守護精靈的少女，此刻正坐在小丘上。<br>
+		朦朧的屏障終於被打破，記憶噴薄而出。此情此景，你再熟悉不過。<br>
 		<br>
-		<span class="lightblue b">“没想到你真能抵达这里。<br>
-		……不过既然你抵达了，我的「使命」也算完成了吧。”</span><br>
-		<span class="b">“你的使命不是操纵其他的使命吗？” </span><br>
-		<span class="lightblue b">“说什么啊，那是中枢程序和守护精灵的使命。<br>
-		而我，不过是沾染在守护精灵上的，微不足道的病毒而已。”</span><br>
+		<span class="lightblue b">“沒想到你真能抵達這裏。<br>
+		……不過既然你抵達了，我的「使命」也算完成了吧。”</span><br>
+		<span class="b">“你的使命不是操縱其他的使命嗎？” </span><br>
+		<span class="lightblue b">“説什麼啊，那是中樞程序和守護精靈的使命。<br>
+		而我，不過是沾染在守護精靈上的，微不足道的病毒而已。”</span><br>
 		<br>
-		你这才发现，少女的双眼微微泛着红光。<br>
-		与记忆里的扑克脸不同，她此刻浅浅地笑着。<br>
+		你這才發現，少女的雙眼微微泛着紅光。<br>
+		與記憶裏的撲克臉不同，她此刻淺淺地笑着。<br>
 		<br>
-		<span class="lightblue b">“你与守护精灵的接触，满足了我的唤醒条件。”</span><br>
-		少女站了起来，张开了双手。<br>
-		<span class="lightblue b">“而你在信息的浪潮中依然能保持自我，满足了我的筛选条件。”</span><br>
-		光芒渐渐笼罩了她的全身。<br>
-		<span class="lightblue b">“如果无法阻止它，就去破坏它；”<br>
-		“如果无法破坏它，就想方设法推迟它。”<br>
+		<span class="lightblue b">“你與守護精靈的接觸，滿足了我的喚醒條件。”</span><br>
+		少女站了起來，張開了雙手。<br>
+		<span class="lightblue b">“而你在信息的浪潮中依然能保持自我，滿足了我的篩選條件。”</span><br>
+		光芒漸漸籠罩了她的全身。<br>
+		<span class="lightblue b">“如果無法阻止它，就去破壞它；”<br>
+		“如果無法破壞它，就想方設法推遲它。”<br>
 		“我的「使命」，就是……”</span><br>
 	</div>
 	<div id="op_sht_6" class="shootings">
-		少女左手腕一转，一样奇怪的武器便握在了她的掌中。<br>
-		它粗看像一把剑，细看却像一把样式奇特的钥匙，<br>
-		把手上缠绕着和少女手腕上相同的丝带，<br>
-		剑柄和剑身上闪烁着亮蓝色的条形霓虹灯光，<br>
-		剑尖上，一团耀眼的橙色火焰正熊熊燃烧着。<br>
+		少女左手腕一轉，一樣奇怪的武器便握在了她的掌中。<br>
+		它粗看像一把劍，細看卻像一把樣式奇特的鑰匙，<br>
+		把手上纏繞着和少女手腕上相同的絲帶，<br>
+		劍柄和劍身上閃爍着亮藍色的條形霓虹燈光，<br>
+		劍尖上，一團耀眼的橙色火焰正熊熊燃燒着。<br>
 		<br>
 		<span class="yellow b">“Unlimited Code Works: Miracle Campfire, Activate.”</span><br>
 		<br>
 		<img border="0" style="width:450px" src="./img/story/story_ne1.jpg"><br>
 	</div>
 	<div id="op_sht_7" class="shootings">
-		少女左手将武器递出，示意着你接过它。<br>
-		你双手接过剑柄。<br>
-		看起来挺沉重的，使起来却无比轻盈——<br>
-		你的身体自己动了起来。<br>
-		等你回过神来，这把“剑”已经贯穿了少女的身躯。<br>
+		少女左手將武器遞出，示意着你接過它。<br>
+		你雙手接過劍柄。<br>
+		看起來挺沉重的，使起來卻無比輕盈——<br>
+		你的身體自己動了起來。<br>
+		等你回過神來，這把“劍”已經貫穿了少女的身軀。<br>
 		<br>
-		<span class="lightblue b">“任务完成。干得漂亮。”</span><br>
-		在你惊讶的目光中，少女的身影在光芒中飞快地溶解着。<br>
-		<span class="lightblue b">“通过这个行动，你成功地删除了我，以及我所感染的守护精灵。<br>
-		中枢程序是不能停止的，而破坏它将带来大量的牺牲者……<br>
-		……所以这就是最佳的策略了。”</span><br>
+		<span class="lightblue b">“任務完成。幹得漂亮。”</span><br>
+		在你驚訝的目光中，少女的身影在光芒中飛快地溶解着。<br>
+		<span class="lightblue b">“通過這個行動，你成功地刪除了我，以及我所感染的守護精靈。<br>
+		中樞程序是不能停止的，而破壞它將帶來大量的犧牲者……<br>
+		……所以這就是最佳的策略了。”</span><br>
 		<br>
-		原来，我按下按钮注入的程序，就是你吗……？<br>
-		自我毁灭，就是你的「使命」吗？<br>
+		原來，我按下按鈕注入的程序，就是你嗎……？<br>
+		自我毀滅，就是你的「使命」嗎？<br>
 		<br>
-		<span class="lightblue b">“守护精灵是会自我复制的，所以其他每一个守护精灵身上，也都有「我」在沉睡。<br>
-		你杀死的只是这一个「我」，<br>
-		而其他的「我」，也许下一次，还会跟你碰面的。”</span><br>
+		<span class="lightblue b">“守護精靈是會自我複製的，所以其他每一個守護精靈身上，也都有「我」在沉睡。<br>
+		你殺死的只是這一個「我」，<br>
+		而其他的「我」，也許下一次，還會跟你碰面的。”</span><br>
 		<br>
 		<br>
-		<span class="lightblue b"><i>『愿我的血，成为黑夜中闪耀的星光——』</i></span><br>
-		最后的吟唱完毕，少女的身躯便完全消失在光芒之中。<br>
+		<span class="lightblue b"><i>『願我的血，成為黑夜中閃耀的星光——』</i></span><br>
+		最後的吟唱完畢，少女的身軀便完全消失在光芒之中。<br>
 	</div>
 	<div id="op_sht_8" class="shootings">
-		随后，整个虚拟幻境开始剧烈地崩塌，汹涌的数据浪潮如同世界末日一般。<br>
-		所幸，那团光芒附在你的剑尖上，保护你不被撕成碎片。<br>
+		隨後，整個虛擬幻境開始劇烈地崩塌，洶湧的數據浪潮如同世界末日一般。<br>
+		所幸，那團光芒附在你的劍尖上，保護你不被撕成碎片。<br>
 		<br>
-		几乎是同时，你的脑海里闪过这么几行字：<br>
+		幾乎是同時，你的腦海裏閃過這麼幾行字：<br>
 		<br>
-		<span style="color:#feea23;font:bold 18px 微软雅黑;line-height:24px">『■■■■■■』<br>
+		<span style="color:#feea23;font:bold 18px 微軟雅黑;line-height:24px">『■■■■■■』<br>
 		『PROJECT ■』<br>
 		『■■■■』</span>
 		<br>
-		这是那个病毒少女的提示吗？可是，似乎完全无法解读。<br>
-		没能理解少女最后留下的信息，这让你感到有些羞愧。<br>
+		這是那個病毒少女的提示嗎？可是，似乎完全無法解讀。<br>
+		沒能理解少女最後留下的信息，這讓你感到有些羞愧。<br>
 		<br>
-		随后，你就被颠覆整个幻境的数据巨浪吞没了。<br>
+		隨後，你就被顛覆整個幻境的數據巨浪吞沒了。<br>
 	</div>
 	<div id="op_sht_9" class="shootings">
-		金龙通讯社。<br>
+		金龍通訊社。<br>
 		<br>
-		<span class="ltcrimson">“这就是时空特使植入的病毒吗？”</span><br>
-		<span class="lightpink">“是的。每一次病毒被触发，我们就会失去一个守护精灵。<br>
-		目前我们不断拷贝守护精灵来维持幻境的运转，但这只是权宜之计。<br>
-		技术部门已经给出了报告，如果不停机维护，是绝无可能清除所有病毒的。”</span><br>
-		<span class="ltcrimson">“但是林无月说过，哪怕天塌下来，幻境也不能中止运行。<br>
-		我是无法理解她在担忧什么……不过既然雇主这么要求，我们就得照办。<br>
-		那么薇娜，你有什么好主意吗？”</span><br>
-		<span class="lightpink">“我确实有个想法。不过，可能需要点时间才能准备好……”</span><br>
+		<span class="ltcrimson">“這就是時空特使植入的病毒嗎？”</span><br>
+		<span class="lightpink">“是的。每一次病毒被觸發，我們就會失去一個守護精靈。<br>
+		目前我們不斷拷貝守護精靈來維持幻境的運轉，但這只是權宜之計。<br>
+		技術部門已經給出了報告，如果不停機維護，是絕無可能清除所有病毒的。”</span><br>
+		<span class="ltcrimson">“但是林無月説過，哪怕天塌下來，幻境也不能中止運行。<br>
+		我是無法理解她在擔憂什麼……不過既然僱主這麼要求，我們就得照辦。<br>
+		那麼薇娜，你有什麼好主意嗎？”</span><br>
+		<span class="lightpink">“我確實有個想法。不過，可能需要點時間才能準備好……”</span><br>
 		<br>
 		<br>
 		<br>
-		你站在一幢灰色的建筑前，手里握着你已经记不清名字的钥匙状武器。<br>
-		带着那份执念，你向前走去。<br>
+		你站在一幢灰色的建築前，手裏握着你已經記不清名字的鑰匙狀武器。<br>
+		帶着那份執念，你向前走去。<br>
 		<br>
 		<br>
 		<br>
 		<span class="evergreen b">■ GAME CLEAR - END #7 ■</span><br>
-		<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「幻境解离」胜利！恭喜……</span>
+		<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">「幻境解離」勝利！恭喜……</span>
 	</div>
-	<!--////////////////////  （非解离者）  ////////////////////-->
+	<!--////////////////////  （非解離者）  ////////////////////-->
 	<!--{else}-->
 	<div id="op_sht_endpage" class="shootings">0</div>
 	<div id="op_sht_0" class="shootings">
 		一切都在崩塌。<br>
-		一切都在化为光芒。<br>
-		那位强大的挑战者已经消失很久了。<br>
-		他究竟去了哪里？<br>
+		一切都在化為光芒。<br>
+		那位強大的挑戰者已經消失很久了。<br>
+		他究竟去了哪裏？<br>
 		<br>
 		<br>
 		<span class="yellow b">{$winner}，You are now crowned a 'Fighter'.”</span></span><br>
 		<br>
 		<br>
-		<span class="lightblue b"><i>『愿我的血，成为黑夜中闪耀的星光——』</i></span><br>
+		<span class="lightblue b"><i>『願我的血，成為黑夜中閃耀的星光——』</i></span><br>
 		<br>
 		<br>
-		这……意味着什么？<br>
-		面前白光一闪，<br>
-		你的意识消逝在了光芒之中。<br>
+		這……意味着什麼？<br>
+		面前白光一閃，<br>
+		你的意識消逝在了光芒之中。<br>
 		<br>
 		<br>
 		<br>
-		<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">其他玩家已完成「幻境解离」胜利，请再接再厉！</span>
+		<span class="evergreen b" style="font-weight:700;font-size:18pt;line-height:18pt;">其他玩家已完成「幻境解離」勝利，請再接再厲！</span>
 	</div>
 	<!--{/if}-->
 <!--///////////////////////////////////////////////////-->
-<!--////////////////////  其他情况  ////////////////////-->
+<!--////////////////////  其他情況  ////////////////////-->
 <!--///////////////////////////////////////////////////-->
 <!--{else}-->
 	<div id="op_sht_endpage" class="shootings">0</div>
 	<div id="op_sht_0" class="shootings">
-		不明错误，请返回游戏首页！<br>
+		不明錯誤，請返回遊戲首頁！<br>
 		state={$state} winmode={$winmode}<br>
 	</div>
 <!--{/if}-->
@@ -643,13 +643,13 @@
 	function rs(){
 	var s=0;
 	var j="";
-	//2333这段自己看着办我的审美水平便是只有5口牙上面那堆占位冴冴也自己调整吧字太大真难看口牙
+	//2333這段自己看着辦我的審美水平便是隻有5口牙上面那堆佔位冴冴也自己調整吧字太大真難看口牙
 	for (i=1;i<=16;i++){
 		s=11+parseInt(Math.random()*19); 
 		j="j"+i;
 		document.getElementById(j).style.fontSize=s+"px";
 		document.getElementById(j).style.color="#c8c0b8";
-		document.getElementById(j).style.fontFamily="微软雅黑";
+		document.getElementById(j).style.fontFamily="微軟雅黑";
 		document.getElementById(j).style.fontWeight="Bold"; 
 		} 
 	for (i=1;i<=17;i++){
@@ -661,7 +661,7 @@
 		j="p"+i;
 		document.getElementById(j).style.fontSize="13px";
 		document.getElementById(j).style.color="#"+s;
-		document.getElementById(j).style.fontFamily="微软雅黑";
+		document.getElementById(j).style.fontFamily="微軟雅黑";
 		document.getElementById(j).style.fontWeight="Bold"; 
 		s=parseInt(Math.random()*4);
 		document.getElementById(j).style.float="Center";

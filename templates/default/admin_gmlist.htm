@@ -5,8 +5,8 @@
 	<table class="admin">
 		<tr>
 			<th>UID</th>
-			<th width="250px">账号</th>
-			<th>权限</th>
+			<th width="250px">賬號</th>
+			<th>權限</th>
 			<th>操作</th>
 		</tr>
 		<!--{loop $gmdata $n $gm}-->
@@ -25,8 +25,8 @@
 				<!--{/if}-->
 			</td>		
 			<td>
-			<input type="submit" value="编辑" <!--{if $gm['groupid'] >= $mygroup}-->disabled="true"<!--{/if}--> onclick="$('command').value='edit';$('adminuid').value='$gm['uid']';">
-			<input type="submit" value="删除" <!--{if $gm['groupid'] >= $mygroup}-->disabled="true"<!--{/if}--> onclick="$('command').value='del';$('adminuid').value='$gm['uid']';">
+			<input type="submit" value="編輯" <!--{if $gm['groupid'] >= $mygroup}-->disabled="true"<!--{/if}--> onclick="$('command').value='edit';$('adminuid').value='$gm['uid']';">
+			<input type="submit" value="刪除" <!--{if $gm['groupid'] >= $mygroup}-->disabled="true"<!--{/if}--> onclick="$('command').value='del';$('adminuid').value='$gm['uid']';">
 			</td>
 		</tr>
 		<!--{/loop}-->

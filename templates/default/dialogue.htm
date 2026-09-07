@@ -1,19 +1,19 @@
 <dialog id="dialogue" style="width: 460px; max-width: 90%;max-height: 80%;">
 <p><center>
 
-<!-- 当前阅读页面 -->
+<!-- 當前閲讀頁面 -->
 <div id="dmarkpage" style="display: none;">0</div>
-<!-- 对话框尾页 -->
+<!-- 對話框尾頁 -->
 <!--{eval $endpage = count($dialogues[$dialogue_id])-1;}-->
 <!--{eval $maxdkey = $endpage + 1;}-->
 <div id="dendpage" style="display: none;">$endpage</div>
 
-<!-- 对白分段显示 -->
+<!-- 對白分段顯示 -->
 <!--{loop $dialogues[$dialogue_id] $dkey $dinfo}-->
 <div id="d{$dkey}" <!--{if $dkey == 0}--> class="ach_box" style="overflow-y: auto; border:0; text-align: center; min-height: min-content; width: max-content; max-width: 560px;" <!--{else}-->  style="display: none;"  <!--{/if}-->>
     <table>
         <tr>
-        <!-- 带头像对白 -->
+        <!-- 帶頭像對白 -->
         <!--{if isset($dialogue_icon[$dialogue_id][$dkey])}-->
             <td>
                 <img style="width:140px;height:80px;" src="$dialogue_icon[$dialogue_id][$dkey]">
@@ -21,7 +21,7 @@
             <td class="ach-cont" style="border: 1px; width:280px;height:80px;text-align: left; padding: 3% 6%;">
                 $dinfo
             </td>
-        <!-- 无头像对白 -->
+        <!-- 無頭像對白 -->
         <!--{else}-->
             <td class="ach-cont" style="width:320px;height:80px;text-align: center; padding: 3% 6%;">
                 $dinfo
@@ -31,10 +31,10 @@
     </table>
     <br>
     <!--{if $dkey > 0}-->
-        <input type="button" class="cmdbutton" id="i" style="margin-right: 5%;" value="[I]上一页" onclick="changePages('d',-1);">
+        <input type="button" class="cmdbutton" id="i" style="margin-right: 5%;" value="[I]上一頁" onclick="changePages('d',-1);">
     <!--{/if}-->
     <!--{if (($dkey <= ($endpage-1)) || (isset($dialogue_branch[$dialogue_id])))}-->
-        <input type="button" class="cmdbutton" id="p" value="[P]下一页" onclick="changePages('d',1);">
+        <input type="button" class="cmdbutton" id="p" value="[P]下一頁" onclick="changePages('d',1);">
     <!--{elseif isset($dialogue_ending[$dialogue_id])}-->
         $dialogue_ending[$dialogue_id]
     <!--{elseif isset($dialogue_end[$dialogue_id])}-->
@@ -43,11 +43,11 @@
 </div>
  <!--{/loop}-->
 
-<!-- 选择肢显示 -->
+<!-- 選擇肢顯示 -->
  <!--{if isset($dialogue_branch[$dialogue_id])}-->
 <div id="d{$maxdkey}" style="display: none;" class="ach_box">
     <table border="0" style="text-align: center;"><tr><td style="width:320px;height:80px; text-align: center; padding: 3% 6%;">
-    <div style="margin-bottom: 10px;">请选择：</div>
+    <div style="margin-bottom: 10px;">請選擇：</div>
     <!--{loop $dialogue_branch[$dialogue_id] $bkey $binfo}-->
         <input type="button" class="cmdbutton" style="margin: 5px; display: block; width: 200px;" value="$binfo" onclick="handleDialogueChoice('{$dialogue_id}', '{$bkey}'); return false;">
      <!--{/loop}-->
@@ -55,7 +55,7 @@
 </div>
 <!--{/if}-->
 
-<!-- 调试信息已移除 -->
+<!-- 調試信息已移除 -->
 
 </center></p>
 <!--{if (isset($dialogue_branch[$dialogue_id]) || isset($dialogue_ending[$dialogue_id]) || isset($dialogue_end[$dialogue_id]))}-->

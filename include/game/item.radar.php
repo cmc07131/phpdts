@@ -22,11 +22,11 @@ function item_radar_old($itmn, &$data) {
 		newradar($itmsk);
 		$itme --;
 		if ($itme <= 0) {
-			$log .= $itm . '的电力用光了，请使用电池充电。<br>';
+			$log .= $itm . '的電力用光了，請使用電池充電。<br>';
 		}
 	} else {
 		$itme = 0;
-		$log .= $itm . '没有电了，请先充电。<br>';
+		$log .= $itm . '沒有電了，請先充電。<br>';
 	}
 }
 
@@ -50,20 +50,20 @@ function item_radar_new($itmn, &$data) {
 			$e_dice = rand(0,1);
 			if($e_dice == 1){
 				$itme--;
-				$log .= "消耗了<span class=\"yellow\">$itm</span>的电力。<br>";
+				$log .= "消耗了<span class=\"yellow\">$itm</span>的電力。<br>";
 			}else{
-				$log .= "由于操作迅速，<span class=\"yellow\">$itm</span>的电力没有消耗。<br>";
+				$log .= "由於操作迅速，<span class=\"yellow\">$itm</span>的電力沒有消耗。<br>";
 			}
 		}else{
 			$itme--;
-			$log .= "消耗了<span class=\"yellow\">$itm</span>的电力。<br>";
+			$log .= "消耗了<span class=\"yellow\">$itm</span>的電力。<br>";
 		}
 		if ($itme <= 0) {
-			$log .= $itm . '的电力用光了，请使用电池充电。<br>';
+			$log .= $itm . '的電力用光了，請使用電池充電。<br>';
 		}
 	} else {
 		$itme = 0;
-		$log .= $itm . '没有电了，请先充电。<br>';
+		$log .= $itm . '沒有電了，請先充電。<br>';
 	}
 }
 
@@ -84,19 +84,19 @@ function item_battery($itmn, &$data) {
 		//global ${'itm' . $i}, ${'itmk' . $i}, ${'itme' . $i}, ${'itms' . $i};
 		if (${'itmk' . $i} == 'E'.$bat_kind && ${'itms' . $i}) {
 			if(${'itme' . $i} >= $elec_cap){
-				$log .= "包裹{$i}里的<span class=\"yellow\">{${'itm'.$i}}</span>已经充满电了。<br>";
+				$log .= "包裹{$i}裏的<span class=\"yellow\">{${'itm'.$i}}</span>已經充滿電了。<br>";
 			}else{
 				${'itme' . $i} += $itme;
 				if(${'itme' . $i} > $elec_cap){${'itme' . $i} = $elec_cap;}
 				$itms --;
 				$flag = true;
-				$log .= "为包裹{$i}里的<span class=\"yellow\">{${'itm'.$i}}</span>充了电。";
+				$log .= "為包裹{$i}裏的<span class=\"yellow\">{${'itm'.$i}}</span>充了電。";
 				break;
 			}				
 		}
 	}
 	if (! $flag) {
-		$log .= '你没有需要充电的物品。<br>';
+		$log .= '你沒有需要充電的物品。<br>';
 	}
 	if ($itms <= 0 && $itm) {
 		$log .= "<span class=\"red\">$itm</span>用光了。<br>";

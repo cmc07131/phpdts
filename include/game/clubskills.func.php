@@ -610,7 +610,7 @@ function upgradeclubskills($cmd)
 		
 		if ($skillpoint<1)
 		{
-			$log.="技能点不足。<br>";
+			$log.="技能點不足。<br>";
 			return;
 		}
 		else
@@ -618,12 +618,12 @@ function upgradeclubskills($cmd)
 			$skillpoint--;
 			if ($club==13) 
 			{
-				$log.="消耗了<span class='lime'>1</span>点技能点，你的生命上限增加了<span class='yellow'>6</span>点。<br>";
+				$log.="消耗了<span class='lime'>1</span>點技能點，你的生命上限增加了<span class='yellow'>6</span>點。<br>";
 				$hp+=6; $mhp+=6;
 			}
 			else 
 			{
-				$log.="消耗了<span class='lime'>1</span>点技能点，你的生命上限增加了<span class='yellow'>3</span>点。<br>";
+				$log.="消耗了<span class='lime'>1</span>點技能點，你的生命上限增加了<span class='yellow'>3</span>點。<br>";
 				$hp+=3; $mhp+=3;
 			}
 		}
@@ -638,7 +638,7 @@ function upgradeclubskills($cmd)
 		
 		if ($skillpoint<1)
 		{
-			$log.="技能点不足。<br>";
+			$log.="技能點不足。<br>";
 			return;
 		}
 		else
@@ -646,12 +646,12 @@ function upgradeclubskills($cmd)
 			$skillpoint--;
 			if ($club==14) 
 			{
-				$log.="消耗了<span class='lime'>1</span>点技能点，你的基础攻击增加了<span class='yellow'>9</span>点，基础防御增加了<span class='yellow'>12</span>点。<br>";
+				$log.="消耗了<span class='lime'>1</span>點技能點，你的基礎攻擊增加了<span class='yellow'>9</span>點，基礎防禦增加了<span class='yellow'>12</span>點。<br>";
 				$att+=9; $def+=12;
 			}
 			else 
 			{
-				$log.="消耗了<span class='lime'>1</span>点技能点，你的基础攻击增加了<span class='yellow'>4</span>点，基础防御增加了<span class='yellow'>6</span>点。<br>";
+				$log.="消耗了<span class='lime'>1</span>點技能點，你的基礎攻擊增加了<span class='yellow'>4</span>點，基礎防禦增加了<span class='yellow'>6</span>點。<br>";
 				$att+=4; $def+=6;
 			}
 		}
@@ -660,13 +660,13 @@ function upgradeclubskills($cmd)
 	{
 		if ($skillpoint<1)
 		{
-			$log.="技能点不足。<br>";
+			$log.="技能點不足。<br>";
 			return;
 		}
 		else
 		{
 			$skillpoint--;
-			$log.="消耗了<span class='lime'>1</span>点技能点，你的所有受伤和异常状态都解除了。<br>";
+			$log.="消耗了<span class='lime'>1</span>點技能點，你的所有受傷和異常狀態都解除了。<br>";
 			$inf="";
 		}
 	}
@@ -687,20 +687,20 @@ function upgradeclubskills($cmd)
 		}
 		if ($which!=$ac['learn1'] && $which!=$ac['learn2'])
 		{
-			$log.="你不能升级此技能。<br>";
+			$log.="你不能升級此技能。<br>";
 			return;
 		}
 		if ($which==$ac['learn1'])
 		{
 			if ($sk1lv==6)
 			{
-				$log.="你已经升到了最高级。<br>";
+				$log.="你已經升到了最高級。<br>";
 				return;
 			}
 			getck($ac['learn1'],$c,$k);
 			if ($skillpoint<$clskl[$c]['sk'.$k][$sk1lv+1][0])
 			{
-				$log.="技能点不足。<br>";
+				$log.="技能點不足。<br>";
 				return;
 			}
 			$skillpoint-=$clskl[$c]['sk'.$k][$sk1lv+1][0];
@@ -711,7 +711,7 @@ function upgradeclubskills($cmd)
 //				$mhp=round($mhp*(100+$clskl[$c]['sk'.$k][$sk1lv+1][1])/100);
 //				$def=round($def*(100+$clskl[$c]['sk'.$k][$sk1lv+1][1])/100);
 //			}
-			$log.="升级成功。<br>";
+			$log.="升級成功。<br>";
 		}
 		else
 		{
@@ -722,26 +722,26 @@ function upgradeclubskills($cmd)
 			}
 			if ($sk2lv==6)
 			{
-				$log.="你已经升到了最高级。<br>";
+				$log.="你已經升到了最高級。<br>";
 				return;
 			}
 			getck($ac['learn2'],$c,$k);
 			if ($skillpoint<$clskl[$c]['sk'.$k][$sk2lv+1][0])
 			{
-				$log.="技能点不足。<br>";
+				$log.="技能點不足。<br>";
 				return;
 			}
 			$skillpoint-=$clskl[$c]['sk'.$k][$sk2lv+1][0];
 			$skills++;
 			
-			$log.="升级成功。<br>";
+			$log.="升級成功。<br>";
 		}
 	}
 	else  
 	{
 		if ($club!=18)
 		{
-			$log.="你不能研发技能。<br>";
+			$log.="你不能研發技能。<br>";
 			return;
 		}
 		
@@ -751,7 +751,7 @@ function upgradeclubskills($cmd)
 		$learn2=((int)($skills/100))%16;
 		if ($learn1 && $learn2)
 		{
-			$log.="你不能研发更多的技能了。<br>";
+			$log.="你不能研發更多的技能了。<br>";
 			return;
 		}
 		
@@ -765,13 +765,13 @@ function upgradeclubskills($cmd)
 		}
 		if ($which==$learn1 || $which==$learn2)
 		{
-			$log.="你已经研发过本技能了。<br>";
+			$log.="你已經研發過本技能了。<br>";
 			return;
 		}
 		get_research_cost($rcost);
 		if ($skillpoint<$rcost[$which])
 		{
-			$log.="技能点不足。<br>";
+			$log.="技能點不足。<br>";
 			return;
 		}
 		$skillpoint-=$rcost[$which];

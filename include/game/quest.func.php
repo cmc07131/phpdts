@@ -98,9 +98,9 @@ function quest_set_offer($candidates, &$data, $source = 'wander')
 	);
 	$mode = 'quest';
 	if ($source == 'debug') {
-		$log .= '<span class="yellow">QUEST调试终端列出了可用任务。</span><br>';
+		$log .= '<span class="yellow">QUEST調試終端列出了可用任務。</span><br>';
 	} else {
-		$log .= '<span class="yellow">你发现了一份新的QUEST委托。</span><br>';
+		$log .= '<span class="yellow">你發現了一份新的QUEST委託。</span><br>';
 	}
 	return true;
 }
@@ -117,25 +117,25 @@ function quest_accept_offer($qid, &$data)
 	quest_init_state($clbpara);
 
 	if (empty($clbpara['quest']['pending'])) {
-		$log .= '<span class="yellow">没有待处理的QUEST委托。</span><br>';
+		$log .= '<span class="yellow">沒有待處理的QUEST委託。</span><br>';
 		return false;
 	}
 	$pending = $clbpara['quest']['pending'];
 	if (empty($qid) && !empty($pending['qid'])) $qid = $pending['qid'];
 	if (empty($qid) || empty($pending['candidates'][$qid])) {
-		$log .= '<span class="yellow">请选择有效的QUEST。</span><br>';
+		$log .= '<span class="yellow">請選擇有效的QUEST。</span><br>';
 		return false;
 	}
 
 	list($questcfg, $questcfg_global) = quest_get_config();
 	$max_active = quest_get_global_value($questcfg_global, 'max_active', 1);
 	if (count($clbpara['quest']['active']) >= $max_active) {
-		$log .= '<span class="yellow">你已经有正在进行的QUEST了。</span><br>';
+		$log .= '<span class="yellow">你已經有正在進行的QUEST了。</span><br>';
 		unset($clbpara['quest']['pending']);
 		return false;
 	}
 	if (empty($questcfg[$qid]) || !quest_is_available($qid, $questcfg[$qid], $data, false, false)) {
-		$log .= '<span class="yellow">这份QUEST现在无法接取。</span><br>';
+		$log .= '<span class="yellow">這份QUEST現在無法接取。</span><br>';
 		unset($clbpara['quest']['pending']);
 		return false;
 	}
@@ -166,9 +166,9 @@ function quest_reject_offer(&$data, $apply_cooldown = true)
 		$reject_time = quest_get_global_value($questcfg_global, 'reject_cooldown', 0);
 		$clbpara['quest']['cooldown']['reject_steps'] = $reject_steps;
 		if ($reject_time > 0) $clbpara['quest']['cooldown']['assign'] = $now + $reject_time;
-		$log .= '<span class="yellow">你拒绝了这份QUEST委托。</span><br>';
+		$log .= '<span class="yellow">你拒絕了這份QUEST委託。</span><br>';
 	} else {
-		$log .= '<span class="yellow">你关闭了QUEST选择。</span><br>';
+		$log .= '<span class="yellow">你關閉了QUEST選擇。</span><br>';
 	}
 }
 
@@ -262,7 +262,7 @@ function quest_tick(&$data)
 				if (quest_is_npc_alive($qstate['linked_npc_id'])) {
 					$qstate['ready_to_claim'] = 1;
 					$qstate['step'] = 2;
-					$qstate['step_desc'] = '目标存活，返回交付任务';
+					$qstate['step_desc'] = '目標存活，返回交付任務';
 				}
 			}
 		}
@@ -311,7 +311,7 @@ function quest_start($qid, &$data)
 		}
 	}
 
-	$log .= '<span class="yellow">任务：'.$clbpara['quest']['active'][$qid]['title'].' 已开始。</span><br>';
+	$log .= '<span class="yellow">任務：'.$clbpara['quest']['active'][$qid]['title'].' 已開始。</span><br>';
 }
 
 // 生成任务道具 / Spawn quest item
@@ -339,7 +339,7 @@ function quest_spawn_item($item_key, &$data, $itmpara_override = array())
 		$data['itms0'] = $item['itms'];
 		$data['itmsk0'] = $item['itmsk'];
 		$data['itmpara0'] = $itmpara;
-		$log .= '获得了QUEST道具<span class="yellow">'.$item['itm'].'</span>。<br>';
+		$log .= '獲得了QUEST道具<span class="yellow">'.$item['itm'].'</span>。<br>';
 		return true;
 	}
 
@@ -349,7 +349,7 @@ function quest_spawn_item($item_key, &$data, $itmpara_override = array())
 	if (function_exists('check_add_searchmemory')) {
 		check_add_searchmemory($iid, 'itm', $item['itm'], $data);
 	}
-	$log .= 'QUEST道具<span class="yellow">'.$item['itm'].'</span>出现在了附近。<br>';
+	$log .= 'QUEST道具<span class="yellow">'.$item['itm'].'</span>出現在了附近。<br>';
 	return true;
 }
 
@@ -415,7 +415,7 @@ function quest_complete($qid, &$data, $reason = '')
 	if (!empty($cfg['reward']['money'])) $money += $cfg['reward']['money'];
 	if (!empty($cfg['reward']['exp'])) $exp += $cfg['reward']['exp'];
 
-	$log .= '<span class="lime">任务完成。</span><br>';
+	$log .= '<span class="lime">任務完成。</span><br>';
 }
 
 // 任务失败 / Fail quest
@@ -431,7 +431,7 @@ function quest_fail($qid, &$data, $reason = '')
 	if (empty($clbpara['quest']['active'][$qid])) return;
 	$clbpara['quest']['failed'][$qid] = array('time' => $now, 'reason' => $reason);
 	unset($clbpara['quest']['active'][$qid]);
-	$log .= '<span class="red">任务失败。</span><br>';
+	$log .= '<span class="red">任務失敗。</span><br>';
 }
 
 // 检查NPC存活 / Check NPC alive
@@ -502,7 +502,7 @@ function quest_handle_q7_cheer($command, &$data, &$edata)
 	$data['clbpara'] = get_clbpara($data['clbpara']);
 	quest_init_state($data['clbpara']);
 	if (empty($data['clbpara']['quest']['active']['Q7'])) {
-		$log .= '<span class="yellow">你没有正在进行的握手会任务。</span><br>';
+		$log .= '<span class="yellow">你沒有正在進行的握手會任務。</span><br>';
 		$data['action'] = ''; $data['bid'] = 0;
 		$mode = 'command';
 		return 2;
@@ -520,11 +520,11 @@ function quest_handle_q7_cheer($command, &$data, &$edata)
 	$qstate['cheer_turns'] += 1;
 	$qstate['progress'] = $qstate['cheer_points'];
 	$qstate['progress_max'] = $cheer_need;
-	$qstate['step_desc'] = '完成应援挑战';
-	$log .= '<span class="lime">你向偶像送出了热烈应援！</span><br>';
+	$qstate['step_desc'] = '完成應援挑戰';
+	$log .= '<span class="lime">你向偶像送出了熱烈應援！</span><br>';
 
 	if ($qstate['cheer_points'] >= $cheer_need || $qstate['cheer_turns'] >= $turn_need) {
-		$log .= '<span class="lime">应援成功，握手会圆满结束！</span><br>';
+		$log .= '<span class="lime">應援成功，握手會圓滿結束！</span><br>';
 		quest_complete('Q7', $data, 'cheer_success');
 		$db->query("DELETE FROM {$tablepre}players WHERE pid='{$edata['pid']}'");
 		$data['action'] = ''; $data['bid'] = 0;
@@ -563,8 +563,8 @@ function quest_combat_prepare_events(&$pa, &$pd, $active)
 	if ($qid == 'Q4') {
 		$slot = quest_find_item_slot($player, 'Q4', 'comfort');
 		if ($slot) {
-			$log .= '<span class="yellow">你将花束递给了幻影。</span><br>';
-			$log .= '<span class="lime">幻影留下遗言后消散了。</span><br>';
+			$log .= '<span class="yellow">你將花束遞給了幻影。</span><br>';
+			$log .= '<span class="lime">幻影留下遺言後消散了。</span><br>';
 			$player['itms'.$slot]--;
 			if ($player['itms'.$slot] <= 0) {
 				$player['itm'.$slot] = '';
@@ -587,7 +587,7 @@ function quest_combat_prepare_events(&$pa, &$pd, $active)
 		$need = !empty($questcfg['Q6']['candy_need']) ? intval($questcfg['Q6']['candy_need']) : 3;
 		$need = max(1, $need);
 		if (empty($player['clbpara']['quest']['active']['Q6'])) {
-			$log .= '<span class="yellow">捣蛋鬼做了个鬼脸，然后溜走了。</span><br>';
+			$log .= '<span class="yellow">搗蛋鬼做了個鬼臉，然後溜走了。</span><br>';
 			$db->query("DELETE FROM {$tablepre}players WHERE pid='{$npc['pid']}'");
 			return -1;
 		}
@@ -598,18 +598,18 @@ function quest_combat_prepare_events(&$pa, &$pd, $active)
 		// 只有当前任务绑定的NPC能够产出糖果，旧NPC与重复请求直接清理。
 		// Only the NPC currently linked to the active quest can award candy.
 		if ($linked_npc !== intval($npc['pid']) || $progress >= $need) {
-			$log .= '<span class="yellow">捣蛋鬼做了个鬼脸，然后溜走了。</span><br>';
+			$log .= '<span class="yellow">搗蛋鬼做了個鬼臉，然後溜走了。</span><br>';
 			$db->query("DELETE FROM {$tablepre}players WHERE pid='{$npc['pid']}'");
 			return -1;
 		}
 
-		$log .= '<span class="lime">「被你发现啦！」</span><br>';
+		$log .= '<span class="lime">「被你發現啦！」</span><br>';
 		quest_spawn_item('q6_candy', $player);
 		$qstate['progress'] = min($need, $progress + 1);
 		$qstate['linked_npc_id'] = 0;
 		unset($qstate['target_pls']);
 		$qstate['step'] = 2;
-		$qstate['step_desc'] = '已收集'.$qstate['progress'].'/'.$need.'颗糖果';
+		$qstate['step_desc'] = '已收集'.$qstate['progress'].'/'.$need.'顆糖果';
 		// 直接移除NPC，避免进入战斗 / Remove NPC to avoid combat
 		$db->query("DELETE FROM {$tablepre}players WHERE pid='{$npc['pid']}'");
 		return -1;
@@ -641,7 +641,7 @@ function quest_attack_result_events(&$pa, &$pd, $active)
 		$threshold = !empty($questcfg['Q5']['hp_threshold']) ? $questcfg['Q5']['hp_threshold'] : 20;
 		$slot = quest_find_item_slot($player, 'Q5', 'purify');
 		if ($slot && $npc['hp'] > 0 && $npc['hp'] <= round($npc['mhp'] * $threshold / 100)) {
-			$log .= '<span class="yellow">你对实验体使用了净化药剂！</span><br>';
+			$log .= '<span class="yellow">你對實驗體使用了淨化藥劑！</span><br>';
 			$player['itms'.$slot]--;
 			if ($player['itms'.$slot] <= 0) {
 				$player['itm'.$slot] = '';
@@ -676,7 +676,7 @@ function quest_attack_result_events(&$pa, &$pd, $active)
 		$qstate['progress'] = $qstate['cheer_points'];
 		$qstate['progress_max'] = $cheer_need;
 		if ($qstate['cheer_points'] >= $cheer_need || $qstate['cheer_turns'] >= $turn_need) {
-			$log .= '<span class="lime">应援成功，握手会圆满结束！</span><br>';
+			$log .= '<span class="lime">應援成功，握手會圓滿結束！</span><br>';
 			quest_complete('Q7', $player);
 			$npc['quest_retreat'] = 1;
 			$npc['action'] = '';

@@ -1,6 +1,6 @@
 {template header}
 <script type="text/javascript">
-// 设置RuleSet头像路径
+// 設置RuleSet頭像路徑
 <!--{if !empty($groomid) && $groomid > 0}-->
 	<!--{eval $result = $db->query("SELECT gruleset FROM {$gtablepre}game WHERE groomid = {$groomid}");}-->
 	<!--{if $db->num_rows($result)}-->
@@ -19,8 +19,8 @@
 <div class="subtitle" align="center">{lang user}</div>
 
 <p align="center" class="linen">
-	需要修改密码则输入原密码和新密码，留空为不修改。<br />
-	注意：若玩家已进入游戏，对性别和头像的修改将在下一局生效。<br />
+	需要修改密碼則輸入原密碼和新密碼，留空為不修改。<br />
+	注意：若玩家已進入遊戲，對性別和頭像的修改將在下一局生效。<br />
 	<span id="notice"></span><br />
 	<span id="info" class="yellow"></span>
 </p>
@@ -48,21 +48,21 @@
 	<!--{if $show_sync_button && !$show_reverse_migrate_button}-->
 	<div style="margin-top: 20px; padding: 15px; border: 2px solid #FFD700; background-color: #FFFACD; border-radius: 5px;">
 		<div style="text-align: center; font-weight: bold; color: #B8860B; margin-bottom: 10px;">
-			主从数据库同步功能
+			主從數據庫同步功能
 		</div>
 		<form method="post" action="user.php" name="syncdata" id="syncform">
 			<input type="hidden" name="mode" value="sync_master">
 			<table align="center" style="border-collapse: collapse;">
 				<tr>
-					<td style="padding: 5px; text-align: right;">主服务器用户名：</td>
+					<td style="padding: 5px; text-align: right;">主服務器用户名：</td>
 					<td style="padding: 5px;">
 						<input type="text" name="master_username" id="master_username" size="20" placeholder="在{$master_server_name}的用户名">
 					</td>
 				</tr>
 				<tr>
-					<td style="padding: 5px; text-align: right;">主服务器密码：</td>
+					<td style="padding: 5px; text-align: right;">主服務器密碼：</td>
 					<td style="padding: 5px;">
-						<input type="password" name="master_password" id="master_password" size="20" placeholder="在{$master_server_name}的密码">
+						<input type="password" name="master_password" id="master_password" size="20" placeholder="在{$master_server_name}的密碼">
 					</td>
 				</tr>
 				<tr>
@@ -74,11 +74,11 @@
 		</form>
 		<!--{if $user_sync_status}-->
 		<div style="margin-top: 10px; text-align: center; font-size: 12px; color: #666;">
-			已绑定主服务器账户：{$user_sync_status['master_username']} (上次同步：{$user_sync_status['sync_time_formatted']})
+			已綁定主服務器賬户：{$user_sync_status['master_username']} (上次同步：{$user_sync_status['sync_time_formatted']})
 		</div>
 		<!--{/if}-->
 		<div style="margin-top: 10px; text-align: center; font-size: 11px; color: #888;">
-			注意：同步将覆盖当前账户的积分、成就、头衔等数据。每个主服务器账户只能绑定一个从服务器账户。
+			注意：同步將覆蓋當前賬户的積分、成就、頭銜等數據。每個主服務器賬户只能綁定一個從服務器賬户。
 		</div>
 	</div>
 
@@ -88,11 +88,11 @@
 		var password = document.getElementById('master_password').value;
 
 		if(!username || !password) {
-			alert('请输入主服务器的用户名和密码');
+			alert('請輸入主服務器的用户名和密碼');
 			return false;
 		}
 
-		if(!confirm('确定要从主服务器同步数据吗？这将覆盖当前账户的相关数据。')) {
+		if(!confirm('確定要從主服務器同步數據嗎？這將覆蓋當前賬户的相關數據。')) {
 			return false;
 		}
 
@@ -105,24 +105,24 @@
 	<!--{if $show_reverse_migrate_button}-->
 	<div style="margin-top: 20px; padding: 15px; border: 2px solid #FF6347; background-color: #FFF5EE; border-radius: 5px;">
 		<div style="text-align: center; font-weight: bold; color: #CD5C5C; margin-bottom: 10px;">
-			反向迁移功能 (推送到远端从服务器)
+			反向遷移功能 (推送到遠端從服務器)
 		</div>
 		<div style="text-align: center; font-size: 12px; color: #8B4513; margin-bottom: 10px;">
-			当前模式：反向迁移模式 | 目标服务器：{$master_server_name}
+			當前模式：反向遷移模式 | 目標服務器：{$master_server_name}
 		</div>
 		<form method="post" action="user.php" name="reversemigratedata" id="reversemigrateform">
 			<input type="hidden" name="mode" value="reverse_migrate">
 			<table align="center" style="border-collapse: collapse;">
 				<tr>
-					<td style="padding: 5px; text-align: right;">远端用户名：</td>
+					<td style="padding: 5px; text-align: right;">遠端用户名：</td>
 					<td style="padding: 5px;">
 						<input type="text" name="remote_username" id="reverse_remote_username" size="20" placeholder="在{$master_server_name}的用户名">
 					</td>
 				</tr>
 				<tr>
-					<td style="padding: 5px; text-align: right;">远端密码：</td>
+					<td style="padding: 5px; text-align: right;">遠端密碼：</td>
 					<td style="padding: 5px;">
-						<input type="password" name="remote_password" id="reverse_remote_password" size="20" placeholder="在{$master_server_name}的密码">
+						<input type="password" name="remote_password" id="reverse_remote_password" size="20" placeholder="在{$master_server_name}的密碼">
 					</td>
 				</tr>
 				<tr>
@@ -134,11 +134,11 @@
 		</form>
 		<!--{if $user_reverse_migrate_status}-->
 		<div style="margin-top: 10px; text-align: center; font-size: 12px; color: #666;">
-			已推送到远端服务器：{$user_reverse_migrate_status['master_username']} (上次推送：{$user_reverse_migrate_status['sync_time_formatted']})
+			已推送到遠端服務器：{$user_reverse_migrate_status['master_username']} (上次推送：{$user_reverse_migrate_status['sync_time_formatted']})
 		</div>
 		<!--{/if}-->
 		<div style="margin-top: 10px; text-align: center; font-size: 11px; color: #888;">
-			注意：反向迁移将把您的本地账户数据推送到远端从服务器 {$master_server_name}，需要在远端服务器有有效账户进行身份验证。本地数据不会受影响。
+			注意：反向遷移將把您的本地賬户數據推送到遠端從服務器 {$master_server_name}，需要在遠端服務器有有效賬户進行身份驗證。本地數據不會受影響。
 		</div>
 	</div>
 
@@ -148,11 +148,11 @@
 		var password = document.getElementById('reverse_remote_password').value;
 
 		if(!username || !password) {
-			alert('请输入远端从服务器的用户名和密码');
+			alert('請輸入遠端從服務器的用户名和密碼');
 			return false;
 		}
 
-		if(!confirm('确定要将本地账户数据推送到远端从服务器吗？需要使用远端服务器的有效账户进行身份验证。本地数据不会受影响。')) {
+		if(!confirm('確定要將本地賬户數據推送到遠端從服務器嗎？需要使用遠端服務器的有效賬户進行身份驗證。本地數據不會受影響。')) {
 			return false;
 		}
 

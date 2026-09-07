@@ -9,11 +9,11 @@ if(!defined('IN_ADMIN')) {
 if($command == 'wthedit'){
 	$iweather = (int)$_POST['iweather'];
 	if($iweather == $weather){
-		$cmd_info = '当前天气已经为'.$wthinfo[$iweather].'，无需修改天气！';
+		$cmd_info = '當前天氣已經為'.$wthinfo[$iweather].'，無需修改天氣！';
 	}elseif(!isset($wthinfo[$iweather])){
-		$cmd_info = '天气数据错误，请重新输入！';
+		$cmd_info = '天氣數據錯誤，請重新輸入！';
 	}else{
-		$cmd_info = '当前天气修改为：'.$wthinfo[$iweather];
+		$cmd_info = '當前天氣修改為：'.$wthinfo[$iweather];
 		$weather = $iweather;
 		save_gameinfo();
 		adminlog('wthedit',$iweather);
@@ -22,9 +22,9 @@ if($command == 'wthedit'){
 }elseif($command == 'hackedit'){
 	$ihack = $_POST['ihack'] != 0 ? 1 : 0;
 	if($ihack == $hack){
-		$cmd_info = '当前禁区已经为该状态，无需修改！';
+		$cmd_info = '當前禁區已經為該狀態，無需修改！';
 	}else{
-		$cmd_info = '当前禁区状态修改为：'.($ihack ? '解除' : '未解除');
+		$cmd_info = '當前禁區狀態修改為：'.($ihack ? '解除' : '未解除');
 		$hack = $ihack;
 		save_gameinfo();
 		adminlog('hackedit',$ihack);
@@ -37,34 +37,34 @@ if($command == 'wthedit'){
 	$igamestate = $igamestate[1];
 	
 	if(!isset($gstate[$igamestate])){
-		$cmd_info = '游戏状态数据错误，请重新输入！';
+		$cmd_info = '遊戲狀態數據錯誤，請重新輸入！';
 	}elseif($gamestate == $igamestate){
-		$cmd_info = '游戏当前已经处于此状态，请重新输入！';
+		$cmd_info = '遊戲當前已經處於此狀態，請重新輸入！';
 //	}elseif($gamestate == 0 && $igamestate != 10){
-//		$cmd_info = '游戏未准备，不可进入后期状态！';
+//		$cmd_info = '遊戲未準備，不可進入後期狀態！';
 	}elseif($gamestate == 10 && $igamestate > 20){
-		$cmd_info = '游戏未开始，不可进入后期状态！';
+		$cmd_info = '遊戲未開始，不可進入後期狀態！';
 	}elseif($igamestate && $igamestate < $gamestate){
-		$cmd_info = '游戏已开始，状态不可回溯！';
+		$cmd_info = '遊戲已開始，狀態不可回溯！';
 	}elseif($igamestate > 20){
-		$cmd_info = '当前游戏状态修改为：'.$gstate[$igamestate];
+		$cmd_info = '當前遊戲狀態修改為：'.$gstate[$igamestate];
 		$gamestate = $igamestate;
 		save_gameinfo();
 		adminlog('gsedit',$igamestate);
 		addnews($now,'sysgschg',$igamestate);	
 	}elseif($igamestate == 20){
-		$cmd_info = '游戏立即开始！请访问任意游戏页面以刷新游戏状态。';
+		$cmd_info = '遊戲立即開始！請訪問任意遊戲頁面以刷新遊戲狀態。';
 		$starttime = $now;
 		save_gameinfo();
 		adminlog('gsedit',$igamestate);
 		addnews($now,'sysgschg',$igamestate);	
 	}elseif($igamestate == 10){
-		$cmd_info = '游戏立即进入准备状态！请访问任意游戏页面以刷新游戏状态。';
+		$cmd_info = '遊戲立即進入準備狀態！請訪問任意遊戲頁面以刷新遊戲狀態。';
 		$starttime = $now + $startmin * 60;
 		save_gameinfo();
 		adminlog('gsedit',$igamestate);
 	}else{
-		$cmd_info = "第 $gamenum 局大逃杀紧急中止";
+		$cmd_info = "第 $gamenum 局大逃殺緊急中止";
 		//include_once GAME_ROOT.'./include/system.func.php';
 		gameover($now,'end6');
 		save_gameinfo();
@@ -72,27 +72,27 @@ if($command == 'wthedit'){
 	}
 }elseif($command == 'sttimeedit'){
 	if($gamestate){
-		$cmd_info = "本局游戏尚未结束，不能设置时间。";
+		$cmd_info = "本局遊戲尚未結束，不能設置時間。";
 	}else{
 		$settime = mktime((int)$_POST['sethour'],(int)$_POST['setmin'],0,(int)$_POST['setmonth'],(int)$_POST['setday'],(int)$_POST['setyear']);
 		if($settime <= $now){
-			$cmd_info = '开始时间不能早于当前时间。';
+			$cmd_info = '開始時間不能早於當前時間。';
 		}else{
 			$starttime = $settime;
 			save_gameinfo();
-			$cmd_info = '游戏开始时间设置成功。';
+			$cmd_info = '遊戲開始時間設置成功。';
 		}
 	}
 }elseif($command == 'areaadd'){
 	if($gamestate <= 10){
-		$cmd_info = "本局游戏尚未开始，不能增加禁区。";
+		$cmd_info = "本局遊戲尚未開始，不能增加禁區。";
 	}elseif((!$areanum && $starttime + 30 > $now) || ($areanum && $areatime - $areahour*60 + 30 > $now)){
-		$cmd_info = "禁区到来后30秒内不能增加禁区。";
+		$cmd_info = "禁區到來後30秒內不能增加禁區。";
 	}else{
 		$areatime = $now;
 		save_gameinfo();
 		$areatime += $areahour * 60;
-		$cmd_info = '下一次禁区时间提前到来。请访问任意游戏页面以刷新游戏状态。';
+		$cmd_info = '下一次禁區時間提前到來。請訪問任意遊戲頁面以刷新遊戲狀態。';
 		addnews($now,'sysaddarea');	
 	}
 }

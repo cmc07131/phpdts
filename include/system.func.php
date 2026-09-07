@@ -351,15 +351,16 @@ function rs_game($mode = 0) {
 					}
 				}
 				list($kind,$num,$price,$area,$item,$itmk,$itme,$itms,$itmsk)=$lst;
-				if($kind != 0){
+				# PHP 8+: non-numeric strings are no longer == 0; skip PHP guard / header lines.
+				if(is_numeric($kind) && (int)$kind != 0){
 					$qry .= "('$kind','$num','$price','$area','$item','$itmk','$itme','$itms','$itmsk','$itmpara'),";
 				}
 			}
 		}
 		if(!empty($qry)){
 			$qry = "INSERT INTO {$tablepre}shopitem (kind,num,price,area,item,itmk,itme,itms,itmsk,itmpara) VALUES ".substr($qry, 0, -1);
+			$db->query($qry);
 		}
-		$db->query($qry);
 
 	}
 
@@ -736,7 +737,7 @@ function movehtm($atime = 0) {
 			$nexthour +=1;$nextmin -= 60;
 		}
 		if($nexthour >= 24){$nexthour-=24;}
-		$areadata .= "<b>{$nexthour}时{$nextmin}分：</b> ";
+		$areadata .= "<b>{$nexthour}時{$nextmin}分：</b> ";
 		for($i=1;$i<=$areaadd;$i++) {
 			$areadata .= '&nbsp;'.$plsinfo[$arealist[$areanum+$i]].'&nbsp;';
 		}
@@ -748,7 +749,7 @@ function movehtm($atime = 0) {
 			$nexthour2 +=1;$nextmin2 -= 60;
 		}
 		if($nexthour2 >= 24){$nexthour2-=24;}
-		$areadata .= "；<b>{$nexthour2}时{$nextmin2}分：</b> ";
+		$areadata .= "；<b>{$nexthour2}時{$nextmin2}分：</b> ";
 		for($i=1;$i<=$areaadd;$i++) {
 			$areadata .= '&nbsp;'.$plsinfo[$arealist[$areanum+$areaadd+$i]].'&nbsp;';
 		}
@@ -760,7 +761,7 @@ function movehtm($atime = 0) {
 			$nexthour3 +=1;$nextmin3 -= 60;
 		}
 		if($nexthour3 >= 24){$nexthour3-=24;}
-		$areadata .= "；<b>{$nexthour3}时{$nextmin3}分：</b> ";
+		$areadata .= "；<b>{$nexthour3}時{$nextmin3}分：</b> ";
 		for($i=1;$i<=$areaadd;$i++) {
 			$areadata .= '&nbsp;'.$plsinfo[$arealist[$areanum+$areaadd*2+$i]].'&nbsp;';
 		}
@@ -1109,12 +1110,12 @@ function get_gambling_result($clist, $winner='',$winmode=''){
 	$bwlist = array(); // Initialize $bwlist to avoid undefined variable
 	//$gbfile = GAME_ROOT.TPLDIR.'/lastgb.htm';
 	if(!in_array($winmode,Array(2,3,5,7))){//无人获胜，全部赌注被冴冴吃掉
-		$gblog .= '无人获胜，全部切糕被冴冴吃掉！';
+		$gblog .= '無人獲勝，全部切糕被冴冴吃掉！';
 		$updatelist = false;
 	}else{
 		$result = $db->query("SELECT * FROM {$tablepre}gambling WHERE 1");
 		if(!$db->num_rows($result)){
-			$gblog .= '无人下注！';
+			$gblog .= '無人下注！';
 			$updatelist = false;
 		}else{
 			$bwlist = $updatelist = Array();
@@ -1157,7 +1158,7 @@ function get_gambling_result($clist, $winner='',$winmode=''){
 			//$dmgprizeodds = 100 + round(pow($hdamage,0.5)) * 2;
 			$obpool = $bpool;
 			$bpool = round($bpool * $creditodds * $apmodds * $timeodds);
-			$gblog = '奖池：'.$obpool.' * '.$creditodds.' * '.$apmodds.' * '.$timeodds.' = '.$bpool.'<br>';
+			$gblog = '獎池：'.$obpool.' * '.$creditodds.' * '.$apmodds.' * '.$timeodds.' = '.$bpool.'<br>';
 			if($bwlist){
 				$bnlist = array_keys($bwlist);
 				$bnstr = "('".implode("','",$bnlist)."')";
@@ -1166,7 +1167,7 @@ function get_gambling_result($clist, $winner='',$winmode=''){
 					$bwlist[$udata['username']]['credits2'] = $udata['credits2'];
 				}
 				if($bwsum >= $bpool){//奖池与本金相等，则大家拿回本金
-					$gblog .= '奖池少于本金，系统资助判断正确者取回本金。';
+					$gblog .= '獎池少於本金，系統資助判斷正確者取回本金。';
 					foreach($bwlist as $key => $val){
 						$bwlist[$val['uname']]['crup'] = 0;
 						$bwlist[$val['uname']]['crrst'] = $val['wager'];
@@ -1183,7 +1184,7 @@ function get_gambling_result($clist, $winner='',$winmode=''){
 						$updatelist[$key] = Array('username' => $key, 'credits2' => $credits2);
 					}
 					$wcrup = ceil($ext * 0.1);
-					$bwlist[] = Array('uname' => '获胜者', 'wager' => '', 'bname' => '', 'odds' => '', 'crup' => $wcrup, 'crrst' => $wcrup);
+					$bwlist[] = Array('uname' => '獲勝者', 'wager' => '', 'bname' => '', 'odds' => '', 'crup' => $wcrup, 'crrst' => $wcrup);
 					if(is_array($updatelist) && isset($updatelist[$winner]['credits2'])){
 						$updatelist[$winner]['credits2'] += $wcrup;
 					}else{
@@ -1200,9 +1201,9 @@ function get_gambling_result($clist, $winner='',$winmode=''){
 //				}
 
 			}else{
-				$gblog .= '无判断正确者，奖池的20%归获胜者。';
+				$gblog .= '無判斷正確者，獎池的20%歸獲勝者。';
 				$wcrup = ceil($bpool * 0.2);
-				$bwlist[] = Array('uname' => '获胜者', 'wager' => '', 'bname' => '', 'odds' => '', 'crup' => $wcrup, 'crrst' => $wcrup);
+				$bwlist[] = Array('uname' => '獲勝者', 'wager' => '', 'bname' => '', 'odds' => '', 'crup' => $wcrup, 'crrst' => $wcrup);
 				if(is_array($updatelist) && isset($updatelist[$winner]['credits2'])){
 					$updatelist[$winner]['credits2'] += $wcrup;
 				}else{

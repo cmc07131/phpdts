@@ -17,7 +17,7 @@ function item_skillbook($itmn, &$data) {
 	
 	$skill_minimum = 100;
 	$skill_limit = 380;
-	$log .= "你阅读了<span class=\"red\">$itm</span>。<br>";
+	$log .= "你閲讀了<span class=\"red\">$itm</span>。<br>";
 	$dice = rand(-10, 10);
 	if (strpos($itmk, 'VV') === 0) {
 		//global $wp, $wk, $wg, $wc, $wd, $wf;
@@ -40,7 +40,7 @@ function item_skillbook($itmn, &$data) {
 		$wc += $vefct; //$itme;
 		$wd += $vefct; //$itme; 
 		$wf += $vefct; //$itme;
-		$wsname = "全系熟练度";
+		$wsname = "全系熟練度";
 	} elseif (strpos($itmk, 'VP') === 0) {
 		//global $wp;
 		if ($wp < $skill_minimum) {
@@ -56,7 +56,7 @@ function item_skillbook($itmn, &$data) {
 			}
 		}
 		$wp += $vefct; //$itme;
-		$wsname = "斗殴熟练度";
+		$wsname = "鬥毆熟練度";
 	} elseif (strpos($itmk, 'VK') === 0) {
 		//global $wk;
 		if ($wk < $skill_minimum) {
@@ -72,7 +72,7 @@ function item_skillbook($itmn, &$data) {
 			}
 		}
 		$wk += $vefct; //$itme; 
-		$wsname = "斩刺熟练度";
+		$wsname = "斬刺熟練度";
 	} elseif (strpos($itmk, 'VG') === 0) {
 		//global $wg;
 		if ($wg < $skill_minimum) {
@@ -88,7 +88,7 @@ function item_skillbook($itmn, &$data) {
 			}
 		}
 		$wg += $vefct; //$itme; 
-		$wsname = "射击熟练度";
+		$wsname = "射擊熟練度";
 	} elseif (strpos($itmk, 'VC') === 0) {
 		//global $wc;
 		if ($wc < $skill_minimum) {
@@ -104,7 +104,7 @@ function item_skillbook($itmn, &$data) {
 			}
 		}
 		$wc += $vefct; //$itme; 
-		$wsname = "投掷熟练度";
+		$wsname = "投擲熟練度";
 	} elseif (strpos($itmk, 'VD') === 0) {
 		//global $wd;
 		if ($wd < $skill_minimum) {
@@ -120,7 +120,7 @@ function item_skillbook($itmn, &$data) {
 			}
 		}
 		$wd += $vefct; //$itme; 
-		$wsname = "引爆熟练度";
+		$wsname = "引爆熟練度";
 	} elseif (strpos($itmk, 'VF') === 0) {
 		//global $wf;
 		if ($wf < $skill_minimum) {
@@ -136,7 +136,7 @@ function item_skillbook($itmn, &$data) {
 			}
 		}
 		$wf += $vefct; //$itme; 
-		$wsname = "灵击熟练度";
+		$wsname = "靈擊熟練度";
 	} elseif (strpos($itmk, 'VS') === 0) {
 		//global $cskills,$clbpara;
 		if(!empty($itmsk) && isset($cskills[$itmsk]))
@@ -145,28 +145,28 @@ function item_skillbook($itmn, &$data) {
 			$flag = getclubskill($itmsk,$clbpara);
 			if($flag)
 			{
-				$log.="哇！没想到这本书里竟然介绍了<span class='yellow'>「{$cskills[$itmsk]['name']}」</span>的原理！<br>获得了技能<span class='yellow'>「{$cskills[$itmsk]['name']}」</span>！<br>你心满意足地把<span class='red'>{$itm}</span>吃进了肚里。<br>";
+				$log.="哇！沒想到這本書裏竟然介紹了<span class='yellow'>「{$cskills[$itmsk]['name']}」</span>的原理！<br>獲得了技能<span class='yellow'>「{$cskills[$itmsk]['name']}」</span>！<br>你心滿意足地把<span class='red'>{$itm}</span>吃進了肚裏。<br>";
 				addnews($now,'getsk_'.$itmsk,$name,$itm,$nick);
 			}
 			else 
 			{
-				$log.="什么嘛！原来里面都是些你看过的东西了，你没有从书中学到任何新东西。<br>你一怒之下把这本破书撕了个稀巴烂！<br>";
+				$log.="什麼嘛！原來裏面都是些你看過的東西了，你沒有從書中學到任何新東西。<br>你一怒之下把這本破書撕了個稀巴爛！<br>";
 			}
 		}
 		else 
 		{
-			$log.="但是你横看竖看，也弄不明白作者到底想表达什么！<br>你一怒之下把这本破书撕了个稀巴烂！<br>";
+			$log.="但是你橫看豎看，也弄不明白作者到底想表達什麼！<br>你一怒之下把這本破書撕了個稀巴爛！<br>";
 		}
 	}
 	if(isset($vefct))
 	{
 		if ($vefct > 0) {
-			$log .= "嗯，有所收获。<br>你的{$wsname}提高了<span class=\"yellow\">$vefct</span>点！<br>";
+			$log .= "嗯，有所收穫。<br>你的{$wsname}提高了<span class=\"yellow\">$vefct</span>點！<br>";
 		} elseif ($vefct == 0) {
-			$log .= "对你来说书里的内容过于简单了。<br>你的熟练度没有任何提升。<br>";
+			$log .= "對你來説書裏的內容過於簡單了。<br>你的熟練度沒有任何提升。<br>";
 		} else {
 			$vefct = -$vefct;
-			$log .= "对你来说书里的内容过于简单了。<br>而且由于盲目相信书上的知识，你反而被编写者的纰漏所误导了！<br>你的{$wsname}下降了<span class=\"red\">$vefct</span>点！<br>";
+			$log .= "對你來説書裏的內容過於簡單了。<br>而且由於盲目相信書上的知識，你反而被編寫者的紕漏所誤導了！<br>你的{$wsname}下降了<span class=\"red\">$vefct</span>點！<br>";
 		}
 	}
 	if ($itms != $nosta) {

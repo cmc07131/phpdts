@@ -413,7 +413,7 @@ function getchat($last,$team='',$limit=0) {
 			if ($chat['msg']){
 				$msg = "<span class=\"red\">【{$tplsinfo[$chat['recv']]}】{$chat['send']}：{$chat['msg']} ".date("\(H:i:s\)",$chat['time']).'</span><br>';
 			} else {
-				$msg = "<span class=\"red\">【{$tplsinfo[$chat['recv']]}】{$chat['send']} 什么都没说就死去了 ".date("\(H:i:s\)",$chat['time']).'</span><br>';
+				$msg = "<span class=\"red\">【{$tplsinfo[$chat['recv']]}】{$chat['send']} 什麼都沒説就死去了 ".date("\(H:i:s\)",$chat['time']).'</span><br>';
 			}
 		} elseif($chat['type'] == '4') {
 			$msg = "<span class=\"yellow\">【{$chatinfo[$chat['type']]}】{$chat['msg']}".date("\(H:i:s\)",$chat['time']).'</span><br>';
@@ -499,20 +499,20 @@ function systemputchat($time,$type,$msg = ''){
 			$msg .= "$plsinfo[$ar] ";
 		}
 		if($type == 'areaadd'){
-			$msg = '增加禁区：'.$msg;
+			$msg = '增加禁區：'.$msg;
 		}elseif($type == 'areawarn'){
-			$msg = '警告，以下区域即将成为禁区：'.$msg;
+			$msg = '警告，以下區域即將成為禁區：'.$msg;
 		}
 	}elseif($type == 'combo'){
-		$msg = '游戏进入连斗阶段！';
+		$msg = '遊戲進入連鬥階段！';
 	}elseif($type == 'comboupdate'){
-		$msg = '连斗死亡判断数修正为'.$msg.'人！';
+		$msg = '連鬥死亡判斷數修正為'.$msg.'人！';
 	}elseif($type == 'duel'){
-		$msg = '游戏进入死斗模式！';
+		$msg = '遊戲進入死鬥模式！';
 	}elseif($type == 'newgame'){
-		$msg = '游戏开始！';
+		$msg = '遊戲開始！';
 	}elseif($type == 'gameover'){
-		$msg = '游戏结束！';
+		$msg = '遊戲結束！';
 	}
 	$db->query("INSERT INTO {$tablepre}chat (type,`time`,send,msg) VALUES ('5','$time','','$msg')");
 	return;
@@ -526,7 +526,7 @@ function getmicrotime(){
 function putmicrotime($t_s,$t_e,$file,$info)
 {
 	$mtime = ($t_e - $t_s)*1000;
-	writeover( $file.'.txt',"$info ；执行时间：$mtime 毫秒 \n",'ab');
+	writeover( $file.'.txt',"$info ；執行時間：$mtime 毫秒 \n",'ab');
 }
 
 //格式化储存player表 可能也是四面的遗产
@@ -593,7 +593,7 @@ function parse_nameinfo_desc($info, $subinfo='', $short='', $tiptype='', $itmpar
 	# 如果没有，过滤掉前缀
 	if(!isset($tps_name[$info]) && !isset($tps_names[$info]))
 	{
-		$tinfo = preg_replace('/锋利的|电气|毒性|\[\+.*\]|-改/', '', $info);
+		$tinfo = preg_replace('/鋒利的|電氣|毒性|\[\+.*\]|-改/', '', $info);
 	}
 	else
 	{
@@ -680,7 +680,7 @@ function parse_kinfo_desc($info,$subinfo='',$short='',$tiptype='')
 	# 传入了属性作为辅助参数时
 	if($info == 'WJ')
 	{
-		$info_tp.= "需装填「重型弹药」";
+		$info_tp.= "需裝填「重型彈藥」";
 	}
 	elseif(!empty($subinfo))
 	{
@@ -688,14 +688,14 @@ function parse_kinfo_desc($info,$subinfo='',$short='',$tiptype='')
 		if(!is_array($subinfo)) $subinfo = get_itmsk_array($subinfo);
 		if($info == 'WG' || $info == 'WGK' || $info == 'WDG')
 		{
-			if(in_array('e',$subinfo) || in_array('w',$subinfo)) $info_tp.= "需装填「能源弹药」";
-			elseif(in_array('u',$subinfo) || in_array('i',$subinfo)) $info_tp.= "需装填「气体弹药」";
-			elseif(in_array('r',$subinfo)) $info_tp.= "需装填「机枪子弹」";
+			if(in_array('e',$subinfo) || in_array('w',$subinfo)) $info_tp.= "需裝填「能源彈藥」";
+			elseif(in_array('u',$subinfo) || in_array('i',$subinfo)) $info_tp.= "需裝填「氣體彈藥」";
+			elseif(in_array('r',$subinfo)) $info_tp.= "需裝填「機槍子彈」";
 		}
 	}
 	else
 	{
-		if($info == 'WG' || $info == 'WGK' || $info == 'WDG') $info_tp.= "需装填「手枪弹药」";
+		if($info == 'WG' || $info == 'WGK' || $info == 'WDG') $info_tp.= "需裝填「手槍彈藥」";
 	}
 
 	if(!empty($info_f)) $info_f = "class=\"{$info_f}\"";
@@ -727,7 +727,7 @@ function parse_skinfo_desc($info,$subinfo='',$short='',$tiptype='')
 		if(!empty($info) && isset($cskills[$info]))
 		{
 			$sk = $cskills[$info];  $sknm = $cskills[$info]['name'];
-			$ret = "<span {$ttypes}=\"使用后可习得技能「{$sknm}」\">知识</span>";
+			$ret = "<span {$ttypes}=\"使用後可習得技能「{$sknm}」\">知識</span>";
 		}
 		return $ret;
 	}

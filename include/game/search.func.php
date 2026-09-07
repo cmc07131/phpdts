@@ -20,7 +20,7 @@ function check_can_move($pls,$pgroup,$moveto)
 
 	if($pls == $moveto)
 	{
-		$log .= "不能重复移动。<br>";
+		$log .= "不能重複移動。<br>";
 		return 0;
 	}
 	$plsnum = sizeof($plsinfo);
@@ -29,7 +29,7 @@ function check_can_move($pls,$pgroup,$moveto)
 		//玩家位于隐藏地点组内，不能通过常规移动方式回到标准地点，也不能移动到其他隐藏地点组
 		if(!array_key_exists($moveto,$hplsinfo[$pgroup]))
 		{
-			$log .= "地图上没有{$hplsinfo[$pgroup][$moveto]}啊？<br>";
+			$log .= "地圖上沒有{$hplsinfo[$pgroup][$moveto]}啊？<br>";
 			return 0;
 		}
 	}
@@ -38,12 +38,12 @@ function check_can_move($pls,$pgroup,$moveto)
 		//玩家位于标准地点组内
 		if((!array_key_exists($moveto,$plsinfo))||($moveto == 'main')||($moveto < 0 )||($moveto >= $plsnum))
 		{
-			$log .= '请选择正确的移动地点。<br>';
+			$log .= '請選擇正確的移動地點。<br>';
 			return 0;
 		}
 		elseif(array_search($moveto,$arealist) <= $areanum && !$hack)
 		{
-			$log .= $plsinfo[$moveto].'是禁区，还是离远点吧！<br>';
+			$log .= $plsinfo[$moveto].'是禁區，還是離遠點吧！<br>';
 			return 0;
 		}
 	}
@@ -66,7 +66,7 @@ function move($moveto = 99,&$data=NULL)
 
 	if($pls == $moveto)
 	{
-		$log .= '相同地点，不需要移动。<br>';
+		$log .= '相同地點，不需要移動。<br>';
 		return;
 	}
 
@@ -75,7 +75,7 @@ function move($moveto = 99,&$data=NULL)
 		//玩家位于隐藏地点组内，不能通过常规移动方式回到标准地点，也不能移动到其他隐藏地点组
 		if(!array_key_exists($moveto,$hplsinfo[$pgroup]))
 		{
-			$log .= "地图上没有{$hplsinfo[$pgroup][$moveto]}啊？<br>";
+			$log .= "地圖上沒有{$hplsinfo[$pgroup][$moveto]}啊？<br>";
 			return;
 		}
 		$hpls_flag = true;
@@ -85,12 +85,12 @@ function move($moveto = 99,&$data=NULL)
 		//玩家位于标准地点组内
 		if((!array_key_exists($moveto,$plsinfo))||($moveto == 'main')||($moveto < 0 )||($moveto >= $plsnum))
 		{
-			$log .= '请选择正确的移动地点。<br>';
+			$log .= '請選擇正確的移動地點。<br>';
 			return;
 		}
 		elseif(array_search($moveto,$arealist) <= $areanum && !$hack)
 		{
-			$log .= $plsinfo[$moveto].'是禁区，还是离远点吧！<br>';
+			$log .= $plsinfo[$moveto].'是禁區，還是離遠點吧！<br>';
 			return;
 		}
 		$hpls_flag = false;
@@ -106,7 +106,7 @@ function move($moveto = 99,&$data=NULL)
 			{
 				if($random_moveto != $moveto)
 				{
-					$log .= "<span class=\"cyan\">【全随机模式】你的移动目标被随机数改写了！</span><br>";
+					$log .= "<span class=\"cyan\">【全隨機模式】你的移動目標被隨機數改寫了！</span><br>";
 				}
 				$moveto = $random_moveto;
 			}
@@ -126,7 +126,7 @@ function move($moveto = 99,&$data=NULL)
 		if(!$hpls_flag) $pgroup = 0;
 		$pls = $moveto;
 		$moveto_info = $hpls_flag ? $hplsinfo[$pgroup][$pls] : $plsinfo[$pls];
-		$log .= "{$actlog}，移动到了<span class=\"yellow\">{$moveto_info}</span>。<br>";
+		$log .= "{$actlog}，移動到了<span class=\"yellow\">{$moveto_info}</span>。<br>";
 	}
 
 	$log .= $areainfo[$pls].'<br>';
@@ -181,7 +181,7 @@ function search(&$data=NULL)
 	{
 		if(array_search($pls,$arealist) <= $areanum && !$hack)
 		{
-			$log .= $plsinfo[$pls].'是禁区，还是赶快逃跑吧！<br>';
+			$log .= $plsinfo[$pls].'是禁區，還是趕快逃跑吧！<br>';
 			return;
 		}
 		$hpls_flag = false;
@@ -195,7 +195,7 @@ function search(&$data=NULL)
 	$moved = pre_move_search_events($data,'search');
 	if($hp <= 0) return;
 
-	$log .= "{$actlog}，你搜索着周围的一切。。。<br>";
+	$log .= "{$actlog}，你搜索着周圍的一切。。。<br>";
 
 	# 探索指定地点，结算探索事件
 	move_search_events($data,'search');
@@ -239,7 +239,7 @@ function calc_move_search_sp_cost(&$data,$act)
 	# 「飞行」技能判定：移动不消耗体力
 	if($act == 'move' && !empty($clbpara['skill']) && in_array('npc_flying', $clbpara['skill']))
 	{
-		$actlog = "你展开双翼，飞向了目的地";
+		$actlog = "你展開雙翼，飛向了目的地";
 		return 'sp';
 	}
 
@@ -281,11 +281,11 @@ function calc_move_search_sp_cost(&$data,$act)
 	}
 	else
 	{
-		$log .= "再动下去要出人命了！<br>还是先睡会儿吧！<br>";
+		$log .= "再動下去要出人命了！<br>還是先睡會兒吧！<br>";
 		return $flag;
 	}
 
-	$actlog = $flag == 'hp' ? "燃烧了<span class=\"red\">{$costsp}</span>点生命" : "消耗了<span class=\"yellow\">{$costsp}</span>点体力";
+	$actlog = $flag == 'hp' ? "燃燒了<span class=\"red\">{$costsp}</span>點生命" : "消耗了<span class=\"yellow\">{$costsp}</span>點體力";
 	return $flag;
 }
 
@@ -319,7 +319,7 @@ function pre_move_search_events(&$data,$act)
 			$pls = $safepls[array_rand($safepls)];
 			$moveto_info = $plsinfo[$pls];
 		}
-		$log = ($log . "龙卷风把你吹到了<span class=\"yellow\">$moveto_info</span>！<br>");
+		$log = ($log . "龍捲風把你吹到了<span class=\"yellow\">$moveto_info</span>！<br>");
 		$moved = true;
 	}
 	# 冰雹
@@ -331,7 +331,7 @@ function pre_move_search_events(&$data,$act)
 			if($ruleset_damage !== NULL) $damage = max(0, intval($ruleset_damage));
 		}
 		$hp -= $damage;
-		$log .= "被<span class=\"blue\">冰雹</span>击中，生命减少了<span class=\"red\">$damage</span>点！<br>";
+		$log .= "被<span class=\"blue\">冰雹</span>擊中，生命減少了<span class=\"red\">$damage</span>點！<br>";
 		if($hp <= 0 )
 		{
 			death('hsmove','',0,'',$data);
@@ -343,28 +343,28 @@ function pre_move_search_events(&$data,$act)
 	{
 		$dice = rand(0,8);
 		if($dice ==0 && strpos($inf,'e')===false){
-			$log .= "空气中充斥着的<span class=\"linen\">狂暴电磁波</span>导致你<span class=\"yellow\">身体麻痹</span>了！<br>";
+			$log .= "空氣中充斥着的<span class=\"linen\">狂暴電磁波</span>導致你<span class=\"yellow\">身體麻痹</span>了！<br>";
 			$inf = str_replace('e','',$inf);
 			$inf .= 'e';
 		}elseif($dice ==1 && strpos($inf,'w')===false){
-			$log .= "空气中充斥着的<span class=\"linen\">狂暴电磁波</span>导致你<span class=\"grey\">混乱</span>了！<br>";
+			$log .= "空氣中充斥着的<span class=\"linen\">狂暴電磁波</span>導致你<span class=\"grey\">混亂</span>了！<br>";
 			$inf = str_replace('w','',$inf);
 			$inf .= 'w';
 		}elseif($dice ==2 && (strpos($inf,'w')===false || strpos($inf,'e')===false)){
 			if (strpos($inf,'w')===false)
 			{
-				$log .= "空气中充斥着的<span class=\"linen\">狂暴电磁波</span>导致你<span class=\"grey\">混乱</span>了！<br>";
+				$log .= "空氣中充斥着的<span class=\"linen\">狂暴電磁波</span>導致你<span class=\"grey\">混亂</span>了！<br>";
 				$inf = str_replace('w','',$inf);
 				$inf .= 'w';
 			}
 			if (strpos($inf,'e')===false)
 			{
-				$log .= "空气中充斥着的<span class=\"linen\">狂暴电磁波</span>导致你<span class=\"yellow\">身体麻痹</span>了！<br>";
+				$log .= "空氣中充斥着的<span class=\"linen\">狂暴電磁波</span>導致你<span class=\"yellow\">身體麻痹</span>了！<br>";
 				$inf = str_replace('e','',$inf);
 				$inf .= 'e';
 			}
 		}else{
-			$log .= "空气中充斥着狂暴的电磁波……<br>";
+			$log .= "空氣中充斥着狂暴的電磁波……<br>";
 		}
 	}
 	//辐射尘
@@ -374,16 +374,16 @@ function pre_move_search_events(&$data,$act)
 		if($dice == 0){
 			$mhpdown = rand(4,8);
 			if($mhp > $mhpdown){
-				$log .= "空气中弥漫着的<span class=\"green\">放射性尘埃</span>导致你的生命上限减少了<span class=\"red\">{$mhpdown}</span>点！<br>";
+				$log .= "空氣中瀰漫着的<span class=\"green\">放射性塵埃</span>導致你的生命上限減少了<span class=\"red\">{$mhpdown}</span>點！<br>";
 				$mhp -= $mhpdown;
 				if($hp > $mhp){$hp = $mhp;}
 			}
 		}elseif ($dice==1 && strpos($inf,'p')===false){
-			$log .= "空气中弥漫着的<span class=\"green\">放射性尘埃</span>导致你<span class=\"purple\">中毒</span>了！<br>";
+			$log .= "空氣中瀰漫着的<span class=\"green\">放射性塵埃</span>導致你<span class=\"purple\">中毒</span>了！<br>";
 			$inf = str_replace('p','',$inf);
 			$inf .= 'p';
 		}else{
-			$log .= "空气中弥漫着放射性尘埃……<br>";
+			$log .= "空氣中瀰漫着放射性塵埃……<br>";
 		}
 	}
 	//臭氧洞
@@ -393,15 +393,15 @@ function pre_move_search_events(&$data,$act)
 		if($dice <= 3){
 			$defdown = rand(4,8);
 			if($def > $defdown){
-				$log .= "高强度的<span class=\"purple\">紫外线照射</span>导致你的防御力减少了<span class=\"red\">{$defdown}</span>点！<br>";
+				$log .= "高強度的<span class=\"purple\">紫外線照射</span>導致你的防禦力減少了<span class=\"red\">{$defdown}</span>點！<br>";
 				$def -= $defdown;
 			}
 		}elseif($dice <=5 && strpos($inf,'u')===false){
-			$log .= "高强度的<span class=\"purple\">紫外线照射</span>导致你<span class=\"red\">烧伤</span>了！<br>";
+			$log .= "高強度的<span class=\"purple\">紫外線照射</span>導致你<span class=\"red\">燒傷</span>了！<br>";
 			$inf = str_replace('u','',$inf);
 			$inf .= 'u';
 		}else{
-			$log .= "高强度的紫外线灼烧着大地……<br>";
+			$log .= "高強度的紫外線灼燒着大地……<br>";
 		}
 	}
 
@@ -425,7 +425,7 @@ function pre_move_search_events(&$data,$act)
 				$moveto_info = $plsinfo[$pls];
 			}
 			$meta_act = $act == 'move' ? "走在前往{$plsinfo[$moveto]}的路上" : "在附近探索";
-			$log .= "<span class='red'>你正哼着小曲{$meta_act}，忽然眼前一黑！<br>回过神来时，你发现自己竟然走到了<span class=\"yellow\">$moveto_info</span>！</span><br>……<br>";
+			$log .= "<span class='red'>你正哼着小曲{$meta_act}，忽然眼前一黑！<br>回過神來時，你發現自己竟然走到了<span class=\"yellow\">$moveto_info</span>！</span><br>……<br>";
 			$moved = true;
 		}
 	}
@@ -469,8 +469,8 @@ function move_search_events(&$data,$act)
 					if($ruleset_damage !== NULL) $damage = max(0, intval($ruleset_damage));
 				}
 				$hp -= $damage;
-				if($damage > 0) $log .= "{$infwords[$inf_ky]}减少了<span class=\"red\">$damage</span>点生命！<br>";
-				elseif($damage < 0) $log .= "{$infwords[$inf_ky]}恢复了<span class=\"lime\">".abs($damage)."</span>点生命！<br>";
+				if($damage > 0) $log .= "{$infwords[$inf_ky]}減少了<span class=\"red\">$damage</span>點生命！<br>";
+				elseif($damage < 0) $log .= "{$infwords[$inf_ky]}恢復了<span class=\"lime\">".abs($damage)."</span>點生命！<br>";
 				if($hp <= 0 ){
 					death($inf_ky.'move','',0,'',$data);
 					return;
@@ -491,7 +491,7 @@ function move_search_events(&$data,$act)
 		elseif ($sp_down < 0) $sp_down = 0;
 		$sp = $sp - $sp_down;
 		$msp = $msp + round($gain_rate * $sp_down);
-		$log .= "因为体内<span class=\"glitchb\">数据风暴</span>肆虐减少了<span class=\"red\">$sp_down</span>点体力！<br>";
+		$log .= "因為體內<span class=\"glitchb\">數據風暴</span>肆虐減少了<span class=\"red\">$sp_down</span>點體力！<br>";
 		if($act == 'move')
 		{
 			$damage = round($mhp * ($burn_rate * $ms - $consume_rate * sqrt($clbpara['consumpt']))/100);
@@ -499,7 +499,7 @@ function move_search_events(&$data,$act)
 			elseif ($damage <= 0) $damage = 1;
 			$hp = $hp - $damage;
 			$mhp = $mhp + round($gain_rate * $damage);
-			$log .= "因为体内<span class=\"glitchb\">数据风暴</span>肆虐减少了<span class=\"red\">$damage</span>点生命！<br>";
+			$log .= "因為體內<span class=\"glitchb\">數據風暴</span>肆虐減少了<span class=\"red\">$damage</span>點生命！<br>";
 		}
 		set_skillpara($sk,'ms',$ms,$data['clbpara']);
 		return;
@@ -531,16 +531,16 @@ function move_search_events(&$data,$act)
 			$sp_up = diceroll($wthpow) * diceroll($wthpow);
 			if($hp_up || $sp_up)
 			{
-				$log .= "<span class='minirainbow'>不知从哪飘来的光球落在了你的肩上……</span><br>超量恢复了";
+				$log .= "<span class='minirainbow'>不知從哪飄來的光球落在了你的肩上……</span><br>超量恢復了";
 				if($hp_up)
 				{
 					$hp += $hp_up;
-					$log .= "<span class='minirainbow'>{$hp_up}</span>点生命！";
+					$log .= "<span class='minirainbow'>{$hp_up}</span>點生命！";
 				}
 				if($sp_up)
 				{
 					$hp += $sp_up;
-					$log .= "<span class='minirainbow'>{$sp_up}</span>点体力！";
+					$log .= "<span class='minirainbow'>{$sp_up}</span>點體力！";
 				}
 				$log .= "<br>";
 			}
@@ -559,7 +559,7 @@ function move_search_events(&$data,$act)
 			$sk_var = get_skillvars($sk,'earn');
 			$earn = min(max(ceil($money*$sk_var/100),get_skillvars($sk,'minmoney')),get_skillvars($sk,'maxmoney'));
 			$money += $earn;
-			$log .= "<span class='yellow'>「理财」使你赚到了{$earn}元！</span><br>";
+			$log .= "<span class='yellow'>「理財」使你賺到了{$earn}元！</span><br>";
 			$ms = 0;
 		}
 		set_skillpara($sk,'ms',$ms,$data['clbpara']);
@@ -611,7 +611,7 @@ function move_search_events(&$data,$act)
 				$add_ev = $temp_enums * (1 + ($sk_var/100));
 				$data['element'.$temp_ekey] = $add_ev;
 				$ms = 0;
-				$log .= "<span class='yellow'>你的口袋里冒出了新的元素！</span><br>";
+				$log .= "<span class='yellow'>你的口袋裏冒出了新的元素！</span><br>";
 			}
 		}
 		set_skillpara($sk,'ms',$ms,$data['clbpara']);
@@ -732,7 +732,7 @@ function discover($schmode = 0,&$data=NULL)
 
 		$result = $db->query("SELECT * FROM {$tablepre}players WHERE pls='$pls' AND pid!='$pid'");
 		if(!$db->num_rows($result)){
-			$log .= '<span class="yellow">周围一个人都没有。</span><br>';
+			$log .= '<span class="yellow">周圍一個人都沒有。</span><br>';
 			if(CURSCRIPT == 'botservice') echo "noenemy=1\n";
 			$mode = 'command';
 			return;
@@ -803,8 +803,8 @@ function discover($schmode = 0,&$data=NULL)
 						}
 						// 检查是否为自己配下的种火
 						if(!empty($edata['clbpara']['owner']) && $edata['clbpara']['owner'] == $pid) {
-							$log .= "<span class='yellow'>你遇到了自己配下的种火「{$edata['name']}」。</span><br>";
-							$log .= "<span class='lime'>「{$edata['name']}」友好地看着你，你们没有发生冲突。</span><br>";
+							$log .= "<span class='yellow'>你遇到了自己配下的種火「{$edata['name']}」。</span><br>";
+							$log .= "<span class='lime'>「{$edata['name']}」友好地看着你，你們沒有發生衝突。</span><br>";
 							continue; // 跳过战斗，继续寻找其他敌人
 						}
 					}
@@ -863,7 +863,7 @@ function discover($schmode = 0,&$data=NULL)
 						}
 						else
 						{
-							echo "进入战斗！<br>";
+							echo "進入戰鬥！<br>";
 							\revcombat\rev_combat_prepare($data,$edata,1,'',0);
 						}
 						return;
@@ -893,12 +893,12 @@ function discover($schmode = 0,&$data=NULL)
 		}
 		elseif($meetman_flag < 0)
 		{
-			$log .= '似乎有人隐藏着……<br>';
+			$log .= '似乎有人隱藏着……<br>';
 		}
 		else
 		{
-			if($horizon == 1) $log .= '<span class="yellow">周围没有同处于灵子视界中的对象。</span><br>';
-			else $log .= '<span class="yellow">周围一个人都没有。</span><br>';
+			if($horizon == 1) $log .= '<span class="yellow">周圍沒有同處於靈子視界中的對象。</span><br>';
+			else $log .= '<span class="yellow">周圍一個人都沒有。</span><br>';
 		}
 		$mode = 'command';
 		return;
@@ -914,14 +914,14 @@ function discover($schmode = 0,&$data=NULL)
 			$flag = focus_item($data);
 			if(!$flag)
 			{
-				$log .= '<span class="yellow">周围找不到任何物品。</span><br>';
+				$log .= '<span class="yellow">周圍找不到任何物品。</span><br>';
 				$mode = 'command';
 				return;
 			}
 		}
 		else
 		{
-			$log .= "但是什么都没有发现。<br>";
+			$log .= "但是什麼都沒有發現。<br>";
 		}
 	}
 	$mode = 'command';
@@ -945,7 +945,7 @@ function focus_item(&$data=NULL,$id=NULL)
 		if(!$db->num_rows($result))
 		{
 			// 这是特性
-			$log .= "但是你想找的东西已经不见了！<br>";
+			$log .= "但是你想找的東西已經不見了！<br>";
 			return 0;
 		}
 		$mi=$db->fetch_array($result);
@@ -981,7 +981,7 @@ function focus_item(&$data=NULL,$id=NULL)
 	}
 	else
 	{
-		$log .= "但是什么都没有发现。可能是因为道具有天然呆属性。<br>";
+		$log .= "但是什麼都沒有發現。可能是因為道具有天然呆屬性。<br>";
 	}
 	return;
 }

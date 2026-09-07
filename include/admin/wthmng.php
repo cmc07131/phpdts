@@ -8,12 +8,12 @@ if($mygroup < 3){
 global $wth,$now;
 
 if($chg == 1 && $wth){
-	echo '当前天气修改为：'.$wthinfo[$wth];
+	echo '當前天氣修改為：'.$wthinfo[$wth];
 	$weather = $wth;
 	save_gameinfo();
 	adminlog('wthchg',$wth);
 	naddnews($now,'syswthchg',$wth);
-}else{echo "当前天气：{$wthinfo[$weather]}<br />";}
+}else{echo "當前天氣：{$wthinfo[$weather]}<br />";}
 
 
 $i=0;$wthlog = '';
@@ -29,7 +29,7 @@ echo <<<EOT
 <input type="hidden" name="command" value="wthmng">
 <input type="hidden" name="chg" value="1">
 $wthlog <br />
-<input type="submit" name="submit" value="修改当前天气"></form>
+<input type="submit" name="submit" value="修改當前天氣"></form>
 EOT;
 ?>
 

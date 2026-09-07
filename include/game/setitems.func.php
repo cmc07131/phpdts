@@ -28,7 +28,7 @@ function process_set_item_effects(&$pa)
                     if(empty($pa['clbpara']['skill']) || !in_array('fireseed1', $pa['clbpara']['skill']))
                     {
                         getclubskill('fireseed1', $pa['clbpara']);
-                        $log .= "<span class='yellow'>套装「{$set_items_info[$sid]['name']}」效果：获得技能「种火I」！</span><br>";
+                        $log .= "<span class='yellow'>套裝「{$set_items_info[$sid]['name']}」效果：獲得技能「種火I」！</span><br>";
                     }
                     break;
 
@@ -36,7 +36,7 @@ function process_set_item_effects(&$pa)
                     if(empty($pa['clbpara']['skill']) || !in_array('fireseed2', $pa['clbpara']['skill']))
                     {
                         getclubskill('fireseed2', $pa['clbpara']);
-                        $log .= "<span class='yellow'>套装「{$set_items_info[$sid]['name']}」效果：获得技能「种火II」！</span><br>";
+                        $log .= "<span class='yellow'>套裝「{$set_items_info[$sid]['name']}」效果：獲得技能「種火II」！</span><br>";
                     }
                     break;
 
@@ -44,7 +44,7 @@ function process_set_item_effects(&$pa)
                     if(empty($pa['clbpara']['skill']) || !in_array('fireseed3', $pa['clbpara']['skill']))
                     {
                         getclubskill('fireseed3', $pa['clbpara']);
-                        $log .= "<span class='yellow'>套装「{$set_items_info[$sid]['name']}」效果：获得技能「种火III」！</span><br>";
+                        $log .= "<span class='yellow'>套裝「{$set_items_info[$sid]['name']}」效果：獲得技能「種火III」！</span><br>";
                     }
                     break;
 
@@ -52,7 +52,7 @@ function process_set_item_effects(&$pa)
                     if(empty($pa['clbpara']['skill']) || !in_array('fireseed4', $pa['clbpara']['skill']))
                     {
                         getclubskill('fireseed4', $pa['clbpara']);
-                        $log .= "<span class='yellow'>套装「{$set_items_info[$sid]['name']}」效果：获得技能「种火IV」！</span><br>";
+                        $log .= "<span class='yellow'>套裝「{$set_items_info[$sid]['name']}」效果：獲得技能「種火IV」！</span><br>";
                     }
                     break;
 
@@ -73,7 +73,7 @@ function process_set_item_effects(&$pa)
                     {
                         # 移除技能
                         lostclubskill('fireseed1', $pa['clbpara']);
-                        $log .= "<span class='yellow'>失去套装「{$set_items_info[$sid]['name']}」效果：技能「种火I」消失了！</span><br>";
+                        $log .= "<span class='yellow'>失去套裝「{$set_items_info[$sid]['name']}」效果：技能「種火I」消失了！</span><br>";
                     }
                     break;
 
@@ -81,7 +81,7 @@ function process_set_item_effects(&$pa)
                     if(!empty($pa['clbpara']['skill']) && in_array('fireseed2', $pa['clbpara']['skill']))
                     {
                         lostclubskill('fireseed2', $pa['clbpara']);
-                        $log .= "<span class='yellow'>失去套装「{$set_items_info[$sid]['name']}」效果：技能「种火II」消失了！</span><br>";
+                        $log .= "<span class='yellow'>失去套裝「{$set_items_info[$sid]['name']}」效果：技能「種火II」消失了！</span><br>";
                     }
                     break;
 
@@ -89,7 +89,7 @@ function process_set_item_effects(&$pa)
                     if(!empty($pa['clbpara']['skill']) && in_array('fireseed3', $pa['clbpara']['skill']))
                     {
                         lostclubskill('fireseed3', $pa['clbpara']);
-                        $log .= "<span class='yellow'>失去套装「{$set_items_info[$sid]['name']}」效果：技能「种火III」消失了！</span><br>";
+                        $log .= "<span class='yellow'>失去套裝「{$set_items_info[$sid]['name']}」效果：技能「種火III」消失了！</span><br>";
                     }
                     break;
 
@@ -97,7 +97,7 @@ function process_set_item_effects(&$pa)
                     if(!empty($pa['clbpara']['skill']) && in_array('fireseed4', $pa['clbpara']['skill']))
                     {
                         lostclubskill('fireseed4', $pa['clbpara']);
-                        $log .= "<span class='yellow'>失去套装「{$set_items_info[$sid]['name']}」效果：技能「种火IV」消失了！</span><br>";
+                        $log .= "<span class='yellow'>失去套裝「{$set_items_info[$sid]['name']}」效果：技能「種火IV」消失了！</span><br>";
                     }
                     break;
 

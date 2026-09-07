@@ -63,7 +63,7 @@ function sync_user_from_master($username, $password, $target_username = null) {
 	
 	$master_db = connect_master_db();
 	if(!$master_db) {
-		return array('success' => false, 'message' => '无法连接到主数据库');
+		return array('success' => false, 'message' => '無法連接到主數據庫');
 	}
 	
 	$username = addslashes($username);
@@ -72,7 +72,7 @@ function sync_user_from_master($username, $password, $target_username = null) {
 	// 检查主数据库中的用户
 	$result = $master_db->query("SELECT * FROM {$master_tablepre}users WHERE username = '$username' AND password = '$password'");
 	if(!$master_db->num_rows($result)) {
-		return array('success' => false, 'message' => '主数据库中未找到匹配的用户名和密码');
+		return array('success' => false, 'message' => '主數據庫中未找到匹配的用户名和密碼');
 	}
 	
 	$master_user_data = $master_db->fetch_array($result);
@@ -82,7 +82,7 @@ function sync_user_from_master($username, $password, $target_username = null) {
 	// 检查是否已经被其他账户同步过
 	$sync_info = get_user_sync_info($username);
 	if($sync_info && $sync_info['target_username'] != $target_username) {
-		return array('success' => false, 'message' => "该主服务器账户已被用户 {$sync_info['target_username']} 同步，无法重复同步");
+		return array('success' => false, 'message' => "該主服務器賬户已被用户 {$sync_info['target_username']} 同步，無法重複同步");
 	}
 	
 	// 检查本地是否已存在目标用户
@@ -109,7 +109,7 @@ function sync_user_from_master($username, $password, $target_username = null) {
 		// 记录同步信息
 		set_user_sync_info($target_username, $username);
 		
-		return array('success' => true, 'message' => '用户数据同步成功');
+		return array('success' => true, 'message' => '用户數據同步成功');
 	} else {
 		// 创建新用户
 		$insert_fields = array('username' => $target_username);
@@ -130,9 +130,9 @@ function sync_user_from_master($username, $password, $target_username = null) {
 		if($db->affected_rows()) {
 			// 记录同步信息
 			set_user_sync_info($target_username, $username);
-			return array('success' => true, 'message' => '用户账户创建并同步成功');
+			return array('success' => true, 'message' => '用户賬户創建並同步成功');
 		} else {
-			return array('success' => false, 'message' => '创建用户账户失败');
+			return array('success' => false, 'message' => '創建用户賬户失敗');
 		}
 	}
 }
@@ -272,7 +272,7 @@ function reverse_migrate_user($local_username, $remote_username, $remote_passwor
 
 	// 检查是否为反向迁移模式
 	if(!is_reverse_migration_mode()) {
-		return array('success' => false, 'message' => '当前不是反向迁移模式 (slave_level != -1)');
+		return array('success' => false, 'message' => '當前不是反向遷移模式 (slave_level != -1)');
 	}
 
 	$local_username = addslashes($local_username);
@@ -282,7 +282,7 @@ function reverse_migrate_user($local_username, $remote_username, $remote_passwor
 	// 读取本地用户数据（本地用户已通过登录验证）
 	$local_result = $db->query("SELECT * FROM {$gtablepre}users WHERE username = '$local_username'");
 	if(!$db->num_rows($local_result)) {
-		return array('success' => false, 'message' => '本地数据库中未找到用户数据');
+		return array('success' => false, 'message' => '本地數據庫中未找到用户數據');
 	}
 
 	$local_user_data = $db->fetch_array($local_result);
@@ -292,13 +292,13 @@ function reverse_migrate_user($local_username, $remote_username, $remote_passwor
 	// 连接到远端从数据库（复用主数据库配置）
 	$slave_db = connect_master_db(); // 复用连接函数，实际连接的是从数据库
 	if(!$slave_db) {
-		return array('success' => false, 'message' => '无法连接到远端从数据库');
+		return array('success' => false, 'message' => '無法連接到遠端從數據庫');
 	}
 
 	// 验证远端从服务器的用户身份
 	$remote_auth_result = $slave_db->query("SELECT * FROM {$master_tablepre}users WHERE username = '$remote_username' AND password = '$remote_password'");
 	if(!$slave_db->num_rows($remote_auth_result)) {
-		return array('success' => false, 'message' => '远端从服务器身份验证失败：用户名或密码错误');
+		return array('success' => false, 'message' => '遠端從服務器身份驗證失敗：用户名或密碼錯誤');
 	}
 
 	// 检查远端从数据库是否已存在目标用户
@@ -326,9 +326,9 @@ function reverse_migrate_user($local_username, $remote_username, $remote_passwor
 		// 记录反向迁移信息
 		set_reverse_migration_info($target_username, $local_username);
 
-		$message = '用户数据已推送到远端从服务器';
+		$message = '用户數據已推送到遠端從服務器';
 		if($game_migrate_result['game_data_migrated']) {
-			$message .= '，游戏角色数据已同步';
+			$message .= '，遊戲角色數據已同步';
 		}
 
 		return array('success' => true, 'message' => $message);
@@ -356,14 +356,14 @@ function reverse_migrate_user($local_username, $remote_username, $remote_passwor
 			// 记录反向迁移信息
 			set_reverse_migration_info($target_username, $local_username);
 
-			$message = '用户账户已创建并推送到远端从服务器';
+			$message = '用户賬户已創建並推送到遠端從服務器';
 			if($game_migrate_result['game_data_migrated']) {
-				$message .= '，游戏角色数据已同步';
+				$message .= '，遊戲角色數據已同步';
 			}
 
 			return array('success' => true, 'message' => $message);
 		} else {
-			return array('success' => false, 'message' => '在远端从服务器创建用户账户失败');
+			return array('success' => false, 'message' => '在遠端從服務器創建用户賬户失敗');
 		}
 	}
 }
@@ -382,7 +382,7 @@ function reverse_migrate_game_data($local_username, $target_username, $slave_db)
 	$result = $db->query("SELECT * FROM {$tablepre}players WHERE name = '$local_username' AND type = 0");
 
 	if(!$db->num_rows($result)) {
-		return array('game_data_migrated' => false, 'message' => '本地数据库中未找到游戏角色数据');
+		return array('game_data_migrated' => false, 'message' => '本地數據庫中未找到遊戲角色數據');
 	}
 
 	$local_player_data = $db->fetch_array($result);
@@ -407,7 +407,7 @@ function reverse_migrate_game_data($local_username, $target_username, $slave_db)
 			$slave_db->query($update_sql);
 		}
 
-		return array('game_data_migrated' => true, 'message' => '游戏角色数据已推送到远端从服务器');
+		return array('game_data_migrated' => true, 'message' => '遊戲角色數據已推送到遠端從服務器');
 	} else {
 		// 在远端从数据库中创建新角色
 		$insert_fields = array('name' => $target_username);
@@ -429,9 +429,9 @@ function reverse_migrate_game_data($local_username, $target_username, $slave_db)
 		$slave_db->query($insert_sql);
 
 		if($slave_db->affected_rows()) {
-			return array('game_data_migrated' => true, 'message' => '游戏角色数据已创建并推送到远端从服务器');
+			return array('game_data_migrated' => true, 'message' => '遊戲角色數據已創建並推送到遠端從服務器');
 		} else {
-			return array('game_data_migrated' => false, 'message' => '在远端从服务器创建游戏角色数据失败');
+			return array('game_data_migrated' => false, 'message' => '在遠端從服務器創建遊戲角色數據失敗');
 		}
 	}
 }

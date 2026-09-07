@@ -50,18 +50,18 @@
 						}
 						return false;"
 						value="{lang refresh}">
-					<!-- 迷你进行状况 -->
+					<!-- 迷你進行狀況 -->
 					<input type="button" id="switch" onClick="
 						if($('sendmode').value=='news'){
 							$('sendmode').value='ref';
 							$('chatlist').style.display='';
 							$('newslist').style.display='none';
-							$('chattitle').innerHTML='聊天讯息';
+							$('chattitle').innerHTML='聊天訊息';
 						}else{
 							$('sendmode').value='news';
 							$('chatlist').style.display='none';
 							$('newslist').style.display='';
-							$('chattitle').innerHTML='进行状况';
+							$('chattitle').innerHTML='進行狀況';
 						}
 					chat($('sendmode').value,$chatrefresh);
 					return false;" value="{lang chatswitch}">
@@ -79,7 +79,7 @@
 	</tr>
 </table>
 
-<!-- JavaScript 代码 -->
+<!-- JavaScript 代碼 -->
 <script>
 	function insertEm(em) {
 		document.getElementById('chatmsg').value += "[" + em + "]";

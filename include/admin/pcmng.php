@@ -73,15 +73,15 @@ if($command == 'kill' || $command == 'live' || $command == 'del') {
 	}
 	if($operlist || $operlist2 || $dfaillist || $gfaillist){
 		if($command == 'kill'){
-			$operword = '被杀死';
+			$operword = '被殺死';
 			$qryword = "UPDATE {$tablepre}players SET hp='0',state='15',bid='0' ";
 		}elseif($command == 'live'){
-			$operword = '被复活';
+			$operword = '被複活';
 			$qryword = "UPDATE {$tablepre}players SET hp=mhp,state='0' ";
 		}elseif($command == 'del'){
 			$operword = '被清除';
 			$qryword = "UPDATE {$tablepre}players SET hp='0',state='16',bid='0',weps='0',arbs='0',arhs='0',aras='0',arfs='0',arts='0',itms0='0',itms1='0',itms2='0',itms3='0',itms4='0',itms5='0',itms6='0',money='0' ";
-			$operword2 = '的尸体被清除';
+			$operword2 = '的屍體被清除';
 			$qryword2 = "UPDATE {$tablepre}players SET bid='0',weps='0',arbs='0',arhs='0',aras='0',arfs='0',arts='0',itms0='0',itms1='0',itms2='0',itms3='0',itms4='0',itms5='0',itms6='0',money='0' ";
 		}
 		if($operlist){
@@ -100,15 +100,15 @@ if($command == 'kill' || $command == 'live' || $command == 'del') {
 		}
 		if($gfaillist){
 			$gfailnames = implode(',',($gfaillist));
-			$cmd_info .= " 玩家 $gfailnames 已经处于该状态，无法 $operword  。<br>";
+			$cmd_info .= " 玩家 $gfailnames 已經處於該狀態，無法 $operword  。<br>";
 		}
 		if($dfaillist){
 			$dfailnames = implode(',',($dfaillist));
-			$cmd_info .= " PID为 $dfailnames 的玩家不存在或位于查询范围外  。<br>";
+			$cmd_info .= " PID為 $dfailnames 的玩家不存在或位於查詢範圍外  。<br>";
 		}
 		save_gameinfo();
 	}else{
-		$cmd_info = "指定的帐户超出查询范围或指令错误。";
+		$cmd_info = "指定的帳户超出查詢範圍或指令錯誤。";
 	}
 	$command = 'list';
 } elseif(strpos($command ,'edit')===0) {
@@ -116,9 +116,9 @@ if($command == 'kill' || $command == 'live' || $command == 'del') {
 	$no = (int)$pid[1];
 	$pid = (int)$pid[2];
 	if(!$pid){
-		$cmd_info = "帐户UID错误。";
+		$cmd_info = "帳户UID錯誤。";
 	}elseif(!isset($pcdata[$no]) || $pcdata[$no]['pid'] != $pid){
-		$cmd_info = "该帐户不存在或超出查询范围。";
+		$cmd_info = "該帳户不存在或超出查詢範圍。";
 	}else{
 		$result = $db->query("SELECT * FROM {$tablepre}players WHERE pid='$pid' AND type='0'");
 		$pc = $db->fetch_array($result);
@@ -150,11 +150,11 @@ if($command == 'kill' || $command == 'live' || $command == 'del') {
 		}
 	}
 	if(!$effect_flag){
-		$cmd_info = "没有检测到对角色 $name 的修改";
+		$cmd_info = "沒有檢測到對角色 $name 的修改";
 	} else {
 		adminlog('editpc',$name);
 		addnews($now,'editpc',$name);
-		$cmd_info = "角色 $name 的属性被修改了";
+		$cmd_info = "角色 $name 的屬性被修改了";
 	}
 	$pcdata = dbsearch($start,$checkmode,$checkinfo);
 }
@@ -184,9 +184,9 @@ function dbsearch($start,$checkmode,$checkinfo){
 		$result = $db->query("SELECT * FROM {$tablepre}players WHERE type='0'".$limitstr);
 	}
 	if(!$db->num_rows($result)) {
-		$cmd_info = '没有符合条件的角色。';
+		$cmd_info = '沒有符合條件的角色。';
 		$startno = $start + 1;
-		$resultinfo = '位置：第'.$startno.'条记录';
+		$resultinfo = '位置：第'.$startno.'條記錄';
 		$pcdata = Array();
 	} else {
 		while($pc = $db->fetch_array($result)) {
@@ -194,7 +194,7 @@ function dbsearch($start,$checkmode,$checkinfo){
 		}
 		$startno = $start + 1;
 		$endno = $start + count($pcdata);
-		$resultinfo = '第'.$startno.'条-第'.$endno.'条记录';
+		$resultinfo = '第'.$startno.'條-第'.$endno.'條記錄';
 	}
 	return $pcdata;
 }

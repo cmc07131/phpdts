@@ -11,22 +11,22 @@ $cmd_info = '';
 if($command == 'add') {
 	$addgroup = intval($addgroup);
 	if(!$addname) {
-		$cmd_info =  '必须填写GM账号';
+		$cmd_info =  '必須填寫GM賬號';
 	} elseif ($addgroup < 2 || $addgroup >= $mygroup || $addgroup > 10) {
-		$cmd_info =  '权限设置错误！';
+		$cmd_info =  '權限設置錯誤！';
 	} else {
 		$result = $db->query("SELECT uid,username,groupid FROM {$gtablepre}users WHERE username='$addname'");
 		if(!$db->num_rows($result)) { 
-			$cmd_info =  '此账号不存在。'; 
+			$cmd_info =  '此賬號不存在。'; 
 		} else {
 			$newgm = $db->fetch_array($result);
 			if($newgm['groupid'] >1){
-				$cmd_info =  '此账号已经是管理员！'; 
+				$cmd_info =  '此賬號已經是管理員！'; 
 			}else{
 				$uid = $newgm['uid'];
 				$db->query("UPDATE {$gtablepre}users SET groupid='$addgroup' WHERE uid='$uid'");
 				adminlog('addgm',$addname,$addgroup);
-				$cmd_info =  "管理员 {$addname} 添加成功，权限等级：{$addgroup}";
+				$cmd_info =  "管理員 {$addname} 添加成功，權限等級：{$addgroup}";
 				$newgm['groupid'] = $addgroup;
 				$gmdata[$uid] = $newgm;
 			}				
@@ -38,15 +38,15 @@ if($command == 'add') {
 	if(isset($gmdata[$adminuid])) {
 		$uid = $gmdata[$adminuid]['uid'];
 		if($gmdata[$adminuid]['groupid'] >= $mygroup){
-			$cmd_info = "权限不够，不能删除管理员 {$gmdata[$adminuid]['username']}！";
+			$cmd_info = "權限不夠，不能刪除管理員 {$gmdata[$adminuid]['username']}！";
 		} else {
 			$db->query("UPDATE {$gtablepre}users SET groupid=1 WHERE uid='$uid'");
 			adminlog('delgm',$gmdata[$adminuid]['username']);
-			$cmd_info =  "管理员 {$gmdata[$adminuid]['username']} 的管理权限被删除！";
+			$cmd_info =  "管理員 {$gmdata[$adminuid]['username']} 的管理權限被刪除！";
 			unset($gmdata[$adminuid]);
 		}
 	}else{
-		$cmd_info =  "请输入正确的数据！";
+		$cmd_info =  "請輸入正確的數據！";
 	}
 	$command = 'gmlist';
 } elseif($command == 'edit') {
@@ -54,17 +54,17 @@ if($command == 'add') {
 	$editgroup = intval($_POST[$adminuid.'_group']);
 	if(isset($gmdata[$adminuid])) {
 		if ( $editgroup < 2 || $editgroup >= $mygroup || $editgroup > 10) {
-			$cmd_info =  '权限设置错误！';
+			$cmd_info =  '權限設置錯誤！';
 		} elseif($gmdata[$adminuid]['groupid'] >= $mygroup) {
-			$cmd_info =  "权限不够，不能编辑管理员 {$editname} ！<br>";
+			$cmd_info =  "權限不夠，不能編輯管理員 {$editname} ！<br>";
 		} else {
 			$db->query("UPDATE {$gtablepre}users SET groupid='$editgroup' WHERE uid='$adminuid'");
 			adminlog('editgm',$gmdata[$adminuid]['username'],$editgroup);
-			$cmd_info =  "管理员 {$gmdata[$adminuid]['username']} 权限修改成功，权限等级：{$editgroup}";
+			$cmd_info =  "管理員 {$gmdata[$adminuid]['username']} 權限修改成功，權限等級：{$editgroup}";
 			$gmdata[$adminuid]['groupid'] = $editgroup;
 		}
 	}else{
-		$cmd_info =  "请输入正确的数据！";
+		$cmd_info =  "請輸入正確的數據！";
 	}
 	$command = 'gmlist';
 }

@@ -39,7 +39,7 @@ if($action === 'download') {
 		adminlog('resourcemng_download',$res_type,$ruleset,basename($target_file));
 		exit;
 	}
-	$cmd_info = '下载失败：目标文件不存在。';
+	$cmd_info = '下載失敗：目標文件不存在。';
 }
 
 if($action === 'upload' && $allow_upload) {
@@ -47,16 +47,16 @@ if($action === 'upload' && $allow_upload) {
 		$uploaded = file_get_contents($_FILES['cfgfile']['tmp_name']);
 		if($uploaded !== false && strlen($uploaded) > 0) {
 			if(@file_put_contents($target_file, $uploaded) !== false) {
-				$cmd_info = '上传覆盖成功。';
+				$cmd_info = '上傳覆蓋成功。';
 				adminlog('resourcemng_upload',$res_type,$ruleset,$_FILES['cfgfile']['name']);
 			} else {
-				$cmd_info = '上传失败：写入文件失败。';
+				$cmd_info = '上傳失敗：寫入文件失敗。';
 			}
 		} else {
-			$cmd_info = '上传失败：文件内容为空或不可读。';
+			$cmd_info = '上傳失敗：文件內容為空或不可讀。';
 		}
 	} else {
-		$cmd_info = '上传失败：未检测到上传文件。';
+		$cmd_info = '上傳失敗：未檢測到上傳文件。';
 	}
 }
 
@@ -73,16 +73,16 @@ if($action === 'save_record') {
 		if($valid) {
 			$records[$id] = $new_row;
 			if(resourcemng_write_data($res_type, $target_file, $header, $records)) {
-				$cmd_info = '记录已保存。';
+				$cmd_info = '記錄已保存。';
 				adminlog('resourcemng_edit',$res_type,$ruleset,$id);
 			} else {
-				$cmd_info = '保存失败：写入文件失败。';
+				$cmd_info = '保存失敗：寫入文件失敗。';
 			}
 		} else {
-			$cmd_info = '保存失败：'.$err;
+			$cmd_info = '保存失敗：'.$err;
 		}
 	} else {
-		$cmd_info = '保存失败：记录不存在。';
+		$cmd_info = '保存失敗：記錄不存在。';
 	}
 	$resource = resourcemng_read_data($res_type, $target_file);
 	$records = $resource['records'];
@@ -94,10 +94,10 @@ if($action === 'delete') {
 		unset($records[$id]);
 		$records = array_values($records);
 		if(resourcemng_write_data($res_type, $target_file, $header, $records)) {
-			$cmd_info = '记录已删除。';
+			$cmd_info = '記錄已刪除。';
 			adminlog('resourcemng_delete',$res_type,$ruleset,$id);
 		} else {
-			$cmd_info = '删除失败：写入文件失败。';
+			$cmd_info = '刪除失敗：寫入文件失敗。';
 		}
 	}
 	$resource = resourcemng_read_data($res_type, $target_file);
@@ -111,13 +111,13 @@ if($action === 'add') {
 		if($res_type === 'npc' && isset($record_id) && intval($record_id) >= 0) $records[intval($record_id)] = $new_row;
 		else $records[] = $new_row;
 		if(resourcemng_write_data($res_type, $target_file, $header, $records)) {
-			$cmd_info = '新记录已添加。';
+			$cmd_info = '新記錄已添加。';
 			adminlog('resourcemng_add',$res_type,$ruleset,'new');
 		} else {
-			$cmd_info = '新增失败：写入文件失败。';
+			$cmd_info = '新增失敗：寫入文件失敗。';
 		}
 	} else {
-		$cmd_info = '新增失败：'.$err;
+		$cmd_info = '新增失敗：'.$err;
 	}
 	$resource = resourcemng_read_data($res_type, $target_file);
 	$records = $resource['records'];
@@ -151,7 +151,7 @@ foreach($records as $i => $row) {
 }
 $total_count = count($filtered);
 $paged_records = array_slice($filtered, $start, $showlimit);
-$resultinfo = '第'.($total_count?($start+1):0).'条-第'.($start+count($paged_records)).'条 / 共'.$total_count.'条';
+$resultinfo = '第'.($total_count?($start+1):0).'條-第'.($start+count($paged_records)).'條 / 共'.$total_count.'條';
 
 // 转义模板输出，表单提交时浏览器会还原实体 / Escape template output; browsers decode entities on submit
 // keyword 已经由 common.inc.php 的 gstrfilter() 实体化；禁止重复编码导致搜索框内容漂移。
@@ -184,7 +184,7 @@ function resourcemng_get_rulesets($res_type){
 		'npc' => 'npc_1.php',
 	);
 	$list = array();
-	$list['__default__'] = array('name' => '默认配置', 'file' => GAME_ROOT.'./gamedata/cache/'.$map[$res_type]);
+	$list['__default__'] = array('name' => '默認配置', 'file' => GAME_ROOT.'./gamedata/cache/'.$map[$res_type]);
 	$ruleset_root = GAME_ROOT.'./gamedata/ruleset';
 	if(is_dir($ruleset_root)) {
 		foreach(scandir($ruleset_root) as $id) {
@@ -260,11 +260,11 @@ function resourcemng_write_data($res_type, $file, $header, $records){
 
 function resourcemng_columns($res_type){
 	$map = array(
-		'mapitem' => array('刷新禁区','地图编号','数量','名称','类别','效果值','耐久/次数','属性','itmpara'),
-		'shopitem' => array('记录类型','分类/出现率','价格/参数','等级','名称','类别','效果值','耐久/次数','属性','itmpara'),
-		'stitem' => array('名称','类别','效果值','耐久/次数','属性','itmpara'),
-		'stwep' => array('名称','类别','效果值','耐久/次数','属性','itmpara'),
-		'npc' => array('NPC类别','配置JSON'),
+		'mapitem' => array('刷新禁區','地圖編號','數量','名稱','類別','效果值','耐久/次數','屬性','itmpara'),
+		'shopitem' => array('記錄類型','分類/出現率','價格/參數','等級','名稱','類別','效果值','耐久/次數','屬性','itmpara'),
+		'stitem' => array('名稱','類別','效果值','耐久/次數','屬性','itmpara'),
+		'stwep' => array('名稱','類別','效果值','耐久/次數','屬性','itmpara'),
+		'npc' => array('NPC類別','配置JSON'),
 	);
 	return $map[$res_type];
 }
@@ -299,11 +299,11 @@ function resourcemng_collect_row($res_type, $input, $default){
 function resourcemng_validate_row($res_type, $row, &$err){
 	$err = '';
 	if($res_type === 'npc') {
-		if(!is_array($row)) { $err = 'NPC配置必须为对象数组'; return false; }
+		if(!is_array($row)) { $err = 'NPC配置必須為對象數組'; return false; }
 		return true;
 	}
 	if(empty($row) || trim($row[0]) === '') {
-		$err = '首字段不能为空';
+		$err = '首字段不能為空';
 		return false;
 	}
 	// CSV 资源的最后一列为 itmpara，若填写则应为合法 JSON

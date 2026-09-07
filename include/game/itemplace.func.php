@@ -98,7 +98,7 @@ function init_itemmix_tips($itemindex='',&$data=NULL)
 		$data = &$pdata;
 	}
 	extract($data,EXTR_REFS);
-	$mix_type = Array('normal' => '通常','sync' => '同调', 'overlay' => '超量');
+	$mix_type = Array('normal' => '通常','sync' => '同調', 'overlay' => '超量');
 	$mhint = ''; $smhint = '';
 	if(!empty($itemindex))
 	{
@@ -121,7 +121,7 @@ function init_itemmix_tips($itemindex='',&$data=NULL)
 		}
 		else
 		{
-			$smhint .= '没有找到<span class="blueseed b">'.$itemindex.'</span>的相关合成公式<span class="grey">（不会显示隐藏公式）</span>';
+			$smhint .= '沒有找到<span class="blueseed b">'.$itemindex.'</span>的相關合成公式<span class="grey">（不會顯示隱藏公式）</span>';
 		}
 		return $smhint;
 	}
@@ -268,13 +268,13 @@ function get_npc_helpinfo($nlist,$tooltip=1)
 								}
 								else
 								{
-									$snpc['pls'] = $snpc['pls']==99 ? '随机' : $plsinfo[$snpc['pls']];
+									$snpc['pls'] = $snpc['pls']==99 ? '隨機' : $plsinfo[$snpc['pls']];
 								}
 							}
 						}
 						if(isset($snpc['pose']))$snpc['poseinfo'] = "<span tooltip=\"{$posetips[$snpc['pose']]}\">".$poseinfo[$snpc['pose']]."</span>";
 						if(isset($snpc['tactic']))$snpc['tacinfo'] = "<span tooltip=\"{$tactips[$snpc['tactic']]}\">".$tacinfo[$snpc['tactic']]."</span>";
-						if(isset($snpc['club'])) $snpc['club'] = $snpc['club']==99 ? '第一形态' : $clubinfo[$snpc['club']];
+						if(isset($snpc['club'])) $snpc['club'] = $snpc['club']==99 ? '第一形態' : $clubinfo[$snpc['club']];
 						//格式化装备、道具名
 						foreach (Array('wep','arb','arh','ara','arf','art','itm0','itm1','itm2','itm3','itm4','itm5','itm6') as $value)
 						{
@@ -333,8 +333,8 @@ function get_item_place($which)
 			if ($iname==$which)
 			{
 				if ($iarea==99) $result.="每禁"; else $result.="{$iarea}禁";
-				if ($imap==99) $result.="全图随机"; else $result.="于{$plsinfo[$imap]}";
-				$result.="刷新{$inum}个 \r";
+				if ($imap==99) $result.="全圖隨機"; else $result.="於{$plsinfo[$imap]}";
+				$result.="刷新{$inum}個 \r";
 			}
 		}
 	$file = config('shopitem',$gamecfg);
@@ -354,7 +354,7 @@ function get_item_place($which)
 	{
 		if ($lst['result'][0]==$which || $lst['result'][0]==$which.' ')
 		{
-			$result.="通过合成获取 \r";
+			$result.="通過合成獲取 \r";
 			break;
 		}
 	}
@@ -366,7 +366,7 @@ function get_item_place($which)
 			list($item,$kind)=explode(',',$lst);
 			if ($item==$which)
 			{
-				$result.="通过同调合成获取 \r";
+				$result.="通過同調合成獲取 \r";
 				break;
 			}
 		}
@@ -378,7 +378,7 @@ function get_item_place($which)
 			list($item,$kind)=explode(',',$lst);
 			if ($item==$which)
 			{
-				$result.="通过超量合成获取 \r";
+				$result.="通過超量合成獲取 \r";
 				break;
 			}
 		}
@@ -390,7 +390,7 @@ function get_item_place($which)
 			list($item,$kind)=explode(',',$lst);
 			if ($item==$which)
 			{
-				$result.="打开礼品盒时有概率获得 \r";
+				$result.="打開禮品盒時有概率獲得 \r";
 				break;
 			}
 		}
@@ -402,7 +402,7 @@ function get_item_place($which)
 			list($item,$kind)=explode(',',$lst);
 			if ($item==$which)
 			{
-				$result.="打开游戏王卡包时有概率获得 \r";
+				$result.="打開遊戲王卡包時有概率獲得 \r";
 				break;
 			}
 		}
@@ -437,13 +437,13 @@ function get_item_place($which)
 		{
 			if(in_array($tvkey,array('wep','arb','arh','ara','arf','art','itm1','itm2','itm3','itm4','itm5','itm6')) && ($which == $tvitm))
 			{
-				$result.="头衔【{$titles_list[$tv]}】的入场奖励 \r";
+				$result.="頭銜【{$titles_list[$tv]}】的入場獎勵 \r";
 				break;
 			}
 		}
 	}
-	if ($which == "悲叹之种") $result.="通过使用『灵魂宝石』强化物品失败获得 \r";
-	if (strpos($which,"（＊）")!==false) $result.="这是一项随机素材，素材名中的文字可能是对素材名的提示。\r在游戏内成功合成上一阶段的关键素材时，会获得更准确的提示。";
+	if ($which == "悲嘆之種") $result.="通過使用『靈魂寶石』強化物品失敗獲得 \r";
+	if (strpos($which,"（＊）")!==false) $result.="這是一項隨機素材，素材名中的文字可能是對素材名的提示。\r在遊戲內成功合成上一階段的關鍵素材時，會獲得更準確的提示。";
 	return $result;
 }
 
@@ -480,7 +480,7 @@ function get_item_npcdrop($which)
 					$npc = array_merge($npcs,$npc);
 					if(isset($npc[$nipval]) && ($which == $npc[$nipval]))
 					{
-						$nresult ="击败{$npc['name']}后拾取 \r";
+						$nresult ="擊敗{$npc['name']}後拾取 \r";
 						if(strpos($result,$nresult)===false)
 						{
 							$result .= $nresult;

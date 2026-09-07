@@ -1,11 +1,11 @@
 {template header}
 <div id="notice"></div>
-<div class="subtitle">空想梦境</div>
+<div class="subtitle">空想夢境</div>
 <center>
 <form method="post" name="vn_postitem" onsubmit="return false;">
 	<input type="hidden" name="vnmode" id="vnmode" value="none">
     <span class="grey"><div id="vmixtips">$vnmix_top_tips</div></span>
-    <span class="yellow"><div id="vmixc2">所持切糕数：$udata['credits2']</div></span>
+    <span class="yellow"><div id="vmixc2">所持切糕數：$udata['credits2']</div></span>
 	<table>
         <tr>
             <td class="b1" height=20px><span>{lang stf0}</span></td>
@@ -55,7 +55,7 @@
                 </select>
             </td>
             <td class="b3">
-                <input type="text" name="vrname" list="vsnamelist" value="<!--{if !empty($carr['itm'])}-->$carr['itm']<!--{else}-->在此填写道具名<!--{/if}-->" maxlength="30" onkeydown="if(event.keyCode==13){event.preventDefault();}">
+                <input type="text" name="vrname" list="vsnamelist" value="<!--{if !empty($carr['itm'])}-->$carr['itm']<!--{else}-->在此填寫道具名<!--{/if}-->" maxlength="30" onkeydown="if(event.keyCode==13){event.preventDefault();}">
             </td>
             <td class="b3">
                 <select name="vrk">
@@ -69,7 +69,7 @@
                 <input type="number" name="vre" style="width:45px" value="$carr['itme']" min="1" max="16777214" oninput="if(value>16777214)value=16777214;if(value<1)value=1" onkeydown="if(event.keyCode==13){event.preventDefault();}">
             </td>
             <td class="b3">
-                <span tooltip2="输入值为0时耐久度为“∞”">
+                <span tooltip2="輸入值為0時耐久度為“∞”">
                 <input type="number" name="vrs" style="width:45px" value="$carr['itms']" min="0" max="65535" oninput="if(value>65535)value=65535;if(value<0)value=0" onkeydown="if(event.keyCode==13){event.preventDefault();}">
                 </span>
             </td>
@@ -78,14 +78,14 @@
                 <input type="hidden" id="vrsk" name="vrsk" value="{$carr['itmsk']}">
             </td>
             <td class="b3">
-                <span tooltip2="删除最后一个添加的属性"><input type="button" value="-" onclick="changeVrskResult(-1);"></span> 
+                <span tooltip2="刪除最後一個添加的屬性"><input type="button" value="-" onclick="changeVrskResult(-1);"></span> 
                 <select id="evrsk" name="evrsk">
                     <!--{eval $tmpk = !empty($carr['itmk']) ? $carr['itmk'] : 'Y';}-->
 					<!--{loop $temp_vn_itemspkinfo $sk $info}-->
 					<option value="$sk">$info</option>
                     <!--{/loop}-->
                 </select>
-                <span tooltip2="添加当前选择的属性"><input type="button" value="+" onclick="changeVrskResult();"></span>
+                <span tooltip2="添加當前選擇的屬性"><input type="button" value="+" onclick="changeVrskResult();"></span>
             </td>
         </tr>
 	</table>
@@ -102,11 +102,11 @@
     <!--{if isset($self_edit_flag)}-->
         <!--{eval $ep='ep+'.$editid;$dp='dp+'.$editid;$c1='cs+'.$editid.'+1';$c2='cs+'.$editid.'+2';}-->
             <!--{if ($udata['groupid']>=$vnmix_editor_group||$udata['username']==$gamefounder)}-->
-                <input type="radio" id="c1" name="exmode" value="$c1" style="margin-left: 10px;"><a onclick="$('c1').click();" href="javascript:void(0);">审核通过</a>
-                <input type="radio" id="c2" name="exmode"value="$c2" style="margin-left: 10px;"><a onclick="$('c2').click();" href="javascript:void(0);">审核不通过</a>
+                <input type="radio" id="c1" name="exmode" value="$c1" style="margin-left: 10px;"><a onclick="$('c1').click();" href="javascript:void(0);">審核通過</a>
+                <input type="radio" id="c2" name="exmode"value="$c2" style="margin-left: 10px;"><a onclick="$('c2').click();" href="javascript:void(0);">審核不通過</a>
             <!--{/if}-->
-            <input type="radio" id="ep" name="exmode" value="$ep" style="margin-left: 10px;" checked><a onclick="$('ep').click();" href="javascript:void(0);">编辑</a>
-            <input type="radio" id="dp" name="exmode" value="$dp" style="margin-left: 10px;"><a onclick="$('dp').click();" href="javascript:void(0);"><span class="red">删除（该操作不可撤销！）</span></a>
+            <input type="radio" id="ep" name="exmode" value="$ep" style="margin-left: 10px;" checked><a onclick="$('ep').click();" href="javascript:void(0);">編輯</a>
+            <input type="radio" id="dp" name="exmode" value="$dp" style="margin-left: 10px;"><a onclick="$('dp').click();" href="javascript:void(0);"><span class="red">刪除（該操作不可撤銷！）</span></a>
         <br>
     <!--{/if}-->
     <br>
@@ -123,7 +123,7 @@ function changeVrskResult(mode=0)
     var arr = $('evrsk').options;
     if(!mode && sk.length>=7)
     {
-        window.alert("不能添加超过7个属性");
+        window.alert("不能添加超過7個屬性");
         return;
     }
     if(key || mode<0)

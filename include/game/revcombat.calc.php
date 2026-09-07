@@ -166,11 +166,11 @@ namespace revcombat
 					$pd['bid'] = $pa['pid'];
 				}
 				$chase_flag = 1;
-				$log.= "<span class='red'>{$pa['nm']}与{$pd['nm']}相互对峙着！</span><br>";
+				$log.= "<span class='red'>{$pa['nm']}與{$pd['nm']}相互對峙着！</span><br>";
 			}
 			else 
 			{
-				$log.= "<span class='grey'>{$pd['nm']}从{$pa['nm']}的视野里消失了。</span><br>";
+				$log.= "<span class='grey'>{$pd['nm']}從{$pa['nm']}的視野裏消失了。</span><br>";
 			}
 		}
 		# 进攻方(pa)持有非爆武器，且防守方(pd)未能及时反击，检查是否触发追击
@@ -187,11 +187,11 @@ namespace revcombat
 					$pd['bid'] = $pa['pid'];
 				}
 				$chase_flag = 1;
-				$log.= "<span class='red'>但是{$pa['nm']}紧追着{$pd['nm']}不放！</span><br>";
+				$log.= "<span class='red'>但是{$pa['nm']}緊追着{$pd['nm']}不放！</span><br>";
 			}
 			else 
 			{
-				$log.= "<span class='grey'>{$pd['nm']}从{$pa['nm']}的视野里消失了。</span><br>";
+				$log.= "<span class='grey'>{$pd['nm']}從{$pa['nm']}的視野裏消失了。</span><br>";
 			}
 		}
 		if($chase_flag)

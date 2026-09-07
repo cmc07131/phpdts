@@ -6,8 +6,8 @@ if(!defined('IN_ADMIN')) {
 $dir = GAME_ROOT.'./gamedata/templates/';
 if(!isset($sub_cmd))
 {
-	$cmd_info = "即将清空路径{$dir}下的.tpl后缀文件，";
-	$cmd_info .= "确认清理吗？<br>";
+	$cmd_info = "即將清空路徑{$dir}下的.tpl後綴文件，";
+	$cmd_info .= "確認清理嗎？<br>";
 	$cmd_info .= "
 	<form method=\"post\" name=\"admin\" onsubmit=\"admin.php\">
 	<input type=\"hidden\" name=\"mode\" id=\"mode\" value=\"templates_clean\">
@@ -21,12 +21,12 @@ else
 	$tpl_file = scandir($dir);
 	if(!empty($tpl_file))
 	{
-		$cmd_info = "开始清理缓存文件……<br>";
+		$cmd_info = "開始清理緩存文件……<br>";
 		foreach($tpl_file as $key => $file_name)
 		{
 			if(strpos($file_name,'.tpl')!==false)
 			{
-				$cmd_info .= "已删除文件{$file_name}<br>";
+				$cmd_info .= "已刪除文件{$file_name}<br>";
 				unlink($dir.$file_name);
 			}
 		}
