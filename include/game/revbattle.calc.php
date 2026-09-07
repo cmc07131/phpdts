@@ -12,8 +12,8 @@ namespace revbattle
 	{
 		global $gamestate,$weather,$pose_find_modifier,$pls_find_modifier,$weather_find_r;
 		
-		# 基础遇敌率
-		$enemyrate = 40;
+		# 基础遇敌率（OSCE 訓練服：提高遇敵頻率）
+		$enemyrate = 75;
 		# 连斗阶段遇敌率+20
 		if($gamestate == 40){$enemyrate += 20;}
 		# 死斗阶段遇敌率+40
