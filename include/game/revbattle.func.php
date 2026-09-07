@@ -10,6 +10,7 @@ namespace revbattle
 	include_once GAME_ROOT.'./include/game/revbattle.calc.php';
 	include_once GAME_ROOT.'./include/game/revcombat.func.php';
 	include_once GAME_ROOT.'./include/game/quest.func.php';
+	include_once GAME_ROOT.'./include/osce_mcq.func.php';
 
 	# 处理从界面传回的战斗相关指令，包含以下两种情况：
 	# 1.主动遇敌先制发现敌人；
@@ -80,6 +81,25 @@ namespace revbattle
 				findenemy_rev($edata);
 				return;
 			}
+		}
+		# OSCE MCQ combat: answer / force clinical question at mapped locations
+		$osce_ans = \osce_mcq_parse_answer_command($command, isset($GLOBALS['osce_answer']) ? $GLOBALS['osce_answer'] : null);
+		if ($osce_ans !== null)
+		{
+			$osce_result = \osce_mcq_handle_answer($osce_ans, $data, $edata);
+			if ($osce_result == 1) {
+				findenemy_rev($edata);
+				return;
+			}
+			if ($osce_result == 2) return;
+			findenemy_rev($edata);
+			return;
+		}
+		if ($command != 'back' && $command != 'changewep' && \osce_mcq_should_force($data, $edata))
+		{
+			# First combat action at a mapped place → OSCE round instead of normal attack
+			findenemy_rev($edata);
+			return;
 		}
 		# 输入切换武器指令时，切换武器
 		if ($command == 'changewep') 
@@ -219,10 +239,12 @@ namespace revbattle
 	{
 		global $db,$tablepre,$log,$mode,$main,$cmd,$battle_title,$attinfo,$skillinfo,$nosta,$cskills;
 		global $fog,$pdata;
-		global $battle_skills, $quest_battle_mode, $quest_battle_state;
+		global $battle_skills, $quest_battle_mode, $quest_battle_state, $osce_battle_mode, $osce_battle_state;
 
 		$quest_battle_mode = '';
 		$quest_battle_state = array();
+		$osce_battle_mode = '';
+		$osce_battle_state = array();
 
 		//格式化双方clbpara
 		$edata['clbpara'] = get_clbpara($edata['clbpara']);
@@ -239,6 +261,12 @@ namespace revbattle
 		// QUEST特殊战斗界面 / QUEST special battle UI
 		$quest_battle_state = \quest_get_q7_battle_state($pdata, $edata);
 		if (!empty($quest_battle_state)) $quest_battle_mode = 'Q7';
+
+		// OSCE MCQ battle UI (once per encounter at mapped places)
+		if ($quest_battle_mode === '') {
+			$osce_battle_state = \osce_mcq_get_battle_state($pdata, $edata);
+			if (!empty($osce_battle_state)) $osce_battle_mode = 'OSCE';
+		}
 
 		//检查是敌对或中立单位
 		$neut_flag = $edata['pose'] == 7 ? 1 : 0;

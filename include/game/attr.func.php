@@ -31,7 +31,7 @@ function get_find_r($weather = 0,$pls = 0,$pose = 0,$tactic = 0,$club = 0,$inf =
 	$find_r = 0;
 	$find_r += $_FIND['pose'][$pose];
 	$find_r += $_FIND['weather'][$weather];
-	$find_r += $_FIND['pls'][$pls];
+	$find_r += isset($_FIND['pls'][$pls]) ? $_FIND['pls'][$pls] : 0;
 	
 	return $find_r;
 }
@@ -122,7 +122,7 @@ function get_attack_p($weather = 0,$pls = 0,$pose = 0,$tactic = 0,$club = 0,$inf
 
 	$attack = 100;
 	$attack += $_ATTACK['weather'][$weather];
-	$attack += $_ATTACK['pls'][$pls];
+	$attack += isset($_ATTACK['pls'][$pls]) ? $_ATTACK['pls'][$pls] : 0;
 	if($active){$attack += $_ATTACK['pose'][$pose];}
 	else{$attack += $_ATTACK['tactic'][$tactic];}
 	foreach ($inf_att_p as $inf_ky => $value) {
@@ -147,7 +147,7 @@ function get_defend_p($weather = 0,$pls = 0,$pose = 0,$tactic = 0,$club = 0,$inf
 
 	$defend = 100;
 	$defend += $_DEFEND['weather'][$weather];
-	$defend += $_DEFEND['pls'][$pls];
+	$defend += isset($_DEFEND['pls'][$pls]) ? $_DEFEND['pls'][$pls] : 0;
 	if($active){$defend += $_DEFEND['pose'][$pose];}
 	else{$defend += $_DEFEND['tactic'][$tactic];}
 	foreach ($inf_def_p as $inf_ky => $value) {

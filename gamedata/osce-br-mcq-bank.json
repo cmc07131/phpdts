@@ -1,0 +1,1656 @@
+{
+  "meta": {
+    "sourceDocs": [
+      "OSCE (11OmZE8zM1Voq7CEOvuOpEOMrZLD_8P8F-skb4FZ3gYw)",
+      "OSCE-Resus (1UM_MAGN2XbXDuRVgCxcUPs2HsCKk7lQi0ISpLl9Trmw)"
+    ],
+    "combat": "MCQ: correct → hit enemy; wrong → hit player",
+    "correctIndex": "0-based",
+    "language": "English stems/options/rationale",
+    "note": "Map expanded beyond classic 22 cells — one location per topic; Gaming Bot should remake map accordingly. Location names reuse菁英服 places + lettered satellites (B/C) for overflow."
+  },
+  "map": [
+    {
+      "location": "诊所",
+      "topicId": "cord_prolapse",
+      "topic": "Cord prolapse",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "南村住宅区",
+      "topicId": "shoulder_dystocia",
+      "topic": "Shoulder dystocia (HELPERR)",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "北村住宅区",
+      "topicId": "pph",
+      "topic": "Postpartum haemorrhage",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "清水池",
+      "topicId": "breech",
+      "topic": "Breech delivery",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "分校",
+      "topicId": "delivery_third",
+      "topic": "Normal delivery / third stage / retained placenta",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "西村住宅区",
+      "topicId": "eclampsia",
+      "topic": "Eclampsia / PET",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "消防署",
+      "topicId": "thyroid_storm",
+      "topic": "Thyroid storm",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "北海岸",
+      "topicId": "burns",
+      "topic": "Major burns / Parkland",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "南海岸",
+      "topicId": "drowning",
+      "topic": "Drowning resuscitation",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "森林地带",
+      "topicId": "lightning",
+      "topic": "Lightning reverse triage",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "邮电局",
+      "topicId": "start_triage",
+      "topic": "START / disaster triage",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "北村公所",
+      "topicId": "hemorrhagic_shock",
+      "topic": "Hemorrhagic shock prep",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "灯塔",
+      "topicId": "neonatal",
+      "topic": "Neonatal resuscitation",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "源二郎池",
+      "topicId": "croup",
+      "topic": "Croup",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "神秘研究所",
+      "topicId": "pals_asthma",
+      "topic": "PALS asthma / PEA megacode",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "废校",
+      "topicId": "septic_shock",
+      "topic": "Septic shock",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "隧道",
+      "topicId": "atls_trauma",
+      "topic": "ATLS / major trauma",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "山丘地带",
+      "topicId": "cardioversion",
+      "topic": "ACLS synchronised cardioversion",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "寺庙",
+      "topicId": "tcp",
+      "topic": "Transcutaneous pacing",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "观音堂",
+      "topicId": "svt_confusion",
+      "topic": "SVT / toxidrome confusion station",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "墓地A",
+      "topicId": "escharotomy",
+      "topic": "Escharotomy",
+      "source": "OSCE-Resus"
+    },
+    {
+      "location": "墓地",
+      "topicId": "sadpersons",
+      "topic": "Suicide risk / SADPERSONS",
+      "source": "OSCE"
+    },
+    {
+      "location": "西村神社",
+      "topicId": "mse_aseptic",
+      "topic": "MSE / ASEPTIC",
+      "source": "OSCE"
+    },
+    {
+      "location": "南村神社",
+      "topicId": "delirium_dementia",
+      "topic": "Delirium vs dementia",
+      "source": "OSCE"
+    },
+    {
+      "location": "观音堂侧",
+      "topicId": "excited_delirium",
+      "topic": "Excited delirium",
+      "source": "OSCE"
+    },
+    {
+      "location": "邮电局侧",
+      "topicId": "form123",
+      "topic": "Form 1/2/3 mental health",
+      "source": "OSCE"
+    },
+    {
+      "location": "清水池侧",
+      "topicId": "ciwa",
+      "topic": "Alcohol withdrawal / CIWA",
+      "source": "OSCE"
+    },
+    {
+      "location": "北村住宅区B",
+      "topicId": "malaria",
+      "topic": "Malaria / returning traveller",
+      "source": "OSCE"
+    },
+    {
+      "location": "南村住宅区B",
+      "topicId": "traveller_diarrhoea",
+      "topic": "Traveller’s diarrhoea",
+      "source": "OSCE"
+    },
+    {
+      "location": "诊所B",
+      "topicId": "nai",
+      "topic": "NAI / Cap. 650",
+      "source": "OSCE"
+    },
+    {
+      "location": "分校B",
+      "topicId": "fall_risk",
+      "topic": "Geriatrics / fall risk",
+      "source": "OSCE"
+    },
+    {
+      "location": "消防署B",
+      "topicId": "renal_stone",
+      "topic": "Renal stone history",
+      "source": "OSCE"
+    },
+    {
+      "location": "灯塔B",
+      "topicId": "needlestick",
+      "topic": "Needlestick injury",
+      "source": "OSCE"
+    },
+    {
+      "location": "北海岸B",
+      "topicId": "pe_history",
+      "topic": "PE history / workup cues",
+      "source": "OSCE"
+    },
+    {
+      "location": "南海岸B",
+      "topicId": "headache",
+      "topic": "Headache red flags",
+      "source": "OSCE"
+    },
+    {
+      "location": "废校B",
+      "topicId": "fever_rash",
+      "topic": "Paediatric fever and rash",
+      "source": "OSCE"
+    },
+    {
+      "location": "源二郎池B",
+      "topicId": "hints",
+      "topic": "Vertigo / HINTS / Dix-Hallpike",
+      "source": "OSCE"
+    },
+    {
+      "location": "神秘研究所B",
+      "topicId": "cerebellar",
+      "topic": "Cerebellar exam",
+      "source": "OSCE"
+    },
+    {
+      "location": "隧道B",
+      "topicId": "epistaxis",
+      "topic": "Epistaxis packing",
+      "source": "OSCE"
+    },
+    {
+      "location": "森林地带B",
+      "topicId": "eye_exam",
+      "topic": "Eye exam / VA",
+      "source": "OSCE"
+    },
+    {
+      "location": "山丘地带B",
+      "topicId": "supracondylar",
+      "topic": "Supracondylar fracture",
+      "source": "OSCE"
+    },
+    {
+      "location": "寺庙B",
+      "topicId": "hand_nerves",
+      "topic": "Hand exam / 3 nerves / FDP-FDS",
+      "source": "OSCE"
+    },
+    {
+      "location": "北村公所B",
+      "topicId": "knee_exam",
+      "topic": "Knee exam",
+      "source": "OSCE"
+    },
+    {
+      "location": "西村神社B",
+      "topicId": "shoulder_exam",
+      "topic": "Shoulder exam",
+      "source": "OSCE"
+    },
+    {
+      "location": "南村神社B",
+      "topicId": "cspine_rules",
+      "topic": "NEXUS / Canadian C-spine",
+      "source": "OSCE"
+    },
+    {
+      "location": "观音堂B",
+      "topicId": "ankle_foot",
+      "topic": "Ankle & foot exam / Ottawa",
+      "source": "OSCE"
+    },
+    {
+      "location": "诊所C",
+      "topicId": "io",
+      "topic": "IO access",
+      "source": "OSCE"
+    },
+    {
+      "location": "消防署C",
+      "topicId": "pelvic_binder",
+      "topic": "Pelvic binder",
+      "source": "OSCE"
+    },
+    {
+      "location": "灯塔C",
+      "topicId": "rsi",
+      "topic": "RSI",
+      "source": "OSCE"
+    },
+    {
+      "location": "分校C",
+      "topicId": "cric",
+      "topic": "Cricothyroidotomy",
+      "source": "OSCE"
+    },
+    {
+      "location": "清水池C",
+      "topicId": "chest_drain",
+      "topic": "Chest drain",
+      "source": "OSCE"
+    },
+    {
+      "location": "邮电局C",
+      "topicId": "niv",
+      "topic": "NIV",
+      "source": "OSCE"
+    },
+    {
+      "location": "北海岸C",
+      "topicId": "suture",
+      "topic": "Suture",
+      "source": "OSCE"
+    },
+    {
+      "location": "南海岸C",
+      "topicId": "bvm_airway",
+      "topic": "BVM / airway adjuncts",
+      "source": "OSCE"
+    },
+    {
+      "location": "废校C",
+      "topicId": "knee_asp",
+      "topic": "Knee aspiration",
+      "source": "OSCE"
+    },
+    {
+      "location": "隧道C",
+      "topicId": "co_poison",
+      "topic": "CO poisoning",
+      "source": "OSCE"
+    },
+    {
+      "location": "山丘地带C",
+      "topicId": "shoulder_reduce",
+      "topic": "Shoulder dislocation reduction",
+      "source": "OSCE"
+    },
+    {
+      "location": "寺庙C",
+      "topicId": "hare_traction",
+      "topic": "Hare / traction splint",
+      "source": "OSCE"
+    }
+  ],
+  "questions": {
+    "cord_prolapse": [
+      {
+        "id": "cp1",
+        "stem": "After ROM you see/feel cord and FHR is 90. Best immediate maternal position?",
+        "options": [
+          "Lithotomy head-up",
+          "Knee–chest or Sims / head-down",
+          "Sitting upright",
+          "Standing"
+        ],
+        "correct": 1,
+        "rationale": "Knee–chest or Sims/head-down reduces compression pending Cat-1 CS."
+      },
+      {
+        "id": "cp2",
+        "stem": "Regarding the prolapsed cord, which is correct?",
+        "options": [
+          "Vigorously replace into uterus",
+          "Rub cord to raise FHR",
+          "Minimal handling; moist gauze ± gentle vaginal replacement",
+          "Clamp until CS"
+        ],
+        "correct": 2,
+        "rationale": "Avoid vasospasm; gentle moist protection."
+      },
+      {
+        "id": "cp3",
+        "stem": "While awaiting Cat-1 CS, how do you offload the cord?",
+        "options": [
+          "Fundal pressure",
+          "Manual elevation of presenting part (± bladder fill 500–700 mL)",
+          "Start oxytocin",
+          "Forceps in ED"
+        ],
+        "correct": 1,
+        "rationale": "Elevate presenting part; bladder fill adjunct."
+      },
+      {
+        "id": "cp4",
+        "stem": "Risk factor for cord prolapse?",
+        "options": [
+          "Engaged cephalic only",
+          "Footling breech / malpresentation",
+          "Oligohydramnios always protective",
+          "No ROM ever"
+        ],
+        "correct": 1,
+        "rationale": "Malpresentation, prematurity, polyhydramnios, twins, ARM, long cord."
+      }
+    ],
+    "shoulder_dystocia": [
+      {
+        "id": "sd1",
+        "stem": "Turtle sign means:",
+        "options": [
+          "Nuchal cord only",
+          "Shoulder dystocia — head appears then retracts",
+          "Normal restitution",
+          "Uterine inversion"
+        ],
+        "correct": 1,
+        "rationale": "Classic recognition."
+      },
+      {
+        "id": "sd2",
+        "stem": "HELPERR — L is:",
+        "options": [
+          "Lithotomy only",
+          "McRoberts — thighs flat on abdomen",
+          "Left lateral only",
+          "Leg hang off bed"
+        ],
+        "correct": 1,
+        "rationale": "McRoberts flattens sacral promontory."
+      },
+      {
+        "id": "sd3",
+        "stem": "Suprapubic pressure targets:",
+        "options": [
+          "Fundus",
+          "Anterior fetal shoulder under symphysis",
+          "Posterior shoulder from perineum only",
+          "Iliac crest"
+        ],
+        "correct": 1,
+        "rationale": "Not fundal pressure."
+      },
+      {
+        "id": "sd4",
+        "stem": "Rubin II:",
+        "options": [
+          "Pull arm straight",
+          "Pressure behind anterior shoulder → adduct/rotate to oblique",
+          "First-line clavicle fracture",
+          "Gaskin only"
+        ],
+        "correct": 1,
+        "rationale": "Enter maneuver."
+      },
+      {
+        "id": "sd5",
+        "stem": "If HELPERR fails, options include:",
+        "options": [
+          "Deliberate clavicle # / GA / symphysiotomy",
+          "Fundal pressure first rescue",
+          "Syntocinon to pull harder",
+          "Discharge"
+        ],
+        "correct": 0,
+        "rationale": "Last resorts from notes."
+      }
+    ],
+    "pph": [
+      {
+        "id": "pp1",
+        "stem": "Four Ts of PPH:",
+        "options": [
+          "Tone, Trauma, Tissue, Thrombin",
+          "Tone, Temp, Time, Thrombin",
+          "Trauma, Twin, Tissue, Tocolysis",
+          "Tone, Transfuse, Tear, Time"
+        ],
+        "correct": 0,
+        "rationale": "Atony most common."
+      },
+      {
+        "id": "pp2",
+        "stem": "First-line uterotonic sequence:",
+        "options": [
+          "Carboprost first",
+          "Oxytocin first then others",
+          "Misoprostol only",
+          "Ergometrine in all HT first"
+        ],
+        "correct": 1,
+        "rationale": "Oxytocin first-line."
+      },
+      {
+        "id": "pp3",
+        "stem": "Early ED PPH — which is WRONG?",
+        "options": [
+          "Call help / MHP",
+          "2× large-bore + XM/coags/fibrinogen",
+          "Fundal massage ± bimanual",
+          "Delay emptying bladder until OT"
+        ],
+        "correct": 3,
+        "rationale": "Empty bladder early."
+      }
+    ],
+    "breech": [
+      {
+        "id": "br1",
+        "stem": "Frank/complete breech imminent — when touch baby?",
+        "options": [
+          "At full dilatation",
+          "Only after scapulae seen",
+          "On seeing buttock",
+          "Never"
+        ],
+        "correct": 1,
+        "rationale": "Hands off until scapulae."
+      },
+      {
+        "id": "br2",
+        "stem": "Footling/incomplete breech:",
+        "options": [
+          "Allow SVD",
+          "Em-LSCS + call obs/paeds",
+          "Vacuum on foot",
+          "Internal version routinely in AED"
+        ],
+        "correct": 1,
+        "rationale": "Unsafe for vaginal birth."
+      },
+      {
+        "id": "br3",
+        "stem": "Main fear in breech vaginal delivery:",
+        "options": [
+          "Head entrapment",
+          "Only PPH",
+          "Only shoulder dystocia",
+          "Only cord avulsion"
+        ],
+        "correct": 0,
+        "rationale": "Also ↑ cord prolapse."
+      }
+    ],
+    "delivery_third": [
+      {
+        "id": "dt1",
+        "stem": "Uncomplicated third stage uterotonic often:",
+        "options": [
+          "IM syntometrine if no CI",
+          "Carboprost routine",
+          "No drug",
+          "Misoprostol only"
+        ],
+        "correct": 0,
+        "rationale": "Else syntocinon if CI."
+      },
+      {
+        "id": "dt2",
+        "stem": "Syntometrine CI includes:",
+        "options": [
+          "Mild anaemia",
+          "Preeclampsia / PVD / severe heart-renal-liver disease",
+          "Multiparity",
+          "Previous CS alone"
+        ],
+        "correct": 1,
+        "rationale": "Avoid in PET etc."
+      },
+      {
+        "id": "dt3",
+        "stem": "Placental separation signs:",
+        "options": [
+          "Cord shortens + soft fundus",
+          "Gush of blood, cord lengthens, fundus firmer/globular/rises",
+          "FHR drop",
+          "Immediate pain only"
+        ],
+        "correct": 1,
+        "rationale": "Classic triad."
+      },
+      {
+        "id": "dt4",
+        "stem": "Placenta not out at 30 min:",
+        "options": [
+          "Normal",
+          "Retained placenta",
+          "Uterine rupture always",
+          "Inevitable hysterectomy"
+        ],
+        "correct": 1,
+        "rationale": "Definition ~30 min."
+      },
+      {
+        "id": "dt5",
+        "stem": "Retained placenta Rx includes:",
+        "options": [
+          "Oxytocin infusion + empty bladder ± manual removal",
+          "Observe 2 h only",
+          "Immediate hysterectomy first",
+          "Syntometrine despite PET"
+        ],
+        "correct": 0,
+        "rationale": "From notes Q18."
+      }
+    ],
+    "eclampsia": [
+      {
+        "id": "ec1",
+        "stem": "Preferred acute BP agent in PET (ALSO-style):",
+        "options": [
+          "IV labetalol",
+          "PO enalapril first in pregnancy",
+          "IV frusemide first for BP",
+          "MgSO4 alone as antihypertensive"
+        ],
+        "correct": 0,
+        "rationale": "MgSO4 for seizures; labetalol for BP."
+      },
+      {
+        "id": "ec2",
+        "stem": "MgSO4 primary role in eclampsia:",
+        "options": [
+          "First-line antihypertensive",
+          "Seizure control / prophylaxis",
+          "Tocolysis only",
+          "Diuresis"
+        ],
+        "correct": 1,
+        "rationale": "Seizure drug."
+      }
+    ],
+    "thyroid_storm": [
+      {
+        "id": "ts1",
+        "stem": "Thyroid storm drug order pearl:",
+        "options": [
+          "Iodide before PTU",
+          "ATD/PTU first; iodide ≥1 h later",
+          "Steroid alone",
+          "β-blocker cures"
+        ],
+        "correct": 1,
+        "rationale": "Block synthesis first."
+      },
+      {
+        "id": "ts2",
+        "stem": "Iodide before antithyroid drug:",
+        "options": [
+          "Safe shortcut",
+          "Can enhance hormone production",
+          "Blocks all conversion instantly",
+          "No effect"
+        ],
+        "correct": 1,
+        "rationale": "Iodine as substrate."
+      },
+      {
+        "id": "ts3",
+        "stem": "Adjuncts in storm include:",
+        "options": [
+          "Cooling, IV fluids, steroid, β-blocker, ICU",
+          "Warming blanket only",
+          "Iodide alone",
+          "Discharge to clinic"
+        ],
+        "correct": 0,
+        "rationale": "Supportive + antithyroid cascade."
+      }
+    ],
+    "burns": [
+      {
+        "id": "bu1",
+        "stem": "Classic adult Parkland:",
+        "options": [
+          "4 mL/kg/%TBSA; ½ in first 8 h from burn time",
+          "1 mL/kg all at once",
+          "Colloid only first 8 h",
+          "No fluid if facial burn"
+        ],
+        "correct": 0,
+        "rationale": "Hartmann’s/LR preferred."
+      },
+      {
+        "id": "bu2",
+        "stem": "Inhalation injury clue → early intubation:",
+        "options": [
+          "Enclosed space/LOC, soot, stridor/hoarseness, high COHb",
+          "Isolated hand burn",
+          "Sunburn",
+          "First-degree only"
+        ],
+        "correct": 0,
+        "rationale": "Airway risk."
+      },
+      {
+        "id": "bu3",
+        "stem": "Paediatric TBSA chart preferred:",
+        "options": [
+          "Rule of nines only",
+          "Lund & Browder",
+          "Palm = 10%",
+          "Ignore chart"
+        ],
+        "correct": 1,
+        "rationale": "Children: Lund & Browder."
+      }
+    ],
+    "drowning": [
+      {
+        "id": "dr1",
+        "stem": "Drowning BLS differs by:",
+        "options": [
+          "ABC with rescue breaths first (not CAB)",
+          "Heimlich always first",
+          "Routine C-spine all cases",
+          "No ventilation"
+        ],
+        "correct": 0,
+        "rationale": "Ventilation priority."
+      },
+      {
+        "id": "dr2",
+        "stem": "Avoid in drowning unless indicated:",
+        "options": [
+          "Rescue breaths",
+          "Routine Heimlich / routine C-spine without trauma",
+          "CPR",
+          "Rewarming"
+        ],
+        "correct": 1,
+        "rationale": "Don’t delay ventilation."
+      }
+    ],
+    "lightning": [
+      {
+        "id": "li1",
+        "stem": "Lightning reverse triage:",
+        "options": [
+          "Treat ambulatory first",
+          "Treat apnoeic/arrest first (high salvage)",
+          "Black-tag all arrests",
+          "Ignore AED"
+        ],
+        "correct": 1,
+        "rationale": "Often recoverable."
+      },
+      {
+        "id": "li2",
+        "stem": "Lightning tag for ambulatory usually:",
+        "options": [
+          "Black",
+          "Red",
+          "Green",
+          "Expectant always"
+        ],
+        "correct": 2,
+        "rationale": "Walking wounded green."
+      }
+    ],
+    "start_triage": [
+      {
+        "id": "st1",
+        "stem": "START: airway opened, still apnoeic →",
+        "options": [
+          "Red",
+          "Yellow",
+          "Green",
+          "Black"
+        ],
+        "correct": 3,
+        "rationale": "Expectant."
+      },
+      {
+        "id": "st2",
+        "stem": "START: RR >30 →",
+        "options": [
+          "Green",
+          "Yellow",
+          "Red",
+          "Black"
+        ],
+        "correct": 2,
+        "rationale": "Immediate."
+      },
+      {
+        "id": "st3",
+        "stem": "START: cannot follow commands →",
+        "options": [
+          "Green",
+          "Yellow",
+          "Red",
+          "Black"
+        ],
+        "correct": 2,
+        "rationale": "Mental = red."
+      }
+    ],
+    "hemorrhagic_shock": [
+      {
+        "id": "hs1",
+        "stem": "Early hemorrhagic shock prep priority:",
+        "options": [
+          "Large-bore access, XM/MHP mindset, haemorrhage control",
+          "Oral fluids only",
+          "Delay IV until Hb back",
+          "Steroids first"
+        ],
+        "correct": 0,
+        "rationale": "Resus readiness."
+      },
+      {
+        "id": "hs2",
+        "stem": "Permissive hypotension concept applies mainly to:",
+        "options": [
+          "Uncontrolled haemorrhage pending control (selected trauma)",
+          "All head injuries aiming SBP 200",
+          "Children always SBP 60",
+          "Burns only"
+        ],
+        "correct": 0,
+        "rationale": "Context-dependent trauma."
+      }
+    ],
+    "neonatal": [
+      {
+        "id": "nn1",
+        "stem": "Initial newborn steps if floppy/no cry:",
+        "options": [
+          "Dry, warm, stimulate, open airway, assess breathing/HR",
+          "Chest compressions first always",
+          "Adrenaline first",
+          "Ignore temperature"
+        ],
+        "correct": 0,
+        "rationale": "NRP sequence."
+      },
+      {
+        "id": "nn2",
+        "stem": "Neonatal compression:ventilation (advanced airway) often taught as:",
+        "options": [
+          "3:1",
+          "30:2 adult only always",
+          "15:2 two-rescuer child only forever",
+          "No compressions"
+        ],
+        "correct": 0,
+        "rationale": "NRP 3:1 classic."
+      }
+    ],
+    "croup": [
+      {
+        "id": "cr1",
+        "stem": "Most common cause of croup:",
+        "options": [
+          "Parainfluenza",
+          "EBV",
+          "HSV",
+          "CMV"
+        ],
+        "correct": 0,
+        "rationale": "Parainfluenza 1&3."
+      },
+      {
+        "id": "cr2",
+        "stem": "Severe croup features include:",
+        "options": [
+          "Stridor at rest, severe recessions, cyanosis/altered consciousness",
+          "Barky cough only when playing",
+          "No stridor ever",
+          "Fever alone"
+        ],
+        "correct": 0,
+        "rationale": "Severity ladder."
+      }
+    ],
+    "pals_asthma": [
+      {
+        "id": "pa1",
+        "stem": "Paediatric arrest after asthma — PEA focus includes:",
+        "options": [
+          "Hypoxia/auto-PEEP/tension/stacking — treat Hs & Ts",
+          "Ignore ventilation",
+          "Only fluids",
+          "No adrenaline"
+        ],
+        "correct": 0,
+        "rationale": "Asthma-specific Hs/Ts."
+      },
+      {
+        "id": "pa2",
+        "stem": "WETFLAGS is used for:",
+        "options": [
+          "Paediatric emergency drug/weight estimates",
+          "Adult ACS only",
+          "Obstetric scoring",
+          "Stroke"
+        ],
+        "correct": 0,
+        "rationale": "PALS prep mnemonic."
+      }
+    ],
+    "septic_shock": [
+      {
+        "id": "ss1",
+        "stem": "ED septic shock priorities:",
+        "options": [
+          "ABC, cultures, early Abx, fluids, source control, lactate",
+          "Wait for CRP before Abx",
+          "Steroids first always",
+          "No IV access"
+        ],
+        "correct": 0,
+        "rationale": "Hour-1 bundle spirit."
+      }
+    ],
+    "atls_trauma": [
+      {
+        "id": "at1",
+        "stem": "ATLS primary survey order emphasis:",
+        "options": [
+          "xABCDE with simultaneous resus",
+          "Full secondary before airway",
+          "CT before ABCs",
+          "History only"
+        ],
+        "correct": 0,
+        "rationale": "Treat as you find."
+      },
+      {
+        "id": "at2",
+        "stem": "Pelvic binder level:",
+        "options": [
+          "Iliac crests",
+          "Greater trochanters / over pubic symphysis",
+          "Costal margin",
+          "Mid-thigh"
+        ],
+        "correct": 1,
+        "rationale": "Trochanter level."
+      }
+    ],
+    "cardioversion": [
+      {
+        "id": "cv1",
+        "stem": "Adverse signs for urgent cardioversion:",
+        "options": [
+          "Shock, ischaemia, HF, altered consciousness",
+          "Anxiety alone",
+          "Stable AF HR 110 always",
+          "Fever alone"
+        ],
+        "correct": 0,
+        "rationale": "Four adverse features."
+      },
+      {
+        "id": "cv2",
+        "stem": "SYNC cardioversion safety:",
+        "options": [
+          "SYNC on every shock; clear; sedation/airway ready",
+          "Never sync AF",
+          "Shock without warning",
+          "Pads on abdomen"
+        ],
+        "correct": 0,
+        "rationale": "ACLS safety."
+      }
+    ],
+    "tcp": [
+      {
+        "id": "tc1",
+        "stem": "TCP indicated for:",
+        "options": [
+          "Symptomatic bradycardia refractory to atropine / high-degree block",
+          "Sinus tach",
+          "Stable mild sinus brady asymptomatic",
+          "Fever"
+        ],
+        "correct": 0,
+        "rationale": "Unstable brady."
+      },
+      {
+        "id": "tc2",
+        "stem": "Confirm TCP capture by:",
+        "options": [
+          "Spikes only",
+          "Spike→QRS plus palpable pulse with QRS",
+          "SpO2 alone",
+          "Comfort alone"
+        ],
+        "correct": 1,
+        "rationale": "Electrical + mechanical."
+      }
+    ],
+    "svt_confusion": [
+      {
+        "id": "sv1",
+        "stem": "Unstable SVT with adverse features:",
+        "options": [
+          "Consider synchronised cardioversion",
+          "Oral digoxin only",
+          "Discharge",
+          "Ignore"
+        ],
+        "correct": 0,
+        "rationale": "Unstable → energy."
+      }
+    ],
+    "escharotomy": [
+      {
+        "id": "es1",
+        "stem": "Escharotomy indicated when:",
+        "options": [
+          "Circumferential chest/neck eschar impairs ventilation/perfusion",
+          "Any first-degree burn",
+          "Sunburn",
+          "All facial burns automatically"
+        ],
+        "correct": 0,
+        "rationale": "Relieve constriction."
+      }
+    ],
+    "sadpersons": [
+      {
+        "id": "sp1",
+        "stem": "SADPERSONS includes:",
+        "options": [
+          "Organised plan / stated future intent",
+          "Female sex as sole risk",
+          "Young age never",
+          "Marriage as highest risk"
+        ],
+        "correct": 0,
+        "rationale": "Classic score items."
+      },
+      {
+        "id": "sp2",
+        "stem": "Features of a serious attempt include:",
+        "options": [
+          "Premeditation, efforts to avoid discovery, affairs in order",
+          "Impulsive minor scratch only",
+          "Told everyone beforehand only",
+          "No planning ever"
+        ],
+        "correct": 0,
+        "rationale": "High lethality cues."
+      }
+    ],
+    "mse_aseptic": [
+      {
+        "id": "ms1",
+        "stem": "ASEPTIC mnemonic is for:",
+        "options": [
+          "Mental state examination structure",
+          "ATLS primary survey",
+          "Acid-base",
+          "Wound class"
+        ],
+        "correct": 0,
+        "rationale": "Appearance, Speech, Emotion, Perception, Thought, Insight, Cognition."
+      }
+    ],
+    "delirium_dementia": [
+      {
+        "id": "dd1",
+        "stem": "Delirium vs dementia — delirium typically:",
+        "options": [
+          "Acute onset, fluctuating attention",
+          "Insidious over years only",
+          "No attention change",
+          "Always irreversible"
+        ],
+        "correct": 0,
+        "rationale": "Attention/fluctuation key."
+      }
+    ],
+    "excited_delirium": [
+      {
+        "id": "ed1",
+        "stem": "Excited delirium ED pearls include:",
+        "options": [
+          "Cooling, benzos/ketamine; high mortality risk",
+          "Ignore hyperthermia",
+          "Sux preferred without caution",
+          "Discharge to street"
+        ],
+        "correct": 0,
+        "rationale": "Aggressive supportive care."
+      }
+    ],
+    "form123": [
+      {
+        "id": "f123",
+        "stem": "Form 1/2/3 relate to:",
+        "options": [
+          "HK mental health compulsory detention pathway",
+          "Sick leave forms",
+          "Death certificates only",
+          "Drug scripts"
+        ],
+        "correct": 0,
+        "rationale": "Psych ordinance forms."
+      }
+    ],
+    "ciwa": [
+      {
+        "id": "cw1",
+        "stem": "CIWA-Ar is used to:",
+        "options": [
+          "Score alcohol withdrawal severity / guide benzos",
+          "Diagnose opioid OD",
+          "Score asthma",
+          "Stroke scale"
+        ],
+        "correct": 0,
+        "rationale": "Withdrawal protocol."
+      }
+    ],
+    "malaria": [
+      {
+        "id": "ma1",
+        "stem": "ED malaria tests:",
+        "options": [
+          "Thick + thin smear (± RDT); repeat if negative",
+          "One thick smear forever rules out",
+          "D-dimer diagnoses",
+          "CXR diagnostic"
+        ],
+        "correct": 0,
+        "rationale": "Repeat smears."
+      },
+      {
+        "id": "ma2",
+        "stem": "Potentially severe falciparum cue often taught:",
+        "options": [
+          "High parasitaemia (e.g. >2% flagged), organ failure features",
+          "Mild single fever only",
+          "Normal exam always safe",
+          "Negative smear once = cured"
+        ],
+        "correct": 0,
+        "rationale": "Severity markers."
+      }
+    ],
+    "traveller_diarrhoea": [
+      {
+        "id": "td1",
+        "stem": "Traveller diarrhoea history should include:",
+        "options": [
+          "Destination, timing, food/water, blood/fever, Abx exposure",
+          "Only home city",
+          "Ignore fever",
+          "No stool questions"
+        ],
+        "correct": 0,
+        "rationale": "Travel Hx essentials."
+      }
+    ],
+    "nai": [
+      {
+        "id": "na1",
+        "stem": "Toddler bilateral foot burns delayed presentation — HK:",
+        "options": [
+          "Mandatory report Cap. 650 (Police + SWD); do not discharge",
+          "GP letter only",
+          "Parents self-refer next week",
+          "Ortho only"
+        ],
+        "correct": 0,
+        "rationale": "Safeguarding."
+      },
+      {
+        "id": "na2",
+        "stem": "Immersion burn red flag pattern:",
+        "options": [
+          "Symmetric stocking distribution ± unclear history",
+          "Tiny splash on dorsum only always accidental",
+          "Any burn = NAI",
+          "Only facial burns"
+        ],
+        "correct": 0,
+        "rationale": "Pattern + history mismatch."
+      }
+    ],
+    "fall_risk": [
+      {
+        "id": "fr1",
+        "stem": "Geriatric fall assessment includes:",
+        "options": [
+          "Cause of fall, injuries, meds, mobility, home hazards, bone health",
+          "BP only",
+          "Ignore meds",
+          "XR only"
+        ],
+        "correct": 0,
+        "rationale": "Multifactorial."
+      }
+    ],
+    "renal_stone": [
+      {
+        "id": "rs1",
+        "stem": "Classic renal colic history features:",
+        "options": [
+          "Loin-to-groin pain, writhing, haematuria, nausea",
+          "Painless jaundice only",
+          "Calf pain",
+          "Photophobia"
+        ],
+        "correct": 0,
+        "rationale": "Stone Hx."
+      }
+    ],
+    "needlestick": [
+      {
+        "id": "ns1",
+        "stem": "Needlestick immediate action:",
+        "options": [
+          "Wash, risk-assess source, report, consider PEP promptly",
+          "Ignore if small",
+          "Wait 1 week",
+          "No baseline bloods"
+        ],
+        "correct": 0,
+        "rationale": "Occupational exposure."
+      }
+    ],
+    "pe_history": [
+      {
+        "id": "pe1",
+        "stem": "PE history risk elements include:",
+        "options": [
+          "Immobility, cancer, prior VTE, OCP, recent surgery, leg symptoms",
+          "Only asthma",
+          "Only migraine",
+          "Food allergy"
+        ],
+        "correct": 0,
+        "rationale": "Wells-type risks."
+      }
+    ],
+    "headache": [
+      {
+        "id": "ha1",
+        "stem": "SAH red-flag headache cue:",
+        "options": [
+          "Thunderclap / peak within minutes, neck stiffness, exertional onset",
+          "Chronic tension years",
+          "Only sinus pressure",
+          "Always migraine aura"
+        ],
+        "correct": 0,
+        "rationale": "Ottawa SAH spirit."
+      }
+    ],
+    "fever_rash": [
+      {
+        "id": "fv1",
+        "stem": "Kawasaki concern in febrile child with rash includes:",
+        "options": [
+          "Prolonged fever + mucocutaneous signs (eyes/lips/extremities/nodes)",
+          "1-day viral exanthem only",
+          "Always scarlet only",
+          "Ignore fever duration"
+        ],
+        "correct": 0,
+        "rationale": "Days of fever + features."
+      }
+    ],
+    "hints": [
+      {
+        "id": "hi1",
+        "stem": "HINTS concerning for central cause:",
+        "options": [
+          "Normal head impulse + ongoing nystagmus (± skew)",
+          "Abnormal HIT alone proving peripheral safely always",
+          "Fatiguable brief Dix-Hallpike only",
+          "No nystagmus ever"
+        ],
+        "correct": 0,
+        "rationale": "Dangerous HINTS."
+      },
+      {
+        "id": "hi2",
+        "stem": "Posterior canal BPPV Dix-Hallpike typically:",
+        "options": [
+          "Latency, brief upbeat-torsional, fatigable",
+          "Immediate pure vertical lasting minutes non-fatiguing",
+          "No nystagmus",
+          "Direction-changing at rest only"
+        ],
+        "correct": 0,
+        "rationale": "Peripheral pattern."
+      }
+    ],
+    "cerebellar": [
+      {
+        "id": "ce1",
+        "stem": "Cerebellar exam elements include:",
+        "options": [
+          "DANISH: dysmetria, ataxia, nystagmus, intention tremor, speech, hypotonia",
+          "Only power",
+          "Only reflexes",
+          "Only plantars"
+        ],
+        "correct": 0,
+        "rationale": "Classic screen."
+      }
+    ],
+    "epistaxis": [
+      {
+        "id": "ep1",
+        "stem": "Anterior epistaxis first-line often:",
+        "options": [
+          "Compression, topical vasoconstrictor, pack if needed",
+          "Immediate arterial ligation always",
+          "Ignore INR",
+          "No airway check"
+        ],
+        "correct": 0,
+        "rationale": "Stepwise."
+      }
+    ],
+    "eye_exam": [
+      {
+        "id": "ey1",
+        "stem": "Basic ED eye exam should include:",
+        "options": [
+          "VA (each eye), pupils, fields, fluorescein/fundus as indicated",
+          "VA unused",
+          "Only IOP always",
+          "Ignore RAPD"
+        ],
+        "correct": 0,
+        "rationale": "Don’t skip VA."
+      }
+    ],
+    "supracondylar": [
+      {
+        "id": "su1",
+        "stem": "Extension-type paediatric SCH — nerve/vessel:",
+        "options": [
+          "AIN ± brachial artery; OK/pinch test",
+          "Sural only",
+          "CN VII",
+          "Obturator"
+        ],
+        "correct": 0,
+        "rationale": "Document NV status."
+      },
+      {
+        "id": "su2",
+        "stem": "Gartland III means:",
+        "options": [
+          "Both cortices disrupted / completely displaced",
+          "Nondisplaced",
+          "Greenstick wrist",
+          "Salter I only"
+        ],
+        "correct": 0,
+        "rationale": "Classification."
+      }
+    ],
+    "hand_nerves": [
+      {
+        "id": "hn1",
+        "stem": "AIN motor test:",
+        "options": [
+          "OK / pinch (FPL + FDP I/II); no sensory loss if isolated AIN",
+          "Finger abduction only",
+          "Wrist extension only",
+          "Sensation tip little finger only"
+        ],
+        "correct": 0,
+        "rationale": "Median deep motor."
+      },
+      {
+        "id": "hn2",
+        "stem": "FDP vs FDS test:",
+        "options": [
+          "Stabilise other fingers to isolate FDS; DIP flexion tests FDP",
+          "Same test for both always",
+          "Only look at cascade",
+          "No need to examine"
+        ],
+        "correct": 0,
+        "rationale": "Tendon exam."
+      }
+    ],
+    "knee_exam": [
+      {
+        "id": "ke1",
+        "stem": "Knee exam sequence includes:",
+        "options": [
+          "Look, feel, move, special tests (e.g. Lachman), NV status",
+          "XR before any look",
+          "Only aspiration always",
+          "Ignore effusion"
+        ],
+        "correct": 0,
+        "rationale": "Orthopaedic screen."
+      }
+    ],
+    "shoulder_exam": [
+      {
+        "id": "sh1",
+        "stem": "Shoulder exam should include:",
+        "options": [
+          "Look/feel/move, rotator cuff tests, NV status, compare sides",
+          "Only neck",
+          "Ignore axilla nerve",
+          "No active movement ever"
+        ],
+        "correct": 0,
+        "rationale": "Full joint exam."
+      }
+    ],
+    "cspine_rules": [
+      {
+        "id": "cs1",
+        "stem": "NEXUS low-risk requires ALL of:",
+        "options": [
+          "No midline tenderness, no intoxication, normal alertness, no focal neuro, no distracting injury",
+          "Age >65 alone clears",
+          "Dangerous mechanism clears",
+          "Any pain = image always without criteria"
+        ],
+        "correct": 0,
+        "rationale": "All five."
+      },
+      {
+        "id": "cs2",
+        "stem": "CCR high-risk factor:",
+        "options": [
+          "Age ≥65 / dangerous mechanism / limb paraesthesia",
+          "Delayed neck pain alone forces film always",
+          "Simple rear-end is high-risk",
+          "Ambulatory is high-risk"
+        ],
+        "correct": 0,
+        "rationale": "Canadian C-spine."
+      }
+    ],
+    "ankle_foot": [
+      {
+        "id": "af1",
+        "stem": "Ottawa ankle rules purpose:",
+        "options": [
+          "Decide need for XR after ankle injury",
+          "Diagnose DVT",
+          "Replace exam",
+          "Treat fracture"
+        ],
+        "correct": 0,
+        "rationale": "Imaging rule."
+      }
+    ],
+    "io": [
+      {
+        "id": "io1",
+        "stem": "Proximal tibial IO landmark:",
+        "options": [
+          "1–2 cm below tibial tuberosity anteromedial",
+          "Through fracture",
+          "Patella centre",
+          "Lateral malleolus always first"
+        ],
+        "correct": 0,
+        "rationale": "Standard site."
+      },
+      {
+        "id": "io2",
+        "stem": "IO contraindication:",
+        "options": [
+          "Fracture in target bone / local infection",
+          "Cardiac arrest",
+          "Shock",
+          "Failed IV"
+        ],
+        "correct": 0,
+        "rationale": "Don’t put through #."
+      }
+    ],
+    "pelvic_binder": [
+      {
+        "id": "pb1",
+        "stem": "Binder placement:",
+        "options": [
+          "At greater trochanters",
+          "At iliac crests",
+          "Around chest",
+          "Around knees"
+        ],
+        "correct": 0,
+        "rationale": "Trochanters."
+      }
+    ],
+    "rsi": [
+      {
+        "id": "rsi1",
+        "stem": "RSI preparation mnemonic spirit (SOAP-ME etc.):",
+        "options": [
+          "Suction, O2, airway, pharma, monitoring, equipment ready before drugs",
+          "Drugs before any kit",
+          "No pre-oxygenation",
+          "Skip backup airway"
+        ],
+        "correct": 0,
+        "rationale": "Prepare before push."
+      },
+      {
+        "id": "rsi2",
+        "stem": "Cricothyroidotomy is:",
+        "options": [
+          "Failed airway rescue / can’t intubate can’t oxygenate pathway",
+          "First-line for every RSI",
+          "Contraindicated in all adults",
+          "Only for kids <1 always first"
+        ],
+        "correct": 0,
+        "rationale": "Rescue."
+      }
+    ],
+    "cric": [
+      {
+        "id": "crx1",
+        "stem": "Landmark for surgical cric:",
+        "options": [
+          "Cricothyroid membrane between thyroid & cricoid cartilages",
+          "Sternal notch",
+          "Hyoid only",
+          "2nd ICS midclavicular"
+        ],
+        "correct": 0,
+        "rationale": "CTM."
+      }
+    ],
+    "chest_drain": [
+      {
+        "id": "cd1",
+        "stem": "Safe triangle for chest drain roughly:",
+        "options": [
+          "Anterior latissimus, lateral pec major, above 5th ICS, mid-axillary",
+          "2nd ICS midclavicular always for all drains",
+          "Posterior scapula tip only",
+          "Anywhere"
+        ],
+        "correct": 0,
+        "rationale": "Triangle of safety."
+      }
+    ],
+    "niv": [
+      {
+        "id": "nv1",
+        "stem": "NIV common ED indications include:",
+        "options": [
+          "Cardiogenic APO / selected COPD hypercapnic failure",
+          "All cardiac arrests first-line",
+          "Complete airway obstruction",
+          "Untreated pneumothorax always"
+        ],
+        "correct": 0,
+        "rationale": "Know contraindications too."
+      }
+    ],
+    "suture": [
+      {
+        "id": "su_w1",
+        "stem": "Wound closure basics include:",
+        "options": [
+          "Irrigation, explore, tetanus, appropriate suture/technique, advice",
+          "No irrigation",
+          "Always glue for bites",
+          "Ignore foreign body"
+        ],
+        "correct": 0,
+        "rationale": "ED toilet + close."
+      }
+    ],
+    "bvm_airway": [
+      {
+        "id": "bv1",
+        "stem": "Difficult BVM predictors include ROMAN-type factors:",
+        "options": [
+          "Radiation/obesity/mask seal/age/no teeth etc.",
+          "Young athlete only",
+          "Always easy if obese",
+          "Ignore beard"
+        ],
+        "correct": 0,
+        "rationale": "Anticipate difficulty."
+      }
+    ],
+    "knee_asp": [
+      {
+        "id": "ka1",
+        "stem": "Knee arthrocentesis relative caution:",
+        "options": [
+          "Overlying cellulitis / uncontrolled coagulopathy",
+          "Any effusion must never be tapped",
+          "Normal INR always absolute ban",
+          "Ultrasound never helps"
+        ],
+        "correct": 0,
+        "rationale": "Relative CIs."
+      }
+    ],
+    "co_poison": [
+      {
+        "id": "co1",
+        "stem": "CO poisoning — key points:",
+        "options": [
+          "High-flow O2; consider HBO criteria; SpO2 unreliable for CO",
+          "Room air only",
+          "SpO2 always shows true O2 content",
+          "No need source history"
+        ],
+        "correct": 0,
+        "rationale": "COHb matters."
+      }
+    ],
+    "shoulder_reduce": [
+      {
+        "id": "sr1",
+        "stem": "Before shoulder reduction:",
+        "options": [
+          "Confirm NV status, consent, analgesia, post-reduction NV + XR",
+          "Reduce without exam",
+          "No analgesia ever",
+          "Skip post XR always"
+        ],
+        "correct": 0,
+        "rationale": "Safety steps."
+      }
+    ],
+    "hare_traction": [
+      {
+        "id": "ht1",
+        "stem": "Traction splint teaching points include:",
+        "options": [
+          "Analgesia, NV check before/after, correct length vs uninjured leg, ischial pad",
+          "Ignore NV",
+          "Use on open bone protrusion freely",
+          "No analgesia"
+        ],
+        "correct": 0,
+        "rationale": "From traction station."
+      }
+    ]
+  }
+}

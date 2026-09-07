@@ -277,14 +277,16 @@ if($mode == 'enter') {
 		}
 	}*/
 
-	$nicks = $udata['nicksrev']['nicks'];
-	if(empty($nicks) || empty($nick))
+	# PHP 8+: nicksrev may be empty array; ensure nicks is always an array for in_array().
+	$nicks = (isset($udata['nicksrev']['nicks']) && is_array($udata['nicksrev']['nicks'])) ? $udata['nicksrev']['nicks'] : array();
+	if(empty($nicks) || (!isset($nick) || $nick === '' || $nick === null))
 	{
 		titles_get_new($udata,0);
 		$nick = 0;
-		$db->query("UPDATE {$gtablepre}users SET nick='$nick',nicksrev='{$udata['nicksrev']}' WHERE username='".$username."'" );
+		$nicks = (isset($udata['nicksrev']['nicks']) && is_array($udata['nicksrev']['nicks'])) ? $udata['nicksrev']['nicks'] : array(0);
+		$db->query("UPDATE {$gtablepre}users SET nick='$nick',nicksrev='".(is_array($udata['nicksrev']) ? json_encode($udata['nicksrev'], JSON_UNESCAPED_UNICODE) : $udata['nicksrev'])."' WHERE username='".$username."'" );
 	}
-	$nick = in_array($nick,$nicks) ? $nick : 120; 
+	$nick = in_array($nick,$nicks) ? $nick : 0; 
 
 	# 初始化头衔tooltip
 	$nickinfo = titles_get_desc($nick);

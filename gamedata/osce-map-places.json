@@ -1,0 +1,410 @@
+{
+  "places": [
+    {
+      "id": 0,
+      "location": "诊所",
+      "display": "診所",
+      "xy": "A-1",
+      "topicId": "cord_prolapse"
+    },
+    {
+      "id": 1,
+      "location": "南村住宅区",
+      "display": "南村住宅區",
+      "xy": "A-2",
+      "topicId": "shoulder_dystocia"
+    },
+    {
+      "id": 2,
+      "location": "北村住宅区",
+      "display": "北村住宅區",
+      "xy": "A-3",
+      "topicId": "pph"
+    },
+    {
+      "id": 3,
+      "location": "清水池",
+      "display": "清水池",
+      "xy": "A-4",
+      "topicId": "breech"
+    },
+    {
+      "id": 4,
+      "location": "分校",
+      "display": "分校",
+      "xy": "A-5",
+      "topicId": "delivery_third"
+    },
+    {
+      "id": 5,
+      "location": "西村住宅区",
+      "display": "西村住宅區",
+      "xy": "A-6",
+      "topicId": "eclampsia"
+    },
+    {
+      "id": 6,
+      "location": "消防署",
+      "display": "消防署",
+      "xy": "A-7",
+      "topicId": "thyroid_storm"
+    },
+    {
+      "id": 7,
+      "location": "北海岸",
+      "display": "北海岸",
+      "xy": "A-8",
+      "topicId": "burns"
+    },
+    {
+      "id": 8,
+      "location": "南海岸",
+      "display": "南海岸",
+      "xy": "A-9",
+      "topicId": "drowning"
+    },
+    {
+      "id": 9,
+      "location": "森林地带",
+      "display": "森林地帶",
+      "xy": "A-10",
+      "topicId": "lightning"
+    },
+    {
+      "id": 10,
+      "location": "邮电局",
+      "display": "郵電局",
+      "xy": "B-1",
+      "topicId": "start_triage"
+    },
+    {
+      "id": 11,
+      "location": "北村公所",
+      "display": "北村公所",
+      "xy": "B-2",
+      "topicId": "hemorrhagic_shock"
+    },
+    {
+      "id": 12,
+      "location": "灯塔",
+      "display": "燈塔",
+      "xy": "B-3",
+      "topicId": "neonatal"
+    },
+    {
+      "id": 13,
+      "location": "源二郎池",
+      "display": "源二郎池",
+      "xy": "B-4",
+      "topicId": "croup"
+    },
+    {
+      "id": 14,
+      "location": "神秘研究所",
+      "display": "神秘研究所",
+      "xy": "B-5",
+      "topicId": "pals_asthma"
+    },
+    {
+      "id": 15,
+      "location": "废校",
+      "display": "廢校",
+      "xy": "B-6",
+      "topicId": "septic_shock"
+    },
+    {
+      "id": 16,
+      "location": "隧道",
+      "display": "隧道",
+      "xy": "B-7",
+      "topicId": "atls_trauma"
+    },
+    {
+      "id": 17,
+      "location": "山丘地带",
+      "display": "山丘地帶",
+      "xy": "B-8",
+      "topicId": "cardioversion"
+    },
+    {
+      "id": 18,
+      "location": "寺庙",
+      "display": "寺廟",
+      "xy": "B-9",
+      "topicId": "tcp"
+    },
+    {
+      "id": 19,
+      "location": "观音堂",
+      "display": "觀音堂",
+      "xy": "B-10",
+      "topicId": "svt_confusion"
+    },
+    {
+      "id": 20,
+      "location": "墓地A",
+      "display": "墓地A",
+      "xy": "C-1",
+      "topicId": "escharotomy"
+    },
+    {
+      "id": 21,
+      "location": "墓地",
+      "display": "墓地",
+      "xy": "C-2",
+      "topicId": "sadpersons"
+    },
+    {
+      "id": 22,
+      "location": "西村神社",
+      "display": "西村神社",
+      "xy": "C-3",
+      "topicId": "mse_aseptic"
+    },
+    {
+      "id": 23,
+      "location": "南村神社",
+      "display": "南村神社",
+      "xy": "C-4",
+      "topicId": "delirium_dementia"
+    },
+    {
+      "id": 24,
+      "location": "观音堂侧",
+      "display": "觀音堂側",
+      "xy": "C-5",
+      "topicId": "excited_delirium"
+    },
+    {
+      "id": 25,
+      "location": "邮电局侧",
+      "display": "郵電局側",
+      "xy": "C-6",
+      "topicId": "form123"
+    },
+    {
+      "id": 26,
+      "location": "清水池侧",
+      "display": "清水池側",
+      "xy": "C-7",
+      "topicId": "ciwa"
+    },
+    {
+      "id": 27,
+      "location": "北村住宅区B",
+      "display": "北村住宅區B",
+      "xy": "C-8",
+      "topicId": "malaria"
+    },
+    {
+      "id": 28,
+      "location": "南村住宅区B",
+      "display": "南村住宅區B",
+      "xy": "C-9",
+      "topicId": "traveller_diarrhoea"
+    },
+    {
+      "id": 29,
+      "location": "诊所B",
+      "display": "診所B",
+      "xy": "C-10",
+      "topicId": "nai"
+    },
+    {
+      "id": 30,
+      "location": "分校B",
+      "display": "分校B",
+      "xy": "D-1",
+      "topicId": "fall_risk"
+    },
+    {
+      "id": 31,
+      "location": "消防署B",
+      "display": "消防署B",
+      "xy": "D-2",
+      "topicId": "renal_stone"
+    },
+    {
+      "id": 32,
+      "location": "灯塔B",
+      "display": "燈塔B",
+      "xy": "D-3",
+      "topicId": "needlestick"
+    },
+    {
+      "id": 33,
+      "location": "北海岸B",
+      "display": "北海岸B",
+      "xy": "D-4",
+      "topicId": "pe_history"
+    },
+    {
+      "id": 34,
+      "location": "南海岸B",
+      "display": "南海岸B",
+      "xy": "D-5",
+      "topicId": "headache"
+    },
+    {
+      "id": 35,
+      "location": "废校B",
+      "display": "廢校B",
+      "xy": "D-6",
+      "topicId": "fever_rash"
+    },
+    {
+      "id": 36,
+      "location": "源二郎池B",
+      "display": "源二郎池B",
+      "xy": "D-7",
+      "topicId": "hints"
+    },
+    {
+      "id": 37,
+      "location": "神秘研究所B",
+      "display": "神秘研究所B",
+      "xy": "D-8",
+      "topicId": "cerebellar"
+    },
+    {
+      "id": 38,
+      "location": "隧道B",
+      "display": "隧道B",
+      "xy": "D-9",
+      "topicId": "epistaxis"
+    },
+    {
+      "id": 39,
+      "location": "森林地带B",
+      "display": "森林地帶B",
+      "xy": "D-10",
+      "topicId": "eye_exam"
+    },
+    {
+      "id": 40,
+      "location": "山丘地带B",
+      "display": "山丘地帶B",
+      "xy": "E-1",
+      "topicId": "supracondylar"
+    },
+    {
+      "id": 41,
+      "location": "寺庙B",
+      "display": "寺廟B",
+      "xy": "E-2",
+      "topicId": "hand_nerves"
+    },
+    {
+      "id": 42,
+      "location": "北村公所B",
+      "display": "北村公所B",
+      "xy": "E-3",
+      "topicId": "knee_exam"
+    },
+    {
+      "id": 43,
+      "location": "西村神社B",
+      "display": "西村神社B",
+      "xy": "E-4",
+      "topicId": "shoulder_exam"
+    },
+    {
+      "id": 44,
+      "location": "南村神社B",
+      "display": "南村神社B",
+      "xy": "E-5",
+      "topicId": "cspine_rules"
+    },
+    {
+      "id": 45,
+      "location": "观音堂B",
+      "display": "觀音堂B",
+      "xy": "E-6",
+      "topicId": "ankle_foot"
+    },
+    {
+      "id": 46,
+      "location": "诊所C",
+      "display": "診所C",
+      "xy": "E-7",
+      "topicId": "io"
+    },
+    {
+      "id": 47,
+      "location": "消防署C",
+      "display": "消防署C",
+      "xy": "E-8",
+      "topicId": "pelvic_binder"
+    },
+    {
+      "id": 48,
+      "location": "灯塔C",
+      "display": "燈塔C",
+      "xy": "E-9",
+      "topicId": "rsi"
+    },
+    {
+      "id": 49,
+      "location": "分校C",
+      "display": "分校C",
+      "xy": "E-10",
+      "topicId": "cric"
+    },
+    {
+      "id": 50,
+      "location": "清水池C",
+      "display": "清水池C",
+      "xy": "F-1",
+      "topicId": "chest_drain"
+    },
+    {
+      "id": 51,
+      "location": "邮电局C",
+      "display": "郵電局C",
+      "xy": "F-2",
+      "topicId": "niv"
+    },
+    {
+      "id": 52,
+      "location": "北海岸C",
+      "display": "北海岸C",
+      "xy": "F-3",
+      "topicId": "suture"
+    },
+    {
+      "id": 53,
+      "location": "南海岸C",
+      "display": "南海岸C",
+      "xy": "F-4",
+      "topicId": "bvm_airway"
+    },
+    {
+      "id": 54,
+      "location": "废校C",
+      "display": "廢校C",
+      "xy": "F-5",
+      "topicId": "knee_asp"
+    },
+    {
+      "id": 55,
+      "location": "隧道C",
+      "display": "隧道C",
+      "xy": "F-6",
+      "topicId": "co_poison"
+    },
+    {
+      "id": 56,
+      "location": "山丘地带C",
+      "display": "山丘地帶C",
+      "xy": "F-7",
+      "topicId": "shoulder_reduce"
+    },
+    {
+      "id": 57,
+      "location": "寺庙C",
+      "display": "寺廟C",
+      "xy": "F-8",
+      "topicId": "hare_traction"
+    }
+  ]
+}

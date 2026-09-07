@@ -2,7 +2,33 @@
 向對手大喊：<br><input size="30" type="text" name="message" maxlength="60"><br><br>
 <input type="hidden" name="mode" value="revcombat">
 <input type="hidden" id="command" name="command" value="back">
-<!--{if !empty($quest_battle_mode) && $quest_battle_mode == 'Q7'}-->
+<!--{if !empty($osce_battle_mode) && $osce_battle_mode == 'OSCE'}-->
+<div id="enemy">
+    <table cellSpacing=0 cellPadding=0 width=320px style="table-layout:fixed;">
+        <tr>
+            <td colspan="2" align="left" style="vertical-align:top">
+                <span class="yellow">【OSCE 臨床問答】</span><br>
+                <span class="lime">$osce_battle_state['qid']</span><br><br>
+                <span>$osce_battle_state['stem']</span><br><br>
+            </td>
+        </tr>
+        <!--{loop $osce_battle_state['options'] $oi $opt}-->
+        <tr>
+            <td colspan="2" align="left" style="vertical-align:top;padding:3px 0;">
+                <input type="button" class="cmdbutton" style="width:300px;white-space:normal;height:auto;min-height:28px;text-align:left;" value="[$oi] $opt" onclick="$('command').value='osce_answer_$oi';postCmd('gamecmd','command.php');this.disabled=true;">
+            </td>
+        </tr>
+        <!--{/loop}-->
+        <tr><td><br></td></tr>
+        <tr>
+            <td width=100px align="center" style="vertical-align:top">
+                <input type="button" class="cmdbutton" id="x" name="back" style="width:95" value="[X]逃跑" onclick="postCmd('gamecmd','command.php');this.disabled=true;">
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<!--{elseif !empty($quest_battle_mode) && $quest_battle_mode == 'Q7'}-->
 <div id="enemy">
     <table cellSpacing=0 cellPadding=0 width=300px style="table-layout:fixed;">
         <tr>
