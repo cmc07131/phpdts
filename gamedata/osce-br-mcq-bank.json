@@ -7,7 +7,9 @@
     "combat": "MCQ: correct → hit enemy; wrong → hit player",
     "correctIndex": "0-based",
     "language": "English stems/options/rationale",
-    "note": "Map expanded beyond classic 22 cells — one location per topic; Gaming Bot should remake map accordingly. Location names reuse菁英服 places + lettered satellites (B/C) for overflow."
+    "note": "Map expanded beyond classic 22 cells — one location per topic; Gaming Bot should remake map accordingly. Location names reuse菁英服 places + lettered satellites (B/C) for overflow.",
+    "updated": "2026-09-07 thickened thin topics to ≥3",
+    "mcqCount": 179
   },
   "map": [
     {
@@ -634,6 +636,18 @@
         ],
         "correct": 1,
         "rationale": "Seizure drug."
+      },
+      {
+        "id": "ec3",
+        "stem": "During eclamptic seizure acute care:",
+        "options": [
+          "ABC, left lateral, MgSO4, avoid unnecessary immediate CS mid-fit",
+          "Force delivery during fit always",
+          "No airway plan",
+          "Fluid overload freely"
+        ],
+        "correct": 0,
+        "rationale": "Stabilise mother."
       }
     ],
     "thyroid_storm": [
@@ -736,6 +750,18 @@
         ],
         "correct": 1,
         "rationale": "Don’t delay ventilation."
+      },
+      {
+        "id": "dr3",
+        "stem": "After drowning ROSC, persistent hypoxia checklist includes:",
+        "options": [
+          "ET position, O2, suction, bronchospasm Rx, lung recruitment as appropriate",
+          "Always extubate immediately",
+          "Ignore vent settings",
+          "No CXR"
+        ],
+        "correct": 0,
+        "rationale": "Post-ROSC airway/vent."
       }
     ],
     "lightning": [
@@ -762,6 +788,18 @@
         ],
         "correct": 2,
         "rationale": "Walking wounded green."
+      },
+      {
+        "id": "li3",
+        "stem": "Associated lightning injuries may include:",
+        "options": [
+          "Tympanic rupture, cataracts, keraunographic markings, trauma from blast/fall",
+          "Only sunburn",
+          "Never arrhythmia",
+          "No need ECG"
+        ],
+        "correct": 0,
+        "rationale": "Multisystem."
       }
     ],
     "start_triage": [
@@ -826,6 +864,18 @@
         ],
         "correct": 0,
         "rationale": "Context-dependent trauma."
+      },
+      {
+        "id": "hs3",
+        "stem": "In trauma haemorrhage, priority alongside ABC is:",
+        "options": [
+          "Stop the bleeding / control source while resuscitating",
+          "CT before any access",
+          "Oral iron",
+          "Steroids first"
+        ],
+        "correct": 0,
+        "rationale": "Haemorrhage control + resus."
       }
     ],
     "neonatal": [
@@ -852,6 +902,18 @@
         ],
         "correct": 0,
         "rationale": "NRP 3:1 classic."
+      },
+      {
+        "id": "nn3",
+        "stem": "HR <60 in newborn after adequate ventilation →",
+        "options": [
+          "Start chest compressions (NRP)",
+          "Only observe",
+          "Adult 30:2 only",
+          "Defib first always"
+        ],
+        "correct": 0,
+        "rationale": "NRP threshold."
       }
     ],
     "croup": [
@@ -878,6 +940,18 @@
         ],
         "correct": 0,
         "rationale": "Severity ladder."
+      },
+      {
+        "id": "cr3",
+        "stem": "First-line meds in croup often include:",
+        "options": [
+          "Steroid (± nebulised adrenaline if moderate–severe)",
+          "Antibiotics always",
+          "Only antitussive",
+          "No oxygen ever"
+        ],
+        "correct": 0,
+        "rationale": "Steroid ± adrenaline."
       }
     ],
     "pals_asthma": [
@@ -904,6 +978,18 @@
         ],
         "correct": 0,
         "rationale": "PALS prep mnemonic."
+      },
+      {
+        "id": "pa3",
+        "stem": "In paediatric asthma arrest PEA, consider:",
+        "options": [
+          "Dynamic hyperinflation — disconnect and compress chest",
+          "Never touch ventilator circuit",
+          "Only fluids",
+          "No adrenaline"
+        ],
+        "correct": 0,
+        "rationale": "Auto-PEEP."
       }
     ],
     "septic_shock": [
@@ -918,6 +1004,30 @@
         ],
         "correct": 0,
         "rationale": "Hour-1 bundle spirit."
+      },
+      {
+        "id": "ss2",
+        "stem": "Within the first hour of suspected sepsis, prioritise:",
+        "options": [
+          "Cultures then prompt broad Abx, fluids for hypotension, lactate",
+          "Wait for CRP",
+          "Delay Abx for full panel",
+          "No fluids if febrile"
+        ],
+        "correct": 0,
+        "rationale": "Early Abx + resus."
+      },
+      {
+        "id": "ss3",
+        "stem": "Septic shock after fluids often needs:",
+        "options": [
+          "Vasopressors (e.g. noradrenaline) for persistent hypotension",
+          "Only more oral water",
+          "Immediate discharge",
+          "Beta-blocker first"
+        ],
+        "correct": 0,
+        "rationale": "Refractory hypotension."
       }
     ],
     "atls_trauma": [
@@ -944,6 +1054,18 @@
         ],
         "correct": 1,
         "rationale": "Trochanter level."
+      },
+      {
+        "id": "at3",
+        "stem": "Massive haemothorax concern includes:",
+        "options": [
+          "Shock + dullness/↓breath sounds — chest drain + blood products/surgery path",
+          "Always NIV first",
+          "Ignore output",
+          "No IV"
+        ],
+        "correct": 0,
+        "rationale": "Chest haemorrhage."
       }
     ],
     "cardioversion": [
@@ -970,6 +1092,18 @@
         ],
         "correct": 0,
         "rationale": "ACLS safety."
+      },
+      {
+        "id": "cv3",
+        "stem": "Unsynchronised shock indicated for:",
+        "options": [
+          "VF / pulseless VT / polymorphic VT when sync inappropriate",
+          "Stable sinus tach",
+          "Anxiety",
+          "All AF first shock unsync"
+        ],
+        "correct": 0,
+        "rationale": "Unsync indications."
       }
     ],
     "tcp": [
@@ -996,6 +1130,18 @@
         ],
         "correct": 1,
         "rationale": "Electrical + mechanical."
+      },
+      {
+        "id": "tc3",
+        "stem": "TCP pad placement commonly:",
+        "options": [
+          "Anterior-posterior",
+          "Both on forehead",
+          "Ankles only",
+          "No pads — paddles on abdomen"
+        ],
+        "correct": 0,
+        "rationale": "AP pads."
       }
     ],
     "svt_confusion": [
@@ -1010,6 +1156,30 @@
         ],
         "correct": 0,
         "rationale": "Unstable → energy."
+      },
+      {
+        "id": "sv2",
+        "stem": "Stable regular narrow-complex SVT first-line often:",
+        "options": [
+          "Vagal manoeuvres then adenosine (if appropriate)",
+          "Immediate unsync 360 J",
+          "Oral amiodarone only",
+          "Ignore monitor"
+        ],
+        "correct": 0,
+        "rationale": "Stable SVT algorithm."
+      },
+      {
+        "id": "sv3",
+        "stem": "Adenosine key teaching point:",
+        "options": [
+          "Rapid flush; warn flush/brief asystole; crash kit ready",
+          "Slow infusion over 30 min",
+          "IM injection",
+          "No monitoring needed"
+        ],
+        "correct": 0,
+        "rationale": "Safety."
       }
     ],
     "escharotomy": [
@@ -1024,6 +1194,30 @@
         ],
         "correct": 0,
         "rationale": "Relieve constriction."
+      },
+      {
+        "id": "es2",
+        "stem": "Chest escharotomy aim:",
+        "options": [
+          "Restore chest wall compliance / ventilation",
+          "Improve cosmetics",
+          "Replace fluids alone",
+          "Treat CO only"
+        ],
+        "correct": 0,
+        "rationale": "Ventilation."
+      },
+      {
+        "id": "es3",
+        "stem": "Limb escharotomy indication cue:",
+        "options": [
+          "Circumferential burn with neurovascular compromise",
+          "Any blister",
+          "Sunburn",
+          "First-degree only"
+        ],
+        "correct": 0,
+        "rationale": "Perfusion threat."
       }
     ],
     "sadpersons": [
@@ -1050,6 +1244,18 @@
         ],
         "correct": 0,
         "rationale": "High lethality cues."
+      },
+      {
+        "id": "sp3",
+        "stem": "Protective factors to ask include:",
+        "options": [
+          "Supports, reasons for living, engagement with help",
+          "Only risk factors",
+          "Ignore family",
+          "No safety plan"
+        ],
+        "correct": 0,
+        "rationale": "Balance assessment."
       }
     ],
     "mse_aseptic": [
@@ -1064,6 +1270,30 @@
         ],
         "correct": 0,
         "rationale": "Appearance, Speech, Emotion, Perception, Thought, Insight, Cognition."
+      },
+      {
+        "id": "ms2",
+        "stem": "In ASEPTIC, P commonly stands for:",
+        "options": [
+          "Perception (hallucinations/illusions)",
+          "Pulse",
+          "pH",
+          "Platelets"
+        ],
+        "correct": 0,
+        "rationale": "MSE domains."
+      },
+      {
+        "id": "ms3",
+        "stem": "Insight assessment asks about:",
+        "options": [
+          "Patient’s awareness of illness/need for treatment",
+          "Only orientation to time",
+          "Only digit span",
+          "Only mood"
+        ],
+        "correct": 0,
+        "rationale": "Insight/judgement."
       }
     ],
     "delirium_dementia": [
@@ -1078,6 +1308,30 @@
         ],
         "correct": 0,
         "rationale": "Attention/fluctuation key."
+      },
+      {
+        "id": "dd2",
+        "stem": "Dementia typical tempo:",
+        "options": [
+          "Insidious, progressive; attention relatively preserved early vs delirium",
+          "Hours with marked fluctuation always",
+          "Only after head strike",
+          "Always reversible in 1 day"
+        ],
+        "correct": 0,
+        "rationale": "Contrast with delirium."
+      },
+      {
+        "id": "dd3",
+        "stem": "First step when delirium suspected in ED:",
+        "options": [
+          "Find/treat precipitant (infection, drugs, metabolic, retention)",
+          "Start donepezil immediately",
+          "CT always before glucose",
+          "Ignore collateral"
+        ],
+        "correct": 0,
+        "rationale": "Treat cause."
       }
     ],
     "excited_delirium": [
@@ -1092,6 +1346,30 @@
         ],
         "correct": 0,
         "rationale": "Aggressive supportive care."
+      },
+      {
+        "id": "ed2",
+        "stem": "Excited delirium RSI caution often taught:",
+        "options": [
+          "Avoid sux if hyperK risk; prepare for difficult physiology",
+          "Sux always safest",
+          "No airway plan needed",
+          "Delay cooling"
+        ],
+        "correct": 0,
+        "rationale": "HyperK/rhabdo risk."
+      },
+      {
+        "id": "ed3",
+        "stem": "Chemical restraint options may include:",
+        "options": [
+          "Benzodiazepines ± ketamine (per local protocol)",
+          "Only oral diazepam home pack",
+          "No meds ever",
+          "Insulin"
+        ],
+        "correct": 0,
+        "rationale": "Sedate safely."
       }
     ],
     "form123": [
@@ -1106,6 +1384,30 @@
         ],
         "correct": 0,
         "rationale": "Psych ordinance forms."
+      },
+      {
+        "id": "f123b",
+        "stem": "Form 1 typically relates to:",
+        "options": [
+          "Application/detention pathway under mental health ordinance (local forms)",
+          "Annual leave",
+          "Death cert",
+          "Antibiotic script"
+        ],
+        "correct": 0,
+        "rationale": "Compulsory pathway."
+      },
+      {
+        "id": "f123c",
+        "stem": "When using compulsory powers, document:",
+        "options": [
+          "Risk, capacity/insight issues, least restrictive option, who was informed",
+          "Nothing",
+          "Only diagnosis code",
+          "Only next clinic date"
+        ],
+        "correct": 0,
+        "rationale": "Legal/clinical record."
       }
     ],
     "ciwa": [
@@ -1120,6 +1422,30 @@
         ],
         "correct": 0,
         "rationale": "Withdrawal protocol."
+      },
+      {
+        "id": "cw2",
+        "stem": "High CIWA score suggests:",
+        "options": [
+          "Severe withdrawal — escalate benzos / monitor closely",
+          "Safe immediate discharge",
+          "Opioid toxicity",
+          "Hypoglycaemia only"
+        ],
+        "correct": 0,
+        "rationale": "Titrate treatment."
+      },
+      {
+        "id": "cw3",
+        "stem": "Alcohol withdrawal seizure risk highest around:",
+        "options": [
+          "Early withdrawal window (hours–days after stopping)",
+          "One month later only",
+          "While still drinking heavily without drop",
+          "Never"
+        ],
+        "correct": 0,
+        "rationale": "Timing."
       }
     ],
     "malaria": [
@@ -1146,6 +1472,18 @@
         ],
         "correct": 0,
         "rationale": "Severity markers."
+      },
+      {
+        "id": "ma3",
+        "stem": "Vector for human malaria:",
+        "options": [
+          "Female Anopheles mosquito",
+          "Tsetse only",
+          "Aedes only always",
+          "Ticks only"
+        ],
+        "correct": 0,
+        "rationale": "Anopheles."
       }
     ],
     "traveller_diarrhoea": [
@@ -1160,6 +1498,30 @@
         ],
         "correct": 0,
         "rationale": "Travel Hx essentials."
+      },
+      {
+        "id": "td2",
+        "stem": "Bloody diarrhoea + fever in returned traveller raises concern for:",
+        "options": [
+          "Invasive bacterial dysentery / serious infection — investigate",
+          "Always IBS",
+          "Ignore travel",
+          "Loperamide and home without review"
+        ],
+        "correct": 0,
+        "rationale": "Red flags."
+      },
+      {
+        "id": "td3",
+        "stem": "Oral rehydration is appropriate when:",
+        "options": [
+          "Mild–moderate dehydration, tolerating orally",
+          "Shock with altered mentation as sole therapy",
+          "Severe sepsis without IV",
+          "Complete obstruction"
+        ],
+        "correct": 0,
+        "rationale": "ORS when appropriate."
       }
     ],
     "nai": [
@@ -1186,6 +1548,18 @@
         ],
         "correct": 0,
         "rationale": "Pattern + history mismatch."
+      },
+      {
+        "id": "na3",
+        "stem": "If caregivers refuse admission in suspected NAI (HK notes):",
+        "options": [
+          "Involve SWD/police powers as needed — do not simply discharge",
+          "Respect refusal always",
+          "Only phone GP",
+          "No documentation"
+        ],
+        "correct": 0,
+        "rationale": "Protect child."
       }
     ],
     "fall_risk": [
@@ -1200,6 +1574,30 @@
         ],
         "correct": 0,
         "rationale": "Multifactorial."
+      },
+      {
+        "id": "fr2",
+        "stem": "Post-fall ED screen should check:",
+        "options": [
+          "Syncope vs mechanical, head injury, fracture, anticoagulation",
+          "Only skin tears",
+          "Ignore ECG",
+          "No med review"
+        ],
+        "correct": 0,
+        "rationale": "Dangerous causes."
+      },
+      {
+        "id": "fr3",
+        "stem": "Medications that increase fall risk include:",
+        "options": [
+          "Sedatives, antihypertensives, anticholinergics (examples)",
+          "Paracetamol only",
+          "Topical cream only",
+          "Vaccines only"
+        ],
+        "correct": 0,
+        "rationale": "Med review."
       }
     ],
     "renal_stone": [
@@ -1214,6 +1612,30 @@
         ],
         "correct": 0,
         "rationale": "Stone Hx."
+      },
+      {
+        "id": "rs2",
+        "stem": "Red flag with suspected stone:",
+        "options": [
+          "Fever/infected obstructed kidney — urologic emergency",
+          "Mild flank ache only",
+          "Clear urine always excludes",
+          "Normal CRP excludes"
+        ],
+        "correct": 0,
+        "rationale": "Sepsis + obstruction."
+      },
+      {
+        "id": "rs3",
+        "stem": "First-line imaging often:",
+        "options": [
+          "Non-contrast CT KUB (or US as available)",
+          "MRI always first",
+          "Bone scan",
+          "PET"
+        ],
+        "correct": 0,
+        "rationale": "CT KUB common."
       }
     ],
     "needlestick": [
@@ -1228,6 +1650,30 @@
         ],
         "correct": 0,
         "rationale": "Occupational exposure."
+      },
+      {
+        "id": "ns2",
+        "stem": "PEP decision timing:",
+        "options": [
+          "As soon as possible after exposure assessment",
+          "Wait 2 weeks for source results only",
+          "Never if skin broken",
+          "Only if symptomatic"
+        ],
+        "correct": 0,
+        "rationale": "Time-critical."
+      },
+      {
+        "id": "ns3",
+        "stem": "Baseline tests after needlestick typically include:",
+        "options": [
+          "HBV/HCV/HIV status (exposed ± source as appropriate)",
+          "Only cholesterol",
+          "Only CXR",
+          "No bloods"
+        ],
+        "correct": 0,
+        "rationale": "Blood-borne viruses."
       }
     ],
     "pe_history": [
@@ -1242,6 +1688,30 @@
         ],
         "correct": 0,
         "rationale": "Wells-type risks."
+      },
+      {
+        "id": "pe2",
+        "stem": "PE classic symptom cluster may include:",
+        "options": [
+          "Dyspnoea, pleuritic pain, haemoptysis, risk factors",
+          "Only rhinorrhoea",
+          "Only dysuria",
+          "Only joint swelling"
+        ],
+        "correct": 0,
+        "rationale": "Respiratory + risks."
+      },
+      {
+        "id": "pe3",
+        "stem": "Wells / PERC spirit in ED:",
+        "options": [
+          "Risk-stratify before d-dimer/CTPA pathway",
+          "CTPA every chest pain",
+          "Ignore HR",
+          "D-dimer rules in PE alone"
+        ],
+        "correct": 0,
+        "rationale": "Pretest probability."
       }
     ],
     "headache": [
@@ -1256,6 +1726,30 @@
         ],
         "correct": 0,
         "rationale": "Ottawa SAH spirit."
+      },
+      {
+        "id": "ha2",
+        "stem": "Headache + fever + neck stiffness — consider:",
+        "options": [
+          "Meningitis/encephalitis workup",
+          "Tension only",
+          "Sinus forever",
+          "Migraine without exam"
+        ],
+        "correct": 0,
+        "rationale": "CNS infection."
+      },
+      {
+        "id": "ha3",
+        "stem": "Focal neuro deficit with acute headache:",
+        "options": [
+          "Urgent imaging / stroke-SAH pathway",
+          "Paracetamol and home",
+          "No exam needed",
+          "Only ENT referral"
+        ],
+        "correct": 0,
+        "rationale": "Red flag."
       }
     ],
     "fever_rash": [
@@ -1270,6 +1764,30 @@
         ],
         "correct": 0,
         "rationale": "Days of fever + features."
+      },
+      {
+        "id": "fv2",
+        "stem": "Non-blanching purpuric rash + fever — worry:",
+        "options": [
+          "Meningococcal disease — immediate Abx/resus",
+          "Viral exanthem only always",
+          "Delay Abx for photo",
+          "Topical steroid first"
+        ],
+        "correct": 0,
+        "rationale": "Do not delay."
+      },
+      {
+        "id": "fv3",
+        "stem": "Scarlet fever classic cues:",
+        "options": [
+          "Sandpaper rash, strawberry tongue, GAS link",
+          "Vesicles on palms only",
+          "Target lesions only",
+          "Night sweats only"
+        ],
+        "correct": 0,
+        "rationale": "GAS."
       }
     ],
     "hints": [
@@ -1296,6 +1814,18 @@
         ],
         "correct": 0,
         "rationale": "Peripheral pattern."
+      },
+      {
+        "id": "hi3",
+        "stem": "Test of skew positive (vertical refixation) suggests:",
+        "options": [
+          "Central cause until proven otherwise",
+          "Definite BPPV",
+          "Normal peripheral only",
+          "Migraine cured"
+        ],
+        "correct": 0,
+        "rationale": "Skew = central worry."
       }
     ],
     "cerebellar": [
@@ -1310,6 +1840,30 @@
         ],
         "correct": 0,
         "rationale": "Classic screen."
+      },
+      {
+        "id": "ce2",
+        "stem": "Cerebellar stroke red flag with vertigo:",
+        "options": [
+          "Inability to walk, dysmetria, central nystagmus pattern",
+          "Brief positional only fatigable",
+          "No neuro signs ever",
+          "Only ear pain"
+        ],
+        "correct": 0,
+        "rationale": "Central features."
+      },
+      {
+        "id": "ce3",
+        "stem": "Heel-shin / finger-nose test mainly for:",
+        "options": [
+          "Coordination / cerebellar pathway",
+          "Power only",
+          "Sensation only",
+          "Reflexes only"
+        ],
+        "correct": 0,
+        "rationale": "Coordination."
       }
     ],
     "epistaxis": [
@@ -1324,6 +1878,30 @@
         ],
         "correct": 0,
         "rationale": "Stepwise."
+      },
+      {
+        "id": "ep2",
+        "stem": "Uncontrolled posterior bleed may need:",
+        "options": [
+          "Posterior pack / ENT / airway vigilance",
+          "Only ice on forehead forever",
+          "No IV access ever",
+          "Dry gauze in throat and discharge"
+        ],
+        "correct": 0,
+        "rationale": "Escalate."
+      },
+      {
+        "id": "ep3",
+        "stem": "Check in anticoagulated epistaxis:",
+        "options": [
+          "ABC, reverse if indicated, coag/INR as relevant",
+          "Ignore meds",
+          "Stop all fluids",
+          "No BP check"
+        ],
+        "correct": 0,
+        "rationale": "Bleed risk."
       }
     ],
     "eye_exam": [
@@ -1338,6 +1916,30 @@
         ],
         "correct": 0,
         "rationale": "Don’t skip VA."
+      },
+      {
+        "id": "ey2",
+        "stem": "Painful red eye with vomiting — consider:",
+        "options": [
+          "Acute angle-closure glaucoma — urgent ophth",
+          "Simple conjunctivitis only",
+          "Ignore IOP/symptoms",
+          "Home antihistamine only"
+        ],
+        "correct": 0,
+        "rationale": "Emergency."
+      },
+      {
+        "id": "ey3",
+        "stem": "Chemical eye injury first step:",
+        "options": [
+          "Immediate copious irrigation",
+          "Wait for pH before any rinse",
+          "Pad and discharge",
+          "Steroid first"
+        ],
+        "correct": 0,
+        "rationale": "Irrigate now."
       }
     ],
     "supracondylar": [
@@ -1364,6 +1966,18 @@
         ],
         "correct": 0,
         "rationale": "Classification."
+      },
+      {
+        "id": "su3",
+        "stem": "Before/after reduction of SCH, always:",
+        "options": [
+          "Document radial/median/ulnar + pulses",
+          "Only pain score",
+          "No NV exam",
+          "Skip"
+        ],
+        "correct": 0,
+        "rationale": "NV documentation."
       }
     ],
     "hand_nerves": [
@@ -1390,6 +2004,18 @@
         ],
         "correct": 0,
         "rationale": "Tendon exam."
+      },
+      {
+        "id": "hn3",
+        "stem": "Ulnar nerve motor bedside test includes:",
+        "options": [
+          "Finger abduction/adduction (interossei) / Froment",
+          "OK sign only",
+          "Wrist extension only",
+          "Hip flexion"
+        ],
+        "correct": 0,
+        "rationale": "Ulnar motor."
       }
     ],
     "knee_exam": [
@@ -1404,6 +2030,30 @@
         ],
         "correct": 0,
         "rationale": "Orthopaedic screen."
+      },
+      {
+        "id": "ke2",
+        "stem": "Lachman test screens for:",
+        "options": [
+          "ACL integrity",
+          "Meniscus only",
+          "LCL only",
+          "Patella dislocation only"
+        ],
+        "correct": 0,
+        "rationale": "ACL."
+      },
+      {
+        "id": "ke3",
+        "stem": "Septic arthritis knee concern:",
+        "options": [
+          "Hot swollen joint ± fever — aspirate/urg ortho",
+          "Ignore CRP",
+          "Always gout first without tap",
+          "Walk it off"
+        ],
+        "correct": 0,
+        "rationale": "Don’t miss septic joint."
       }
     ],
     "shoulder_exam": [
@@ -1418,6 +2068,30 @@
         ],
         "correct": 0,
         "rationale": "Full joint exam."
+      },
+      {
+        "id": "sh2",
+        "stem": "After shoulder dislocation, document:",
+        "options": [
+          "Axillary nerve (regimental badge) + pulses before/after",
+          "Only pain score",
+          "No neuro exam",
+          "Only neck"
+        ],
+        "correct": 0,
+        "rationale": "NV status."
+      },
+      {
+        "id": "sh3",
+        "stem": "Empty can / Jobe mainly tests:",
+        "options": [
+          "Supraspinatus",
+          "Subscapularis only",
+          "Teres major only",
+          "Biceps reflex"
+        ],
+        "correct": 0,
+        "rationale": "Cuff."
       }
     ],
     "cspine_rules": [
@@ -1444,6 +2118,18 @@
         ],
         "correct": 0,
         "rationale": "Canadian C-spine."
+      },
+      {
+        "id": "cs3",
+        "stem": "If CCR allows ROM testing, clear if:",
+        "options": [
+          "Can actively rotate 45° left and right",
+          "Can nod once",
+          "Pain anywhere forbids all exam forever without film always",
+          "Only passive ROM by examiner"
+        ],
+        "correct": 0,
+        "rationale": "Active rotation."
       }
     ],
     "ankle_foot": [
@@ -1458,6 +2144,30 @@
         ],
         "correct": 0,
         "rationale": "Imaging rule."
+      },
+      {
+        "id": "af2",
+        "stem": "Ottawa ankle — XR if:",
+        "options": [
+          "Malleolar pain + bone tenderness or inability to weight-bear 4 steps",
+          "Any bruise always",
+          "No tenderness ever needs XR",
+          "Only if age >80"
+        ],
+        "correct": 0,
+        "rationale": "Rules."
+      },
+      {
+        "id": "af3",
+        "stem": "Achilles rupture clue:",
+        "options": [
+          "Sudden pop, weak plantarflexion, positive Thompson",
+          "Only ankle sprain forever",
+          "Normal squeeze test always",
+          "No gap ever"
+        ],
+        "correct": 0,
+        "rationale": "Thompson."
       }
     ],
     "io": [
@@ -1484,6 +2194,18 @@
         ],
         "correct": 0,
         "rationale": "Don’t put through #."
+      },
+      {
+        "id": "io3",
+        "stem": "Confirm IO placement by:",
+        "options": [
+          "Needle stands, aspirate marrow, flush without soft-tissue swelling",
+          "Pain alone",
+          "XR mandatory before any drug",
+          "Colour of hub only"
+        ],
+        "correct": 0,
+        "rationale": "Confirm."
       }
     ],
     "pelvic_binder": [
@@ -1498,6 +2220,30 @@
         ],
         "correct": 0,
         "rationale": "Trochanters."
+      },
+      {
+        "id": "pb2",
+        "stem": "Binder complication if left too long:",
+        "options": [
+          "Skin necrosis / pressure injury",
+          "Improved comfort only forever",
+          "No risk",
+          "Hypertension"
+        ],
+        "correct": 0,
+        "rationale": "Time-limited."
+      },
+      {
+        "id": "pb3",
+        "stem": "Improvised binder if no commercial device:",
+        "options": [
+          "Sheet wrap at trochanter level",
+          "Neck collar",
+          "Arm sling only",
+          "Nothing"
+        ],
+        "correct": 0,
+        "rationale": "Improvised."
       }
     ],
     "rsi": [
@@ -1524,6 +2270,18 @@
         ],
         "correct": 0,
         "rationale": "Rescue."
+      },
+      {
+        "id": "rsi3",
+        "stem": "Failed intubation next priority:",
+        "options": [
+          "Oxygenate — BVM/supraglottic / declare CICO early if needed",
+          "Repeat same blade forever",
+          "No call for help",
+          "Wake and discharge"
+        ],
+        "correct": 0,
+        "rationale": "Oxygenate."
       }
     ],
     "cric": [
@@ -1538,6 +2296,30 @@
         ],
         "correct": 0,
         "rationale": "CTM."
+      },
+      {
+        "id": "crx2",
+        "stem": "Scalpel-bougie-tube cric concept:",
+        "options": [
+          "Incise CTM, bougie, railroad ETT",
+          "Blind nasal forever",
+          "Only needle forever in all adults",
+          "Tracheostomy first without training"
+        ],
+        "correct": 0,
+        "rationale": "Emergency front of neck."
+      },
+      {
+        "id": "crx3",
+        "stem": "Indication for emergency FONA:",
+        "options": [
+          "CICO — can’t intubate, can’t oxygenate",
+          "Elective dental",
+          "Mild epistaxis",
+          "Stable COPD"
+        ],
+        "correct": 0,
+        "rationale": "Rescue airway."
       }
     ],
     "chest_drain": [
@@ -1552,6 +2334,30 @@
         ],
         "correct": 0,
         "rationale": "Triangle of safety."
+      },
+      {
+        "id": "cd2",
+        "stem": "Immediate needle decompression landmark (tension) classically:",
+        "options": [
+          "2nd ICS midclavicular (or local updated lateral approach)",
+          "10th ICS posterior",
+          "Umbilicus",
+          "Mastoid"
+        ],
+        "correct": 0,
+        "rationale": "Tension PTX."
+      },
+      {
+        "id": "cd3",
+        "stem": "After chest drain, confirm with:",
+        "options": [
+          "Clinical + CXR; watch swing/bubble",
+          "No imaging ever",
+          "Only SpO2",
+          "Ignore output"
+        ],
+        "correct": 0,
+        "rationale": "Confirm position."
       }
     ],
     "niv": [
@@ -1566,6 +2372,30 @@
         ],
         "correct": 0,
         "rationale": "Know contraindications too."
+      },
+      {
+        "id": "nv2",
+        "stem": "NIV caution / relative CI includes:",
+        "options": [
+          "Reduced consciousness, vomiting aspiration risk, untreated PTX",
+          "All APO patients banned",
+          "Mild hypoxia only indication forever",
+          "Never in COPD"
+        ],
+        "correct": 0,
+        "rationale": "Know CIs."
+      },
+      {
+        "id": "nv3",
+        "stem": "IPAP vs EPAP simple idea:",
+        "options": [
+          "IPAP supports ventilation; EPAP/PEEP recruits/oxygenates",
+          "Both identical always",
+          "EPAP only for CO2",
+          "IPAP only for O2"
+        ],
+        "correct": 0,
+        "rationale": "BiPAP basics."
       }
     ],
     "suture": [
@@ -1580,6 +2410,30 @@
         ],
         "correct": 0,
         "rationale": "ED toilet + close."
+      },
+      {
+        "id": "su_w2",
+        "stem": "Heavily contaminated wound may need:",
+        "options": [
+          "Irrigation ± delayed primary closure / Abx as indicated",
+          "Water-tight immediate close always",
+          "No tetanus review",
+          "Glue over dirt"
+        ],
+        "correct": 0,
+        "rationale": "Contamination."
+      },
+      {
+        "id": "su_w3",
+        "stem": "Facial suture timing usually:",
+        "options": [
+          "Fine sutures, earlier removal than limbs (local protocol)",
+          "Leave 3 weeks always",
+          "Never suture face",
+          "Staples preferred face always"
+        ],
+        "correct": 0,
+        "rationale": "Face specifics."
       }
     ],
     "bvm_airway": [
@@ -1594,6 +2448,30 @@
         ],
         "correct": 0,
         "rationale": "Anticipate difficulty."
+      },
+      {
+        "id": "bv2",
+        "stem": "OPA sizing roughly:",
+        "options": [
+          "Corner of mouth to angle of jaw",
+          "Nose to ear only for OPA",
+          "Random",
+          "Same as ETT length"
+        ],
+        "correct": 0,
+        "rationale": "Sizing."
+      },
+      {
+        "id": "bv3",
+        "stem": "NPA caution:",
+        "options": [
+          "Base of skull fracture / significant midface trauma risk",
+          "All unconscious banned forever",
+          "Only for neonates",
+          "Never lubricate"
+        ],
+        "correct": 0,
+        "rationale": "Trauma caution."
       }
     ],
     "knee_asp": [
@@ -1608,6 +2486,30 @@
         ],
         "correct": 0,
         "rationale": "Relative CIs."
+      },
+      {
+        "id": "ka2",
+        "stem": "Synovial fluid septic clues:",
+        "options": [
+          "Cloudy, very high WCC, +Gram/culture",
+          "Crystal positive excludes infection always",
+          "Clear fluid always infected",
+          "Glucose high in sepsis"
+        ],
+        "correct": 0,
+        "rationale": "Septic profile."
+      },
+      {
+        "id": "ka3",
+        "stem": "Common approach for knee aspirate:",
+        "options": [
+          "Parapatellar (medial or lateral)",
+          "Through patellar tendon mid always only",
+          "Popliteal fossa first",
+          "Ankle portal"
+        ],
+        "correct": 0,
+        "rationale": "Parapatellar common."
       }
     ],
     "co_poison": [
@@ -1622,6 +2524,30 @@
         ],
         "correct": 0,
         "rationale": "COHb matters."
+      },
+      {
+        "id": "co2",
+        "stem": "Classic CO sources include:",
+        "options": [
+          "Faulty heaters, fires, enclosed generators",
+          "Only outdoor air",
+          "Only chlorine pools",
+          "Only food"
+        ],
+        "correct": 0,
+        "rationale": "Source Hx."
+      },
+      {
+        "id": "co3",
+        "stem": "COHb measurement:",
+        "options": [
+          "Needs co-oximetry — not standard pulse oximetry alone",
+          "Room SpO2 suffices always",
+          "Urine dip",
+          "CXR diagnoses CO"
+        ],
+        "correct": 0,
+        "rationale": "Co-oximetry."
       }
     ],
     "shoulder_reduce": [
@@ -1636,6 +2562,30 @@
         ],
         "correct": 0,
         "rationale": "Safety steps."
+      },
+      {
+        "id": "sr2",
+        "stem": "Common ED reduction methods include:",
+        "options": [
+          "Traction-countertraction / external rotation / scapular manipulation",
+          "Immediate ORIF always",
+          "No analgesia pathways",
+          "Ignore sedation risk"
+        ],
+        "correct": 0,
+        "rationale": "Several techniques."
+      },
+      {
+        "id": "sr3",
+        "stem": "Post-reduction care includes:",
+        "options": [
+          "Sling, NV recheck, XR, follow-up",
+          "Return to contact sport same day always",
+          "No follow-up",
+          "Skip XR if feels better"
+        ],
+        "correct": 0,
+        "rationale": "Aftercare."
       }
     ],
     "hare_traction": [
@@ -1650,6 +2600,30 @@
         ],
         "correct": 0,
         "rationale": "From traction station."
+      },
+      {
+        "id": "ht2",
+        "stem": "Caution for traction splint:",
+        "options": [
+          "Open fracture with exposed bone (relative/CI per teaching)",
+          "Closed midshaft femur candidate",
+          "Painful closed femur",
+          "Suspected femur # with good NV"
+        ],
+        "correct": 0,
+        "rationale": "Open protruding bone."
+      },
+      {
+        "id": "ht3",
+        "stem": "Reassess after applying traction splint:",
+        "options": [
+          "Pulse, motor, sensory",
+          "Only colour of toes ignore pulse",
+          "No need",
+          "Only pain"
+        ],
+        "correct": 0,
+        "rationale": "NV recheck."
       }
     ]
   }
