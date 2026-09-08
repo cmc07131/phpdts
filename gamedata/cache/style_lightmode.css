@@ -1,0 +1,93 @@
+/* BR大逃殺 — global light mode overrides */
+html, body {
+  background-color: #f4f6f8 !important;
+  background-image: none !important;
+  color: #1a1a1a !important;
+}
+a { color: #1a5fb4 !important; }
+a:hover { color: #0b3d91 !important; }
+.title, .subtitle, .ach-subtitle, .ach-subdesc {
+  color: #0b3d91 !important;
+  filter: none !important;
+}
+.ver a { color: #c62828 !important; }
+
+.b1, .b2 {
+  background-color: rgba(66, 133, 244, 0.85) !important;
+  color: #fff !important;
+  border-color: #c5d0dc !important;
+}
+.b3, .map {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  color: #1a1a1a !important;
+  border-color: #c5d0dc !important;
+}
+.b4, .b5 { color: #1a1a1a !important; }
+.map2 { border-color: #c5d0dc !important; color: #1a1a1a !important; }
+.maptdred { background-color: rgba(244, 67, 54, 0.2) !important; border-color: #c5d0dc !important; }
+.maptdyellow { background-color: rgba(255, 193, 7, 0.25) !important; border-color: #c5d0dc !important; }
+.maptdlime { background-color: rgba(76, 175, 80, 0.2) !important; border-color: #c5d0dc !important; }
+
+table.admin { BACKGROUND: #e8eef5 !important; }
+table.dialogue {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #90a4ae !important;
+  color: #1a1a1a !important;
+}
+
+/* common panels / cmd / log boxes */
+.cmd, .log, .battle, .profile, .chat, .news, .gamecmd,
+#cmd, #log, #chat, #profile, #main, #gamecmd,
+div.cmd, div.log, td.b3, th.b3 {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border-color: #c5d0dc !important;
+}
+
+input, select, textarea, button {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #90a4ae !important;
+}
+input[type="submit"], input[type="button"], button {
+  background-color: #e3f2fd !important;
+  color: #0b3d91 !important;
+}
+
+/* semantic colors keep readable on light */
+.yellow { color: #b8860b !important; }
+.red { color: #c62828 !important; }
+.lime, .green { color: #2e7d32 !important; }
+.clan, .cyan, .blue { color: #0277bd !important; }
+.orange { color: #ef6c00 !important; }
+.purple { color: #7b1fa2 !important; }
+.grey, .gray { color: #616161 !important; }
+.white { color: #212121 !important; }
+
+/* dark translucent overlays → light */
+[style*="background-color:rgba(0,0,0"],
+[style*="background-color: rgba(0, 0, 0"],
+[style*="background-color:rgba(17,17,17"],
+[style*="background-color: rgba(17, 17, 17"] {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* dialogs / windows */
+.dialog-background,
+.dialog, .window, .panel, .nouveau-desktop-bg {
+  background-color: rgba(244, 246, 248, 0.96) !important;
+  color: #1a1a1a !important;
+}
+
+/* footer / header bars */
+.footer, .header, .titlebar {
+  background-color: #e8eef5 !important;
+  color: #1a1a1a !important;
+}
+
+/* OSCE battle buttons stay clear */
+.osce-mcq, .osce-mcq button, .osce-choice {
+  background-color: #e3f2fd !important;
+  color: #0b3d91 !important;
+  border: 1px solid #90caf9 !important;
+}
