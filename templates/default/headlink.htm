@@ -9,4 +9,12 @@
 <a href="admin.php">>>{lang admin}</a>
 <a href="https://bbs.brdts.online/">>>{lang report}</a>
 <a href="$homepage" target="_blank">>>{lang homepage}</a>
+<a href="#" class="theme-toggle" id="brdts-theme-toggle" onclick="return brdtsToggleTheme();"><span id="brdts-theme-label">切換原版暗色</span></a>
+<script>
+(function(){
+  var t = document.documentElement.getAttribute('data-theme') || 'light';
+  var el = document.getElementById('brdts-theme-label');
+  if (el) el.textContent = t === 'light' ? '切換原版暗色' : '切換淺色模式';
+})();
+</script>
 </div>

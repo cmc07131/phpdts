@@ -1,93 +1,183 @@
-/* BR大逃殺 — global light mode overrides */
-html, body {
-  background-color: #f4f6f8 !important;
+/* High-contrast light theme — only when data-theme=light */
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background-color: #f7f8fa !important;
   background-image: none !important;
-  color: #1a1a1a !important;
+  color: #111827 !important;
 }
-a { color: #1a5fb4 !important; }
-a:hover { color: #0b3d91 !important; }
-.title, .subtitle, .ach-subtitle, .ach-subdesc {
+
+html[data-theme="light"] a {
+  color: #0b57d0 !important;
+}
+html[data-theme="light"] a:hover {
+  color: #0842a0 !important;
+  text-decoration: underline;
+}
+
+html[data-theme="light"] .title,
+html[data-theme="light"] .subtitle,
+html[data-theme="light"] .ach-subtitle,
+html[data-theme="light"] .ach-subdesc {
   color: #0b3d91 !important;
   filter: none !important;
+  -webkit-text-stroke: 0 !important;
 }
-.ver a { color: #c62828 !important; }
+html[data-theme="light"] .ver a { color: #b71c1c !important; }
 
-.b1, .b2 {
-  background-color: rgba(66, 133, 244, 0.85) !important;
-  color: #fff !important;
-  border-color: #c5d0dc !important;
-}
-.b3, .map {
-  background-color: rgba(255, 255, 255, 0.92) !important;
-  color: #1a1a1a !important;
-  border-color: #c5d0dc !important;
-}
-.b4, .b5 { color: #1a1a1a !important; }
-.map2 { border-color: #c5d0dc !important; color: #1a1a1a !important; }
-.maptdred { background-color: rgba(244, 67, 54, 0.2) !important; border-color: #c5d0dc !important; }
-.maptdyellow { background-color: rgba(255, 193, 7, 0.25) !important; border-color: #c5d0dc !important; }
-.maptdlime { background-color: rgba(76, 175, 80, 0.2) !important; border-color: #c5d0dc !important; }
-
-table.admin { BACKGROUND: #e8eef5 !important; }
-table.dialogue {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+/* Table / panel cells */
+html[data-theme="light"] .b1,
+html[data-theme="light"] .b2 {
+  background-color: #1565c0 !important;
+  color: #ffffff !important;
   border-color: #90a4ae !important;
-  color: #1a1a1a !important;
 }
-
-/* common panels / cmd / log boxes */
-.cmd, .log, .battle, .profile, .chat, .news, .gamecmd,
-#cmd, #log, #chat, #profile, #main, #gamecmd,
-div.cmd, div.log, td.b3, th.b3 {
+html[data-theme="light"] .b3,
+html[data-theme="light"] .map {
   background-color: #ffffff !important;
-  color: #1a1a1a !important;
-  border-color: #c5d0dc !important;
+  color: #111827 !important;
+  border-color: #90a4ae !important;
+}
+html[data-theme="light"] .b4,
+html[data-theme="light"] .b5,
+html[data-theme="light"] .map2,
+html[data-theme="light"] td,
+html[data-theme="light"] th,
+html[data-theme="light"] tr,
+html[data-theme="light"] li,
+html[data-theme="light"] p {
+  color: #111827 !important;
+}
+html[data-theme="light"] .map2 { border-color: #90a4ae !important; }
+html[data-theme="light"] .maptdred {
+  background-color: #ffcdd2 !important;
+  color: #b71c1c !important;
+  border-color: #90a4ae !important;
+}
+html[data-theme="light"] .maptdyellow {
+  background-color: #fff9c4 !important;
+  color: #f57f17 !important;
+  border-color: #90a4ae !important;
+}
+html[data-theme="light"] .maptdlime {
+  background-color: #c8e6c9 !important;
+  color: #1b5e20 !important;
+  border-color: #90a4ae !important;
 }
 
-input, select, textarea, button {
+/* Semantic status colors — dark enough on white */
+html[data-theme="light"] .yellow,
+html[data-theme="light"] span.yellow,
+html[data-theme="light"] .gold {
+  color: #b45309 !important;
+}
+html[data-theme="light"] .red,
+html[data-theme="light"] span.red {
+  color: #b91c1c !important;
+}
+html[data-theme="light"] .lime,
+html[data-theme="light"] .green,
+html[data-theme="light"] span.lime,
+html[data-theme="light"] span.green {
+  color: #15803d !important;
+}
+html[data-theme="light"] .clan,
+html[data-theme="light"] .cyan,
+html[data-theme="light"] .blue,
+html[data-theme="light"] span.clan,
+html[data-theme="light"] span.blue {
+  color: #0369a1 !important;
+}
+html[data-theme="light"] .orange,
+html[data-theme="light"] span.orange {
+  color: #c2410c !important;
+}
+html[data-theme="light"] .purple,
+html[data-theme="light"] span.purple {
+  color: #7e22ce !important;
+}
+html[data-theme="light"] .grey,
+html[data-theme="light"] .gray,
+html[data-theme="light"] span.grey {
+  color: #4b5563 !important;
+}
+html[data-theme="light"] .white,
+html[data-theme="light"] span.white {
+  color: #111827 !important;
+}
+html[data-theme="light"] .evergreen {
+  color: #047857 !important;
+}
+html[data-theme="light"] .minirainbow,
+html[data-theme="light"] .linen {
+  color: #6d28d9 !important;
+}
+
+html[data-theme="light"] table.admin { background: #e8eef5 !important; }
+html[data-theme="light"] table.dialogue,
+html[data-theme="light"] table.infotable {
   background-color: #ffffff !important;
-  color: #1a1a1a !important;
-  border: 1px solid #90a4ae !important;
+  color: #111827 !important;
+  border-color: #90a4ae !important;
 }
-input[type="submit"], input[type="button"], button {
-  background-color: #e3f2fd !important;
+
+html[data-theme="light"] input,
+html[data-theme="light"] select,
+html[data-theme="light"] textarea {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #64748b !important;
+}
+html[data-theme="light"] input[type="submit"],
+html[data-theme="light"] input[type="button"],
+html[data-theme="light"] button {
+  background-color: #dbeafe !important;
   color: #0b3d91 !important;
+  border: 1px solid #60a5fa !important;
+  font-weight: bold;
 }
 
-/* semantic colors keep readable on light */
-.yellow { color: #b8860b !important; }
-.red { color: #c62828 !important; }
-.lime, .green { color: #2e7d32 !important; }
-.clan, .cyan, .blue { color: #0277bd !important; }
-.orange { color: #ef6c00 !important; }
-.purple { color: #7b1fa2 !important; }
-.grey, .gray { color: #616161 !important; }
-.white { color: #212121 !important; }
-
-/* dark translucent overlays → light */
-[style*="background-color:rgba(0,0,0"],
-[style*="background-color: rgba(0, 0, 0"],
-[style*="background-color:rgba(17,17,17"],
-[style*="background-color: rgba(17, 17, 17"] {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+/* Common dark translucent panels → solid white */
+html[data-theme="light"] .cmd,
+html[data-theme="light"] .log,
+html[data-theme="light"] .battle,
+html[data-theme="light"] .chat,
+html[data-theme="light"] .profile,
+html[data-theme="light"] .dialog,
+html[data-theme="light"] .dialog-background,
+html[data-theme="light"] .window,
+html[data-theme="light"] .panel,
+html[data-theme="light"] .footer,
+html[data-theme="light"] .header {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  border-color: #90a4ae !important;
 }
 
-/* dialogs / windows */
-.dialog-background,
-.dialog, .window, .panel, .nouveau-desktop-bg {
-  background-color: rgba(244, 246, 248, 0.96) !important;
-  color: #1a1a1a !important;
-}
+/* Map span labels */
+html[data-theme="light"] .mapspanred,
+html[data-theme="light"] .minimapspanred { color: #b91c1c !important; }
+html[data-theme="light"] .mapspanlime,
+html[data-theme="light"] .minimapspanlime { color: #15803d !important; }
+html[data-theme="light"] .mapspanyellow,
+html[data-theme="light"] .minimapspanyellow { color: #b45309 !important; }
+html[data-theme="light"] .minimapspanclan { color: #0369a1 !important; }
 
-/* footer / header bars */
-.footer, .header, .titlebar {
-  background-color: #e8eef5 !important;
-  color: #1a1a1a !important;
+/* Theme toggle control */
+.theme-toggle {
+  display: inline-block;
+  margin: 4px 8px;
+  padding: 2px 10px;
+  font: bold 10pt "FusionPixel10px", sans-serif;
+  border: 1px solid #64748b;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none !important;
+  background: #e2e8f0;
+  color: #0f172a !important;
 }
-
-/* OSCE battle buttons stay clear */
-.osce-mcq, .osce-mcq button, .osce-choice {
-  background-color: #e3f2fd !important;
-  color: #0b3d91 !important;
-  border: 1px solid #90caf9 !important;
+html[data-theme="dark"] .theme-toggle {
+  background: #333;
+  color: #eee !important;
+  border-color: #666;
 }
+.theme-toggle:hover { text-decoration: underline !important; }
